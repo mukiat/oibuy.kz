@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>{include file ='library/admin_html_head.lbi'}</head>
+
+<body class="iframe_body">
+	<div class="warpper">
+    	<div class="title"><a href="{$action_link.href}" class="s-back">{$lang.back}</a>{$lang.11_system} - {$ur_here}</div>
+        <div class="content">
+        	<div class="explanation" id="explanation">
+            	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
+                <ul>
+                    <li>{$lang.operation_prompt_content.adv_info.0}</li>
+                    <li>{$lang.operation_prompt_content_common}</li>
+                </ul>
+            </div>
+            <div class="flexilist">
+                <div class="common-content">
+                    <div class="mian-info">
+                        <form action="country.php" method="post" name="theForm" enctype="multipart/form-data" id="country_form" >
+                            <div class="switch_info" id="conent_area">
+
+
+                                <div class="item">
+                                    <div class="label">{$lang.require_field}{$lang.country_name}：</div>
+                                    <div class="label_value">
+                                        <input type="text" name="country_name" class="text" value="{$country.country_name|escape}" autocomplete="off" />
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="label">{$lang.require_field}{$lang.country_icon}：</div>
+                                    <div class="label_value">
+                                        <div class="type-file-box">
+                                            <input type="button" name="button" id="button" class="type-file-button" value="" />
+                                            <input type="file" class="type-file-file" id="country_icon" name="country_icon" data-state="imgfile" size="30" hidefocus="true" value="" />
+                                            {if $country.country_icon}
+                                            <span class="show">
+                                                    <a href="{$country.country_icon}" target="_blank" class="nyroModal"><i class="icon icon-picture" data-tooltipimg="{$country.country_icon}" ectype="tooltip" title="tooltip"></i></a>
+                                                </span>
+                                            {/if}
+                                            <input type="text" name="textfile" class="type-file-text" id="textfield" autocomplete="off" readonly />
+                                        </div>
+                                        <div class="form_prompt"></div>
+                                        <div class="notic m20" id="AdCodeImg">{$lang.ad_icon_img}</div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="label">&nbsp;</div>
+                                    <div class="label_value info_btn">
+                                        <a href="javascript:;" class="button" id="submitBtn">{$lang.button_submit}</a>
+                                        <input type="hidden" name="act" value="{$form_act}" />
+                                        <input type="hidden" name="id" value="{$country.id}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+ 	{include file ='library/pagefooter.lbi'}
+    <script type="text/javascript">
+
+		$(function(){
+			//点击查看图片
+			$('.nyroModal').nyroModal();
+
+			//表单验证
+			$("#submitBtn").click(function(){
+                if($("#country_form").valid()){
+                    //防止表单重复提交
+                    if(checkSubmit() == true){
+    					$("#country_form").submit();
+                    }
+                    return false
+				}
+			});
+
+			$('#country_form').validate({
+				errorPlacement:function(error, element){
+					var error_div = element.parents('div.label_value').find('div.form_prompt');
+					element.parents('div.label_value').find(".notic").hide();
+					error_div.append(error);
+				},
+				rules:{
+                    country_name :{
+						required : true
+					}
+				},
+				messages:{
+                    country_name:{
+						 required : '<i class="icon icon-exclamation-sign"></i>'+country_name_empty
+					}
+				}
+			});
+		});
+    </script>
+</body>
+</html>

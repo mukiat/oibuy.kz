@@ -1,0 +1,197 @@
+{if $full_page}
+<!doctype html>
+<html lang="zh-Hans">
+<head>{include file ='library/admin_html_head.lbi'}</head>
+<body class="iframe_body">
+	<div class="warpper">
+    	<div class="title">{$lang.promotion} - {$ur_here}</div>
+        <div class="content">
+        	<div class="tabs_info">
+            	<ul>
+                    <li><a href="value_card.php?act=list">{$lang.vc_type_list}</a></li>
+					<li class="curr"><a href="value_card.php?act=vc_list">{$lang.value_card_list}</a></li>
+					<li><a href="pay_card.php?act=list">{$lang.pc_type_list}</a></li>
+                    <li><a href="pay_card.php?act=pc_list">{$lang.pay_card_list}</a></li>
+				</ul>
+            </div>
+        	<div class="explanation" id="explanation">
+            	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
+                <ul>
+                	<li>{$lang.operation_prompt_content.view.0}</li>
+                    <li>{$lang.operation_prompt_content.view.1}</li>
+                    <li>{$lang.operation_prompt_content.view.2}</li>
+                </ul>
+            </div>
+            <div class="flexilist">
+				<div class="common-head">
+                	{if $action_link}
+                    <div class="fl">
+                        <a href="javascript:exportData();"><div class="fbutton"><div class="csv" title="{$action_link.text}"><span><i class="icon icon-download-alt"></i>{$action_link.text}</span></div></div></a>
+                        <a href="export/history?type=value_card&callback={$current_url}"><div class="fbutton"><div>{$lang.view_export_records}</div></div></a>
+                    </div>
+                    {/if}
+			        <div class="refresh ml0">
+                    	<div class="refresh_tit" title="{$lang.refresh_data}"><i class="icon icon-refresh"></i></div>
+                    	<div class="refresh_span">{$lang.refresh_common}{$record_count}{$lang.record}</div>
+                    </div>
+                    <div class="search">
+                        <form action="javascript:;" name="searchForm" onSubmit="searchGoodsname(this);">
+                            <div class="select">
+                                <div class="imitate_select select_w60">
+                                    <div class="cite">{$lang.card_use_status}</div>
+                                    <ul>
+                                        <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.card_use.0}</a></li>
+                                        <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.card_use.1}</a></li>
+                                        <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.card_use.2}</a></li>
+                                    </ul>
+                                    <input name="use_status" type="hidden" value="-1" id="">
+                                </div>
+                            </div>
+                            <div class="input">
+                                <input type="text" name="keywords" class="text nofocus w160" placeholder="{$lang.value_card_sn}/{$lang.bind_user}/{$lang.order_sn}" autocomplete="off" />
+                                <input type="submit" class="btn" name="secrch_btn" ectype="secrch_btn" value="" />
+                            </div>
+                        </form>
+                    </div>
+				</div>
+                <div class="common-content">
+					<form method="POST" action="value_card.php?act=handle_value_card" name="listForm">
+                	<div class="list-div" id="listDiv">
+						{/if}
+                    	<table cellpadding="0" cellspacing="0" border="0">
+                        	<thead>
+                            	<tr>
+                                    <th width="3%" class="sign">
+                                        <div class="tDiv">
+                                            <input type="checkbox" name="all_list" class="checkbox" id="all_list"/>
+                                            <label for="all_list" class="checkbox_stars"></label>
+                                        </div>
+                                    </th>
+                                	<th width="3%"><div class="tDiv">{$lang.record_id}</div></th>
+                                    <th width="20%"><div class="tDiv">{$lang.value_card_sn}</div></th>
+									<th width="14%"><div class="tDiv">{$lang.value_card_password}</div></th>
+                                    <th width="10%"><div class="tDiv">{$lang.value_card_type}</div></th>
+									<th width="10%"><div class="tDiv">{$lang.value_card_value}</div></th>
+									<th width="6%"><div class="tDiv">{$lang.vc_dis}</div></th>
+									<th width="12%"><div class="tDiv">{$lang.value_card_money}</div></th>
+                                    <th><div class="tDiv">{$lang.card_use_status}</div></th>
+                                    <th width="10%"><div class="tDiv">{$lang.bind_user}</div></th>
+                                    <th width="10%"><div class="tDiv">{$lang.bind_time}</div></th>
+                                    <th class="handle">{$lang.handler}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+							{foreach from=$value_card_list item=vc}
+								<tr>
+                                    <td class="sign">
+                                        <div class="tDiv">
+                                            <input type="checkbox" name="checkboxes[]" value="{$vc.vid}"
+                                               class="checkbox" id="checkbox_{$vc.vid}"/>
+                                            <label for="checkbox_{$vc.vid}" class="checkbox_stars"></label>
+                                        </div>
+                                    </td>
+									<td><div class="tDiv">{$vc.vid}</div></td>
+									<td><div class="tDiv">{$vc.value_card_sn}</div></td>
+									<td><div class="tDiv">{$vc.value_card_password}</div></td>
+									<td><div class="tDiv">{$vc.name}</div></td>
+									<td><div class="tDiv">{$vc.vc_value|default:$lang.n_a}</div></td>
+									<td><div class="tDiv">{$vc.vc_dis|default:$lang.n_a}</div></td>
+									<td><div class="tDiv">{$vc.card_money|default:$lang.n_a}</div></td>
+                                    <td>
+                                        <div class="tDiv">
+                                            {if $vc.use_status neq 1}
+                                                <em class="red">{$lang.card_use.$vc.use_status}</em>
+                                            {else}
+                                                {$lang.card_use.$vc.use_status}
+                                            {/if}
+                                        </div>
+                                    </td>
+									<td><div class="tDiv">{$vc.user_name|default:$lang.n_a}</div></td>
+									<td><div class="tDiv">{$vc.bind_time}</div></td>
+									<td align="center"  class="handle">
+										<div class="tDiv a3">
+                                            {if $vc.use_status neq 2}
+                                                {if $vc.use_status eq 1}
+                                                <a href="javascript:;" onclick="listTable.remove('{$vc.vid}&status=0', '{$lang.use_status.invalid_desc}', 'use_status')" title="{$lang.use_status.invalid}" class="btn_trash">
+                                                    <i class="icon icon-screenshot"></i>{$lang.use_status.invalid}
+                                                </a>
+                                                {else}
+                                                <a href="javascript:;" onclick="listTable.remove('{$vc.vid}&status=1', '{$lang.use_status.use_desc}', 'use_status')" title="{$lang.use_status.use}" class="btn_trash">
+                                                    <i class="icon icon-screenshot"></i>{$lang.use_status.use}
+                                                </a>
+                                                {/if}
+                                            {/if}
+											<a href="javascript:;" onclick="listTable.remove({$vc.vid}, '{$lang.drop_confirm}', 'remove_vc')" title="{$lang.remove}" class="btn_trash"><i class="icon icon-trash"></i>{$lang.drop}</a>
+                                            <a href="value_card.php?act=vc_log_list&vc_id={$vc.vid}" title="{$lang.use_log}" class="btn_see"><i class="sc_icon sc_icon_see"></i>{$lang.use_log}</a>
+										</div>
+									</td>
+								</tr>
+							{foreachelse}
+								<tr><td class="no-records" align="center" colspan="12">{$lang.no_records}</td></tr>
+							{/foreach}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="12">
+                                        <div class="tDiv">
+                                            <div class="tfoot_btninfo">
+                                                <input type="submit" value="{$lang.card_use.0}" name="invalid_vc"
+                                                       ectype="btnSubmit" class="btn btn_disabled" disabled=""
+                                                       onclick="this.form.target = '_self'">
+                                                <input type="submit" value="{$lang.card_use.1}" name="use_vc"
+                                                       ectype="btnSubmit" class="btn btn_disabled" disabled=""
+                                                       onclick="this.form.target = '_self'">
+                                                <input type="submit" value="{$lang.card_use.3}" name="remove_vc"
+                                                       ectype="btnSubmit" class="btn btn_disabled" disabled=""
+                                                       onclick="this.form.target = '_self'">
+
+                                                <input type="hidden" name="tid" value="{$filter.tid}" />
+                                            </div>
+                                            <div class="list-page">
+                                                {include file="library/page.lbi"}
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+						{if $full_page}
+                    </div>
+					</form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {include file ='library/pagefooter.lbi'}
+    <script type="text/javascript">
+	//列表导航栏设置下路选项
+	$(".ps-container").perfectScrollbar();
+
+    listTable.recordCount = {$record_count|default:0};
+    listTable.pageCount = {$page_count|default:1};
+    listTable.query = "vc_query";
+
+    {foreach from=$filter item=item key=key}
+    listTable.filter.{$key} = '{$item}';
+    {/foreach}
+	
+	var btn_submit = true;
+
+    function exportData()
+    {
+		if(btn_submit){
+            btn_submit = false;
+            var status = listTable.filter.use_status;
+            var keywords = listTable.filter.keywords;
+
+            var args = "status=" + status + "&keywords=" + keywords;
+
+            $.post("{$action_link.href}", args, function () {
+                window.location.href = "{$callback_url}";
+            }, 'json');
+		}
+    }
+    </script>
+</body>
+</html>
+{/if}

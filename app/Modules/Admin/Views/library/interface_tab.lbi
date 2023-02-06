@@ -1,0 +1,7 @@
+<div class="tabs_info">
+    <ul>
+        <li {if $menu_select.current eq 'self_api'}class="curr"{/if}><a href="open_api.php?act=list&type=0">{$lang.self_api}</a></li>
+        <li {if $menu_select.current eq 'seller_api'}class="curr"{/if}><a href="open_api.php?act=list&type=1">{$lang.seller_api}</a></li>
+        <li {if $menu_select.current eq 'user_api'}class="curr"{/if}><a href="open_api.php?act=list&type=2">{$lang.user_api}</a></li>
+    </ul>
+</div>

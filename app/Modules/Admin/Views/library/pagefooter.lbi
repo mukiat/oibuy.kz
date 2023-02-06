@@ -1,0 +1,5 @@
+<div id="footer" class="copyright">
+     <p>{$copyright}</p>
+</div>
+<script type="text/javascript" src="__TPL__/js/jquery.purebox.js"></script>
+<script type="text/javascript" src="__ROOT__js/jquery.picTip.js"></script>

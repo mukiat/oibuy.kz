@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+{include file ='library/admin_html_head.lbi'}
+
+<style>
+
+.item_left, .item_right {width:50%;float:left;}
+.mt8 {margin-top: 8px;}
+
+.add_sub_dialog {
+    /*position: absolute;*/
+    margin:0 auto;
+    width: 360px;
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    overflow: hidden;
+}
+
+.dialog_item { width: 100%; height: 30px; line-height: 30px; float: left; margin-bottom: 10px;}
+.dialog_item .label {width: 30%;height: 30px; line-height: 30px; float: left;text-align: right;padding-right: 8px;color: #333}
+.dialog_item .label_value { width: 68%;float: left;}
+
+
+
+
+/* 查看店铺信息 start */
+
+/* 店铺基本信息 start */
+.basic_info {
+    background-color: #fff;
+}
+.store_warp .title {
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    color: #333;
+}
+.basic_info_main {
+    display: flex;
+    padding: 0 28px;
+}
+.basic_info_main .store_logo {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+}
+.basic_info_main .store_logo img {
+    width: 100px;
+    height: 100px;
+}
+.basic_info_main .info_content {
+    flex: 1;
+    margin-left: 50px;
+    padding-bottom: 20px;
+}
+.basic_info_main .info_items {
+    display: flex;
+    flex-wrap: wrap;
+}
+.basic_info_main .info_item {
+    display: flex;
+    width: 50%;
+    height: 35px;
+}
+.basic_info_main .info_label {
+    min-width: 80px;
+    text-align: right;
+    color: #666;
+}
+.basic_info_main .info_item:nth-child(even) .info_label {
+    min-width: 115px;
+}
+.basic_info_main .info_value {
+    flex: 1;
+    margin-left: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #000;
+}
+.basic_info_main .info_value img {
+    vertical-align: middle;
+}
+.nav_btns {
+    display: flex;
+    flex-wrap: wrap;
+    width: 940px;
+}
+.nav_btns li {
+    margin: 6px 15px 0 0;
+}
+.nav_btns li:nth-child(n + 8) {
+    margin-top: 20px;
+}
+.nav_btns li a {
+    display: block;
+    min-width: 110px;
+    height: 26px;
+    padding: 0 3px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #1B8BFF;
+    border: 1px solid #1B8BFF;
+    background-color: #ECF5FF;
+}
+/* 店铺基本信息 end */
+
+/* 店铺资金 start */
+.store_money {
+    background-color: #fff;
+    margin-top: 20px;
+}
+.store_money_content {
+    display: flex;
+    padding: 0 0 20px 28px;
+}
+.store_money_content li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+.store_money_content li:nth-child(n + 2) {
+    border-left: 1px solid #E7EAF0;
+}
+.store_money_content .store_count_item {
+    display: flex;
+    flex-direction: column;
+}
+.store_money_content .store_count_title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #666;
+}
+.store_money_content li span {
+    font-size: 18px;
+    color: #333;
+}
+.store_money_content .store_tips {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #E7EAF0;
+}
+.store_money_content .store_tips_ico {
+    flex: 1;
+    color: #fff;
+}
+.store_money_content .store_tips_text {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    padding: 0 5px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 12px;
+    color: #fff;
+    background-color: #9A9A9A;
+}
+.store_money_content .store_tips:hover .store_tips_text {
+    display: block;
+}
+/* 店铺资金 end */
+
+/* 二级商户号 start */
+.sub_merchant {
+    background-color: #fff;
+    margin-top: 20px;
+}
+.sub_merchant_content {
+    padding: 0 28px;
+}
+.store_warp table {
+    width: 100%;
+}
+.store_warp tr {
+    display: flex;
+}
+.store_warp thead {
+    border-top: 2px solid #DBDBDB;
+    background-color: #F2F2F2;
+}
+.store_warp tbody tr:hover {
+    background-color: #F5FAFF;
+}
+.store_warp th,
+.store_warp td {
+    flex: 1;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    font-weight: 700;
+    color: #000;
+}
+.store_warp td {
+    height: 60px;
+    line-height: 60px;
+    font-weight: 400;
+}
+.store_warp .no_data {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+/* 二级商户号 end */
+
+/* 资金明细 start */
+.money_details {
+    margin: 20px 0;
+    background-color: #fff;
+}
+.money_details_content {
+    padding: 0 28px;
+}
+.money_details .cause_change {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.money_details .cause_change span {
+    line-height: 1.5;
+}
+.store_warp .color_blue {
+    color: #0000FF;
+}
+.store_warp .color_gray {
+    color: #707070;
+}
+.store_warp .color_red {
+    color: #FF0000;
+}
+/* 资金明细 end */
+
+/* 查看店铺信息 end */
+
+
+</style>
+
+</head>
+<body class="iframe_body">
+	<div class="warpper">
+        <div class="content">
+            <div class="title"><a href="{$action_link.href}" class="s-back">{$lang.back}</a>{$lang.merchants_info}-{$lang.look_merchants_info}</div>
+
+            <div class="flexilist">
+                <!-- 店铺基本信息 start -->
+                <div class="basic_info store_warp">
+                    <h3 class="title">{$lang.merchants_base_info}</h3>
+                    <div class="basic_info_main">
+                        <a href="javascript:;" class="store_logo">
+                            <img src="{$shop_information.logo_thumb}" alt="">
+                        </a>
+                        <div class="info_content">
+                            <ul class="info_items">
+                                <li class="info_item">
+                                    <span class="info_label">{$lang.steps_shop_name}：</span>
+                                    <span class="info_value">{$shop_information.shop_name}</span>
+                                </li>
+                                {if $is_permer}
+                                <li class="info_item">
+                                    <span class="info_label">{$lang.join_type}</span>
+                                    <span class="info_value">{if $shop_information.is_personal eq 1}{$lang.personal_merchants}{else}{$lang.company_merchants}{/if}</span>
+                                </li>
+                                {/if}
+                                <li class="info_item">
+                                    <span class="info_label">{$lang.shopinfo.merchants_level}</span>
+                                    <span class="info_value">{if $shop_information.grade_img}<img src="{$shop_information.grade_img}" title="{$shop_information.grade_name}" width="20"/>{/if}</span>
+                                </li>
+                                <li class="info_item">
+                                    <span class="info_label">{$lang.shopinfo.bond}</span>
+                                    <span class="info_value">{if $shop_information.seller_apply_info.total_amount}<em class="ftx-01">{$shop_information.seller_apply_info.total_amount}</em>  {if $shop_information.seller_apply_info.expire_status == 1} （{$lang.shopinfo.expired}） {else} （{$lang.shopinfo.paid}） {/if} {else}{$lang.shopinfo.unpaid}{/if}</span>
+                                </li>
+                                <li class="info_item">
+                                    <span class="info_label">{$lang.steps_main_categories}：</span>
+                                    <span class="info_value">{$shop_information.main_categories}</span>
+                                </li>
+                                <li class="info_item">
+                                    <span class="info_label">{$lang.shopinfo.label_area}：</span>
+                                    <span class="info_value">{$shop_information.region}</span>
+                                </li>
+                                <li class="info_item">
+                                    <span class="info_label">{$lang.label_detail_address}</span>
+                                    <span class="info_value">{$shop_information.get_seller_shopinfo.shop_address}</span>
+                                </li>
+                                <li class="info_item">
+                                    <span class="info_label">{$lang.label_lng_lat}</span>
+                                    <span class="info_value">{$shop_information.get_seller_shopinfo.longitude} - {$shop_information.get_seller_shopinfo.latitude}</span>
+                                </li>
+                                <li class="info_item">
+                                    <span class="info_label">{$lang.shopinfo.iphone}</span>
+                                    <span class="info_value">{$shop_information.mobile_phone} {if $shop_information.mobile_phone}<em><a href="javascript:;" class="js-sendsms" >{$lang.shopinfo.sms_reminder}</a></em>{/if}</span>
+                                </li>
+                                <li class="info_item">
+                                    <span class="info_label">{$lang.shopinfo.emile}</span>
+                                    <span class="info_value">{$shop_information.email} {if $shop_information.email}<em><a href="javascript:;" class="js-sendemail">{$lang.shopinfo.emile_reminder}</a></em>{/if}</span>
+                                </li>
+                                <li class="info_item">
+                                    <span class="info_label">{$lang.shopinfo.open_time}</span>
+                                    <span class="info_value">{$shop_information.grade_add_time}</span>
+                                </li>
+                                <li class="info_item">
+                                    <span class="info_label">{$lang.shopinfo.expire_time}</span>
+                                    <span class="info_value">{$shop_information.grade_end_time}</span>
+                                </li>
+                            </ul>
+                            <ul class="nav_btns">
+                                <li><a href="../merchants_store.php?merchant_id={$shop_information.user_id}" target="_blank">{$lang.look_merchants}</a></li>
+                                <li><a href="goods.php?act=list&store_search=1&seller_list=1&merchant_id={$shop_information.user_id}">{$lang.merchants_goods_manage}</a></li>
+                                <li><a href="category_store.php?act=list&merchant_id={$shop_information.user_id}">{$lang.merchants_cat_manage}</a></li>
+                                <li><a href="merchants_brand.php?act=list&store_search=1&merchant_id={$shop_information.user_id}">{$lang.merchants_brand_manage}</a></li>
+                                <li><a href="comment_manage.php?act=list&store_search=1&seller_list=1&merchant_id={$shop_information.user_id}">{$lang.merchants_goods_comment}</a></li>
+                                <li><a href="goods_type.php?act=manage&seller_list=1&merchant_id={$shop_information.user_id}">{$lang.merchants_goods_type}</a></li>
+                                <li><a href="complaint.php?act=list">{$lang.merchants_complaint}</a></li>
+                                <li><a href="order.php?act=list&store_search=1&seller_list=1&merchant_id={$shop_information.user_id}">{$lang.merchants_order}</a></li>
+                                <li><a href="order/export?ru_id={$shop_information.user_id}">{$lang.merchants_import}</a></li>
+                                <li><a href="merchants_commission.php?act=edit&id={$shop_information.user_id}">{$lang.merchants_commission_manage}</a></li>
+                                <li><a href="merchants_account.php?act=list&act_type=merchants_seller_account&store_search=1&merchant_id={$shop_information.user_id}">{$lang.merchants_account_manage}</a></li>
+                                <li><a href="order.php?act=return_list&seller_list=1&store_search=1&merchant_id={$shop_information.user_id}">{$lang.merchants_return_apply}</a></li>
+                                {if file_exists($smarty.const.MODULES_DIVIDE)}
+                                <li class="js-add-sub-mchid"><a href="javascript:;">{$lang.merchants_divide_add}</a></li>
+                                <li><a href="seller_divide/apply?ru_id={$shop_information.user_id}">{$lang.merchants_divide_apply}</a></li>
+                                {/if}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 店铺基本信息 end -->
+
+                <!-- 店铺资金 start -->
+                <div class="store_money store_warp">
+                    <h3 class="title">{$lang.merchants_account}</h3>
+                    <ul class="store_money_content">
+                        <li>
+                            <div class="store_count_item">
+                                <div class="store_count_title">{$lang.merchants_sales_account}<div class="store_tips"><i class="store_tips_ico">?</i><p class="store_tips_text">{$lang.merchants_sales_account_notice}</p></div></div>
+                                <span>{$seller_account.total_amount}</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="store_count_item">
+                                <div class="store_count_title">{$lang.merchants_is_settlement}<div class="store_tips"><i class="store_tips_ico">?</i><p class="store_tips_text">{$lang.merchants_is_settlement_notice}</p></div></div>
+                                <span>{$seller_account.gain_is_settlement}</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="store_count_item">
+                                <div class="store_count_title">{$lang.merchants_no_settlement}<div class="store_tips"><i class="store_tips_ico">?</i><p class="store_tips_text">{$lang.merchants_no_settlement_notice}</p></div></div>
+                                <span>{$seller_account.no_settlement}</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="store_count_item">
+                                <div class="store_count_title">{$lang.merchants_money_yuan}<div class="store_tips"><i class="store_tips_ico">?</i><p class="store_tips_text">{$lang.merchants_money_yuan_notice}</p></div></div>
+                                <span>{$seller_account.seller_money}</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="store_count_item">
+                                <div class="store_count_title">{$lang.merchants_frozen_money_yuan}<div class="store_tips"><i class="store_tips_ico">?</i><p class="store_tips_text">{$lang.merchants_frozen_money_yuan_notice}</p></div></div>
+                                <span>{$seller_account.frozen_money}</span>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- 店铺资金 end -->
+                {if file_exists($smarty.const.MODULES_DIVIDE)}
+                <!-- 二级商户号 start -->
+                <div class="sub_merchant store_warp">
+                    <h3 class="title">{$lang.seller_sub_mchid}</h3>
+                    <div class="sub_merchant_content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>{$lang.seller_sub_mchid}</th>
+                                    <th>{$lang.divide_channel}</th>
+                                    <th>{$lang.bind_time}</th>
+                                    <th>{$lang.bind_way}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {foreach from=$seller_divide item=action}
+                                    <tr>
+                                        <td>{$action.sub_mchid}</td>
+                                        <td>{$action.divide_channel_formated}</td>
+                                        <td>{$action.add_time_formated}</td>
+                                        <td>{$action.add_way_formated}</td>
+                                    </tr>
+                                {foreachelse}
+                                    <tr><td class="no_data" colspan="4">{$lang.no_records}</td></tr>
+                                {/foreach}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 二级商户号 end -->
+                {/if}
+
+                <!-- 资金明细 start -->
+                <div class="money_details store_warp">
+                    <h3 class="title">{$lang.merchants_account_details}</h3>
+                    <div class="money_details_content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>{$lang.merchants_account_change_time}</th>
+                                    <th>{$lang.merchants_account_change_cause}</th>
+                                    <th>{$lang.merchants_money}</th>
+                                    <th>{$lang.merchants_frozen_money}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {foreach from=$capital_details item=detail}
+                                <tr>
+                                    <td>{$detail.change_time}</td>
+                                    <td>
+                                        <span class="cause_change">{$detail.change_desc}</span>
+                                    </td>
+
+                                    {if $detail.user_money gt 0}
+                                        <td class="color_blue">+{$detail.user_money}</td>
+                                    {elseif $detail.user_money lt 0}
+                                        <td class="color_red">{$detail.user_money}</td>
+                                    {else}
+                                        <td class="color_gray">{$detail.user_money}</td>
+                                    {/if}
+
+                                    {if $detail.frozen_money gt 0}
+                                        <td class="color_blue">+{$detail.frozen_money}</td>
+                                    {elseif $detail.frozen_money lt 0}
+                                        <td class="color_red">{$detail.frozen_money}</td>
+                                    {else}
+                                        <td class="color_gray">{$detail.frozen_money}</td>
+                                    {/if}
+
+                                </tr>
+                                {foreachelse}
+                                <tr><td class="no_data" colspan="4">{$lang.no_records}</td></tr>
+                                {/foreach}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 资金明细 end -->
+
+<div class="add_sub_dialog hide" >
+    <div class="dialog_item mt10">
+        <div class="label">{$lang.divide_channel}：</div>
+        <div class="label_value">
+            <div class="checkbox_items">
+                <div class="checkbox_item">
+                    <input type="radio" class="clicktype" name="divide_channel" id="divide_channel_1" value="1" checked="true" /> {$lang.divide_channel_1}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog_item">
+        <div class="label">{$lang.seller_sub_mchid}：</div>
+        <div class="label_value">
+            <input type="hidden" name="ru_id" value="{$shop_information.user_id}" />
+            <input type="text" name="seller_sub_mchid" id="seller_sub_mchid" class="text w300" autocomplete="off"/>
+        </div>
+    </div>
+</div>
+
+{include file ='library/pagefooter.lbi'}
+<script>
+$(function(){
+
+    setTimeout(function(){
+         $('.nyroModalCont').width(700);
+         $('.nyroModalWrapper').width(700);
+    }, 100);
+
+    var user_id = '{$shop_information.user_id}';
+    var grade_end_time = '{$shop_information.grade_end_time}';
+
+    // 短信提醒
+    $('.js-sendsms').click(function(){
+        var mobile_phone = '{$shop_information.mobile_phone}';
+
+        if (mobile_phone) {
+            $.post('merchants_users_list.php?act=ajax_send_message', {type:0,id:user_id}, function(res){
+                if (res.error > 0) {
+                    alert('{$lang.send_message_fail}');
+                } else {
+                    alert('{$lang.send_message_success}');
+                }
+                return false;
+            }, 'json');
+        }
+        return false;
+    });
+
+    // 邮件提醒
+    $('.js-sendemail').click(function(){
+        var email = '{$shop_information.email}';
+
+        if (email) {
+            $.post('merchants_users_list.php?act=ajax_send_message', {type:1,id:user_id}, function(res){
+                if (res.error > 0) {
+                    alert('{$lang.send_sms_fail}');
+                } else {
+                    alert('{$lang.send_sms_success}');
+                }
+                return false;
+            }, 'json');
+        }
+        return false;
+    });
+
+    // 添加二级商户号弹窗
+    $(document).on("click", ".js-add-sub-mchid", function() {
+
+        pb({
+            id: "update_dialog",
+            title: "{$lang.seller_add_sub_mchid}",
+            width: 635,
+            content: $('.add_sub_dialog').html(),
+            ok_title: "{$lang.button_submit_alt}",
+            cl_title: "{$lang.cancel}",
+            drag: false,
+            foot: true,
+            onOk: function () {
+
+                var ru_id = $("#update_dialog").find('input[name="ru_id"]').val();
+                var divide_channel = $("#update_dialog").find('input[name="divide_channel"]:checked').val();
+                var seller_sub_mchid = $("#update_dialog").find('input[name="seller_sub_mchid"]').val();
+
+                if (!ru_id) {
+                    alert('{$lang.ru_id_required}');
+                    return false;
+                }
+                if (!divide_channel) {
+                    alert('{$lang.divide_channel_required}');
+                    return false;
+                }
+                if (!seller_sub_mchid) {
+                    alert('{$lang.seller_sub_mchid_required}');
+                    return false;
+                }
+
+                var data = {
+                    divide_channel:divide_channel,
+                    sub_mchid:seller_sub_mchid
+                }
+
+                $.post('seller_divide/update', {handler:'add',ru_id:ru_id,data:data}, function (result) {
+                    alert(result.msg);
+                    if (result.error == 0) {
+                        if (result.url) {
+                            setTimeout(function () {
+                                window.location.href = result.url;
+                            }, 1500);
+                        } else {
+                            window.location.reload();
+                        }
+                    }
+                    return false;
+                }, 'json');
+
+            }
+        });
+
+    });
+
+});
+</script>
+</body>
+</html>

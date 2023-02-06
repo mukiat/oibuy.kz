@@ -1,0 +1,97 @@
+
+<style>
+    .order_box {
+        display: flex;
+        border-bottom: 1px dashed #ccc;
+    }
+    .order_title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 50px;
+        border-right: 1px solid #f6f6f6;
+        padding-right: 10px;
+    }
+    .order_content {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .order_item {
+        display: flex;
+        align-items: center;
+        padding: 8px 0 8px 16px;
+        border-bottom: 1px dashed #dcdcdc;
+    }
+    .order_item:last-child {
+        border: none;
+    }
+    .order_item:hover {
+        background-color: #f6f6f6;
+    }
+    .order_item span:nth-child(1) {
+        min-width: 200px;
+    }
+    .invoice_no_text{
+        border: 1px solid #dbdbdb;
+        border-radius: 2px;
+        height: 28px;
+        line-height: 28px;
+        padding: 0 10px;
+        margin-right: 10px;
+        width:149px;
+    }
+    .span-two{
+        min-width: 150px;
+        padding: 0 10px
+    }
+    .text-invo{
+        float: right;
+        flex: 1;
+        text-align: right;
+    }
+
+    .border_red { border:1px solid #ff0000}
+    .text-invo .item {float: right; width: 100%; line-height:30px; padding:5px 0px;}
+</style>
+<!--{if $res}-->
+{foreach from=$res key=key item=info}
+    <div class="order_box">
+        <div class="order_title">{$key}</div>
+        <div class="order_content">
+            {foreach from=$info key=key item=val}
+                <div class="order_item">
+                    <span>{$lang.label_order_sn}{$val.order_sn}</span>
+                    <div class="span-two">
+                        <p>{$lang.label_consignee}{$val.consignee}</p>
+                        <p>{$lang.label_mobile}{$val.mobile}</p>
+                    </div>
+                    <span>{$lang.label_address}{$val.address}</span>
+                    <div class="text-invo">
+                        {if $express_list && $val.shipping_code eq 'express'}
+                        <div class="item">
+                            <label><em class="require-field">*</em>{$lang.label_post_form_company}</label>
+                            <div class="imitate_select select_w170 fr">
+                                <div class="cite">{$lang.please_select}</div>
+                                <ul style="display: none;">
+                                    {foreach from=$express_list item=express}
+                                    <li><a href="javascript:;" data-value="{$express.code}" class="ftx-01">{$express.name}</a></li>
+                                    {/foreach}
+                                </ul>
+                                <input type="hidden" name="express_code[]" value=""/>
+                            </div>
+                        </div>
+                        {/if}
+                        <div class="item">
+                            <label><em class="require-field">*</em>{$lang.label_post_form_id}</label>
+                            <input type="text" name="invoice_no[]" class="invoice_no_text" autocomplete="off"/>
+                            <input type="hidden" name="order_id[]" value="{$val.order_id}"/>
+                            <span class="red"></span>
+                        </div>
+                    </div>
+                </div>
+            {/foreach}
+        </div>
+    </div>
+{/foreach}
+<!--{/if}-->

@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>{include file ='library/admin_html_head.lbi'}</head>
+<body class="iframe_body">
+<div class="warpper">
+    <div class="title"><a href="{if $goback}javascript:;{else}{$action_link.href}{/if}" {if $goback} ectype="goback" {/if} class="s-back">{$lang.back}</a>{$lang.08_members} - {$ur_here}
+    </div>
+    <div class="content new_view_see">
+        <div class="step step_one">
+            <div class="step_content">
+                <div class="section">
+                    <div class="section-view section-items">
+                        <div class="section_title"><i class="ui-step"></i>
+                            <h1>{$lang.users_note}</h1><a href="users.php?act=edit&id={$user_info.uid}" class="more">{$lang.view}</a></div>
+                    </div>
+                    <div class="header">
+                        <div class="header_avatar"><img src="{$user_info.user.user_picture}" class="img"/></div>
+                        <div class="header_info">
+                            <div class="header_name">{$lang.user_name}：{$user_info.user.user_name}</div>
+                            <div class="header_name">{$lang.nick_name}：{$user_info.user.nick_name}</div>
+                        </div>
+                        <div class="header_set">
+                            <div class="yaicon" {if $user_info.user.bind_phone > 0} style="background-color: #19d219;" {/if}>
+                                <i class="iconfont icon-mobile-phone-alt"></i></div>
+                            <div class="yaicon" {if $user_info.user.bind_email > 0} style="background-color: #19d219;"{/if}><i
+                                        class="iconfont icon-email-alts"></i></div>
+                            <div class="yaicon" {if $user_info.user.bind_real > 0} style="background-color: #19d219;"{/if}><i
+                                        class="iconfont icon-identity"></i></div>
+                        </div>
+                    </div>
+                    <div class="section-items">
+                        <div class="section-item">
+                            <div class="label">{$lang.mobile}：</div>
+                            <div class="value">
+                                <span class="phone">
+                                    {if $user_info.user.mobile_phone_sign}{$user_info.user.mobile_phone_sign}{else}{$lang.unbinding}{/if}
+                                </span>
+                                {if $user_info.user.mobile_phone_sign}
+                                <i class="iconfont icon-follow-view" data-input="{$user_info.user.mobile_phone}" data-phone="{$user_info.user.mobile_phone_sign}"></i>
+                                {/if}
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.email}：</div>
+                            <div class="value">{$user_info.user.email}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.gender}：</div>
+                            <div class="value">{$lang.sex.$user_info.user.sex}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.birthday}：</div>
+                            <div class="value">{$user_info.user.birthday}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.reg_time}：</div>
+                            <div class="value">{$user_info.user.reg_time}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.last_login_time}：</div>
+                            <div class="value">{$user_info.user.last_login}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="section-view section-items">
+                        <div class="section_title"><i class="ui-step"></i>
+                            <h1>{$lang.ranks_info}</h1><a
+                                    href="user_rank/edit?id={$user_info.user.rank_id}"
+                                    class="more">{$lang.view}</a></div>
+                        <div class="section-item">
+                            <div class="label">{$lang.user_rank}：</div>
+                            <div class="value">{$user_info.user.rank_name}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.enjoy_rights}：</div>
+                            <div class="value">
+                            {foreach from=$user_info.user.rank_rights item=rank_rights}
+                                <div class="qyk">
+                                    <div class="arv"><img src="{$rank_rights.icon}"></div>
+                                    <span>{$rank_rights.name}</span>
+                                </div>
+                            {/foreach}
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.rights_times}：</div>
+                            <div class="value">{$user_info.user.rank_end_time}</div>
+                        </div>
+                    </div>
+                    <div class="section-view">
+                        <div class="section_title"><i class="ui-step"></i>
+                            <h1>{$lang.aff_info}</h1></div>
+                        <div class="section-items">
+                            <div class="section-item">
+                                <div class="label">{$lang.parent_user}：</div>
+                                <div class="value">
+                                    <span>
+                                        {if $user_info.aff.parent_user_id > 0}
+                                            <a href="users.php?act=user_detail&id={$user_info.aff.parent_user_id}">{$user_info.aff.parent_username}</a>
+                                        {else}
+                                            {$user_info.aff.parent_username}
+                                        {/if}
+                                    </span>
+                                    {if $user_info.aff.bind_affiliate > 0}
+                                        <a href="users.php?act=remove_parent&id={$user_info.uid} class="red">{$lang.unbind}</a>
+                                    {/if}
+                                </div>
+                            </div>
+                            {if $user_info.aff.bind_affiliate > 0}
+                                <div class="section-item">
+                                    <div class="label">{$lang.parent_time}：</div>
+                                    <div class="value">{$user_info.aff.reg_time}</div>
+                                </div>
+                            {/if}
+                            {if $user_info.aff.affdb}
+                                <div class="section-item">
+                                    <div class="label">{$lang.low_lever_mer}：</div>
+                                    <div class="value">
+                                        <a href="users.php?act=aff_list&auid={$user_info.uid}" class="li">[{$lang.aff_user}]</a>
+                                        <a href="affiliate_ck.php?act=list&auid={$user_info.uid}" class="li">[{$lang.aff_order}]</a>
+                                    </div>
+                                </div>
+                                {foreach from=$user_info.aff.affdb item=val key=key}
+                                    <div class="section-item">
+                                        <div class="label">{$lang.user_aff_level.$key}：</div>
+                                        <div class="value">{$val.num}{$lang.person}</div>
+                                    </div>
+                                {/foreach}
+                            {/if}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step_title"><i class="ui-step"></i>
+                <h3>{$lang.real_user_info}</h3>{if $user_info.real.real_id > 0}<a
+                href="user_real.php?act=edit&real_id={$user_info.real.real_id}&user_type=0" target="_blank"
+                class="more">{$lang.view}</a>{/if}</div>
+            <div class="step_content">
+                <div class="td">{$lang.16_users_real}：<a
+                            href="javascript:;">{if $user_info.real.review_status eq 1}{$lang.audited_adopt}{elseif $user_info.real.review_status eq 2}{$lang.audited_not_adopt}{else}{$lang.not_real}{/if}</a>
+                </div>
+                <div class="td">{$lang.real_name}：{$user_info.real.real_name}</div>
+                <div class="td">{$lang.mobile}：<span class="phone">{if $user_info.real.bank_mobile}{$user_info.real.bank_mobile_sign}</span><i class="iconfont icon-follow-view" data-input="{$user_info.real.bank_mobile}" data-phone="{$user_info.real.bank_mobile_sign}"></i>{/if}</div>
+                <div class="td">{$lang.id_card}：<span class="phone">{if $user_info.real.self_num}{$user_info.real.self_num_sign}</span> <i class="iconfont icon-follow-view" data-input="{$user_info.real.self_num}" data-phone="{$user_info.real.self_num_sign}"></i>{/if}</div>
+                <div class="td">{$lang.ID_photo}：
+                    {if $user_info.real.z_user_pic}
+                    <a href="{$user_info.real.z_user_pic}" class="nyroModal">
+                        <i class="icon icon-picture" ectype="tooltip"></i>
+                    </a>
+                    {/if}
+                    {if $user_info.real.f_user_pic}
+                    <a href="{$user_info.real.f_user_pic}" class="nyroModal">
+                        <i class="icon icon-picture" ectype="tooltip"></i>
+                    </a>
+                    {/if}
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step_title"><i class="ui-step"></i>
+                <h3>{$lang.acc_money}</h3></div>
+            <div class="step_content">
+                <div class="zj-header">
+                    <div class="yaicon"><i class="iconfont icon-money1"></i></div>
+                    <div class="zj-price">
+                        <strong>{$user_info.account.formated_user_money}</strong>
+                        <span>{$lang.can_use_money}</span>
+                    </div>
+                    <a href="account_log.php?act=add&user_id={$user_info.uid}" class="btn btn35 blue_btn">{$lang.change_acc_money}</a>
+                    <a href="account_log.php?act=list&user_id={$user_info.uid}" class="btn btn35 btn_blue">{$lang.capital_details}</a>
+                </div>
+                <div class="zj-items">
+                    <div class="zj-item">
+                        <div class="zj-price">
+                            <strong>{$user_info.account.formated_frozen_money}</strong>
+                            <span>{$lang.frozen_money}（{$lang.yuan}）</span>
+                        </div>
+                    </div>
+                    <div class="zj-item">
+                        <div class="zj-price">
+                            <strong>{$user_info.account.pay_points}</strong>
+                            <span>{$lang.spand_integral}</span>
+                        </div>
+                    </div>
+                    <div class="zj-item">
+                        <div class="zj-price">
+                            <strong>{$user_info.account.rank_points}</strong>
+                            <span>{$lang.level_integral}</span>
+                        </div>
+                    </div>
+                    <div class="zj-item">
+                        <div class="zj-price">
+                            <strong>{$user_info.account.formated_credit_line}</strong>
+                            <span>{$lang.credit_line}（{$lang.yuan}）</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step_title"><i class="ui-step"></i>
+                <h3>{$lang.coup_info}</h3></div>
+            <div class="step_content">
+                <div class="boxshadow-items">
+                    <a href="users.php?act=user_bonus_list&user_id={$user_info.uid}">
+                        <div class="boxshadow-item">
+                            <div class="yaicon"><i class="iconfont icon-bonus"></i></div>
+                            <div class="info">
+                                <div class="tit">{$lang.can_available_bonus}</div>
+                                <div class="num">{$lang.goods_number}：<em class="red">{$user_info.activity.bonus_num}</em>个</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="users.php?act=user_coupon_list&user_id={$user_info.uid}">
+                        <div class="boxshadow-item">
+                            <div class="yaicon"><i class="iconfont icon-coupon"></i></div>
+                            <div class="info">
+                                <div class="tit">{$lang.can_available_coupons}</div>
+                                <div class="num">{$lang.goods_number}：<em class="red">{$user_info.activity.coupon_num}</em>个</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="users.php?act=user_value_card_list&user_id={$user_info.uid}">
+                        <div class="boxshadow-item">
+                            <div class="yaicon"><i class="iconfont icon-value-card"></i></div>
+                            <div class="info">
+                                <div class="tit">{$lang.can_available_valuecard}</div>
+                                <div class="num">{$lang.goods_number}：<em class="red">{$user_info.activity.value_card_num}</em>个</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step_title"><i class="ui-step"></i>
+                <h3>{$lang.add_manger}</h3><a href="users.php?act=address_list&id={$user_info.uid}" class="more">{$lang.more}</a></div>
+            <div class="step_content">
+                <div class="list-div">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                        <th>{$lang.consignee_name}</th>
+                        <th>{$lang.mobile}</th>
+                        <th>{$lang.consignee_area}</th>
+                        <th>{$lang.detail_address}</th>
+                        </thead>
+                        <tbody>
+                        <td>{if $user_info.address.buyer} {$user_info.address.buyer}（{$lang.default}）{/if}</td>
+                        <td>{$user_info.address.buyer_mobile}</td>
+                        <td>{$user_info.address.region}</td>
+                        <td>{$user_info.address.address}</td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step_title"><i class="ui-step"></i>
+                <h3>{$lang.all_order}</h3><a href="order.php?act=list&user_id={$user_info.uid}" class="more">{$lang.more}</a></div>
+            <div class="step_content">
+                <div class="list-div">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                        <th>{$lang.order_sn}</th>
+                        <th>{$lang.goods_steps_name}</th>
+                        <th>{$lang.order_time}</th>
+                        <th>{$lang.consignee_address}</th>
+                        <th>{$lang.total_fee}</th>
+                        <th>{$lang.all_status}</th>
+                        </thead>
+                        {foreach from=$user_info.order item=order}
+                        <tbody>
+                            <td>{$order.order_sn}</td>
+                            <td>{$order.shop_name}</td>
+                            <td>{$order.add_time}</td>
+                            <td>
+                                <div class="tDiv" style="height: 100px;text-align: left;">{$order.buyer}<br>
+                                    TEL: {$order.mobile}<br>{$order.address}
+                                </div>
+                            </td>
+                            <td>{$order.formated_total_fee_order}</td>
+                            <td>
+                                <div>{$lang.os[$order.order_status]}<br />{$lang.ps[$order.pay_status]}<br />{$lang.ss[$order.shipping_status]}</div>
+                            </td>
+                        </tbody>
+                        {/foreach}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file ='library/pagefooter.lbi'}
+
+<script type="text/javascript">
+    $(".icon-follow-view").click(function(){
+        var input = $(this).data("input");
+        var phone = $(this).data("phone");
+
+        if($(this).hasClass('is')){
+            $(this).removeClass('is');
+            $(this).siblings(".phone").html(phone);
+        }else{
+            $(this).addClass('is');
+            $(this).siblings(".phone").html(input);
+        }
+    })
+
+    $(function(){
+        $(".nyroModal").nyroModal();
+    })
+</script>
+</body>
+</html>
+

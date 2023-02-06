@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+$command = new Hhxsv5\LaravelS\Console\Portal(__DIR__);
+$input = new Symfony\Component\Console\Input\ArgvInput();
+$output = new Symfony\Component\Console\Output\ConsoleOutput();
+$code = $command->run($input, $output);
+exit($code);

@@ -1,0 +1,150 @@
+{if $full_page}
+    <!doctype html>
+<html lang="zh-Hans">
+<head>{include file ='library/admin_html_head.lbi'}</head>
+
+<body class="iframe_body">
+<div class="warpper">
+    <div class="title"><a href="javascript:;"  ectype="goback" class="s-back">{$lang.back}</a>{$lang.14_coupon_list} - {$ur_here}</div>
+    <div class="content">
+        <div class="tabs_info">
+            <ul>
+                <li{if $filter.use_type eq 0} class="curr"{/if}><a
+                            href="users.php?act=user_coupon_list&use_type=0&user_id={$user_id}">{$lang.is_use}</a></li>
+                <li{if $filter.use_type eq 1} class="curr"{/if}><a
+                            href="users.php?act=user_coupon_list&use_type=1&user_id={$user_id}">{$lang.is_used}</a></li>
+                <li{if $filter.use_type eq 2} class="curr"{/if}><a
+                            href="users.php?act=user_coupon_list&use_type=2&user_id={$user_id}">{$lang.cant_use}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="flexilist">
+            <div class="common-head">
+                <div class="refresh">
+                    <div class="refresh_tit" title="{$lang.refresh_data}"><i class="icon icon-refresh"></i></div>
+                    <div class="refresh_span">{$lang.refresh_common}{$record_count}{$lang.record}</div>
+                </div>
+                <div class="search">
+                    <form action="javascript:;" name="searchForm" onSubmit="searchGoodsname(this);">
+                        <div class="select m0">
+                            <div class="imitate_select select_w170">
+                                <div class="cite">{$lang.goods_steps_name}</div>
+                                <ul>
+                                    {foreach from=$store_list item=item}
+                                        <li><a href="javascript:;" data-value="{$item.ru_id}"
+                                               class="ftx-01">{$item.store_name}</a></li>
+                                    {/foreach}
+                                </ul>
+                                <input name="ru_id" type="hidden" value="0" id="">
+                            </div>
+                        </div>
+                        <div class="input">
+                            <input type="text" name="keywords" class="text nofocus"
+                                   placeholder="{$lang.please_input_coupons_name}" autocomplete="off"/>
+                            <input type="submit" class="btn" name="secrch_btn" ectype="secrch_btn" value=""/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="common-content">
+                <div class="list-div" id="listDiv">
+                    {/if}
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                        <tr>
+                            <th width="1%"></th>
+                            <th width="6%">{$lang.coupons_info}</th>
+                            <th width="6%">{$lang.goods_steps_name}</th>
+                            <th width="6%">{$lang.coupons_type}</th>
+                            <th width="8%">{$lang.use_goods}</th>
+                            <th width="5%">{$lang.coupons_man}</th>
+                            <th width="5%">{$lang.coupons_money}</th>
+                            <th width="8%">{$lang.valid_date}</th>
+                            {if $filter.use_type eq 1}
+                                <th width="6%">{$lang.order_id}</th>
+                                <th width="6%">{$lang.used_time}</th>
+                            {/if}
+                            {if $filter.use_type eq 0 || $filter.use_type eq 2}
+                                <th width="5%" class="handle">{$lang.handler}</th>
+                            {/if}
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {foreach from=$list item=item}
+                            <tr>
+                                <td></td>
+                                <td>
+                                    {$lang.record_id}：{$item.uc_id}
+                                    <p><a href="coupons.php?act=edit&cou_id={$item.cou_id}"
+                                          >{$item.cou_name}</a></p>
+                                </td>
+                                <td>{$item.store_name}</td>
+                                <td>{$item.cou_type_name}</td>
+                                <td>
+                                    {if !$item.cou_goods && !$item.spec_cat}
+                                        {$lang.goods_all}
+                                    {elseif $item.cou_goods && !$item.spec_cat}
+                                        {$lang.goods_appoint}
+                                    {elseif !$item.cou_goods && $item.spec_cat}
+                                        {$lang.spec_cat}
+                                    {/if}
+                                </td>
+                                <td>{$item.cou_man}</td>
+                                <td>{$item.cou_money}</td>
+                                <td>{$item.cou_start_time}<br>{$item.cou_end_time}</td>
+                                {if $filter.use_type eq 1}
+                                    <td><a href="order.php?act=info&order_id={$item.order_id}"
+                                        >{$item.order_sn}</a></td>
+                                    <td>{$item.is_use_time}</td>
+                                {/if}
+                                {if $filter.use_type eq 0 || $filter.use_type eq 2}
+                                    <td class="handle">
+                                        <div class="tDiv a3">
+                                            <a href="javascript:;"
+                                               onclick="listTable.remove({$item.uc_id}, '{$lang.sure_drop_coupons}', 'remove_user_coupon_list')"
+                                                title="{$lang.remove}" class="btn_trash"><i
+                                                        class="icon icon-trash"></i>{$lang.drop}</a>
+                                        </div>
+                                    </td>
+                                {/if}
+
+                            </tr>
+                            {foreachelse}
+                            <tr>
+                                <td class="no-records" {if $process_type eq 1}colspan="11"{else}
+                                    colspan="10" {/if}>{$lang.no_records}</td>
+                            </tr>
+                        {/foreach}
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="12">
+                                <div class="tDiv">
+                                    <div class="list-page">
+                                        {include file="library/page.lbi"}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    {if $full_page}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file ='library/pagefooter.lbi'}
+<script type="text/javascript">
+    listTable.recordCount = {$record_count|default:0};
+    listTable.pageCount = {$page_count|default:1};
+    listTable.query = 'user_coupon_list_query';
+    {foreach from=$filter item=item key=key}
+    listTable.filter.{$key} = '{$item}';
+    {/foreach}
+</script>
+</body>
+</html>
+{/if}

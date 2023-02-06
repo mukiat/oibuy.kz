@@ -1,0 +1,88 @@
+{if $extend eq 'keywords' || $extend eq 'tag' || $extend eq 'goodstag'}
+<div class="ps-scrollbar-visible">
+    <div class="items">
+        <div class="item">
+            {if $extend eq 'keywords'}
+                {if $keywords} 
+                    {$keywords} 
+                {else}
+                    N/A 
+                {/if} 
+            {/if}
+
+            {if $extend eq 'tag'}
+                {if $goods_product_tag} 
+                    {$goods_product_tag} 
+                {else}
+                    N/A 
+                {/if} 
+            {/if}
+
+            {if $extend eq 'goodstag'}
+                {if $goods_tag} 
+                    {$goods_tag} 
+                {else}
+                    N/A 
+                {/if} 
+            {/if}
+        </div>
+    </div>
+</div>
+{/if}
+
+{if $extend eq 'user'}
+<div class="manual_info">  
+    <table class="w500">
+        <thead>
+            <th>{$lang.user_rank}</th>
+            <th>{$lang.enjoy_the_price}</th>
+        </thead>
+        <tbody>
+            {foreach from=$rank_list item=list}
+            <tr>
+                <td>{$list.rank_name}</td>
+                <td>{$price_list.$list.rank_id}</td>
+            </tr> 
+            {/foreach}
+        </tbody>
+    </table>  
+</div>
+{/if}
+
+{if $extend eq 'volume'}
+<div class="manual_info">  
+    <table class="w500">
+        <thead>
+            <th>{$lang.number_item}</th>
+            <th>{$lang.enjoy_the_price}</th>
+        </thead>
+        <tbody>
+            {foreach from=$volume_price_list item=list}
+            <tr>
+                <td>{$list.number}</td>
+                <td>{$list.format_price}</td>
+            </tr> 
+            {/foreach}
+        </tbody>
+    </table>  
+</div>
+{/if}
+
+{if $extend eq 'fullcut'}
+<div class="manual_info">  
+    <table class="w500">
+        <thead>
+            <th>{$lang.cfull_price}</th>
+            <th>{$lang.reduce_the_price}</th>
+        </thead>
+        <tbody>
+            {foreach from=$consumption_list item=list}
+            <tr>
+                <td>{$list.cfull}</td>
+                <td>{$list.creduce}</td>
+            </tr> 
+            {/foreach}
+        </tbody>
+    </table>  
+</div>
+{/if}

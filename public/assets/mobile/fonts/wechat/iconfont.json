@@ -1,0 +1,352 @@
+{
+  "id": "389320",
+  "name": "微信通素材图标",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "681187",
+      "name": "二维码",
+      "font_class": "erweima",
+      "unicode": "e748",
+      "unicode_decimal": 59208
+    },
+    {
+      "icon_id": "5912733",
+      "name": "扫码",
+      "font_class": "saoma",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "5083737",
+      "name": "我的卡券",
+      "font_class": "wodeqiaquan-",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "8941147",
+      "name": "卡券",
+      "font_class": "qiaquan",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "12620002",
+      "name": "礼包卡券",
+      "font_class": "icon_A",
+      "unicode": "e69f",
+      "unicode_decimal": 59039
+    },
+    {
+      "icon_id": "749907",
+      "name": "alipay",
+      "font_class": "alipay",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "5466008",
+      "name": "alipay",
+      "font_class": "alipay1",
+      "unicode": "e70a",
+      "unicode_decimal": 59146
+    },
+    {
+      "icon_id": "3507053",
+      "name": "Facebook",
+      "font_class": "Facebook",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "7736052",
+      "name": "facebook",
+      "font_class": "facebook",
+      "unicode": "e8e7",
+      "unicode_decimal": 59623
+    },
+    {
+      "icon_id": "683275",
+      "name": "红包",
+      "font_class": "hongbao1",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "780044",
+      "name": "红包",
+      "font_class": "hongbao2",
+      "unicode": "e6db",
+      "unicode_decimal": 59099
+    },
+    {
+      "icon_id": "924690",
+      "name": "红包",
+      "font_class": "hongbao3",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "6078865",
+      "name": "红包-01",
+      "font_class": "hongbao-",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "6129161",
+      "name": "120收支明细、财富、红包、余额",
+      "font_class": "shouzhimingxicaifuhongbaoyue",
+      "unicode": "e78b",
+      "unicode_decimal": 59275
+    },
+    {
+      "icon_id": "6129163",
+      "name": "122收支明细、财富、红包、余额",
+      "font_class": "shouzhimingxicaifuhongbaoyue1",
+      "unicode": "e78d",
+      "unicode_decimal": 59277
+    },
+    {
+      "icon_id": "7264381",
+      "name": "红包",
+      "font_class": "hongbao4",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
+      "icon_id": "9626875",
+      "name": "红包",
+      "font_class": "hongbao5",
+      "unicode": "e870",
+      "unicode_decimal": 59504
+    },
+    {
+      "icon_id": "479382",
+      "name": "QQ",
+      "font_class": "qq",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "599933",
+      "name": "微信",
+      "font_class": "weixin1",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "785012",
+      "name": "QQ",
+      "font_class": "qq2",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "925499",
+      "name": "微信",
+      "font_class": "weixin2",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "978353",
+      "name": "新浪微博",
+      "font_class": "weibo",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "1115081",
+      "name": "微博",
+      "font_class": "weibo1",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "705346",
+      "name": "微信-会员卡",
+      "font_class": "weixinhuiyuanqia",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "782122",
+      "name": "微信摇一摇_icon",
+      "font_class": "weixinyaoyiyaoicon",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "1274288",
+      "name": "微信朋友圈",
+      "font_class": "weixinpengyouquan",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "3977929",
+      "name": "微信支付",
+      "font_class": "weixinzhifu",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "7006683",
+      "name": "微信小程序",
+      "font_class": "weixinxiaochengxu",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "7158881",
+      "name": "微信通知",
+      "font_class": "weixintongzhi",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "12178766",
+      "name": "微信客服",
+      "font_class": "weixinkefu",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "5427697",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "6855695",
+      "name": "红包",
+      "font_class": "hongbao",
+      "unicode": "e6da",
+      "unicode_decimal": 59098
+    },
+    {
+      "icon_id": "3354756",
+      "name": "九宫格",
+      "font_class": "jiugongge1",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1821987",
+      "name": "扫码收款",
+      "font_class": "weibiaoti-",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "2544603",
+      "name": "二维码收款",
+      "font_class": "erweimashoukuan",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "26842",
+      "name": "新品",
+      "font_class": "xinpin",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "26856",
+      "name": "精品",
+      "font_class": "jingpin",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "28028",
+      "name": "刮刮卡",
+      "font_class": "guaguaqia",
+      "unicode": "e6e0",
+      "unicode_decimal": 59104
+    },
+    {
+      "icon_id": "207671",
+      "name": "砸金蛋",
+      "font_class": "zajindan",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "708239",
+      "name": "订单查询",
+      "font_class": "dingdanchaxun",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "840962",
+      "name": "现金红包",
+      "font_class": "xianjinhongbao",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    },
+    {
+      "icon_id": "875312",
+      "name": "优惠券",
+      "font_class": "coupon",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "1092253",
+      "name": "查询物流",
+      "font_class": "chaxunwuliu",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "1139197",
+      "name": "热卖",
+      "font_class": "remai",
+      "unicode": "e6ab",
+      "unicode_decimal": 59051
+    },
+    {
+      "icon_id": "1774514",
+      "name": "微信上墙2",
+      "font_class": "weixinshangqiang",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "2046839",
+      "name": "积分查询",
+      "font_class": "jifenchaxun",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "2295994",
+      "name": "大转盘",
+      "font_class": "dazhuanpan",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "2368043",
+      "name": "签到",
+      "font_class": "qiandao",
+      "unicode": "e688",
+      "unicode_decimal": 59016
+    },
+    {
+      "icon_id": "2254781",
+      "name": "扫码付款02",
+      "font_class": "saomafukuan",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    }
+  ]
+}

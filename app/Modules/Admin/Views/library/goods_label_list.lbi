@@ -1,0 +1,6 @@
+{foreach from=$label_list item=label}
+<div class="label_image">
+  <img src="{$label.formated_label_image}" class="label_image_img">
+  <i class="icon-remove" data-id="{$label.id}" ectype="services_label_delete"></i>
+</div>
+{/foreach}

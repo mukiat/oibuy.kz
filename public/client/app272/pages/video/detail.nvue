@@ -1,0 +1,301 @@
+<template>
+	<view class="page">
+		<view class="swiper" v-if="goodsInfo">
+			<view class="swiper-item">
+				<view class="video-box">
+					<chunlei-video class="video" :src="goodsInfo.goods_video" :height="height" :width="width" :play="play" @pause="pauseVideo" @playEnd="playEnd" @playClick="playClick" @timeupdate="timeupdate"></chunlei-video>
+
+					<cover-view class="goods-info" @click="hrefClick('/pages/goodsDetail/goodsDetail?id='+goodsInfo.goods_id)">
+						<cover-image :src="goodsInfo.goods_thumb" class="goods-image"></cover-image>
+						<cover-view class="goods-text">
+							<text class="goods-tit">{{goodsInfo.goods_name}}</text>
+							<text class="goods-price">{{goodsInfo.shop_price_formated}}</text>
+						</cover-view>
+					</cover-view>
+					<cover-image class="video_close_btn" src="../../static/video/close.png" @click="goBackList"></cover-image>
+					<cover-view class="cover-view-right">
+						<cover-image :src="goodsInfo.is_collect == 1 ? '../../static/video/love-filled.png' : '../../static/video/love.png'" class="icon" @click.stop="tapLove(goodsInfo.is_collect)"></cover-image>
+						<text class="right-text">{{goodsInfo.user_collect}}</text>
+						<cover-image src="../../static/video/comment-alt.png" class="icon" @click.stop="tapMsg"></cover-image>
+						<text class="right-text">{{goodsInfo.comment_num}}</text>
+						<cover-image src="../../static/video/share.png" class="icon" @click.stop="appShare(goodsInfo)"></cover-image>
+						<text class="right-text">分享</text>
+					</cover-view>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	import chunleiVideo from '@/components/chunlei-video/chunlei-video';
+	import universal from '@/common/mixins/universal.js';
+	import * as localConfig from '@/config/local/config';
+	import outerHref from '@/common/outerHref';
+
+	export default{
+		mixins:[universal],
+		components:{
+			chunleiVideo
+		},
+		data() {
+		    return {
+				index:0,
+				height:'667px',
+				width:'',
+				play:true,
+				duration:'',
+				videoList:[],
+				goods_id:0,
+				goodsInfo:''
+			}
+		},
+		onLoad(e){
+			this.goods_id = e.goods_id ? e.goods_id : 0;
+
+			this.getList();
+		},
+		created(){
+			let height = uni.getSystemInfoSync().windowHeight;
+			let width = uni.getSystemInfoSync().windowWidth;
+			this.height = `${height}px`;
+			this.width = `${width}px`;
+		},
+		methods:{
+			getList(){
+				uni.request({
+					url: `${localConfig.websiteUrl}/api/goods/videoinfo`,
+					method: 'POST',
+					data: {
+						goods_id:this.goods_id
+					},
+					header: {
+						'Content-Type': 'application/json',
+						'X-Client-Hash':uni.getStorageSync('client_hash'),
+						'token': uni.getStorageSync('token')
+					},
+					success: (res) => {
+						this.goodsInfo = res.data.data;
+					},
+					fail: (err) => {
+						console.error(err)
+					}
+				})
+			},
+			animationFinish(){},
+			pauseVideo(e){},
+			playEnd(){
+				this.play = false
+			},
+			//点击视频区域暂停当前视频
+			playClick(e){
+				this.play = e;
+			},
+			timeupdate(e){
+			},
+			collectionNumber(){
+				let that = this
+				uni.request({
+					url: `${localConfig.websiteUrl}/api/collect/collectnum`,
+					method: 'GET',
+					data: {
+						goods_id: this.goods_id
+					},
+					header: {
+						'Content-Type': 'application/json',
+						'token': uni.getStorageSync('token'),
+						'X-Client-Hash':uni.getStorageSync('client_hash'),
+					},
+					success: (res) => {
+						this.goodsInfo.user_collect = res.data.data
+					},
+					fail: (err) => {
+						console.error(err)
+					}
+				})
+			},
+			tapLove(is_collect){
+				let that = this
+				if(uni.getStorageSync('token')){
+					uni.request({
+						url: `${localConfig.websiteUrl}/api/collect/collectgoods`,
+						method: 'POST',
+						data: {
+							goods_id: this.goods_id,
+				            status: is_collect == 1 ? true : false
+						},
+						header: {
+							'Content-Type': 'application/json',
+							'token': uni.getStorageSync('token'),
+							'X-Client-Hash':uni.getStorageSync('client_hash'),
+						},
+						success: (res) => {
+							let data = res.data.data
+
+				        	if(data.error == 0){
+				        		uni.showToast({
+									title:data.msg,
+									icon:"none"
+								})
+
+				            	that.goodsInfo.is_collect = !that.goodsInfo.is_collect
+
+								that.collectionNumber();
+				        	}
+						}
+					})
+				}else{
+					uni.showModal({
+						content:'请登录后收藏该商品',
+						success:(res)=>{
+							if(res.confirm){
+								uni.navigateTo({
+									url:'/pagesB/login/login?delta=1'
+								})
+							}
+						}
+					})
+				}
+			},
+			tapMsg(){
+				outerHref(`${localConfig.websiteUrl}/mobile/#/goods/comment/${this.goods_id}`);
+			},
+			appShare(item){
+				let shareInfo = {
+					href:`${localConfig.websiteUrl}/mobile/#/goods/${item.goods_id}?platform=APP`,
+					title:item.goods_name,
+					summary:'',
+					imageUrl:item.goods_thumb
+				};
+				this.shareInfo(shareInfo)
+			},
+			hrefClick(url){
+				uni.navigateTo({
+					url:url
+				})
+			},
+			goBackList() {
+				uni.navigateBack({
+					delta: 1
+				})
+			}
+		}
+	}
+</script>
+
+<style scoped>
+	.page{
+		flex: 1;
+	}
+	.swiper{
+		flex: 1;
+		background-color: #000;
+	}
+	.swiper-item {
+		flex: 1;
+	}
+	.video {
+		flex: 1;
+		z-index: 99;
+	}
+	.video-box{
+		flex: 1;
+		width: 750rpx;
+	}
+
+	/* 商品信息 */
+	.goods-info{
+		position: absolute;
+		margin-left: 20upx;
+		bottom: 200upx;
+		right: 100rpx;
+		left: 20rpx;
+		z-index: 9999;
+		color: #FFFFFF;
+		background-color: #FFFFFF;
+		border-radius: 10upx;
+		padding: 5upx;
+		flex-direction: row;
+	}
+	.goods-image{
+		width: 150upx;
+		height: 150upx;
+		border-radius: 10upx;
+		overflow: hidden;
+	}
+
+	.goods-text{
+		padding: 20upx;
+	}
+
+	.goods-tit{
+		color: #000;
+		font-size: 28upx;
+		height: 40upx;
+		line-height: 40upx;
+		width: 400upx;
+		overflow: hidden;
+	}
+	.goods-price{
+		color: #FD2F2F;
+		font-size: 32upx;
+		margin-top: 10upx;
+	}
+	
+	.cover-view-right{
+		position: absolute;
+		bottom: 360upx;
+		right: 30upx;
+		z-index: 9999;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.right-text-avater{
+		position: absolute;
+		font-size: 14px;
+		top: 80upx;
+		left: 30upx;
+		height: 40upx;
+		width: 40upx;
+		background-color: #DD524D;
+		color: #FFFFFF;
+		border-radius: 50%;
+		text-align: center;
+		line-height: 40upx;
+		z-index: 999;
+	}
+
+	.avater-icon{
+		height: 40upx;
+		width: 40upx;
+		color: #fff;
+		background-color: #DD524D;
+		border-radius: 50%;
+		position: absolute;
+		left: 30upx;
+		top:-20upx;
+	}
+
+	.right-text{
+		text-align: center;
+		font-size: 28rpx;
+		color: #FFFFFF;
+		margin: 10upx 0 20upx;
+		height: 25px;
+	}
+
+	.icon{
+		height: 50upx;
+		width: 50upx;
+	}
+
+	.video_close_btn {
+		position: absolute;
+		top: 150px;
+		right: 47upx;
+		width: 30upx;
+		height: 30upx;
+	}
+</style>

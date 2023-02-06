@@ -1,0 +1,40 @@
+{
+  "database": {
+    "account": {
+      "dscmall": {
+        "user": "root",
+        "password": "root"
+      }
+    },
+    "serverInfo": {
+      "mysql": {
+        "write": {
+          "host": ["127.0.0.1"],
+          "port": 3306,
+          "timeout": 2,
+          "account": "dscmall"
+        },
+        "read": {
+          "host": ["127.0.0.1"],
+          "port": 3306,
+          "timeout": 2,
+          "account": "dscmall",
+          "startConns": "swoole_cpu_num()*10",
+          "maxSpareConns": "swoole_cpu_num()*10",
+          "maxSpareExp": 3600,
+          "maxConns": "swoole_cpu_num()*20"
+        }
+      }
+    },
+    "databases": {
+      "dscmall": {
+        "serverInfo": "mysql",
+        "startConns": "swoole_cpu_num()*2",
+        "maxSpareConns": "swoole_cpu_num()*2",
+        "maxSpareExp": 3600,
+        "maxConns": "swoole_cpu_num()*2",
+        "charset": "utf8mb4"
+      }
+    }
+  }
+}

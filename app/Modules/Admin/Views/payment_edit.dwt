@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>{include file ='library/admin_html_head.lbi'}</head>
+
+<body class="iframe_body">
+	<div class="warpper">
+    	<div class="title"><a href="{$action_link.href}" class="s-back"></a>{$lang.payment} - {$ur_here}</div>
+        <div class="content">
+        	<div class="explanation" id="explanation">
+            	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
+                <ul>
+                	<li>{$lang.operation_prompt_content_common}</li>
+                	<li>{$lang.operation_prompt_content.info.0}</li>
+                </ul>
+            </div>
+            <div class="flexilist">
+                <div class="common-content">
+                    <div class="mian-info">
+                        <form action="payment.php" method="post" name="theForm" id="reg_form">
+                    		<div class="switch_info">
+                                <div class="items">
+                                    <div class="item">
+                                        <div class="label">{$lang.require_field}&nbsp;{$lang.payment_name}：</div>
+                                        <div class="value">
+                                            <input type="text" class="text" name="pay_name" value="{$pay.pay_name|escape}" id="pay_name" autocomplete="off" required />
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="label">{$lang.payment_desc}：</div>
+                                        <div class="value">
+                                            <textarea class="textarea" name="pay_desc" id="role_describe">{$pay.pay_desc|escape}</textarea>
+                                        </div>
+                                    </div>
+                                    {foreach from=$pay.pay_config item=config key=key}
+                                    <div class="item">
+                                        <div class="label">{$config.label}：</div>
+                                        <!-- {if $config.type == "text"} -->
+                                        <div class="value">
+                                            <div class="step_label">
+                                                <input type="{$config.type}" name="cfg_value[{$key}]" class="text" value="{$config.value}" autocomplete="off" />
+                                            </div>
+                                            {if $config.desc}<div class="step_value notic" style="margin-bottom: 3px;">{$config.desc|nl2br}</div>{/if}
+                                        </div>
+                                         <!-- {elseif $config.type == "textarea"} -->
+                                         <div class="value">
+                                             <div class="step_label">
+                                                <textarea class="textarea" name="cfg_value[{$key}]">{$config.value}</textarea>
+                                             </div>
+                                             {if $config.desc}<div class="step_value notic" style="margin-bottom: 3px;">{$config.desc|nl2br}</div>{/if}
+                                         </div>
+                                         <!-- {elseif $config.type == "select"} -->
+                                         <div class="value">
+                                            <div class="imitate_select select_w320">
+                                                <div class="cite">{$lang.please_select}</div>
+                                                <ul>
+                                                   {foreach from=$config.range item=options key=k}
+                                                   <li><a href="javascript:;" selectid="{$k}" data-value="{$k}" class="ftx-01">{$options}</a></li>
+                                                   {/foreach}
+                                                </ul>
+                                                <input name="cfg_value[{$key}]" type="hidden" value="{$config.value}">
+                                            </div>
+                                            {if $config.desc}<div class="step_value notic" style="margin-bottom: 3px;">{$config.desc|nl2br}</div>{/if}
+                                        </div>
+                                        <!-- {elseif $config.type == "radiobox"} -->
+                                        <div class="value">
+                                            <div class="checkbox_items">
+                                                {foreach from=$config.range item=options key=k}
+                                                <div class="checkbox_item">
+                                                    <input type="radio" class="ui-radio" name="cfg_value[{$key}]" id="{$config.name}_{$k}" value="{$k}" {if $config.value == $k} checked="true" {/if}  />
+                                                    <label for="{$config.name}_{$k}" class="ui-radio-label">{$options}</label>
+                                                </div>
+                                                {/foreach}
+                                            </div>
+                                            {if $config.desc}<div class="step_value notic" style="margin-bottom: 3px;">{$config.desc|nl2br}</div>{/if}
+                                        </div>
+                                         <!--{/if}-->
+                                        <input name="cfg_name[]" type="hidden" value="{$config.name}" />
+                                        <input name="cfg_type[]" type="hidden" value="{$config.type}" />
+                                        <input name="cfg_lang[]" type="hidden" value="{$config.lang}" />
+
+                                    </div>
+
+                                    {/foreach}
+                                    {if $config.use_pay_fee == 1 && $pay.pay_code != 'chunsejinrong' && $pay.pay_code != 'onlinepay' && $pay.pay_code != 'balance'}
+                                    <div class="item">
+                                        <div class="label">{$lang.pay_fee}：</div>
+                                        <div class="value">
+                                            {if $pay.is_cod }
+                                            <input name="pay_fee" type="hidden" value="{$pay.pay_fee|default:0}" />
+                                            <div class="notic">{$lang.decide_by_ship}</div>
+                                            {else}
+                                            <input name="pay_fee" type="text" value="{$pay.pay_fee|default:0}" class="text" autocomplete="off" />
+                                            <div class="notic">{$lang.pay_fee_desc}</div>
+                                            {/if}
+                                        </div>
+                                    </div>
+                                    {/if}
+                                    <div class="item">
+                                        <div class="label">{$lang.payment_is_cod}：</div>
+                                        <div class="value">
+                                            {if $pay.is_cod == "1"}{$lang.yes}{else}{$lang.no}{/if}
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="label">{$lang.payment_is_online}：</div>
+                                        <div class="value">
+                                            {if $pay.is_online == "1"}{$lang.yes}{else}{$lang.no}{/if}
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="label">&nbsp;</div>
+                                        <div class="value info_btn">
+                                            <input type="button" class="button" value="{$lang.button_submit}" id="submitBtn"/>
+                                            <input type="hidden" name="act" value="update" />
+                                            <input type="hidden" name="pay_id" value="{$pay.pay_id}" />
+                                            <input type="hidden" name="pay_code" value="{$pay.pay_code}" />
+                                            <input type="hidden" name="is_cod" value="{$pay.is_cod}" />
+                                            <input type="hidden" name="is_online" value="{$pay.is_online}" />
+                                        </div>
+                                    </div>
+                                </div>
+                        	</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	{include file ='library/pagefooter.lbi'}
+    <script language="javascript">
+	$(function(){
+		$("#submitBtn").click(function(){
+			if($("#reg_form").valid()){
+                //防止表单重复提交
+                if(checkSubmit() == true){
+    				$("#reg_form").submit();
+                }
+                return false
+			}
+		});
+
+		// $('#reg_form').validate({
+		// 	errorPlacement:function(error, element){
+		// 		var error_div = element.parents('div.value').find('div.form_prompt');
+		// 		error_div.append(error);
+		// 	},
+		// 	rules:{
+		// 		pay_name:{
+		// 			required : true
+		// 		}
+		// 	},
+		// 	messages:{
+		// 		pay_name:{
+		// 			required:'<i class="icon icon-exclamation-sign"></i>'+pay_name_null
+		// 		}
+		// 	}
+		// });
+        $().ready(function() {
+            $("#reg_form").validate();
+        });
+	});
+    </script>
+</body>
+</html>

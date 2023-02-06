@@ -1,0 +1,18 @@
+<div>
+    <div id="mapcontainer" class="mapcontainer"></div>
+    <div id="myPageTop" class="ml10 fl">
+        <dl class="button_info">
+            <dt>{$lang.label_search_by_keywords}</dt>
+            <dd>
+                <input type="text" class="text text_2" placeholder="{$lang.please_input_keywords_to_search}" id="tipinput"><input type="button" value="{$lang.button_search}" class="sc-btn btn30 sc-blueBg-btn ml10 auto-item" id="mapsubmit" >
+            </dd>
+        </dl>
+        <br />
+        <dl class="button_info">
+            <dt>{$lang.label_lng_lat}</dt>
+            <dd>
+                <input type="text" class="text text_2" readonly id="lnglat" name="lnglat">
+            </dd>
+        </dl>
+    </div>
+</div>

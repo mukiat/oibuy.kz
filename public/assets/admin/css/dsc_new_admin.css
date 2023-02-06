@@ -1,0 +1,29 @@
+	 /*分销中心修改层级弹框样式*/
+    .goods_search_div{margin-bottom: 20px;}
+	 /*div+js模仿select效果*/
+    .imitate_select{ float: left; position:relative;border: 1px solid #dbdbdb;border-radius: 5px;height: 32px;line-height: 30px;font-size: 12px;width: 170px;}
+    .imitate_select .cite{border-radius: 5px; background: #fff url({{ asset('assets/admin/images/xjt.png') }}) right 11px no-repeat; padding: 0 10px; cursor:pointer;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; text-align:left;}
+    .imitate_select ul{ position:absolute; top:28px; left:-1px; background:#fff; width:100%; border:1px solid #dbdbdb; border-radius:0 0 3px 3px; display:none; z-index:199; max-height:280px; overflow:hidden;}
+    .imitate_select ul li{ padding:0 10px; cursor:pointer;}
+    .imitate_select ul li:hover{ background:#f5faff;}
+    .imitate_select ul li a{ display:block;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; text-align:left; color:#707070;}
+    .imitate_select ul li.li_not{ text-align:center;padding: 20px 10px;}
+    .imitate_select .upward{ top:inherit; bottom:28px; border-radius:3px 3px 0 0;}
+    /*div+js模仿select效果end*/
+    .imitate_select.select_w140 .cite {background-position: 150px 12px;}
+    .text-on{ height: 32px;line-height: 32px;border: 1px solid #e5e5e5;background: #fff;border-radius: 5px;padding: 0 10px; float: left; }
+    .move_div .move_info_new {border-radius: 5px;position: relative;border: 1px solid #e5e5e5;/* padding: 10px 0 10px 10px; */}
+    .move_div .move_info_new h4{height: 30px;line-height: 30px;border-radius: 3px 3px 0 0;border: 1px solid #e5e5e5;font-size: 14px;font-weight: 400;padding-left: 10px;background-color: #e5e5e5; }
+    .move_div .move_info_new .move_list {overflow: hidden; height: 240px; position: relative;}
+    .move_div .groupbuy_goods .goods-item .goods-img {margin: 15px 10px 10px 10px;}
+    .move_div .groupbuy_goods .goods-item .goods-info {width: calc(100% - 132px)!important;}
+    .goods-item .goods-info .goods-outer-new{margin-top: 5px;overflow: hidden;margin-top: 5px;}
+    .move_div .groupbuy_goods .goods-item .goods-info .txt-new {color: #fff;background-color: #FCB847;padding: 3px;border-radius: 3px;float: left;margin-left: 10px;}
+    .move_div .groupbuy_goods .goods-item .goods-info .txt-jin {background-color: #35B50B;}
+    .move_div .groupbuy_goods .goods-item .goods-sku .title-new{padding:0 10px 10px;font-size: 1px;font-weight: 600;color: #333;}
+    .sku-info .sun{width: 33.33%;float: left;text-align: center;color: #999;font-size: 10px;}
+    .sku-info .sun .red{margin-top: 10px;color: red;font-size: 15px;font-weight: 600;}
+    .pb-m{height: 32px;line-height: 32px;border-radius: 4px;display: inline-block;margin-right: 10px;font-size: 12px;cursor: pointer;padding: 0 20px;}
+    .pb-ft-new {height: 35px;color: #fff;background-color: #009DDF;line-height: 35px;display: inline-block;padding: 0 30px;border-radius: 5px;cursor: pointer;font-size: 14px;}
+    .btn-sm{padding: 0 10px;border:none;margin-left: 30px;background: #139ff0;}
+     /*分销中心修改层级弹框样式 end*/

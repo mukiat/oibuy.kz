@@ -1,0 +1,44 @@
+{if $step eq 'member'}
+<table class="table_div table_heng">
+	{foreach from=$res item=list}
+	<tr class="first_tr">
+	    <th class="th w150" >{$list.rank_name}</th>
+        <td>
+            <input type="text" class="text w50" autocomplete="off" value="{$list.member_price}" size="8" class="text_3" readonly />
+        </td>
+	</tr>
+	{foreachelse}
+	<tr>
+	    <th class="th w150" >N/A</th>
+        <td>
+            <input type="text" class="text w50" autocomplete="off" value="N/A" size="8" class="text_3" readonly />
+        </td>
+	</tr>
+	{/foreach}
+</table>
+{elseif $step eq 'volume'}
+<table class="table_div table_heng">
+    <tr class="first_tr">
+        <td class="first_td">{$lang.amount}</td>
+        {foreach from=$res item=list}
+        <td>
+            <input type="text" value="{$list.volume_num}" class="text w50" autocomplete="off" />
+        </td>
+		{foreachelse}
+        <td>
+            <input type="text" value="N/A" class="text w50" autocomplete="off" />
+        </td>		
+        {/foreach}
+    </tr>
+    <tr  class="first_tr">
+        <td class="first_td">{$lang.price}</td>
+		{foreach from=$res item=list}
+        <td><input type="text" value="{$list.volume_price}" class="text w50" autocomplete="off" /></td>
+		{foreachelse}
+        <td>
+            <input type="text" value="N/A" class="text w50" autocomplete="off" />
+        </td>
+        {/foreach}
+    </tr>
+</table>
+{/if}

@@ -1,0 +1,87 @@
+{if $full_page}
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    {include file ='library/seller_html_head.lbi'}
+</head>
+
+<body>
+{include file ='library/seller_header.lbi'}
+<div class="ecsc-layout">
+    <div class="site wrapper">
+        {include file ='library/seller_menu_left.lbi'}
+        <div class="ecsc-layout-right">
+            <div class="main-content" id="mainContent">
+                {include file ='library/url_here.lbi'}
+                {include file ='library/seller_menu_tab.lbi'}
+
+                {/if}
+                <div class="list-div mt10" id="listDiv">
+                    <table class="ecsc-default-table">
+                        <thead>
+                        <tr>
+                            <th width="15%">{$lang.seller_follow_name}</th>
+                            <th width="20%">{$lang.seller_follow_cover_pic}</th>
+                            <th width="15%">{$lang.seller_follow_qr_code}</th>
+                            <th width="20%">{$lang.seller_follow_desc}</th>
+                            <th width="10%">{$lang.handler}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {foreach from=$follow_list item=follow name=nofollow_list}
+                        <tr>
+                            <td align="center">{$follow.name}</td>
+                            <td valign="middle">
+                                <div class="tDiv">
+                                    <span class="show">
+                                        <a href="{$follow.cover_pic}" class="nyroModal" target="_blank"><i class="icon icon-picture" onmouseover="toolTip('<img src={$follow.cover_pic}>')" onmouseout="toolTip()"></i></a>
+                                    </span>
+                                </div>
+                            </td>
+                            <td valign="middle">
+                                <div class="tDiv">
+                                    <span class="show">
+                                        <a href="{$follow.qr_code}" class="nyroModal" target="_blank"><i class="icon icon-picture" onmouseover="toolTip('<img src={$follow.qr_code}>')" onmouseout="toolTip()"></i></a>
+                                    </span>
+                                </div>
+                            </td>
+                            <td align="center">{$follow.desc}</td>
+                            <td class="ecsc-table-handle tr">
+                                <span><a href="seller_follow.php?act=edit&id={$follow.id}" title="{$lang.edit}" title="{$lang.edit}" class="btn-green"><i class="icon icon-edit"></i><p>{$lang.edit}</p></a></span>
+                                <span><a href="javascript:;" onclick="listTable.remove({$follow.id}, '{$lang.drop_confirm}')" title="{$lang.drop}" class="btn-red"><i class="icon icon-trash"></i><p>{$lang.drop}</p></a></span>
+                            </td>
+                        </tr>
+                        {foreachelse}
+                        <tr><td class="no-records" colspan="5">{$lang.no_records}</td></tr>
+                        {/foreach}
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="5">{include file="page.dwt"}</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                {if $full_page}
+            </div>
+        </div>
+    </div>
+</div>
+{include file ='library/seller_footer.lbi'}
+<script type="text/javascript">
+    listTable.recordCount = {$record_count};
+    listTable.pageCount = {$page_count};
+
+    {foreach from=$filter item=item key=key}
+    listTable.filter.{$key} = '{$item}';
+    {/foreach}
+
+    $(function(){
+        //点击查看图片
+        $('.nyroModal').nyroModal();
+
+    });
+</script>
+</body>
+</html>
+{/if}

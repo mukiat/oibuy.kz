@@ -1,0 +1,5 @@
+<ul >
+    {foreach from=$seller_list item=seller}
+    <li data-name="{$seller.shop_name}" data-id="{$seller.ru_id}">{$seller.shop_name}</li>
+    {/foreach}
+</ul>

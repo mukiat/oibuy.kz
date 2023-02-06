@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>{include file ='library/seller_html_head.lbi'}
+
+<style>
+    #pay_button {
+        border: 1px solid #dccccc;
+        display: block;
+        margin: 0 auto;
+        width: 130px;
+        text-align: center;
+        color: #fff;
+        background-color: #f42424;
+        font-size: 12px;
+        cursor: pointer;
+        height: 40px;
+        line-height: 40px;
+    }
+    #pay_button:hover{background-color:#f42424; color:#fff;}
+    #pay_button input[type="button"], #pay_button input[type="submit"], #pay_button a{
+        border: none;
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        color: #fff;
+        font-size: 12px;
+        cursor: pointer;
+    }
+</style>
+
+</head>
+
+<body>
+{include file ='library/seller_header.lbi'}
+<div class="ecsc-layout">
+    <div class="site wrapper">
+        {include file ='library/seller_menu_left.lbi'}
+        <div class="ecsc-layout-right">
+            <div class="main-content" id="mainContent">
+				{include file ='library/url_here.lbi'}
+				{include file ='library/seller_menu_tab.lbi'}
+                <div class="table_list" id="listDiv">
+
+                    <table border="0" cellpadding='1' cellspacing='1'  class="ecsc-default-table order">
+                        <tr>
+                            <td>{$lang.label_order_number}{$order.order_sn}</td>
+                            <td>
+                                {$lang.you_select_payment_is}: <strong>{$payment.pay_name}{if $pay_fee > 0}，{$lang.service_fee_is}：{$pay_fee}{/if}</strong>，{$lang.you_should_pay_is}:<strong>{$amount}</strong>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                        {if $pay_config}
+                            <td colspan="3">
+                                {$lang.bank_payee_name}：{$pay_config.bank_payee_name}<br/>
+                                {$lang.bank_card_number}：{$pay_config.bank_card_number}<br/>
+                                {$lang.bank_deposit_bank}：{$pay_config.bank_deposit_bank}<br/>
+                                {$lang.bank_branch}：{$pay_config.bank_branch}<br/>
+                                {$lang.bank_explain}：{$pay_config.bank_explain}<br/>
+                            </td>
+                        {else}
+                            <td align="center" colspan="3" bgcolor="#FFFFFF">
+                                {if $payment.pay_button}
+                                <div class="single-btn" id="pay_button">{$payment.pay_button} </div>
+                                {/if}
+                            </td>
+                        {/if}
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file ='library/seller_footer.lbi'}
+<script type="text/javascript" src="__TPL__/js/jquery.purebox.js"></script>
+<script type="text/javascript">
+    onload = function()
+    {
+        // 开始检查订单
+        startCheckOrder();
+    }
+
+    //微信支付扫码
+    $(document).on('click', "[data-type='wxpay']", function(){
+        var content = $("#wxpay_dialog").html();
+        pb({
+            id: "scanCode",
+            title: "",
+            width: 716,
+            content: content,
+            drag: true,
+            foot: false,
+            cl_cBtn: false,
+            cBtn: false
+        });
+    });
+
+    checkOrder();
+
+    var timer;
+	function checkOrder(){
+        var url = "visual_editing";
+        var grade_type  = "{$grade_type}";
+        if(grade_type == 1){
+            url = "merchants_upgrade";
+        }else if (grade_type == 2){
+            url = "merchants_account";
+        }
+
+        var url = url +".php?act=checkorder&apply_id={$apply_id}";
+        $.get(url, {}, function(data){
+            //已付款
+            if(data.code > 0){
+                alert(jl_pay_success);
+                if(grade_type == 1){
+                    location.href = "seller_apply.php?act=list";
+                }else if(grade_type == 2){
+                    location.href = "merchants_account.php?act=account_manage&act_type=detail";
+                }else{
+                    location.href = "visual_editing.php?act=template_apply_list";
+                }
+            }
+        },'json');
+
+        timer = setTimeout("checkOrder()", 5000);
+    }
+
+    function clearCheckOrder(){
+        window.clearInterval(timer)
+    }
+</script>
+</body>
+</html>

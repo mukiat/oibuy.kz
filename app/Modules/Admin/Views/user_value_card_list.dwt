@@ -1,0 +1,106 @@
+{if $full_page}
+<!doctype html>
+<html lang="zh-Hans">
+<head>{include file ='library/admin_html_head.lbi'}</head>
+
+<body class="iframe_body">
+	<div class="warpper">
+    	<div class="title"><a href="javascript:;"  ectype="goback" class="s-back">{$lang.back}</a>{$lang.14_value_card_list} - {$ur_here}</div>
+        <div class="content">
+            <div class="tabs_info">
+            	<ul>
+                    <li{if $filter.use_type eq 0} class="curr"{/if}><a href="users.php?act=user_value_card_list&use_type=0&user_id={$user_id}">{$lang.is_use}</a></li>
+                    <li{if $filter.use_type eq 1} class="curr"{/if}><a href="users.php?act=user_value_card_list&use_type=1&user_id={$user_id}">{$lang.cant_use}</a></li>
+                </ul>
+            </div>
+
+            <div class="flexilist">
+            	<div class="common-head">
+
+                    <div class="refresh">
+                    	<div class="refresh_tit" title="{$lang.refresh_data}"><i class="icon icon-refresh"></i></div>
+                    	<div class="refresh_span">{$lang.refresh_common}{$record_count}{$lang.record}</div>
+                    </div>
+                    <div class="search">
+                    	<form action="javascript:;" name="searchForm" onSubmit="searchGoodsname(this);">
+                        <div class="input">
+                            <input type="text" name="keywords" class="text nofocus" placeholder="{$lang.enter_value_card_name}" autocomplete="off" />
+							<input type="submit" class="btn" name="secrch_btn" ectype="secrch_btn" value="" />
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="common-content">
+                    <div class="list-div" id="listDiv">
+                        {/if}
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <thead>
+                                <tr>
+                                    <th width="1%"></th>
+                                    <th width="6%">{$lang.value_card_info}</th>
+                                    <th width="6%">{$lang.value_card_sn}</th>
+                                    <th width="6%">{$lang.value_card_password}</th>
+                                    <th width="8%">{$lang.use_condition}</th>
+                                    <th width="5%">{$lang.value_card_value}</th>
+                                    <th width="5%">{$lang.value_card_money}</th>
+                                    <th width="8%">{$lang.bind_time}</th>
+                                    <th width="6%">{$lang.indate}</th>
+                                    {if $filter.use_type eq 1}
+                                        <th width="6%">{$lang.expiration_time}</th>
+                                    {/if}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {foreach from=$list item=item}
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        {$lang.record_id}：{$item.vid}
+                                        <p><a href="value_card.php?act=vc_type_edit&id={$item.tid}" target="_blank">{$item.name}</a></p>
+                                    </td>
+                                    <td>{$item.value_card_sn}</td>
+                                    <td>{$item.value_card_password}</td>
+                                    <td>{$item.use_condition}</td>
+                                    <td>{$item.vc_value}</td>
+                                    <td>{$item.card_money}</td>
+                                    <td>{$item.bind_time}</td>
+                                    <td>{$item.vc_indate}{$lang.months}</td>
+                                    {if $filter.use_type eq 1}
+                                        <td>{$item.end_time}</td>
+                                    {/if}
+
+                                </tr>
+                                {foreachelse}
+                                <tr><td class="no-records" {if $process_type eq 1}colspan="11"{else} colspan="10" {/if}>{$lang.no_records}</td></tr>
+                                {/foreach}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="12">
+                                        <div class="tDiv">
+                                            <div class="list-page">
+                                                {include file="library/page.lbi"}
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        {if $full_page}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	{include file ='library/pagefooter.lbi'}
+    <script type="text/javascript">
+        listTable.recordCount = {$record_count|default:0};
+        listTable.pageCount = {$page_count|default:1};
+        listTable.query = 'user_value_card_list_query';
+        {foreach from=$filter item=item key=key}
+        listTable.filter.{$key} = '{$item}';
+        {/foreach}
+    </script>
+</body>
+</html>
+{/if}

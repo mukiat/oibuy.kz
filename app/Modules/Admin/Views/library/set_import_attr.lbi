@@ -1,0 +1,139 @@
+<div class="goods_type_body" style="padding: 0 20px;">
+<div class="step_content">
+{if $goods_type_list}
+<div class="ecsc-form-goods">
+	<div class="step_item">
+		<div class="step_item_left"><h5>{$lang.label_goods_attr}</h5></div>
+		<div class="step_item_right">
+			<div class="item_right_li">
+				<div class="value_select">
+					<div id="attr_select" class="imitate_select select_w320">
+						<div class="cite">{$lang.please_select}</div>
+                        <ul style="display: none;">
+                            <li><a href="javascript:getAttrList(0);" data-value="0" class="ftx-01">{$lang.please_select_goods_type}</a></li>
+                            {foreach from=$goods_type_list item=goods_type key=key}
+                            <li><a href="javascript:getAttrList(0);" data-value="{$goods_type.cat_id}" class="ftx-01">{$goods_type.cat_name}</a></li>
+                            {/foreach}
+                        </ul>
+						<input name="goods_type" type="hidden" value="{$new_goods_type}" id="select_attr_val">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="step_item pb0" id="tbody-goodsAttr"></div>
+	<div class="step_item_table" id="attribute_table"></div>
+</div>
+{else}
+<div class="notic_import_attr">{$lang.please_set_goods_attribute}</div>
+{/if}
+</div>
+<div class="step" id="goods_attr_gallery"></div>
+</div>
+<script type="text/javascript">
+    getAttrList();
+    var goods_id = $("input[name='goods_id']").val();
+
+    $(document).on("click","a[ectype='attr_input']",function(){
+        var attr_id = $(this).data('attrid');
+        
+        $.jqueryAjax('dialog.php', 'is_ajax=1&act=attr_input_type' + '&attr_id=' + attr_id + '&goods_id=' + goods_id, function(data){
+            var content = data.content;
+            pb({
+                id:"attr_input_type",
+                title:"{$lang.manual_entry_property}",
+                width:820,
+                content:content,
+                ok_title:"{$lang.button_submit_alt}",
+                cl_title:"{$lang.cancel}",
+                drag:false,
+                foot:true,
+                cl_cBtn:true,
+                onOk:function(){
+                    insert_attr_input();
+                }
+            });
+        });
+    });
+    
+    function insert_attr_input(){
+        var actionUrl = "dialog.php?act=insert_attr_input";  
+        $("#insertAttrInput").ajaxSubmit({
+            type: "POST",
+            dataType: "JSON",
+            url: actionUrl,
+            data: { "action": "TemporaryImage" },
+            success: function (data) {
+                $(".attr_input_type_" + data.attr_id).html(data.content);
+                
+                //自动加载商品属性
+                getAttrList(data.goods_id);
+            },
+            async: true  
+         });
+    }
+
+    //唯一属性框进入焦点
+    function insert_attr_input_val(obj){
+        var _this = $(obj).parents('.value'),
+            attr_id_val = [],
+            value_list_val = [],
+            attr_id = _this.find("input[name='attr_id_list[]']").val();
+        
+        attr_id_val.push(_this.find("input[name='goods_attr_id_list[]']").val());
+        value_list_val.push(_this.find("input[name='attr_value_list[]']").val());
+        
+        $.jqueryAjax('dialog.php', 'is_ajax=1&act=insert_attr_input&attr_id_val=' + attr_id_val + '&attr_id=' + attr_id + '&goods_id=' + goods_id + "&value_list_val=" + value_list_val, function(data){});
+    }
+    
+    //下拉属性选择
+    $.divselect("#blur_attr_list","#blur_attr_list_val",function(obj){
+        var val = obj.data("value"),
+            _this = obj.parents('.value'),
+            attr_id_val = [],
+            value_list_val = [],
+            attr_id = _this.find("input[name='attr_id_list[]']").val();
+        
+        attr_id_val.push(_this.find("input[name='goods_attr_id_list[]']").val());
+        value_list_val.push(val);
+        
+        $.jqueryAjax('dialog.php', 'is_ajax=1&act=insert_attr_input&attr_id_val=' + attr_id_val + '&attr_id=' + attr_id + '&goods_id=' + goods_id + "&value_list_val=" + value_list_val, function(data){});
+    });
+    
+    $(document).on("click",".xds_up",function(){
+        var _div = $(this).parent().clone();
+        _div.find("i").removeClass("xds_up").addClass("xds_down");
+        $(this).parents(".input_type_items").append(_div);
+    });
+    
+    $(document).on("click",".xds_down",function(){
+        var parent = $(this).parents(".input_type_item");
+        var goods_attr_id = parent.children("input[name='goods_attr_id[]']").val();
+        
+        if(goods_attr_id > 0){
+            
+            var attr_id = $("input[name='attr_id']").val();
+
+            if(confirm('{$lang.drop_goods_attr_confirm}')){
+                $.jqueryAjax('dialog.php', 'is_ajax=1&act=del_input_type' + '&goods_attr_id=' + goods_attr_id + '&attr_id=' + attr_id + '&goods_id=' + goods_id, function(data){
+                    $(".attr_input_type_" + data.attr_id).html(data.attr_content);
+                    parent.remove();
+                    
+                    //自动加载商品属性
+                    getAttrList(goods_id);
+                });
+            }
+            
+        }else{
+            parent.remove();
+        }
+    });
+    
+    $(document).on("click","[ectype='search_attr']",function(){
+        set_attribute_table(goods_id , 1); //重置表格
+    });
+</script>
+<style type="text/css">
+.step_item_left{ padding-right: 5%; }
+.input_type_items{ padding: 0 20px; }
+</style>

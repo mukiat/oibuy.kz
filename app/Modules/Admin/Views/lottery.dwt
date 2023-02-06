@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>{include file ='library/admin_html_head.lbi'}</head>
+
+<body class="iframe_body">
+<div class="warpper">
+    <div class="title"><a href="favourable.php?act=marketing_center" class="s-back">
+        {$lang.back}</a>{$lang.promotion} - {$ur_here}
+    </div>
+    <div class="content">
+        <div class="tabs_info">
+            <ul>
+                <li class="curr">
+                    <a href="javascript:;" data-val="0" ectype="tabs_info">活动设置</a>
+                </li>
+                <li>
+                    <a href="lottery.php?act=record" data-val="1" ectype="tabs_info">参与记录</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="explanation" id="explanation">
+            <div class="ex_tit">
+                <i class="sc_icon"></i>
+                <h4>{$lang.operating_hints}</h4>
+                <span id="explanationZoom" title="{$lang.fold_tips}"></span>
+            </div>
+            <ul>
+                <li>下单抽奖：是⼀款增加⽤户互动、提⾼⽤户活跃率的活动。由管理员设定奖品和规则，会员来商城消费指定⾦额并成功⽀付，即可参与抽奖活动领取福利。</li>
+                <li>活动的整体中奖概率为100%，需满⾜以下条件：</li>
+                <li> 1、奖品对应的活动时间不能失效，奖品状态正常</li>
+                <li> 2、保持奖品库存需充⾜，当奖项被领取完，系统将不再发放奖品。</li>
+            </ul>
+        </div>
+        <div class="flexilist">
+            <div class="common-content">
+                <div class="mian-info" id="app">
+                    <form method="post" action="lottery.php?act=update" name="theForm"
+                          enctype="multipart/form-data" id="favourable_form">
+                        <div style="border-bottom: 1px solid #c0c0c0;font-weight: bold; padding: 5px;">
+                            基本设置
+                        </div>
+                        <div class="switch_info">
+                            <div class="items">
+                                <div class="item">
+                                    <div class="label">是否启用活动：</div>
+                                    <div class="label_value step_goods_service">
+                                        <div class="switch switch_2 {if $config.active_state > 0}active{/if}"
+                                             title="是否启用活动">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <input type="hidden" value="{$config.active_state}" name="active_state">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="label">{$lang.require_field} 活动起止时间：</div>
+                                    <div class="label_value text_time">
+                                        <input type="text" class="text mr0" name="start_time" id="start_time"
+                                               value="{$config.start_time}" autocomplete="off"/>
+                                        <span class="bolang">&nbsp;&nbsp;~&nbsp;&nbsp;</span>
+                                        <input type="text" class="text" name="end_time" id="end_time"
+                                               value="{$config.end_time}" autocomplete="off"/>
+                                        <div class="form_prompt"></div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="label">{$lang.require_field} 活动规则说明：</div>
+                                    <div class="label_value text_time">
+                                        <textarea name="active_desc" cols="40" rows="3" class="textarea">
+                                            {$config.active_desc}
+                                        </textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div style="border-bottom: 1px solid #c0c0c0;font-weight: bold; padding: 5px;">
+                            规则设置
+                        </div>
+                        <div class="switch_info">
+                            <div class="items">
+                                <div class="item">
+                                    <div class="label">{$lang.require_field} 活动对象：</div>
+                                    <div class="label_value">
+                                        <div class="checkbox_items relative">
+                                            <div class="checkbox_item">
+                                                <input type="checkbox" class="ui-checkbox" id="select_all" value="0">
+                                                <label for="select_all" class="ui-label">全选</label>
+                                            </div>
+                                            {foreach from=$ranks key=key item=rank}
+                                            <div class="checkbox_item">
+                                                <input type="checkbox" class="ui-checkbox" name="user_rank[]"
+                                                       value="{$key}" {$rank.checked}
+                                                       id="user_rank_{$key}" autocomplete="off">
+                                                <label for="user_rank_{$key}" class="ui-label">{$rank.name}</label>
+                                            </div>
+                                            {/foreach}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="label">{$lang.require_field} 单笔消费：</div>
+                                    <div class="label_value">
+                                        <input name="single_amount" type="text" class="text"
+                                               value="{$config.single_amount}" autocomplete="off">
+                                        元
+                                        <div class="notic">设置⽤户下单消费指定⾦额后，可参与抽奖活动，0表⽰⽆限制，只要下单即可参与活动</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="label">参与次数：</div>
+                                    <div class="label_value">
+                                        <input name="participate_number" type="text" class="text"
+                                               value="{$config.participate_number}" autocomplete="off">
+                                        次
+                                        <div class="notic">设置⽤户下单达到指定条件后，可参与抽奖活动次数，默认1次，0表⽰⽆限制</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="label">{$lang.require_field} 奖品设置：</div>
+                                    <div class="label_value">
+                                        <button class="btn btn30 blue_btn fl mr10">添加奖品</button>
+                                        <div class="notic">
+                                            奖品奖项不能少于1项，且不能超过8项，必须要设置每个奖品的概率，所有奖品概率相加不可超过100%。奖项发放完毕之后活动将⾃动关闭
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="label">&nbsp;</div>
+                                    <div class="label_value">
+                                        <table>
+                                            <tr>
+                                                <th>奖品图片</th>
+                                                <th>奖品类型</th>
+                                                <th>奖品</th>
+                                                <th>数量</th>
+                                                <th>已发放</th>
+                                                <th>中奖概率</th>
+                                                <th>操作</th>
+                                            </tr>
+                                            {foreach from=$prizes item=item}
+                                            <tr>
+                                                <td><img src="{$item.prize_image}"/></td>
+                                                <td>{$item.prize_type}</td>
+                                                <td>{$item.prize_name}</td>
+                                                <td>{$item.prize_number}</td>
+                                                <td>{$item.prize_issued}</td>
+                                                <td>{$item.prize_prob}</td>
+                                                <td>
+                                                    <a href="lottery.php?act=prize_edit&id={$item.id}">编辑</a>
+                                                    <a href="lottery.php?act=prize_remove&id={$item.id}">删除</a></td>
+                                            </tr>
+                                            {/foreach}
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="label">&nbsp;</div>
+                                    <div class="label_value info_btn">
+                                        <input type="submit" class="button" value="{$lang.button_submit}"/>
+                                        <input type="hidden" name="id" value="{$config.id}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file ='library/pagefooter.lbi'}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
+
+    //时间选择
+    var opts1 = {
+        'targetId': 'start_time',//时间写入对象的id
+        'triggerId': ['start_time'],//触发事件的对象id
+        'alignId': 'start_time',//日历对齐对象
+        'format': '-',//时间格式 默认'YYYY-MM-DD HH:MM:SS'
+        'min': '' //最小时间
+    }, opts2 = {
+        'targetId': 'end_time',
+        'triggerId': ['end_time'],
+        'alignId': 'end_time',
+        'format': '-',
+        'min': ''
+    }
+    xvDate(opts1);
+    xvDate(opts2);
+
+    //参加会员全选
+    $('#select_all').click(function () {
+        if ($('#select_all').is(':checked')) {
+            $('.relative input[type=checkbox]').prop('checked', true);
+        } else {
+            $('.relative input[type=checkbox]').prop('checked', false);
+        }
+    });
+</script>
+</body>
+</html>

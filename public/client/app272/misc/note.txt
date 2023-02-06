@@ -1,0 +1,14 @@
+证书别名：dscmall
+证书密码：123456
+keystore密码：123456
+
+
+
+
+
+
+生成 jks 文件
+
+keytool -genkey -v -keystore dscmall.jks -keyalg RSA -keysize 2048 -validity 20000 -alias dscmall
+
+开放平台签名，一定需要打包后的正式包签名!!!!。

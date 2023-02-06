@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>{include file ='library/seller_html_head.lbi'}</head>
+<body>
+{include file ='library/seller_header.lbi'}
+<div class="ecsc-layout">
+    <div class="site wrapper">
+        {include file ='library/seller_menu_left.lbi'}
+        <div class="ecsc-layout-right">
+            <div class="main-content" id="mainContent">
+            	{include file ='library/url_here.lbi'}
+				{include file ='library/seller_menu_tab.lbi'}
+                <!--start-->
+                <div class="ecsc-form-goods">
+                	<form action="seller_follow.php" method="post" name="theForm" enctype="multipart/form-data" id='follow_form'>
+                	<div class="wrapper-list border1">
+
+                        <dl>
+                        	<dt>{$lang.require_field}&nbsp;{$lang.seller_follow_name}：</dt>
+                            <dd>
+                                <input type="text" name="name" value="{$info.name}" size="35" class="text" />
+                                <div class="form_prompt"></div>
+                            </dd>
+                        </dl>
+                        <dl>
+                        	<dt>{$lang.require_field}&nbsp;{$lang.seller_follow_cover_pic}：</dt>
+                            <dd>
+                                <div class="type-file-box">
+                                	<div class="input">
+                                        <input type="text" name="text_cover_pic" class="type-file-text" autocomplete="off" value="{$info.cover_pic}" readonly />
+                                        <input type="button" class="type-file-button" value="{$lang.uploading}" />
+                                        <input type="file" class="type-file-file" id="cover_pic" name="cover_pic" data-state="imgfile" size="30" hidefocus="true" value="" />
+                                    </div>
+                                    {if $info.cover_pic}
+                                    <span class="show">
+                                        <a href="{$info.cover_pic}" target="_blank" class="nyroModal"><i class="icon icon-picture" onmouseover="toolTip('<img src={$info.cover_pic}>')" onmouseout="toolTip()"></i></a>
+                                    </span>
+                                    {/if}
+                                </div>
+                                <div class="form_prompt"></div>
+                                <div class="notic m20" id="AdCoverPic">{$lang.cover_pic_img_notice}</div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>{$lang.require_field}&nbsp;{$lang.seller_follow_qr_code}：</dt>
+                            <dd>
+                                <div class="type-file-box">
+                                    <div class="input">
+                                        <input type="text" name="text_qr_code" class="type-file-text" autocomplete="off" value="{$info.qr_code}" readonly />
+                                        <input type="button" class="type-file-button" value="{$lang.uploading}" />
+                                        <input type="file" class="type-file-file" id="qr_code" name="qr_code" data-state="imgfile" size="30" hidefocus="true" value="" />
+                                    </div>
+                                    {if $info.qr_code}
+                                    <span class="show">
+                                        <a href="{$info.qr_code}" target="_blank" class="nyroModal"><i class="icon icon-picture" onmouseover="toolTip('<img src={$info.qr_code}>')" onmouseout="toolTip()"></i></a>
+                                    </span>
+                                    {/if}
+                                </div>
+                                <div class="form_prompt"></div>
+                                <div class="notic m20" id="AdQrCode">{$lang.qr_code_img_notice}</div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>{$lang.seller_follow_link}：</dt>
+                            <dd>
+                                <input type="text" name="link_url" value="{$info.link_url}" size="35" class="text" />
+                                <div class="form_prompt"></div>
+                            </dd>
+                        </dl>
+                        <dl>
+                        	<dt>{$lang.seller_follow_desc}：</dt>
+                            <dd>
+                                <textarea name="desc" cols="40" rows="3" class="textarea fl">{$info.desc}</textarea>
+                            </dd>
+                        </dl>
+                        <dl class="button_info">
+                         	<dt>&nbsp;</dt>
+                            <dd>
+                            	<input type="button" value="{$lang.button_submit}" class="sc-btn sc-blueBg-btn btn35" id='submitBtn'/>
+                                <input type="reset" value="{$lang.button_reset}" class="sc-btn btn35 sc-blue-btn" />
+                                <input type="hidden" name="act" value="{$form_act}" />
+                                <input type="hidden" name="id" value="{$info.id}" />
+                            </dd>
+                        </dl>
+                    </div>
+                    </form>
+                </div>
+                <!--end-->
+            </div>
+        </div>
+    </div>
+</div>
+{include file ='library/seller_footer.lbi'}
+<script type="text/javascript" src="__ROOT__js/jquery.picTip.js"></script>
+<script type="text/javascript">
+
+    $(function() {
+        //点击查看图片
+        $('.nyroModal').nyroModal();
+
+        //表单验证
+        $("#submitBtn").click(function () {
+            if ($("#follow_form").valid()) {
+                //防止表单重复提交
+                if (checkSubmit() == true) {
+                    $("#follow_form").submit();
+                }
+                return false
+            }
+        });
+
+        $('#follow_form').validate({
+            errorPlacement:function(error, element){
+                var error_div = element.parents('dl').find('div.form_prompt');
+                //element.parents('dl').find(".notic").hide();
+                error_div.append(error);
+            },
+            rules:{
+                name :{
+                    required : true
+                },
+                text_cover_pic :{
+                    required : true
+                },
+                text_qr_code :{
+                    required : true
+                }
+            },
+            messages:{
+                name:{
+                    required : '<i class="icon icon-exclamation-sign"></i>'+'{$lang.seller_follow_name_required}'
+                },
+                text_cover_pic :{
+                    required : '<i class="icon icon-exclamation-sign"></i>'+'{$lang.seller_follow_cover_pic_required}'
+                },
+                text_qr_code :{
+                    required : '<i class="icon icon-exclamation-sign"></i>'+'{$lang.seller_follow_qr_code_required}'
+                }
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

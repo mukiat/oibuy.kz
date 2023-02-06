@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>{include file ='library/admin_html_head.lbi'}</head>
+
+<body class="iframe_body">
+	<div class="warpper">
+    	<div class="title">
+            <a href="{$action_link.href}" class="s-back">{$lang.back}</a>
+            {$lang.goods_alt} - {$ur_here}
+        </div>
+        <div class="content">
+        	<div class="explanation" id="explanation">
+            	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
+                <ul>
+                    <li>{$lang.operation_prompt_content.info.0}</li>
+                </ul>
+            </div>
+            <div class="flexilist">
+                <div class="common-content">
+                    <div class="mian-info">
+                        <form action="goods_keyword.php" method="post" name="theForm" enctype="multipart/form-data" id="keywordForm">
+                            <div class="switch_info">
+                                <div class="item">
+                                    <div class="label">{$lang.parent_id}：</div>
+                                    <div class="label_value">
+                                        <div class="search_select">
+                                            <div class="categorySelect">
+                                                <div class="selection">
+                                                    <input type="text" name="category_name" id="category_name" class="text w290 valid" value="{if $parent_category}{$parent_category}{else}{$lang.cat_top}{/if}" autocomplete="off" readonly data-filter="cat_name" />
+                                                    <input type="hidden" name="parent_id" id="category_id" value="{$parent_id|default:0}" data-filter="cat_id" />
+                                                </div>
+                                                <div class="select-container w319" style="display:none;">
+                                                    {include file="library/filter_category.lbi"}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="notic">{$lang.parent_id_notic}</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="label">{$lang.keyword_name}：</div>
+                                    <div class="label_value">
+
+                                        {if $form_action eq 'insert'}
+                                        <textarea name="keyword_name" cols="48" rows="3" class="textarea"></textarea>
+                                        <div class="notic bf100">{$lang.keyword_name_notic}</div>
+                                        {else}
+                                        <input type="text" name="keyword_name" value="{$keyword.name}" class="text" autocomplete="off" />
+                                        {/if}
+
+                                    	<div class="form_prompt"></div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="label">&nbsp;</div>
+                                    <div class="label_value info_btn">
+										<input type="button" class="button" value="{$lang.button_submit}" id="submitBtn" />
+										<input type="reset" class="button button_reset" value="{$lang.button_reset}" />
+										<input type="hidden" name="act" value="{$form_action}" />
+										<input type="hidden" name="id" value="{$keyword.id}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+    {include file ='library/pagefooter.lbi'}
+	{literal}
+	<script type="text/javascript">
+	$(function(){
+		//表单验证
+		$("#submitBtn").click(function(){
+			if($("#keywordForm").valid()){
+                //防止表单重复提交
+                if(checkSubmit() == true){
+    				$("#keywordForm").submit();
+                }
+                return false
+			}
+		});
+
+		$(function(){
+			$('.nyroModal').nyroModal();
+		});
+
+		$('#keywordForm').validate({
+			errorPlacement:function(error, element){
+				var error_div = element.parents('div.label_value').find('div.form_prompt');
+				element.parents('div.label_value').find(".notic").hide();
+				error_div.append(error);
+			},
+			rules:{
+                keyword_name :{
+					required : true,
+
+                    {if $form_action eq 'update'}
+                    maxlength: 20
+                    {/if}
+				}
+			},
+			messages:{
+                keyword_name:{
+					required : '<i class="icon icon-exclamation-sign"></i>' + keyword_name_null,
+
+                    {if $form_action eq 'update'}
+                    maxlength : '<i class="icon icon-exclamation-sign"></i>' + keyword_name_length
+                    {/if}
+				}
+			}
+		});
+	});
+	</script>
+	{/literal}
+</body>
+</html>

@@ -1,0 +1,62 @@
+import * as localConfig from '@/config/local/config'
+
+const url = localConfig.websiteUrl;
+
+const imagePath = {
+	'imageFalseSrc': url + '/static/dist/img/false-1.png',
+	'cardA': url + '/static/dist/img/card-a.png',
+	'cardB': url + '/static/dist/img/card-b.png',
+	'bargainsImg': url + '/static/dist/img/bargain_s.jpg',
+	'comUser02': url + '/static/dist/img/com-user_02.jpg',
+	'userShop': url + '/static/dist/img/user-shop.png',
+	'upgrade': url + '/static/dist/img/upgrade.png',
+	'userDefaultImg': url + '/static/dist/img/user_default.png',
+	'shoppingInfoB': url + '/static/dist/img/shopping_info_b.png',
+	'brandHeaderBg': url + '/static/dist/img/brand_header_bg.jpg',
+	'couponsPrint': url + '/static/dist/img/coupons-print.png',
+	'defaultImg': url + '/static/dist/img/default-img.jpg',
+	'sbBg': url + '/static/dist/img/sb-bg.png',
+	'sBg': url + '/static/dist/img/s-bg.png',
+	'wdBg': url + '/static/dist/img/wd_bg.jpg',
+	'vipApplyImg1': url + '/static/dist/img/apply-img-1.jpg',
+	'vipApplyImg2': url + '/static/dist/img/apply-img-2.jpg',
+	'vipApplyImg3': url + '/static/dist/img/apply-img-3.png',
+	'infoIcon1': url + '/static/dist/img/info-icon1.png',
+	'infoIcon2': url + '/static/dist/img/info-icon2.png',
+	'infoIcon3': url + '/static/dist/img/info-icon3.png',
+	'infoIcon4': url + '/static/dist/img/info-icon4.png',
+	'rankBg': url + '/static/dist/img/rank_bg.jpg',
+	'seckillTag': url + '/static/dist/img/seckill-tag.png',
+	
+	'user_icon1': url + '/static/dist/img/icon1.png',
+	'user_icon2': url + '/static/dist/img/icon2.png',
+	'user_icon3': url + '/static/dist/img/icon3.png',
+	'user_icon4': url + '/static/dist/img/icon4.png',
+	'user_icon5': url + '/static/dist/img/icon5.png',
+	'user_icon6': url + '/static/dist/img/icon6.png',
+	'user_icon7': url + '/static/dist/img/icon7.png',
+	'user_icon8': url + '/static/dist/img/icon8.png',
+	'user_icon9': url + '/static/dist/img/icon9.png',
+	'user_icon10': url + '/static/dist/img/icon10.png',
+	'user_icon11': url + '/static/dist/img/icon11.png',
+	'user_icon12': url + '/static/dist/img/icon12.png',
+	
+	'user_profile_1': url + '/static/dist/img/user-1.png',
+	'user_profile_2': url + '/static/dist/img/user-2.png',
+	
+	'titleSmallBg': url + '/static/dist/img/apply-title-small.png',
+	'titleBigBg': url + '/static/dist/img/apply-title-big.png',
+	'titleHow': url + '/static/dist/img/title-how.png',
+	'drpInfoBg': url + '/static/dist/img/info-bg.png',
+	'liveBg': url + '/img/live.gif',
+	'scanBg': url + '/img/scan.jpg',
+	'userqrcodeBg': url + '/static/dist/img/userqrcodebg.png',
+	'merchantBg': url + '/static/dist/img/merchant_bg.png',
+	'merchantIco': url + '/static/dist/img/merchant_ico.png',
+	'merchantIco3': url + '/static/dist/img/merchant_ico3.png',
+	'merchantIco4': url + '/static/dist/img/merchant_ico4.png',
+	'merchantIco5': url + '/static/dist/img/merchant_ico5.png',
+	'activity_goods_01': url + '/static/dist/img/activity_goods.png',
+}
+
+export default imagePath

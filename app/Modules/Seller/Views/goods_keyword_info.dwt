@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>{include file ='library/seller_html_head.lbi'}</head>
+
+<body>
+{include file ='library/seller_header.lbi'}
+<div class="ecsc-layout">
+    <div class="site wrapper">
+        {include file ='library/seller_menu_left.lbi'}
+        <div class="ecsc-layout-right">
+            <div class="main-content" id="mainContent">
+                {include file ='library/url_here.lbi'}
+                {include file ='library/seller_menu_tab.lbi'}
+                <div class="ecsc-form-goods">
+                    <form method="post" action="goods_keyword.php" name="theForm" enctype="multipart/form-data" id="keywordForm">
+                        <div class="wrapper-list border1">
+                            <dl>
+                                <dt>{$lang.parent_id}：</dt>
+                                <dd>
+                                    <div class="search_select">
+                                        <div class="categorySelect">
+                                            <div class="selection">
+                                                <input type="text" name="category_name" id="category_name" class="text w290 valid" value="{if $parent_category}{$parent_category}{else}{$lang.category_top}{/if}" autocomplete="off" readonly data-filter="cat_name" />
+                                                <input type="hidden" name="parent_id" id="category_id" value="{$parent_id|default:0}" data-filter="cat_id" />
+                                            </div>
+                                            <div class="select-container w320" style="display:none;">
+                                                {include file="library/filter_category_seller.lbi"}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>{$lang.keyword_name}：</dt>
+                                <dd>
+
+                                    {if $form_action eq 'insert'}
+                                    <textarea name="keyword_name" cols="48" rows="3" class="textarea"></textarea>
+                                    <div class="notic bf100">{$lang.keyword_name_notic}</div>
+                                    {else}
+                                    <input type="text" name="keyword_name" value="{$keyword.name}" class="text" autocomplete="off" />
+                                    {/if}
+
+                                    <div class="form_prompt"></div>
+                                </dd>
+                            </dl>
+                            <dl class="button_info">
+                                <dt>&nbsp;</dt>
+                                <dd>
+                                    <input type="button" class="sc-btn sc-blueBg-btn btn35" value="{$lang.button_submit}" id="submitBtn"/>
+                                    <input type="reset" class="sc-btn btn35 sc-blue-btn" value="{$lang.button_reset}" />
+                                    <input type="hidden" name="act" value="{$form_action}" />
+                                    <input type="hidden" name="id" value="{$keyword.id}" />
+                                </dd>
+                            </dl>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file ='library/seller_footer.lbi'}
+
+<script type="text/javascript">
+    $(function(){
+        //表单验证
+        $("#submitBtn").click(function(){
+            if($("#keywordForm").valid()){
+                //防止表单重复提交
+                if(checkSubmit() == true){
+                    $("#keywordForm").submit();
+                }
+                return false
+            }
+        });
+
+        $(function(){
+            $('.nyroModal').nyroModal();
+        });
+
+        $('#keywordForm').validate({
+            errorPlacement:function(error, element){
+                var error_div = element.parents('dl').find('div.form_prompt');
+                error_div.append(error);
+            },
+            rules:{
+                keyword_name :{
+                    required : true,
+
+                    {if $form_action eq 'update'}
+                    maxlength: 20
+                    {/if}
+                }
+            },
+            messages:{
+                keyword_name:{
+                    required : '<i class="icon icon-exclamation-sign"></i>' + keyword_name_null,
+
+                    {if $form_action eq 'update'}
+                    maxlength : '<i class="icon icon-exclamation-sign"></i>' + keyword_name_length
+                    {/if}
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+{if $full_page}
+<!doctype html>
+<html lang="zh-Hans">
+<head>{include file ='library/admin_html_head.lbi'}</head>
+
+<body class="iframe_body">
+    <div class="warpper">
+        <div class="title">{$lang.report_form} - {$ur_here}</div>
+        <div class="content">
+            <div class="tabs_info">
+                <ul>
+                    <li><a href="user_stats.php?act=new">{$lang.newadd_user}</a></li>
+                    <li><a href="user_stats.php?act=user_analysis">{$lang.user_analysis}</a></li>
+                    <li><a href="user_stats.php?act=user_area_analysis">{$lang.user_area_analysis}</a></li>
+                    <li><a href="user_stats.php?act=user_rank_analysis">{$lang.user_rank_analysis}</a></li>
+                    <li class="curr"><a href="user_stats.php?act=user_consumption_rank">{$lang.user_consumption_rank}</a></li>
+                </ul>
+            </div>
+            <div class="explanation" id="explanation">
+                <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
+                <ul>
+                    <li>{$lang.operation_prompt_content.rank.0}</li>
+                    <li>{$lang.operation_prompt_content.rank.1}</li>
+                    <li>{$lang.operation_prompt_content.rank.2}</li>
+                    <li>{$lang.operation_prompt_content.rank.3}</li>
+                    <li>{$lang.operation_prompt_content.rank.4}</li>
+                    <li>{$lang.operation_prompt_content.rank.5}</li>
+                </ul>
+            </div>
+            <div class="flexilist mt30">
+                <div class="query_result">
+                    <div class="common-content">
+                        <div class="switch_info">
+                            <div class="stat_order_search stat_order_search2">
+                                <form action="" method="post" id="" name="selectForm">
+                                    <div class="search_item">
+                                        <strong class="label_txt">{$lang.time}：</strong>
+                                        <div class="text_time" id="text_time_start">
+                                            <input type="text" class="text" name="start_date" id="start_date" value="" autocomplete="off" readonly>
+                                        </div>
+                                        <span class="bolang">&nbsp;&nbsp;~&nbsp;&nbsp;</span>
+                                        <div class="text_time" id="text_time_end">
+                                            <input type="text" class="text" name="end_date" id="end_date" value="{$current_time}" autocomplete="off" readonly>
+                                        </div>
+                                        <a href="javascript:setStartTime(-7);" class="bolang line_height_28 js-select-time red" style="margin-left: 14px">{$lang.latest_7days}</a>
+                                        <a href="javascript:setStartTime(-30);" class="bolang line_height_28 js-select-time" style="margin-left: 14px">{$lang.latest_30days}</a>
+                                        <a href="javascript:setStartTime(-90);" class="bolang line_height_28 js-select-time" style="margin-left: 14px">{$lang.latest_3months}</a>
+                                        <a href="javascript:setStartTime(-365);" class="bolang line_height_28 js-select-time" style="margin-left: 14px">{$lang.latest_1years}</a>
+                                    </div>
+                                    <div class="search_item">
+                                        <strong class="label_txt">&nbsp</strong>
+                                        <a href="javascript:void(0);" class="btn btn30 blue_btn" ectype="searchButton"><i class="icon icon-search"></i>{$lang.btn_search}</a>
+                                        <a href="javascript:void(0);" class="btn btn30 btn_blue" ectype="exportButton">{$lang.export_list}</a>
+                                        <a href="export/history?type=user_consumption_rank&callback={$current_url}" style="margin-left: 12px;">{$lang.view_export_records}</a>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="query_result mt30">
+                                <div class="common-head">
+                                    <div class="refresh">
+                                        <div class="refresh_tit" title="{$lang.refresh_data}"><i class="icon icon-refresh"></i></div>
+                                        <div class="refresh_span">{$lang.refresh_common}{$record_count}{$lang.record}</div>
+                                    </div>
+                                </div>
+                                <div class="list-div" id="listDiv">
+                                    {/if}
+                                    <table cellpadding="0" cellspacing="0" border="0">
+                                        <thead>
+                                        <tr>
+                                            <th width="6%"><div class="tDiv">{$lang.record_id}</div></th>
+                                            <th width="14%"><div class="tDiv">{$lang.user_name}</div></th>
+                                            <th width="10%"><div class="tDiv">{$lang.user_sale_stats.2}</div></th>
+                                            <th width="10%"><div class="tDiv">{$lang.user_sale_stats.3}</div></th>
+                                            <th width="10%"><div class="tDiv">{$lang.user_sale_stats.4}</div></th>
+                                            <th width="10%"><div class="tDiv">{$lang.user_sale_stats.5}</div></th>
+                                            <th width="10%"><div class="tDiv">{$lang.user_sale_stats.6}</div></th>
+                                            <th width="10%"><div class="tDiv">{$lang.user_sale_stats.7}</div></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {foreach from=$order_list item=vo name=vo}
+                                        <tr>
+                                            <td><div class="tDiv">{$vo.user_id}</div></td>
+                                            <td><div class="tDiv"><p>{$lang.user_name}：{if $vo.user_name}{$vo.user_name}{else}<span class="blue">{$lang.not_set}</span>{/if}</p><p>{$lang.user_nick_name}：{if $vo.nick_name}{$vo.nick_name}{else}<span class="blue">{$lang.not_set}</span>{/if}</p></div></td>
+                                            <td><div class="tDiv">{$vo.total_num|default:0}</div></td>
+                                            <td><div class="tDiv">{$vo.formated_total_fee|default:0}</div></td>
+                                            <td><div class="tDiv">{$vo.valid_num|default:0}</div></td>
+                                            <td><div class="tDiv">{$vo.formated_valid_fee|default:0}</div></td>
+                                            <td><div class="tDiv">{$vo.return_num|default:0}</div></td>
+                                            <td><div class="tDiv">{$vo.formated_return_fee|default:0}</div></td>
+                                        </tr>
+                                        {foreachelse}
+                                        <tr>
+                                            <td colspan="12" class="no_record"><div class="tDiv">{$lang.no_records}</div></td>
+                                        </tr>
+                                        {/foreach}
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td colspan="12">
+                                                <div class="list-page">
+                                                    {include file="library/page.lbi"}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                    {if $full_page}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	{include file ='library/pagefooter.lbi'}
+	<script type="text/javascript">
+        //分页传值
+        listTable.recordCount = {$record_count|default:0};
+        listTable.pageCount = {$page_count|default:1};
+        listTable.url = "user_stats.php?is_ajax=1";
+        listTable.query = "user_consumption_rank_query";
+
+        {foreach from=$filter item=item key=key}
+        listTable.filter.{$key} = '{$item}';
+        {/foreach}
+
+        //日期选择插件调用start sunle
+        var opts1 = {
+            'targetId':'start_date',//时间写入对象的id
+            'triggerId':['start_date'],//触发事件的对象id
+            'alignId':'start_date',//日历对齐对象
+            'format':'-',//时间格式 默认'YYYY-MM-DD HH:MM:SS'
+            'min':'' //最小时间
+        },opts2 = {
+            'targetId':'end_date',
+            'triggerId':['end_date'],
+            'alignId':'end_date',
+            'format':'-',
+            'min':''
+        }
+        xvDate(opts1);
+        xvDate(opts2);
+        //日期选择插件调用end sunle
+
+        //统计
+        $(function(){
+            $(document).on('click', "[ectype='searchButton']", function(){
+                searchData();
+            })
+
+            // 设置默认的起始时间
+            setStartTime(-7);
+
+            // 导出会员消息排行（队列）
+            $(document).on('click', "[ectype='exportButton']", function () {
+                exportData();
+            })
+        })
+
+        function searchData()
+        {
+            listTable.filter['start_date'] = Utils.trim(document.forms['selectForm'].elements['start_date'].value);
+            listTable.filter['end_date'] = Utils.trim(document.forms['selectForm'].elements['end_date'].value);
+
+            listTable.filter['page'] = 1;
+            listTable.loadList();
+        }
+
+        function setStartTime(v) {
+            $("#start_date").val(getDay(v) + ' 00:00:00');
+        }
+
+        $('.js-select-time').click(function(){
+            //单独a标签点击添加class
+            $(this).addClass("red").siblings().removeClass("red");
+        });
+
+        function getDay(day) {
+            var today = new Date();
+            var targetday_milliseconds=today.getTime() + 1000*60*60*24*day;
+            today.setTime(targetday_milliseconds); //注意，这行是关键代码
+            var tYear = today.getFullYear();
+            var tMonth = today.getMonth();
+            var tDate = today.getDate();
+
+            tMonth = doHandleMonth(tMonth + 1);
+            tDate = doHandleMonth(tDate);
+            return tYear+"-"+tMonth+"-"+tDate;
+        }
+
+        function doHandleMonth(month) {
+            var m = month;
+            if(month.toString().length == 1){
+                m = "0" + month;
+            }
+            return m;
+        }
+
+        var checkSubmitFlg = false; // 防止表单重复提交
+        function exportData()
+        {
+            if (checkSubmitFlg === true) {
+                return false;
+            }
+            checkSubmitFlg = true;
+
+            listTable.filter['start_date'] = Utils.trim(document.forms['selectForm'].elements['start_date'].value);
+            listTable.filter['end_date'] = Utils.trim(document.forms['selectForm'].elements['end_date'].value);
+
+            $.post('user_stats.php?act=export_user_consumption_rank', listTable.filter, function (res) {
+                checkSubmitFlg = false;
+                if (res.error === 0) {
+                    window.location.href = 'export/history?type=' + res.content + '&callback={$current_url}'
+                }
+            }, 'json');
+        }
+
+    </script>
+</body>
+</html>
+{/if}

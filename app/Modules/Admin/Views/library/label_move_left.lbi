@@ -1,0 +1,9 @@
+<ul>
+    {foreach from=$filter_list item=filter}
+    <li data-value="{$filter.id}" data-text="{$filter.label_name}">
+      <i class="sc_icon sc_icon_ok"></i>
+      <img src="{$filter.formated_label_image}" style="height: 16px; float: left; margin: 10px 10px 0 0;">
+      <span>[{$filter.label_name}]</span>
+    </li>
+    {/foreach}
+</ul>

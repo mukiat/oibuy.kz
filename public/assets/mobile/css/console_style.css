@@ -1,0 +1,281 @@
+@import "common.css";
+
+
+/*后台第三方登录插件样式*/
+.items-box {
+    overflow: hidden;
+    margin-right: -24px;
+    padding: 0;
+}
+
+.item_wrap {
+    width: 50%;
+    float: left;
+    display: inline-block;
+    position: relative;
+}
+
+.plugin_item {
+    display: block;
+    overflow: hidden;
+    margin-right: 24px;
+    margin-bottom: 24px;
+    color: #222;
+    height: 94px;
+    padding-left: 94px;
+    border: 1px solid #e7e7eb;
+    background: #f7f7f7;
+}
+
+.plugin_item:hover {
+    text-decoration: none;
+    background-color: #f4f5f9;
+    border-color: #d9dadc;
+}
+
+.plugin_icon {
+    width: 94px;
+    height: 94px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.plugin_icon img {
+    width: 94px;
+    height: 94px;
+}
+
+.plugin_content {
+    padding: 10px 0 10px 20px;
+    overflow: hidden;
+}
+
+.plugin_content .title {
+    width: 216px;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    font-style: normal;
+    border-bottom: 0px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.plugin_content .desc {
+    color: #8d8d8d;
+    font-size: 12px;
+    line-height: 30px;
+    width: 238px;
+}
+
+.plugin_status {
+    position: relative;
+    float: right;
+    text-align: right;
+    padding: 54px 12px 0px;
+}
+
+.oauth_list .iconfont {
+    font-size: 52px;
+    text-align: center;
+    line-height: 94px;
+    display: block;
+}
+
+.oauth_list a:hover {
+    text-decoration: none;
+}
+
+.icon-qq:before {
+    content: "\e60c";
+}
+
+.icon-wechat:before {
+    content: "\e620";
+}
+
+.icon-weixin:before {
+    content: "\e618";
+}
+
+.icon-weibo:before {
+    content: "\e63d";
+}
+
+.icon-facebook:before {
+    content: "\e8e7";
+}
+
+.icon-alipay:before {
+    content: "\e60d";
+}
+
+.oauth_list .bg-qq {
+    background: #35B4EA;
+}
+
+.oauth_list .bg-wechat {
+    background: #0DC719;
+}
+
+.oauth_list .bg-weixin {
+    background: #0DC719;
+}
+
+.oauth_list .bg-weibo {
+    background: #F32F58;
+}
+
+.oauth_list .bg-facebook {
+    background: #4E71A8;
+}
+
+.oauth_list .bg-alipay {
+    background: #1FB8EF;
+}
+
+
+
+/*权益首页*/
+.mkc_content {
+}
+
+.mkc_content .mkc_dl {
+    margin-bottom: 10px;
+}
+
+.mkc_content .mkc_dt {
+    font-weight: bolder;
+    font-size: 16px;
+    color: #333;
+    overflow: hidden;
+    margin: 0 0 15px;
+}
+
+.mkc_content .mkc_dd:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.mkc_content .mkc_dd ul {
+    width: calc(100% + 10px);
+}
+
+.mkc_content .mkc_dd li {
+    float: left;
+    border: 1px solid #ebebeb;
+    padding: 15px 15px;
+    margin: 0 20px 10px 0;
+    background-color: #f5f5f5;
+    width: 306px;
+}
+
+.mkc_content .mkc_dd li:hover {
+    transition: all .1s ease-out;
+    text-decoration: none;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+}
+
+.mkc_content .mkc_dd li em {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+
+.mkc_content .mkc_dd li em img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.mkc_content .mkc_dd li .info {
+    float: left;
+    margin-left: 10px;
+    line-height: 20px;
+    width: 220px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.mkc_content .mkc_dd li .info h2 {
+    font-weight: bolder;
+    color: #333;
+    font-size: 14px;
+}
+
+.mkc_content .mkc_dd li .info span {
+    display: inline-block;
+    color: #707070;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+
+.mkc_content .mkc_dd li .desc_info {
+    display: block;
+    float: left;
+    width: 100%;
+    line-height: 20px;
+    margin-top: 5px;
+}
+
+.mkc_content .mkc_dd li .desc_info .name {
+    float: left;
+    font-size: 12px;
+    color: #b2b2b2;
+}
+
+.mkc_content .mkc_dd li .desc_info .handle {
+    float: right;
+}
+
+.mkc_content .mkc_dd li .desc_info .handle a {
+    color: #bfbfbf;
+}
+
+.mkc_content .mkc_dd li .desc_info .handle .iconfont {
+    font-size: 12px;
+}
+
+.mkc_content .mkc_dd li .desc_info .handle .edit:hover {
+    color: #31b4e1;
+}
+
+.mkc_content .mkc_dd li .desc_info .handle .view:hover {
+    color: #29c25f;
+}
+
+.mkc_content .mkc_dd li .desc_info .handle .remove:hover {
+    color: #f42424;
+}
+
+.list-div .handle .tDiv .btn_edit_rights {
+    color: #fff !important;
+    padding: 8px 8px;
+}
+
+.list-div .handle .tDiv .btn_uninstall_rights {
+    color: #fff !important;
+    padding: 8px 8px;
+}
+
+.list-div .handle .tDiv .btn_install_rights {
+    color: #fff !important;
+    padding: 8px 8px;
+}
+
+.rights-list .plugin_content .desc {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}

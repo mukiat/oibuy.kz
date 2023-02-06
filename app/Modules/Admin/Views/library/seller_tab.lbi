@@ -1,0 +1,10 @@
+<div class="tabs_info">
+    <ul>
+        <li {if $menu_select.current eq '02_merchants_users_list'}class="curr"{/if}>
+            <a href="merchants_users_list.php?act=list&uselastfilter=1">{$lang.02_merchants_users_list}</a>
+        </li>
+        <li {if $menu_select.current eq '11_seller_apply'}class="curr"{/if}>
+            <a href="seller_apply.php?act=list">{$lang.11_seller_apply}</a>
+        </li>
+    </ul>
+</div>

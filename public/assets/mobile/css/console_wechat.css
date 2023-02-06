@@ -1,0 +1,678 @@
+@import "common.css";
+
+.weixin_url {
+    width: 80%;
+    background: #f5faff;
+    border: 1px dashed #62b3ff;
+    margin-right: 10px;
+}
+
+/* 推荐二维码部分样式 */
+#valid_time {
+    margin: 0;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#valid_time_select {
+    width: 50px;
+    padding: 0 5px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(../img/xjt.png) no-repeat right center;
+    background-position: 33px 12px;
+    background-color: #eee;
+    background-size: 20%;
+    height: 30px;
+    line-height: 28px;
+    border: 1px solid #dbdbdb;
+}
+
+/*粉丝管理样式*/
+.list-div .sub-list {
+    width: 75%;
+    float: left;
+}
+
+.list-div .group-list {
+    width: 24%;
+    float: left;
+    margin-left: 10px;
+}
+
+.list-div .user_img_box {
+    width: 70px;
+    height: 70px;
+    border-radius: 4rem;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.list-div .wei-nickname {
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.list-div .wei-area {
+    font-size: 12px;
+    color: #D6D6D6;
+}
+
+.user_tag {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1px .7em;
+    line-height: 1.3;
+    color: #8d8d8d;
+    border: 1px solid #9e9e9e;
+    background-color: #fff;
+    overflow: hidden;
+    -webkit-border-top-left-radius: 10px 50%;
+    border-top-right-radius: 10px 50%;
+    -moz-border-radius-topright: 10px 50%;
+    -webkit-border-top-right-radius: 10px 50%;
+    border-bottom-left-radius: 10px 50%;
+    -moz-border-radius-bottomleft: 10px 50%;
+    -webkit-border-bottom-left-radius: 10px 50%;
+    border-bottom-right-radius: 10px 50%;
+    -moz-border-radius-bottomright: 10px 50%;
+    -webkit-border-bottom-right-radius: 10px 50%;
+}
+
+.subscribe_head .common-head {
+    width: 75%;
+}
+
+/* 标签管理 */
+.tags_button {
+    width: 24%;
+    float: left;
+    margin-left: 10px;
+    padding: 0 0 10px 0;
+}
+
+.tags_button .add {
+    float: right;
+}
+
+.tags_button .update {
+    float: right;
+    padding-left: 10px;
+}
+
+.tags_button .list-div .handle .tDiv a {
+    margin-right: 6px;
+}
+
+/*客服消息页面 start*/
+.wechat-message .panel-heading img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden
+}
+
+.wechat-message .panel-heading span {
+    margin-left: 10px;
+    position: absolute;
+    top: 15px;
+    color: #444;
+    font-size: 15px
+}
+
+.wechat-message .wechat-show {
+    min-height: 260px;
+    height: auto;
+    padding: 15px 15px 5px;
+    border-bottom: 1px solid #f1f1f1;
+    overflow: hidden;
+    background: #f5faff;
+}
+
+.wechat-message .wechat-show li {
+    min-height: 60px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.wechat-message .user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.wechat-message .talk-left {
+    text-align: left;
+    padding-left: 60px;
+}
+
+.wechat-message .talk-left img {
+    top: 0;
+    left: 0;
+}
+
+.wechat-message .cite {
+    position: absolute;
+    top: 2px;
+    width: 500px;
+    line-height: 24px;
+    font-size: 12px;
+    white-space: nowrap;
+    color: #999;
+}
+
+.wechat-message .talk-left .cite {
+    text-align: left;
+}
+
+.wechat-message .talk-left .cite i {
+    padding-left: 10px;
+}
+
+.wechat-message .talk-right {
+    text-align: right;
+    padding-right: 60px;
+}
+
+.wechat-message .talk-right img {
+    top: 0;
+    right: 0;
+}
+
+.wechat-message .talk-right .cite {
+    right: 60px;
+    text-align: right;
+}
+
+.wechat-message .talk-right .cite i {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.wechat-message .speak-text {
+    position: relative;
+    margin-top: 25px;
+    padding: 8px 15px;
+    border-radius: 3px;
+    line-height: 22px;
+    background: #e2e2e2;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+}
+
+.wechat-message .speak-text.green {
+    background: #62b3ff;
+    text-align: left;
+    color: #fff;
+}
+
+.wechat-message .speak-text:after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 13px;
+    right: -10px;
+    overflow: hidden;
+    border-width: 10px;
+    border-color: #e2e2e2 transparent transparent;
+    border-style: solid dashed dashed;
+}
+
+.wechat-message .speak-text.green:after {
+    left: -10px;
+    border-color: #62b3ff transparent transparent;
+}
+
+.wechat-message .wechat-middle {
+    padding-left: 15px;
+    line-height: 30px;
+    height: 30px;
+}
+
+.wechat-message .wechat-middle .help-block {
+    margin-top: 0;
+    display: inline-block;
+}
+
+.wechat-message .wechat-middle .history-mass {
+    float: right;
+    padding-right: 10px;
+}
+
+.wechat-message .header-bg {
+    background-color: #f2f2f2
+}
+
+.wechat-message .wechat-content {
+    display: block;
+    width: 100%;
+    height: 68px;
+    padding: 5px 0 0;
+    line-height: 22px;
+    border: none;
+    overflow: auto;
+}
+
+/*客服消息页面 end*/
+
+/*微信通-功能扩展*/
+.items-box {
+    overflow: hidden;
+    margin-right: -24px;
+}
+
+.seller-extend .item_wrap {
+    width: 33.3%;
+    float: left;
+    display: inline-block;
+    position: relative;
+}
+
+.plugin_item {
+    display: block;
+    overflow: hidden;
+    margin-right: 24px;
+    margin-bottom: 24px;
+    color: #222;
+    height: 94px;
+    padding-left: 94px;
+    border: 1px solid #e7e7eb;
+}
+
+.plugin_item:hover {
+    text-decoration: none;
+    background-color: #f4f5f9;
+    border-color: #d9dadc;
+}
+
+.plugin_icon {
+    width: 94px;
+    height: 94px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.plugin_content {
+    padding: 5px 10px;
+    overflow: hidden;
+}
+
+.plugin_content .title {
+    width: 216px;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    font-style: normal;
+    border-bottom: 0px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.plugin_content .desc {
+    color: #8d8d8d;
+    font-size: 12px;
+    line-height: 24px;
+    width: 238px;
+}
+
+.plugin_status {
+    position: absolute;
+    text-align: right;
+    right: 35px;
+    bottom: 35px;
+}
+
+.list-div .handle a.btn_inst:hover {
+    color: #29c25f;
+    border-color: #29C25F;
+}
+
+.list-div .handle a.btn_edit:hover {
+    color: #31b4e1;
+    border-color: #31B4E1;
+}
+
+.list-div .handle a.btn_trash:hover {
+    color: #ec5151;
+    border-color: #ec5151;
+}
+
+.list-div .handle i.sc_icon_see {
+    width: 13px;
+    height: 12px;
+    display: inline-block;
+    background-position: -195px -484px;
+}
+
+.list-div .handle a.btn_see:hover {
+    color: #29c25f;
+    border-color: #29c25f;
+}
+
+.list-div .handle a.btn_see:hover i.sc_icon_see {
+    background-position: -195px -502px;
+}
+
+.list-div .handle i.sc_icon_inst {
+    width: 13px;
+    height: 12px;
+    display: inline-block;
+    background-position: -195px -526px;
+}
+
+i.sc_icon {
+    background: url(../img/console/admin-icon.png);
+}
+
+.list-div .handle i, .btn_trash i {
+    font-size: 14px;
+    margin: -2px 4px 0 4px;
+    vertical-align: middle;
+}
+
+.list-div .handle a.btn_inst:hover i.sc_icon_inst {
+    background-position: -195px -546px;
+}
+
+.seller-extend .iconfont {
+    font-size: 52px;
+    text-align: center;
+    line-height: 94px;
+    display: block;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.bg-news, .bg-hot, .bg-best {
+    background: #76cac3;
+}
+
+.bg-zjd, .bg-dzp, .bg-ggk {
+    background: #ec4f4f;
+}
+
+.bg-bonus, .bg-sign {
+    background: #FE831B;
+}
+
+.bg-jfcx, .bg-ddcx, .bg-wlcx {
+    background: #eea97f;
+}
+
+.icon-news:before {
+    content: "\e602";
+}
+
+.icon-best:before {
+    content: "\e610";
+}
+
+.icon-ggk:before {
+    content: "\e6e0";
+}
+
+.icon-zjd:before {
+    content: "\e636";
+}
+
+.icon-ddcx:before {
+    content: "\e614";
+}
+
+.icon-redpack:before {
+    content: "\e69e";
+}
+
+.icon-bonus:before {
+    content: "\e640";
+}
+
+.icon-wlcx:before {
+    content: "\e608";
+}
+
+.icon-hot:before {
+    content: "\e6ab";
+}
+
+.icon-wall:before {
+    content: "\e62d";
+}
+
+.icon-jfcx:before {
+    content: "\e69d";
+}
+
+.icon-qrpay:before {
+    content: "\e609";
+}
+
+.icon-dzp:before {
+    content: "\e601";
+}
+
+.icon-sign:before {
+    content: "\e688";
+}
+
+/*营销中心样式*/
+.market-index {
+}
+
+.market-index .item_wrap {
+    width: 33.3%;
+    float: left;
+    display: inline-block;
+    position: relative;
+}
+
+.market-index .list-div .handle .tDiv p:last-child {
+    margin-right: 0;
+}
+
+.market-index .list-div .handle .tDiv p {
+    padding: 2px 4px;
+    border-radius: 3px;
+    border: 1px solid #e9e9e9;
+    color: #999;
+    font-size: 12px;
+    margin-right: 12px;
+}
+
+.market-index i.sc_icon {
+    background: url(../img/console/admin-icon.png);
+}
+
+.market-index .list-div .handle p.btn_inst:hover {
+    color: #29c25f;
+    border-color: #29C25F;
+}
+
+.market-index .list-div .handle i.sc_icon_inst {
+    width: 13px;
+    height: 12px;
+    display: inline-block;
+    background-position: -195px -526px;
+}
+
+.market-index .list-div .handle p.btn_inst:hover i.sc_icon_inst {
+    background-position: -195px -546px;;
+}
+
+/*微信墙样式*/
+.wall-list {
+    height: 50px;
+    line-height: 50px;
+}
+
+.wall-list .button {
+    float: none;
+    padding: 8px 20px;
+}
+
+.bg-wall {
+    background: #03CB6E
+}
+
+/*微信现金红包*/
+.bg-redpack {
+    background: #ec4f4f;
+}
+
+.adv-list td {
+    line-height: 38px !important;
+    padding: 10px 0 10px 20px !important;
+    vertical-align: middle !important;
+}
+
+.show-subscribe {
+    height: 40px;
+    line-height: 40px;
+}
+
+/*收款二维码*/
+.bg-qrpay {
+    background: #65A1FD;
+}
+
+.qrpay-checked {
+    height: 30px;
+    line-height: 30px !important;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
+
+#qrpay-disount {
+    width: 80px;
+    text-align: left;
+}
+
+.img-thumbnail {
+    margin: 5px;
+}
+
+.fbutton .disabled, .fbutton .disabled:hover {
+    border-color: #8e8e8e;
+    background: #8e8e8e;
+    cursor: default;
+    color: #fff;
+}
+
+/*模板消息样式*/
+.industry .h34 {
+    height: 34px;
+    line-height: 34px;
+}
+
+.industry span {
+    color: blue;
+}
+
+.industry .label_value {
+    width: 100%;
+    margin: 10px;
+    padding: 20px 30px;
+}
+
+.industry .select {
+    height: 30px;
+    line-height: 30px;
+}
+
+.shop_special .form-control-feedback {
+    left: 0;
+}
+
+.has-feedback .glyphicon-ok {
+    color: #00A600
+}
+
+.has-feedback .glyphicon-remove {
+    color: #fa1330
+}
+
+.qrcode-set .drp_config_title {
+    background: #fff;
+    clear: both;
+    padding: 20px 20px;
+    margin-bottom: -20px;
+    border-bottom: none;
+}
+
+/*权益管理*/
+.card-background {
+    display: block;
+    width: 100%;
+    height: 50px;
+}
+
+/*绑定权益*/
+.add-rights .checkbox_items .checkbox_item {
+    float: none;
+    padding-bottom: 10px;
+}
+
+.add-rights .checkbox_items .checkbox_item .checkbox {
+    float: left;
+}
+
+.add-rights .checkbox_items .checkbox_item .checkbox_stars {
+    padding: 0 5px;
+}
+
+.add-rights .input-sm {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.add-rights .expiry_date {
+    margin: 0 5px;
+    border-radius: 4px;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    color: #555;
+}
+
+.add-rights .item_background {
+    line-height: 15px;
+}
+
+.add-rights .item_receive_type .checkbox_items .checkbox_item {
+    padding-top: 3px;
+}
+
+.bind-rights ul li {
+    height: 50px;
+    line-height: 50px;
+}
+
+
+
+/* app版本更新 */
+.version-extend .item_wrap{ width: 30%; float: left; padding: 20px; background-color: #f4f5f9; border-radius: 10px; margin-right: 2%; }
+.version-extend .item_wrap .left{ float: left; width: 65%;}
+.version-extend .item_wrap .left .tit{ font-size: 18px; font-weight: 700; color: #333; }
+.version-extend .item_wrap .left .desc{ margin-top: 5px; }
+.version-extend .item_wrap .right{ float: left; margin-top: 10px;}
+.version-extend .item_wrap .right a{ display: inline-block; padding: 0 20px; color: #fff; height: 30px; line-height: 30px; border-radius: 5px; float: left; }
+.version-extend .item_wrap .right a.manage{ background-color: #17b8d8; margin-right:10px;}
+.version-extend .item_wrap .right a.delete{ background-color: #ee4e4d; }
+.version-extend .item_wrap .right a.client_delete{ background-color: #ee4e4d; }

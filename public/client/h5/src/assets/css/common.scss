@@ -1,0 +1,259 @@
+/**
+ * 大商创公共类定义说明：
+ 1.采用属性名+下划线+属性值 例：size_30  color_ccc
+ 2.属性为单个单词为全拼 例：size color  
+ 3.多单词使用首字母+下划线+属性值  (justify-content: center;) ==> jc_center
+ 4.字体大小类不带单位，默认颜色：#000000
+ */
+
+/* 字体类 star */
+.size_10 {
+	font-size: 1rem;
+}
+.size_11 {
+	font-size: 1.1rem;
+}
+.size_12 {
+	font-size: 1.2rem;
+}
+.size_13 {
+	font-size: 1.3rem;
+}
+.size_14 {
+	font-size: 1.4rem;
+}
+.size_15 {
+	font-size: 1.5rem;
+}
+.size_16 {
+	font-size: 1.6rem;
+}
+.size_17 {
+	font-size: 1.7rem;
+}
+.size_18 {
+	font-size: 1.8rem;
+}
+.size_20 {
+	font-size: 2rem;
+}
+.size_22 {
+	font-size: 2.2rem;
+}
+.size_24 {
+	font-size: 2.4rem;
+}
+.size_26 {
+	font-size: 2.6rem;
+}
+.size_28 {
+	font-size: 2.8rem;
+}
+.size_30 {
+	font-size: 3rem;
+}
+.size_32 {
+	font-size: 3.2rem;
+}
+.size_34 {
+	font-size: 3.4rem;
+}
+.size_40 {
+	font-size: 4rem;
+}
+.weight_700 {
+	font-weight: 500;
+}
+.color_ccc {
+	color: #CCCCCC;
+}
+.color_000 {
+	color: #000000;
+}
+.color_333 {
+	color: #333333;
+}
+.color_666 {
+	color: #666666;
+}
+.color_888 {
+	color: #888888;
+}
+.color_fff {
+	color: #FFFFFF;
+}
+.color_f0151b {
+	color: #F0151B;
+}
+.color_FD001C {
+	color: #FD001C;
+}
+.color_fe {
+	color: #FEFEFE;
+}
+.color_6c {
+	color: #6C6C6C;
+}
+.text_1 {
+  display: inline-block;
+  white-space: nowrap; 
+  width: 100%; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text_2 {
+	width:100%;
+	word-break:break-all;
+	display:-webkit-box;
+	-webkit-line-clamp:2;
+	-webkit-box-orient:vertical;
+	overflow:hidden;
+}
+.text_9 {
+	width:100%;
+	word-break:break-all;
+	display:-webkit-box;
+	-webkit-line-clamp:9;
+	-webkit-box-orient:vertical;
+	overflow:hidden;
+}
+.td_lt {
+	text-decoration: line-through;
+}
+.lh_1 {
+	display: inline-block;
+	line-height: 1;
+}
+/* 字体类 end */
+
+/* 圆角 边框类 star */
+.br_1 {
+	border-radius: 1rem;
+}
+.bb_e6 {
+	border-bottom: 0.1rem solid #E6E6E6;
+}
+/* 圆角 边框类 end */
+
+/* 背景颜色类 star */
+.bgc_fff {
+	background-color: #FFFFFF;
+}
+.bgc_f5 {
+	background-color: #F5F5F5;
+}
+.bgc_F6 {
+	background-color: #F6F6F6;
+}
+.bgc_888 {
+	background-color: #888888;
+}
+/* 背景颜色类 end */
+
+/* flex布局类 star */
+.flex_box {
+	display: flex;
+}
+.fd_column {
+	flex-direction: column;
+}
+.fw_w {
+	flex-wrap: wrap;
+}
+.flex_1 {
+	flex: 1;
+}
+.jc_center {
+	justify-content: center;
+}
+.jc_sa {
+	justify-content: space-around;
+}
+.jc_sb {
+	justify-content: space-between;
+}
+.ai_center {
+	align-items: center;
+}
+.ai_fs {
+	align-items: flex-start;
+}
+.ai_fe {
+	align-items: flex-end;
+}
+/* flex布局类 end */
+
+/* 默认样式 star */
+.page_container {
+	height: 100%;
+}
+/* 默认样式 end */
+
+/* 价格样式 star */
+.comment_box {
+	.price_box .size_16 em {
+		font-size: 1.2rem;
+	}
+	
+	.price_box .size_10 em {
+		font-size: .9rem;
+	}
+}
+/* 价格样式 end */
+
+/* start--Retina 屏幕下的 1px 边框--start */
+.u-border,
+.u-border-bottom,
+.u-border-left,
+.u-border-right,
+.u-border-top,
+.u-border-top-bottom {
+	position: relative
+}
+
+.u-border-bottom:after,
+.u-border-left:after,
+.u-border-right:after,
+.u-border-top-bottom:after,
+.u-border-top:after,
+.u-border:after {
+	content: ' ';
+	position: absolute;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	box-sizing: border-box;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	// 多加0.1%，能解决有时候边框缺失的问题
+	width: 199.8%;
+	height: 199.7%;
+	transform: scale(0.5, 0.5);
+	border: 0 solid #e4e7ed;
+	z-index: 2;
+}
+
+.u-border-top:after {
+	border-top-width: 1px
+}
+
+.u-border-left:after {
+	border-left-width: 1px
+}
+
+.u-border-right:after {
+	border-right-width: 1px
+}
+
+.u-border-bottom:after {
+	border-bottom-width: 1px
+}
+
+.u-border-top-bottom:after {
+	border-width: 1px 0
+}
+
+.u-border:after {
+	border-width: 1px
+}
+/* end--Retina 屏幕下的 1px 边框--end */

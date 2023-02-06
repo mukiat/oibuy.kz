@@ -1,0 +1,294 @@
+<template>
+	<view class="container-box">
+		<template v-if="postList.length > 0">
+			<map class="map" id="map" :longitude="longitude" :latitude="latitude" :markers="covers" scale="15" enable-3D show-scale></map>
+			<view class="list-box">
+				<scroll-view class="scroll_view" scroll-y="true" @scrolltolower="loadmore">
+					<view class="list_item" v-for="(item, index) in postList" :key="item.phone" @click="changePost(index)">
+						<view class="icon_box">
+							<image class="radio_ico" src="../../static/radio-button.png" v-if="index == currentIndex"></image>
+							<view class="item_checked_icon" v-else></view>
+						</view>
+						<view class="item-main">
+							<view class="item-main-title">
+								<text class="item_pick_up_point">{{item.pick_up_point}}</text>
+								<text class="item_distance">{{item.distance}}km</text>
+							</view>
+							<text class="item_address">{{$t('lang.post_address')}}: {{item.address}}</text>
+							<text class="item_phone">{{$t('lang.label_tel')}}: {{item.phone}}</text>
+						</view>
+					</view>
+					<text class="loading_text" v-if="postList.length > 3">{{isOver ? $t('lang.no_more') : $t('lang.loading')}}</text>
+				</scroll-view>
+				<text class="item-btn-submit" @click="usePost">{{$t('lang.post_use')}}</text>
+			</view>
+		</template>
+		<template v-else-if="!loading">
+			<view class="no_content_box">
+				<image class="no_content_img" src="https://x.dscmall.cn/img/no_content.png" mode="widthFix"></image>
+				<text class="no_content_text">{{$t('lang.not_cont_prompt')}}</text>
+			</view>
+		</template>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				latitude: '',
+				longitude: '',
+				leader_id:0,
+				postList: [],
+				currentIndex: 0,
+				loading: false,
+				isOver: false,
+				page: 1,
+				size: 10,
+				covers: [],
+				platform: uni.getSystemInfoSync().platform
+			}
+		},
+		onLoad(e) {
+			
+			const {
+				lng,
+				lat
+			} = JSON.parse(uni.getStorageSync('addressLngLat'));
+
+			this.latitude = lat;
+			this.longitude = lng;
+			const timestamp = new Date().getTime();
+			const label = {
+				content: this.$t('lang.post_shipping_address'),
+				fontSize: this.platform == 'ios' ? 16 : 24,
+				bgColor: '#ffffff',
+				borderWidth: 1,
+				borderColor: '#f00000'
+			}
+			const obj = {
+				id: timestamp,
+				latitude: lat,
+				longitude: lng,
+				iconPath: '../../static/applocation.png',
+				label
+			};
+			
+			this.covers.push(obj);
+			
+			this.getPostListData(1);
+		},
+		methods: {
+			async getPostListData(page) {
+				this.loading = true;
+				
+				if(page){
+					this.page = page
+					this.size = Number(page) * 10
+				}
+				const {
+					data: {
+						post_list
+					},
+					status
+				} = await this.$store.dispatch('getPostList', {
+					page: this.page,
+					size: this.size
+				});
+				this.loading = false;
+				if (status != 'success') {
+					return uni.showToast({
+						title: this.$t('lang.post_msg_fail'),
+						icon: 'none'
+					})
+				};
+				
+				this.isOver = post_list.length > 0 ? false : true;
+				
+				// 判断是否length > 0
+				if(post_list.length > 0){
+					
+					this.postList = [...this.postList, ...post_list];
+				
+					this.$nextTick(function() {
+						if(this.page == 1) this.openInfoCart(this.postList[0]);
+					})
+				}
+			},
+			openInfoCart(currentInfo) {
+				const timestamp = new Date().getTime();
+				const {pick_up_point, address, phone, lat, lng, distance} = currentInfo;
+				this.latitude = lat;
+				this.longitude = lng;
+				const contentStr = '${pick_up_point}\n'+this.$t('lang.post_address')+': ${address}\n'+this.$t('lang.label_tel')+': ${phone}\n'+this.$t('lang.post_distance_address')+': ${distance}km';
+				const callout = {
+					content: contentStr,
+					fontSize: this.platform == 'ios' ? 16 : 30,
+					color: '#ffffff',
+					bgColor: '#3366ff',
+					padding: 15,
+					borderRadius: 10,
+					display: 'ALWAYS',
+					textAlign:'left'
+				};
+				const obj = {
+					id: timestamp,
+					latitude: lat,
+					longitude: lng,
+					iconPath: '../../static/applocation.png',
+					callout
+				};
+				this.covers = [this.covers[0], obj];
+			},
+			changePost(i) {
+				if (i == this.currentIndex) return;
+				if (!this.isShowCart) this.isShowCart = true;
+				//当前选中index
+				this.currentIndex = i;
+				//当前选中的社区信息
+				this.openInfoCart(this.postList[i])
+			},
+			async usePost() {
+				uni.showLoading({ title: this.$t('lang.loading'),mask: true });
+				
+				//当前选中的社区leader_id
+				this.leader_id = this.postList[this.currentIndex].leader_id;
+				
+				//存储选择驿站leader_id
+				uni.setStorageSync('leader_id',this.leader_id);
+				
+				//请求接口
+				await this.$store.dispatch('setChangeConsignee',{
+					leader_id:this.leader_id
+				});
+				
+				//返回checkout
+				uni.hideLoading();
+				uni.navigateBack({
+					delta:2
+				})
+			},
+			// 下拉加载更多
+			loadmore() {
+				if (this.isOver) return;
+				this.page ++;
+				this.getPostListData();
+			}
+		}
+	}
+</script>
+
+<style scoped>
+	.container-box {
+		flex: 1;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.map {
+		flex: 1;
+	}
+
+	.list-box {
+		flex: 1;
+		flex-direction: column;
+		padding-top: 20upx;
+		background-color: #fff;
+	}
+	
+	.scroll_view {
+		flex: 1;
+	}
+
+	.list_item {
+		flex-direction: row;
+		padding: 0 20upx 20upx;
+	}
+
+	.item-main {
+		flex: 1;
+		margin-left: 20upx;
+	}
+
+	.item-main-title {
+		flex: 1;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-bottom: 12upx;
+		color: #333;
+	}
+	.item_pick_up_point {
+		flex: 1;
+		font-size: 34upx;
+		font-weight: 700;
+		overflow:hidden;  
+		text-overflow:ellipsis;  
+		lines: 1;
+	}
+	.item_distance {
+		font-size: 34upx;
+		padding-left: 20upx;
+	}
+	.item_address {
+		flex: 1;
+		font-size: 30upx;
+		line-height: 50upx;
+		color: #A0A0A0;
+		overflow:hidden;
+		text-overflow:ellipsis;  
+		lines: 1;
+	}
+	.item_phone {
+		flex: 1;
+		font-size: 30upx;
+		line-height: 50upx;
+		color: #A0A0A0;
+	}
+	.item_checked_icon {
+		width: 38upx;
+		height: 38upx;
+		border-width: 2upx;
+		border-color: #CCCCCC;
+		border-radius: 50%;
+	}
+	.item-btn-submit {
+		font-size: 40upx;
+		line-height: 100upx;
+		text-align: center;
+		color: #FFFFFF;
+		background-color: #f91f28;
+	}
+	.loading_text {
+		text-align: center;
+		font-size: 30upx;
+		padding: 0 0 20upx;
+	}
+	
+	.icon_box {
+		width: 40upx;
+		height: 40upx;
+	}
+	
+	.radio_ico {
+		width: 40upx;
+		height: 40upx;
+	}
+	
+	.no_content_box {
+		flex: 1;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 50px;
+	}
+	
+	.no_content_img {
+		width: 280px;
+		margin-bottom: 40px;
+	}
+	
+	.no_content_text {
+		font-size: 32upx;
+		color: #999999;
+		text-align: center;
+	}
+</style>

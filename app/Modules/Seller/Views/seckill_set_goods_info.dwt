@@ -1,0 +1,302 @@
+{if $full_page}
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>{include file ='library/seller_html_head.lbi'}</head>
+<body>
+{include file ='library/seller_header.lbi'}
+<div class="ecsc-layout">
+    <div class="site wrapper">
+        {include file ='library/seller_menu_left.lbi'}
+        <div class="ecsc-layout-right">
+            <div class="main-content" id="mainContent">
+                {include file ='library/url_here.lbi'}
+				{include file ='library/seller_menu_tab.lbi'}
+                <div class="btn-info"  ectype="item">
+                    <a href="javascript:void(0);" class="sc-btn sc-blue-btn" ectype="setupGoods"><i class="icon icon-plus"></i>{$lang.set_goods}</a>
+                    <input type="hidden" name="tb_id" value="{$tb_id}">
+                    <input type="hidden" name="sec_id" value="{$sec_id}">
+                    <input type="hidden" name="cat_goods" value="{$cat_goods}">
+                </div>
+                <div class="list-div" id="listDiv">
+					{/if}
+                    	<table class="ecsc-default-table">
+                        	<thead>
+                            	<tr>
+                                	<th width="5%"><div class="tDiv">{$lang.record_id}</div></th>
+                                    <th width="30%"><div class="tDiv">{$lang.goods_name}</div></th>
+                                    <th width="10%"><div class="tDiv">{$lang.goods_price}</div></th>
+                                    <th width="15%"><div class="tDiv">{$lang.seckill_price}</div></th>
+                                    <th width="15%"><div class="tDiv">{$lang.seckill_number}</div></th>
+									<th width="15%"><div class="tDiv">{$lang.xiangou_number}</div></th>
+									<th width="10%"><div class="handle">{$lang.handler}</div></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+							{foreach from=$seckill_goods item=sg}
+                            	<tr>
+                                	<td><div class="tDiv">{$sg.id}</div></td>
+                                	<td><div class="tDiv">{$sg.goods_name}</div></td>
+                                	{if $sg.has_attr > 0}
+                                	<td><div class="tDiv"></div></td>
+                                	<td><div class="tDiv"></div></td>
+                                	<td><div class="tDiv"></div></td>
+                                	<td><div class="tDiv"></div></td>
+                                	{else}
+									<td><div class="tDiv">{$sg.shop_price}</div></td>
+									<td><div class="tDiv"><input class="text w50 tc fn" style="margin-right:0px;" onblur="listTable.editInput(this, 'edit_sec_price', {$sg.id} );" autocomplete="off" value="{$sg.sec_price}" type="text"></div></td>
+									<td><div class="tDiv"><input class="text w50 tc fn" style="margin-right:0px;" onblur="listTable.editInput(this, 'edit_sec_num', {$sg.id} );" autocomplete="off" value="{$sg.sec_num}" type="text"></div></td>
+									<td><div class="tDiv"><input class="text w50 tc fn" style="margin-right:0px;" onblur="listTable.editInput(this, 'edit_sec_limit', {$sg.id} );" autocomplete="off" value="{$sg.sec_limit}" type="text"></div></td>
+                                    {/if}
+                                    <td class="ecsc-table-handle">
+										<div class="tDiv a2">
+										    {if $sg.has_attr > 0}
+										    <!--选择秒杀商品规格-->
+                                            <span><a href="javascript:;" ectype="selectGoodsAttr" data-id="{$sg.id}" data-goodsid="{$sg.goods_id}" class="btn_edit"><i class="icon icon-edit"></i><p>{$lang.select_goods_attr}</p></a></span>
+                                            {/if}
+											<span><a href="javascript:;" onclick="listTable.remove({$sg.id}, '{$lang.drop_confirm}', 'sg_remove')" title="{$lang.remove}" class="btn_trash"><i class="icon icon-trash"></i><p>{$lang.remove}</p></a></span>
+										</div>
+									</td>
+                                </tr>
+
+                                {foreach from=$sg.seckill_product_list item=seckill_prod name=prod}
+                                <tr class="seckill_goods_list_{$sg.id}  {if $smarty.foreach.prod.last} {else} attr_wrap {/if}" >
+                                    <td><div class="tDiv"></div></td>
+                                    <td><div class="tDiv">{$seckill_prod.goods_attr_format}</div></td>
+                                    <td><div class="tDiv">{$seckill_prod.product_price}</div></td>
+                                    <td>
+                                        <div class="tDiv">
+                                            <input class="text w50 tc fn mr0" name="sec_price" onblur="editInput(this, 'set_seckill_goods_attr',{$sg.id});" data-product="{$seckill_prod.product_id}" data-goods_id="{$seckill_prod.goods_id}" autocomplete="off" value="{$seckill_prod.sec_price}" type="text">
+                                        </div>
+                                    </td>
+                                    <td>
+                                    <div class="tDiv">
+                                        <input class="text w50 tc fn mr0" name="sec_num" onblur="editInput(this, 'set_seckill_goods_attr',{$sg.id});" data-product="{$seckill_prod.product_id}" data-goods_id="{$seckill_prod.goods_id}" autocomplete="off" value="{$seckill_prod.sec_num}" type="text">
+                                    </div>
+                                    </td>
+                                    <td>
+                                    <div class="tDiv">
+                                        <input class="text w50 tc fn mr0" name="sec_limit" onblur="editInput(this, 'set_seckill_goods_attr',{$sg.id});" data-product="{$seckill_prod.product_id}" data-goods_id="{$seckill_prod.goods_id}" autocomplete="off" value="{$seckill_prod.sec_limit}" type="text">
+                                    </div>
+                                    </td>
+                                    <td class="handle">
+                                        <div class="tDiv a2">
+                                            <input type="hidden" name="goods_id[{$seckill_prod.product_id}]" value="{$seckill_prod.goods_id}" />
+                                            <span><a href="javascript:;" onclick="set_seckill_goods_attr_list(this, 'remove', '{$seckill_prod.product_id}', '{$sg.id}')" title="{$lang.remove}" class="btn_trash"><i class="icon icon-trash"></i><p>{$lang.drop}</p></a></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {/foreach}
+
+							{foreachelse}
+							<tr><td class="no-records"colspan="7">{$lang.no_records}</td></tr>
+							{/foreach}
+                            </tbody>
+                            <tfoot>
+                            	<tr>
+                                    <td colspan="7">
+                                        {include file="page.dwt"}
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+					{if $full_page}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file ='library/seller_footer.lbi'}
+<script type="text/javascript" src="__TPL__/js/jquery.purebox.js"></script>
+<script type="text/javascript">
+		//分页传值
+		listTable.recordCount = {$record_count|default:0};
+		listTable.pageCount = {$page_count|default:1};
+		listTable.query = 'sg_query';
+		listTable.filter.sec_id = {$sec_id};
+		listTable.filter.tb_id 	= {$tb_id};
+
+		{foreach from=$filter item=item key=key}
+		listTable.filter.{$key} = '{$item}';
+		{/foreach}
+
+        // layer弹出层组件初始化
+        layui.use('layer', function(){
+            var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+        });
+
+		//设置商品
+		$(document).on("click","*[ectype='setupGoods']",function(){
+			var _this = $(this),
+				spec_attr = new Object(),
+				cat_id = _this.parents("[ectype='item']").find("input[name='cateValue[]']").val(),
+				cat_goods = _this.parents("[ectype='item']").find("input[name='cat_goods']").val();
+
+			spec_attr.goods_ids = cat_goods;
+			Ajax.call('seckill.php', "act=goods_info" + "&goods_type=1&cat_id=" + cat_id + "&spec_attr="+$.toJSON(spec_attr) , function(data){
+				var content = data.content;
+				pb({
+					id:"set_up_goods",
+					title: jl_set_goods,
+					width: 1000,
+					content: content,
+					ok_title: jl_determine,
+					cl_title: jl_cancel,
+					drag: true,
+					foot: true,
+					cl_cBtn: true,
+					onOk: function(){
+						var goods_ids = $("#set_up_goods").find("input[name='goods_ids']").val();
+						var tb_id = $("input[name='tb_id']").val();
+						var sec_id = $("input[name='sec_id']").val();
+						Ajax.call('get_ajax_content.php','act=add_seckill_goods&goods_ids='+goods_ids+'&sec_id='+sec_id+'&tb_id='+tb_id,function(data){
+							document.getElementById("listDiv").innerHTML = data.content;
+							$("[ectype='item']").find("input[name='cat_goods']").val(data.goods_ids);
+						},'GET','JSON');
+					}
+				});
+			}, 'POST', 'JSON');
+		});
+
+		//选择秒杀商品规格
+        $(document).on("click","*[ectype='selectGoodsAttr']",function(){
+            var _this = $(this);
+
+            var seckill_goods_id = _this.attr('data-id');
+            var goods_id =  _this.attr('data-goodsid');
+
+            Ajax.call('seckill.php', "act=get_goods_attr" + "&seckill_goods_id=" + seckill_goods_id + "&goods_id="+goods_id , function(data){
+                var content = data.content;
+                pb({
+                    id:"set_goods_attr",
+                    title: "{$lang.select_goods_attr}",
+                    width: 970,
+                    content: content,
+                    ok_title: "{$lang.button_submit}",
+                    cl_title: "{$lang.cancel}",
+                    drag: true,
+                    foot: true,
+                    cl_cBtn: true,
+                    onOk: function(){
+                        var goods_ids = $("input[name='cat_goods']").val();
+                        var tb_id = $("input[name='tb_id']").val();
+                        var sec_id = $("input[name='sec_id']").val();
+
+                        Ajax.call('get_ajax_content.php','act=add_seckill_goods&goods_ids='+goods_ids+'&sec_id='+sec_id+'&tb_id='+tb_id,function(data){
+                            document.getElementById("listDiv").innerHTML = data.content;
+                            $("[ectype='item']").find("input[name='cat_goods']").val(data.goods_ids);
+                        },'GET','JSON');
+                    }
+                });
+            }, 'POST', 'JSON');
+        });
+
+        // 选择商品规格参与、取消秒杀
+        function set_seckill_goods_attr_list(obj, handler, product_id, seckill_goods_id)
+        {
+            if (!product_id || !seckill_goods_id) {
+               return false;
+            }
+
+            var goods_id = $(".seckill_goods_list_"+seckill_goods_id).find("input[name='goods_id["+product_id+"]']").val();
+
+            if (handler == 'edit') {
+                var sec_price = $(".seckill_goods_list_"+seckill_goods_id).find("input[name='sec_price["+product_id+"]']").val();
+                var sec_num = $(".seckill_goods_list_"+seckill_goods_id).find("input[name='sec_num["+product_id+"]']").val();
+                var sec_limit = $(".seckill_goods_list_"+seckill_goods_id).find("input[name='sec_limit["+product_id+"]']").val();
+
+                if (!sec_price || sec_price <= 0) {
+                    layer.msg('{$lang.seckill_price}{$lang.empty}');
+                    return false;
+                }
+                sec_num = Number(sec_num);
+                sec_limit = Number(sec_limit);
+                if (!sec_num || sec_num <= 0) {
+                    layer.msg('{$lang.seckill_number}{$lang.empty}');
+                    return false;
+                }
+
+                if (sec_limit > sec_num) {
+                    layer.msg('{$lang.sec_limit_notice}');
+                    location.reload();
+                    return false;
+                }
+            }
+
+            var data = {
+                sec_price:sec_price || 0,
+                sec_num:sec_num || 0,
+                sec_limit:sec_limit || 0
+            };
+
+            $.post("seckill.php?act=set_seckill_goods_attr",{
+                handler:handler,
+                seckill_goods_id:seckill_goods_id,
+                product_id:product_id,
+                goods_id:goods_id,
+                data:data
+            }, function (res) {
+                layer.msg(res.msg);
+                if (handler == 'remove') {
+                    location.reload();
+                    return false;
+                }
+                return false;
+            }, 'json');
+
+        }
+
+        // 编辑秒杀属性
+        function editInput(obj, act, id, val, str)
+        {
+            var value = obj.value
+
+            if (!value || !id) {
+                return false;
+            }
+
+          if(act == 'set_seckill_goods_attr'){
+            var goods_id = $(obj).data("goods_id");
+            var product_id = $(obj).data("product");
+            var name = $(obj).attr("name");
+            var sec_price = 0, sec_num = 0, sec_limit = 0;
+            if(name == 'sec_price'){
+              sec_price = value;
+              sec_num = $(obj).parents(".seckill_goods_list_"+ id).find("input[name='sec_num']").val();
+              sec_limit = $(obj).parents(".seckill_goods_list_"+ id).find("input[name='sec_limit']").val();
+            }else if(name == 'sec_num'){
+              sec_num = value;
+              sec_price = $(obj).parents(".seckill_goods_list_"+ id).find("input[name='sec_price']").val();
+              sec_limit = $(obj).parents(".seckill_goods_list_"+ id).find("input[name='sec_limit']").val();
+            }else{
+              sec_limit = value;
+              sec_num = $(obj).parents(".seckill_goods_list_"+ id).find("input[name='sec_num']").val();
+              sec_price = $(obj).parents(".seckill_goods_list_"+ id).find("input[name='sec_price']").val();
+            }
+
+            $.post("seckill.php?act=set_seckill_goods_attr",{
+                handler:'edit',
+                seckill_goods_id:id,
+                product_id:product_id,
+                goods_id:goods_id,
+                data:{
+                  sec_price: sec_price || 0,
+                  sec_num: sec_num || 0,
+                  sec_limit: sec_limit || 0
+                }
+            }, function (res) {
+                if (res.error > 0) {
+                    layer.msg(res.msg);
+                    setTimeout(function() {
+                        location.reload();
+                    }, 1000);
+                }
+                return false;
+            }, 'json');
+          }
+
+        }
+
+    </script>
+ </body>
+</html>
+{/if}

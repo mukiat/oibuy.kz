@@ -1,0 +1,141 @@
+{if $full_page}
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>{include file ='library/seller_html_head.lbi'}</head>
+
+<body>
+{include file ='library/seller_header.lbi'}
+<div class="ecsc-layout">
+    <div class="site wrapper">
+        {include file ='library/seller_menu_left.lbi'}
+        <div class="ecsc-layout-right">
+            <div class="main-content" id="mainContent">
+                {include file ='library/url_here.lbi'}
+				{include file ='library/seller_menu_tab.lbi'}
+				<div class="search-info">
+                    <div class="search-form">
+                    <form action="javascript:searchOrder()" name="searchForm">
+                        <input type="text" class="text w140 mr10" name="bill_sn" value="" placeholder="{$lang.negative_number}">
+                        <input type="text" class="text w140 mr10" name="commission_bill_sn" value="" placeholder="{$lang.bill_number}">
+                        <div class="search-key">
+                            <input type="text" class="text w140" name="order_sn" value="" placeholder="{$lang.order_sn}">
+                            <input type="submit" class="submit" value="{$lang.button_search}">
+                        </div>
+                    </form>
+                    </div>
+                </div>
+
+                <div class="tabmenu">
+                    <ul class="tab">
+                        <li {if $filter.bill_channel == 0} class="active" {/if}><a href="merchants_commission.php?act=negative_bill&id={$user_id}">{$lang.negative_channel_menu.0}</a></li>
+                        {if file_exists($smarty.const.MODULES_DIVIDE)}
+                        <li {if $filter.bill_channel == 1} class="active" {/if} ><a href="merchants_commission.php?act=negative_bill&id={$user_id}&bill_channel=1">{$lang.negative_channel_menu.1}</a></li>
+                        {/if}
+                    </ul>
+                </div>
+
+                <form method="post" action="" name="listForm" onsubmit="return confirm(batch_drop_confirm);">
+                <div class="list-div" id="listDiv">
+					{/if}
+					<table class="ecsc-default-table goods-default-table mt20">
+                    <thead>
+                    	<tr>
+                    	    <th width="7%">{$lang.record_id}</th>
+                            <th width="7%">{$lang.negative_number}</th>
+                            <th class="hide">{$lang.steps_shop_name}</th>
+                            <th>{$lang.bill_number}</th>
+                            <th>{$lang.return_amount}</th>
+                            <th>{$lang.return_shippingfee}</th>
+                            <th width="10%">{$lang.return_total}</th>
+                            <th width="8%">{$lang.order_start_time}</th>
+                            <th width="8%">{$lang.order_end_time}</th>
+                            <th width="15%" class="tc">{$lang.handler}</th>
+                    	</tr>
+                    </thead>
+                    <tbody>
+                    {foreach from=$bill_list item=bill name=nobill}
+                    <tr>
+                        <td class="bdr" rowspan="2">
+                            <div class="number">{$bill.id}</div>
+                        </td>
+                        <td class="pl10">{$bill.bill_sn}</td>
+                        <td class="hide red">{$bill.shop_name}</td>
+                        <td><div class="red">{if $bill.commission_bill_sn}{$bill.commission_bill_sn}{else}{$lang.negative_binding}{/if}</div></td>
+                        <td>{$bill.format_return_amount}</td>
+                        <td>{$bill.format_return_shippingfee}</td>
+                        <td><div>{$bill.format_return_total}</div></td>
+                        <td>{$bill.start_time}</td>
+                        <td>{$bill.end_time}</td>
+                      	<td class="ecsc-table-handle">
+                            <span><a href="merchants_commission.php?act=negative_order&negative_id={$bill.id}&seller_id={$bill.seller_id}" class="btn-orange"><i class="sc_icon_see"></i><p>{$lang.negative_bill_detail}</p></a></span>
+                      	</td>
+                    </tr>
+                    <tr class="row_header">
+                        <td colspan="10">
+                            {if $is_drp eq 1}
+                            <div class="fl pl10 mr10">
+                                {$lang.drp_money}：<em class="red">(-){$bill.format_drp_money}</em>
+                            </div>
+                            <div class="fl mr10">
+                            {$lang.actual_deducted_total}：<em class="red">{$bill.format_actual_deducted}</em>
+                            </div>
+                            {else}
+                            <div class="fl pl10 mr10">
+                                {$lang.actual_deducted_total}：<em class="red">{$bill.format_actual_deducted}</em>
+                            </div>
+                            {/if}
+                            <div class="fl">
+                            {$lang.negative_status}：{$bill.chargeoff_status}
+                            </div>
+                        </td>
+                    </tr>
+                    {foreachelse}
+                    <tr><td class="no-records" colspan="20">{$lang.no_records}</td></tr>
+                    {/foreach}
+                    </tbody>
+                  	</table>
+                 	{include file="page.dwt"}
+                	{if $full_page}
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<input name="bill_seller" type="hidden" value="{$user_id|default:0}" />
+{include file ='library/seller_footer.lbi'}
+<script type="text/javascript">
+
+	//检查结算账单
+	checkBill();
+
+	listTable.recordCount = {$record_count};
+	listTable.pageCount = {$page_count};
+	listTable.query = "negative_query";
+
+	{foreach from=$filter item=item key=key}
+	listTable.filter.{$key} = '{$item}';
+	{/foreach}
+
+	{literal}
+	onload = function()
+	{
+	  startCheckOrder();
+	}
+
+	/**
+     * 搜索订单
+     */
+    function searchOrder()
+    {
+        listTable.filter['bill_sn'] = Utils.trim(document.forms['searchForm'].elements['bill_sn'].value);
+        listTable.filter['commission_bill_sn'] = Utils.trim(document.forms['searchForm'].elements['commission_bill_sn'].value);
+        listTable.filter['order_sn'] = Utils.trim(document.forms['searchForm'].elements['order_sn'].value);
+        listTable.filter['page'] = 1;
+        listTable.loadList();
+    }
+	{/literal}
+</script>
+</body>
+</html>
+{/if}

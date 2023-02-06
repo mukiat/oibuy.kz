@@ -1,0 +1,134 @@
+<style>
+.hidden  {
+    display: none !important;
+}
+.sku_goods_info .list-div {
+    height:300px;width:100%;display:block;overflow-y:auto;
+}
+</style>
+<div class="sku_goods_info">
+    <div class="list-div" id="listDiv" >
+
+         <table class="table">
+            <thead>
+                <th width="30%"><div class="tDiv">{$lang.goods_specifications}</div></th>
+                <th width="10%"><div class="tDiv">{$lang.price}</div></th>
+                <th width="10%"><div class="tDiv">{$lang.seckill_price}</div></th>
+                <th width="10%"><div class="tDiv">{$lang.stock}</div></th>
+                <th width="10%"><div class="tDiv">{$lang.seckill_number}</div></th>
+                <th width="10%"><div class="tDiv">{$lang.xiangou_number}</div></th>
+                <th width="10%" class="handle">{$lang.handler}</th>
+            </thead>
+            <tbody>
+                {foreach from=$product_list item=list name=product}
+                <tr {if $list.is_seckill_goods_attr == 1} class="tr_bg_org" {/if}>
+                    <td><div class="tDiv"><span>{$list.goods_attr_format}</div></span></td>
+                    <td><div class="tDiv"><span>{$list.product_price}</span></div></td>
+                    <td><input class="text w50 tc fn" name="sec_price[{$list.product_id}]" autocomplete="off" value="{$list.sec_price}" type="text" /></td>
+                    <td><div class="tDiv"><span>{$list.product_number}</span></div></td>
+                    <td><input class="text w50 tc fn" name="sec_num[{$list.product_id}]" autocomplete="off" value="{$list.sec_num}" type="text" /></td>
+                    <td><input class="text w50 tc fn" name="sec_limit[{$list.product_id}]" autocomplete="off" value="{$list.sec_limit}" type="text" /></td>
+                    <td class="handle">
+                        <div class="tDiv a1">
+                            <input type="hidden" name="goods_id[{$list.product_id}]" value="{$list.goods_id}" />
+                            <a href="javascript:;" id="remove_attr_{$list.product_id}"  onclick="set_seckill_goods_attr(this, 'remove', '{$list.product_id}', '{$seckill_goods_id}')" class="btn_trash {if $list.is_seckill_goods_attr == 0} hidden {/if}" style="margin-right:0px;" >{$lang.remove_attr_to_seckill}</a>
+                            <a href="javascript:;" id="edit_attr_{$list.product_id}" onclick="set_seckill_goods_attr(this, 'edit', '{$list.product_id}', '{$seckill_goods_id}')" class="btn_edit {if $list.is_seckill_goods_attr == 1} hidden {/if}">{$lang.add_attr_to_seckill}</a>
+                        </div>
+                    </td>
+                </tr>
+                {foreachelse}
+                <tr><td class="no-records"  colspan="7">{$lang.no_records}</td></tr>
+                {/foreach}
+            </tbody>
+        </table>
+
+	</div>
+</div>
+<script type="text/javascript">
+
+listTable_pb.recordCount = '{$sku_record_count}';
+listTable_pb.pageCount = '{$sku_page_count}';
+listTable_pb.url = "seckill.php?is_ajax=1";
+listTable_pb.query = '{$query}';
+
+{foreach from=$sku_filter item=item key=key}
+listTable_pb.filter.{$key} = '{$item}';
+{/foreach}
+
+// layer弹出层组件初始化
+layui.use('layer', function(){
+    var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+});
+
+// 选择商品规格参与、取消秒杀
+function set_seckill_goods_attr(obj, handler, product_id, seckill_goods_id)
+{
+    if (!product_id || !seckill_goods_id) {
+       return false;
+    }
+
+    var goods_id = $("#set_goods_attr").find("input[name='goods_id["+product_id+"]']").val();
+
+    if (handler == 'edit') {
+        var sec_price = $("#set_goods_attr").find("input[name='sec_price["+product_id+"]']").val();
+        var sec_num = $("#set_goods_attr").find("input[name='sec_num["+product_id+"]']").val();
+        var sec_limit = $("#set_goods_attr").find("input[name='sec_limit["+product_id+"]']").val();
+
+        if (!sec_price || sec_price <= 0) {
+            layer.msg('{$lang.seckill_price}{$lang.empty}');
+            return false;
+        }
+
+        sec_num = Number(sec_num);
+        sec_limit = Number(sec_limit);
+        if (!sec_num || sec_num <= 0) {
+            layer.msg('{$lang.seckill_number}{$lang.empty}');
+            return false;
+        }
+
+        if (sec_limit > sec_num) {
+            layer.msg('{$lang.sec_limit_notice}');
+            return false;
+        }
+    }
+
+    var obj = $(obj);
+    if (obj.hasClass('hidden')) {
+        obj.removeClass('hidden');
+    } else {
+        obj.addClass('hidden');
+    }
+    if (handler == 'edit' && $("#remove_attr_"+product_id).hasClass('hidden')) {
+        $("#remove_attr_"+product_id).removeClass('hidden');
+    }
+    if (handler == 'remove' && $("#edit_attr_"+product_id).hasClass('hidden')) {
+        $("#edit_attr_"+product_id).removeClass('hidden');
+    }
+
+    var data = {
+        sec_price:sec_price || 0,
+        sec_num:sec_num || 0,
+        sec_limit:sec_limit || 0
+    };
+
+    $.post("seckill.php?act=set_seckill_goods_attr",{
+        handler:handler,
+        seckill_goods_id:seckill_goods_id,
+        product_id:product_id,
+        goods_id:goods_id,
+        data:data
+    }, function (res) {
+        if (res.error > 0) {
+            layer.msg(res.msg);
+        }
+        if (handler == 'remove') {
+            $("#set_goods_attr").find("input[name='sec_price["+product_id+"]']").val(0);
+            $("#set_goods_attr").find("input[name='sec_num["+product_id+"]']").val(0);
+            $("#set_goods_attr").find("input[name='sec_limit["+product_id+"]']").val(0);
+        }
+        return false;
+    }, 'json');
+
+}
+
+</script>

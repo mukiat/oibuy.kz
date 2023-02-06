@@ -1,0 +1,268 @@
+{
+    "name" : "大商创",
+    "appid" : "__UNI__9425D6C",
+    "description" : "大商创-免费B2B2C商城系统，免费多商户商城系统，多店铺商城系统，企业级电商系统免费下载_模板堂出",
+    "versionName" : "2.7.2",
+    "versionCode" : 272,
+    "transformPx" : false,
+    "app-plus" : {
+        "nvueCompiler" : "weex",
+        /* 5+App特有相关 */
+        "modules" : {
+            "Share" : {},
+            "VideoPlayer" : {},
+            "Payment" : {},
+            "Geolocation" : {},
+            "Maps" : {},
+            "OAuth" : {}
+        },
+        /* 模块配置 */
+        "distribute" : {
+            /* 应用发布信息 */
+            "android" : {
+                /* android打包配置 */
+                "permissions" : [
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_SMS\"/>",
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.SEND_SMS\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SMS\"/>"
+                ],
+                "schemes" : [ "dscmall" ],
+                "permissionExternalStorage" : {
+                    "request" : "none"
+                },
+                "permissionPhoneState" : {
+                    "request" : "none"
+                },
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a" ]
+            },
+            "ios" : {
+                "urltypes" : [
+                    {
+                        "urlidentifier" : "cn.dscmall.x",
+                        "urlschemes" : [ "dscmall" ]
+                    }
+                ],
+                "privacyDescription" : {
+                    "NSLocationAlwaysUsageDescription" : "我们需要您的同意，才能访问您的位置，快速为您获取周边店铺或商品列表，方便您浏览、购买商品",
+                    "NSLocationWhenInUseUsageDescription" : "我们需要您的同意，才能在使用期间访问您的位置，快速为您获取周边店铺或商品列表，方便您浏览、购买商品",
+                    "NSLocationAlwaysAndWhenInUseUsageDescription" : "我们需要您的同意，才能访问您的位置，快速为您获取周边店铺或商品列表，方便您浏览、购买商品",
+                    "NSPhotoLibraryUsageDescription" : "我们需要获取您的相册访问权限才能保存、上传头像",
+                    "NSCameraUsageDescription" : "我们需要获取您的摄像头权限才能扫描二维码、上传头像",
+                    "NSPhotoLibraryAddUsageDescription" : "我们需要您的同意,才能保存图片到您的相册",
+                    "NSMicrophoneUsageDescription" : "",
+                    "NSAppleMusicUsageDescription" : "我们需要您的同意,才能使用媒体资料库"
+                },
+                "idfa" : false,
+                "urlschemewhitelist" : [ "baidumap", "iosamap", "qqmap" ]
+            },
+            /* ios打包配置 */
+            "sdkConfigs" : {
+                "oauth" : {
+                    "apple" : {},
+                    "weixin" : {
+                        "appid" : "wx7b2f24a3f47d7e4f",
+                        "appsecret" : "e125fa666ec4aa9985885ef0207ff00c",
+                        "UniversalLinks" : "https://x.dscmall.cn/apple-app-site-association"
+                    }
+                },
+                "payment" : {
+                    "weixin" : {
+                        "appid" : "wx7b2f24a3f47d7e4f",
+                        "UniversalLinks" : "https://x.dscmall.cn/apple-app-site-association"
+                    },
+                    "alipay" : {},
+                    "appleiap" : {}
+                },
+                "share" : {
+                    "weixin" : {
+                        "appid" : "wx7b2f24a3f47d7e4f",
+                        "appsecret" : "e125fa666ec4aa9985885ef0207ff00c",
+                        "UniversalLinks" : "https://x.dscmall.cn/apple-app-site-association"
+                    }
+                },
+                "push" : {},
+                "ad" : {},
+                "geolocation" : {
+                    "amap" : {
+                        "__platform__" : [ "ios", "android" ],
+                        "appkey_ios" : "06c66f3ae1573a1197743446bcbcd3ef",
+                        "appkey_android" : "248aeafb0ab104c0559096a613b5741f"
+                    }
+                },
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "06c66f3ae1573a1197743446bcbcd3ef",
+                        "appkey_android" : "248aeafb0ab104c0559096a613b5741f"
+                    }
+                }
+            },
+            "icons" : {
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                },
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "ldpi" : "unpackage/res/icons/48x48.png",
+                    "mdpi" : "unpackage/res/icons/48x48.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                }
+            },
+            "splashscreen" : {
+                "android" : {
+                    "hdpi" : "misc/启动页/Android启动图片设置/480-762.png",
+                    "xhdpi" : "misc/启动页/Android启动图片设置/720-1242.png",
+                    "xxhdpi" : "misc/启动页/Android启动图片设置/1080-1882.png"
+                },
+                "ios" : {
+                    "iphone" : {
+                        "portrait-896h@2x" : "misc/启动页/iPhone启动图片设置/828-1792.png",
+                        "landscape-896h@2x" : "misc/启动页/iPhone启动图片设置/1792-828.png",
+                        "iphonex" : "misc/启动页/iPhone启动图片设置/1125-2436.png",
+                        "iphonexl" : "misc/启动页/iPhone启动图片设置/2436-1125.png",
+                        "retina55" : "misc/启动页/iPhone启动图片设置/1242-2208.png",
+                        "retina55l" : "misc/启动页/iPhone启动图片设置/2208-1242.png",
+                        "retina47" : "misc/启动页/iPhone启动图片设置/750-1334.png",
+                        "retina47l" : "misc/启动页/iPhone启动图片设置/1334-750.png",
+                        "retina40" : "misc/启动页/iPhone启动图片设置/640-1136.png",
+                        "retina40l" : "misc/启动页/iPhone启动图片设置/1136-640.png",
+                        "retina35" : "misc/启动页/iPhone启动图片设置/640-960.png"
+                    },
+                    "ipad" : {
+                        "portrait-1366h@2x" : "misc/启动页/iPad启动图片/2732-2018.png",
+                        "landscape-1366h@2x" : "misc/启动页/iPad启动图片/2732-2018.png",
+                        "portrait-1194h@2" : "misc/启动页/iPad启动图片/1688-2388.png",
+                        "landscape-1194h@2x" : "misc/启动页/iPad启动图片/2388-1668.png",
+                        "portrait-1112h@2x" : "misc/启动页/iPad启动图片/1668-2224.png",
+                        "landscape-1112h@2x" : "misc/启动页/iPad启动图片/2224-1668.png",
+                        "portrait-retina7" : "misc/启动页/iPad启动图片/1536-2048.png",
+                        "landscape-retina7" : "misc/启动页/iPad启动图片/2048-1536.png",
+                        "portrait7" : "misc/启动页/iPad启动图片/768-1024.png",
+                        "landscape7" : "misc/启动页/iPad启动图片/1024-768.png"
+                    }
+                },
+                "androidStyle" : "default",
+                "iosStyle" : "common"
+            }
+        },
+        "safearea" : {
+            //安全区域配置，仅iOS平台生效  
+            "background" : "#FFFFFF", //安全区域外的背景颜色，默认值为"#FFFFFF"  
+            "bottom" : {
+                // 底部安全区域配置  
+                "offset" : "none" // 底部安全区域偏移，"none"表示不空出安全区域，"auto"自动计算空出安全区域，默认值为"none"  
+            },
+            "left" : {
+                //左侧安全区域配置（横屏显示时有效）  
+                "offset" : "auto"
+            },
+            "right" : {
+                //右侧安全区域配置（横屏显示时有效）  
+                "offset" : "auto"
+            }
+        },
+        "softinput" : {
+            "navBar" : "auto", //是否显示iOS软键盘上的“完成”导航条
+            "mode" : "adjustResize" //软键盘弹出模式，
+        },
+        "usingComponents" : true,
+        "compilerVersion" : 2,
+        "runmode" : "liberate", // 开启分包优化后，必须配置资源释放模式
+        "privacy" : {
+            "prompt" : "template", //可取值template、custom、none  
+            "template" : {
+                "title" : "隐私政策",
+                "message" : "　　请你务必审慎阅读、充分理解“隐私政策”各条款，包括但不限于：为了更好的向你提供服务，我们需要收集你的设备标识、操作日志等信息用于分析、优化应用性能。<br/>　　<a href='https://x.dscmall.cn/mobile/#/articleDetail/82'>《用户协议与隐私政策》</a>了解详细信息。如果你同意，请点击下面按钮开始接受我们的服务。",
+                "buttonAccept" : "同意",
+                "buttonRefuse" : "暂不同意",
+                "second" : {
+                    "title" : "温馨提示",
+                    "message" : "　　进入应用前，你需先同意<a href='https://x.dscmall.cn/mobile/#/articleDetail/82'>《用户协议与隐私政策》</a>，否则将退出应用。",
+                    "buttonAccept" : "同意并继续",
+                    "buttonRefuse" : "退出应用"
+                }
+            }
+        }
+    },
+    /* SDK配置 */
+    "quickapp" : {},
+    /* 快应用特有相关 */
+    "mp-weixin" : {
+        /* 小程序特有相关 */
+        "appid" : "wx8d05aead679423f1",
+        "setting" : {
+            "urlCheck" : true,
+            "postcss" : true,
+            "minified" : true,
+            "es6" : true,
+            "checkSiteMap" : false
+        },
+        "plugins" : {
+            "live-player-plugin" : {
+                "version" : "1.3.0",
+                "provider" : "wx2b03c6e691cd7370"
+            }
+        },
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "获取位置信息后为您提供个性化推荐"
+            }
+        },
+        "usingComponents" : true
+    },
+    "h5" : {
+        "title" : "大商创"
+    },
+    "mp-baidu" : {
+        "usingComponents" : false
+    },
+    "mp-alipay" : {
+        "usingComponents" : false
+    },
+    "mp-toutiao" : {
+        "usingComponents" : false
+    }
+}

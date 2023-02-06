@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>{include file ='library/admin_html_head.lbi'}</head>
+<body class="iframe_body">
+<div class="warpper">
+    <div class="title"><a href="{$action_link.href}"ectype="goback"class="s-back">{$lang.back}</a>{$ur_here}</div>
+    <div class="content new_view_see">
+        <div class="step step_top">
+            <div class="step_title">
+                <i class="ui-step"></i>
+                <h3>{$lang.base_info}</h3>
+                <a href="goods.php?act=edit&goods_id={$goods_id}" target="_blank" class="more">{$lang.edit}</a>
+                <input type="hidden" name="goods_id" value="{$goods_id}">
+            </div>
+            <div class="step_content">
+                <div class="section">
+                    <div class="section-view">
+                        <div class="new_goods_header">
+                            <h1 class="twolist-hidden">{$info.goods_name}</h1>
+                            <div class="tags">
+                                {if $info.is_best || $info.store_best}<i class="iconfont icon-jingpin"></i>{/if}
+                                {if $info.is_hot || $info.store_hot}<i class="iconfont icon-rexiao"></i>{/if}
+                                {if $info.is_new || $info.store_new}<i class="iconfont icon-xinpin"></i>{/if}
+                            </div>
+                            <p>{$info.goods_brief}</p>
+                        </div>
+                        <div class="header">
+                            <div class="left">
+                                <div class="rows">
+                                    <div class="row">
+                                        <div class="label">{$lang.lab_bar_shop_price}：</div>
+                                        <div class="value price">{$info.shop_price_formated}</div>
+                                    </div>
+                                </div>
+                                <div class="rows">
+                                    <div class="row">
+                                        <div class="label">{$lang.lab_bar_market_price}：</div>
+                                        <div class="value">{$info.market_price_formated}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="label">{$lang.lab_bar_cost_price}：</div>
+                                        <div class="value">{$info.cost_price_formated}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="yaicon curr"><a href="{$info.goods_url}" target="_blank"><i class="iconfont icon-diannao1"></i></a></div>
+                                <div class="yaicon curr"><i class="iconfont icon-erweima" onmouseover="toolTip('<img src={$info.goods_qrcode.url}>')" onmouseout="toolTip()"></i></div>
+                            </div>
+                        </div>
+                        <div class="section-items mt20">
+                            <div class="section-item">
+                                <div class="label">{$lang.lab_goods_cat}</div>
+                                <div class="value">{$info.category}</div>
+                            </div>
+                            <div class="section-item">
+                                <div class="label">{$lang.lab_goods_sn}</div>
+                                <div class="value">{$info.goods_sn}</div>
+                            </div>
+                            <div class="section-item">
+                                <div class="label">{$lang.lab_bar_code}</div>
+                                <div class="value">{$info.bar_code}</div>
+                            </div>
+                            <div class="section-item">
+                                <div class="label">{$lang.lab_storage}：</div>
+                                <div class="value">{$info.goods_number}</div>
+                            </div>
+                            <div class="section-item">
+                                <div class="label">{$lang.lab_bar_inventory_warn}：</div>
+                                <div class="value">{$info.warn_number}</div>
+                            </div>
+                            <div class="section-item">
+                                <div class="label">{$lang.supplier_name}：</div>
+                                <div class="value">{$info.suppliers_name}</div>
+                            </div>
+                            <div class="section-item">
+                                <div class="label">{$lang.lab_goods_brand}</div>
+                                <div class="value">{$info.brand_name}</div>
+                            </div>
+                            <div class="section-item">
+                                <div class="label">{$lang.goods_freight}：</div>
+                                <div class="value">{if $info.freight eq 2}<a href="goods_transport.php?act=edit&tid={$info.tid}" target="_blank">{$info.goods_transport}</a> {else} {$lang.fixed_freight} {$info.shipping_fee}{/if}</div>
+                            </div>
+                            <div class="section-item">
+                                <div class="label">{$lang.label_return_mark}</div>
+                                <div class="value">
+                                    {if in_array(0, $info.goods_cause)} {$lang.return_type.0} {/if}
+                                    {if in_array(1, $info.goods_cause)} {$lang.return_type.1} {/if}
+                                    {if in_array(2, $info.goods_cause)} {$lang.return_type.2} {/if}
+                                    {if in_array(3, $info.goods_cause)} {$lang.return_type.3} {/if}
+                                </div>
+                            </div>
+                            <div class="section-item">
+                                <div class="label">{$lang.lab_goods_service}</div>
+                                <div class="value">
+                                    {if $info.goods_extend.is_reality eq 1} {$lang.goods_service.0} {/if}
+                                    {if $info.goods_extend.is_return eq 1} {$lang.goods_service.1} {/if}
+                                    {if $info.goods_extend.is_fast eq 1} {$lang.goods_service.2} {/if}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-view">
+                        <div class="shop-warp">
+                            <div class="shop-img"><img src="{$info.shopinfo.logo_thumb}"></div>
+                            <div class="shop-info">
+                                <div class="shop-name">
+                                    <h1>{$info.shopinfo.shop_name}</h1>
+                                    {if $info.shopinfo.self_run}<em> {$lang.self_run} </em>{/if}
+                                </div>
+                                {if $info.shopinfo.mobile}
+                                <div class="tel">
+                                    <span>{$lang.contact}：</span>
+                                    <span class="phone">{$info.shopinfo.mobile_hide}</span>
+                                    <i class="iconfont icon-follow-view" data-input="{$info.shopinfo.mobile}" data-phone="{$info.shopinfo.mobile_hide}"></i>
+                                </div>
+                                {/if}
+                                <a href="goods.php?act=list&seller_list=1&store_search=1&is_on_sale=-1&review_status=0&merchant_id={$info.user_id}" target="_blank" class="see">{$lang.view_seller_goods}</a>
+                            </div>
+                        </div>
+                        <div class="album-swiper">
+                            <div class="gallery_wrap">
+                                <ul>
+                                    {foreach from=$info.goods_gallery item=item}
+                                    <li><img src="{$item.img_url}" /></li>
+                                    {/foreach}
+                                </ul>
+                            </div>
+                            <div class="spec-list">
+                                <a href="javascript:void(0);" class="spec-prev prevStop"><i class="iconfont icon-left"></i></a>
+                                <div class="spec-items">
+                                    <ul>
+                                        {foreach from=$info.goods_gallery item=item}
+                                        <li><img src="{$item.thumb_url}" /></li>
+                                        {/foreach}
+                                    </ul>
+                                </div>
+                                <a href="javascript:void(0);" class="spec-next nextStop"><i class="iconfont icon-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step step_one">
+            <div class="step_content">
+                <div class="section">
+                    <div class="section-view section-items">
+                        <div class="section_title"><i class="ui-step"></i>
+                            <h1>{$lang.special_info}</h1>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.lab_promote_price}</div>
+                            <div class="value">{if $info.is_promote}{$info.promote_price_formated} （{$lang.term_of_validity}：{$info.promote_start_end}）{else}{$lang.not_yet}{/if}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.label_limit_buy_number}</div>
+                            <div class="value">{if $info.is_xiangou}{$info.xiangou_num} （{$lang.term_of_validity}：{$info.xiangou_start_end}）{else}{$lang.not_yet}{/if}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.minimum}：</div>
+                            <div class="value">{if $info.is_minimum}{$info.minimum} （{$lang.term_of_validity}：{$info.minimum_start_end}）{else}{$lang.not_yet}{/if}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.drp_comm}</div>
+                            <div class="value">{if $info.is_distribution}{$info.dis_commission}%{else}{$lang.not_yet}{/if}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.label_staging}</div>
+                            <div class="value">{if $info.stages}{$info.stages}（{$info.stages_rate}%）{else}{$lang.not_yet}{/if}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.lab_user_price}</div>
+                            <div class="value">{if $info.member_price}<a href="javascript:;" ectype="seepb" data-val="user">{$lang.view}</a>{else}{$lang.not_yet}{/if}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.label_ladder_price}</div>
+                            <div class="value">{if $info.is_volume}<a href="javascript:;" ectype="seepb" data-val="volume">{$lang.view}</a>{else}{$lang.not_yet}{/if}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.label_full_price}</div>
+                            <div class="value">{if $info.is_fullcut}<a href="javascript:;" ectype="seepb" data-val="fullcut">{$lang.view}</a>{else}{$lang.not_yet}{/if}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="section-view section-items">
+                        <div class="section_title"><i class="ui-step"></i>
+                            <h1>{$lang.tab_mix}</h1>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.lab_give_integral}</div>
+                            <div class="value">{$info.give_integral}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.lab_rank_integral}</div>
+                            <div class="value">{$info.rank_integral}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.lab_integral}</div>
+                            <div class="value">{$info.integral}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.alone_to_sale}：</div>
+                            <div class="value">{if $info.is_alone_sale eq 1} {$lang.yes} {else} {$lang.no} {/if}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.free_shipping_fee}：</div>
+                            <div class="value">{if $info.is_shipping eq 1} {$lang.yes} {else} {$lang.no} {/if}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.lab_keywords}</div>
+                            <div class="value">{if $info.keywords}<a href="javascript:;" ectype="seepb" data-val="keywords">{$lang.view}</a>{else}{$lang.not_yet}{/if}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.comment_tag}：</div>
+                            <div class="value">{if $info.goods_product_tag}<a href="javascript:;" ectype="seepb" data-val="tag">{$lang.view}</a>{else}{$lang.not_yet}{/if}</div>
+                        </div>
+                        <div class="section-item">
+                            <div class="label">{$lang.service_commitment_tag}：</div>
+                            <div class="value">{if $info.goods_tag}<a href="javascript:;" ectype="seepb" data-val="goodstag">{$lang.view}</a>{else}{$lang.not_yet}{/if}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {if $info.product_list}
+        <div class="step">
+            <div class="step_title"><i class="ui-step"></i>
+                <h3>{$lang.goods_spec_stock}</h3>
+                <a href="{$info.goods_url}" target="_blank" class="more">{$lang.view}</a>
+            </div>
+            <div class="step_content">
+                <div class="list-div">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                        <th>{$lang.spec_sku}</th>
+                        <th>{$lang.lab_bar_market_price}</th>
+                        <th>{$lang.lab_bar_cost_price}</th>
+                        <th>{$lang.promotion_price}</th>
+                        <th>{$lang.goods}{$lang.goods_sn}/{$lang.bar_code}</th>
+                        <th>{$lang.goods_number}</th>
+                        <th>{$lang.lab_bar_inventory_warn}</th>
+                        </thead>
+                        <tbody>
+                            {foreach from=$info.product_list item=item}
+                            <tr>
+                            <td><p>{$item.attr_value}</p><p>{$item.product_price_formated}</p></td>
+                            <td>{$item.product_market_price_formated}</td>
+                            <td>{$item.product_cost_price_formated}</td>
+                            <td>{$item.product_promote_price_formated}</td>
+                            <td>{$item.product_sn}</td>
+                            <td>{$item.product_number}</td>
+                            <td>{$item.product_warn_number}</td>
+                            </tr>
+                            {/foreach}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {/if}
+        <div class="step">
+            <div class="step_title"><i class="ui-step"></i>
+                <h3>{$lang.relation_info}</h3>
+                <a href="{$info.goods_url}" target="_blank" class="more">{$lang.view}</a>
+            </div>
+            <div class="step_content">
+                <div class="boxshadow-items">
+                    <a href="javascript:;">
+                        <div class="boxshadow-item">
+                            <div class="yaicon"><i class="iconfont icon-bonus"></i></div>
+                            <div class="info">
+                                <div class="tit">{$lang.tab_linkgoods}</div>
+                                <div class="num">{$lang.amount}：<em class="red">{$info.link_goods}</em>个</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="javascript:;">
+                        <div class="boxshadow-item">
+                            <div class="yaicon"><i class="iconfont icon-coupon"></i></div>
+                            <div class="info">
+                                <div class="tit">{$lang.tab_article}</div>
+                                <div class="num">{$lang.amount}：<em class="red">{$info.link_article}</em>个</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="javascript:;">
+                        <div class="boxshadow-item">
+                            <div class="yaicon"><i class="iconfont icon-value-card"></i></div>
+                            <div class="info">
+                                <div class="tit">{$lang.tab_areaRegion}</div>
+                                <div class="num">{$lang.amount}：<em class="red">{$info.link_area}</em>个</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="javascript:;">
+                        <div class="boxshadow-item">
+                            <div class="yaicon"><i class="iconfont icon-value-card"></i></div>
+                            <div class="info">
+                                <div class="tit">{$lang.goods}{$lang.tab_groupgoods}</div>
+                                <div class="num">{$lang.amount}：<em class="red">{$info.link_group}</em>个</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step_title"><i class="ui-step"></i>
+                <h3>{$lang.tab_detail}</h3>
+            </div>
+            <div class="step_content">
+                <div class="tabs_desc">
+                    <ul class="ui-tabs-nav">
+                        <li class="current"><a href="javascript:void(0);"><i class="icon icon-desktop"></i>{$lang.pc_detail}</a></li>
+                        <li><a href="javascript:void(0);"><i class="icon icon-mobile-phone"></i>{$lang.h5_detail}</a></li>
+                    </ul>
+                    <div class="panel-main">
+                        <div class="panel panel-pc">
+                            {$info.goods_desc}
+                        </div>
+                        <div class="panel panel-phone" style="display:none;">
+                            <div class="panel_warp">
+                                <div class="pannel">
+                                    <div class="pannel-content"><div class="section_warp">{$info.desc_mobile}</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file ='library/pagefooter.lbi'}
+
+<script type="text/javascript" src="__ROOT__js/jquery.picTip.js"></script>
+<script type="text/javascript">
+    $(".icon-follow-view").click(function(){
+        var input = $(this).data("input");
+        var phone = $(this).data("phone");
+
+        if($(this).hasClass('is')){
+            $(this).removeClass('is');
+            $(this).siblings(".phone").html(phone);
+        }else{
+            $(this).addClass('is');
+            $(this).siblings(".phone").html(input);
+        }
+    })
+
+    // 切换详细描述
+    $(".tabs_desc li").click(function(){
+        if(!$(this).hasClass("current")){
+            $(".tabs_desc ul").find('li').removeClass("current");
+            $(this).addClass("current");
+        }
+
+        $.each($(".tabs_desc ul").find('li'), function(index, item){
+            if($(this).hasClass("current")){
+                $.each($(".panel-main").children('div'), function(i, t){
+                    if (index == i) {
+                        $(t).show();
+                    } else {
+                        $(t).hide();
+                    }
+                });
+            }
+        });
+    });
+
+    $(document).on("click", "*[ectype='seepb']", function(){
+        var val = $(this).data('val');
+        var goodsid = $("input[name='goods_id']").val();
+        $.post('goods.php', 'act=audit_detail_extend&goods_id=' + goodsid + '&val=' + val, function(data){
+            pb({
+                id:"detail_extend",
+                title:data.title,
+                width:600,
+                content:data.content,
+                drag:false,
+                foot:false,
+            });
+        });
+    });
+
+    $(function(){
+        $(".nyroModal").nyroModal();
+
+        $(".spec-list").slide({mainCell:".spec-items ul",effect:"left",trigger:"click",pnLoop:false,autoPage:true,scroll:1,vis:5,prevCell:".spec-prev",nextCell:".spec-next"});
+
+        $(".album-swiper").slide({ titCell:".spec-items li",mainCell:".gallery_wrap ul" });
+    })
+
+
+    $(".pannel-content").hover(function(){
+        $(".pannel-content").perfectScrollbar("destroy");
+        $(".pannel-content").perfectScrollbar();
+    });
+</script>
+</body>
+</html>
+

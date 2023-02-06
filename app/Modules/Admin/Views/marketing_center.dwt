@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>{include file ='library/admin_html_head.lbi'}</head>
+
+<body class="iframe_body">
+	<div class="warpper">
+    	<div class="title">{$lang.promotion} - {$ur_here}</div>
+        <div class="content">
+            <div class="flexilist mt0">
+                <div class="common-content">
+                    <div class="mian-info">
+                        <div class="mkc_content">
+                            {foreach from=$group_list item=group name=val}
+                            <div class="mkc_dl {if $smarty.foreach.val.iteration == 1} mck_one {elseif $smarty.foreach.val.iteration == 2} mck_two {elseif $smarty.foreach.val.iteration == 3} mck_three {/if}">
+                                <div class="mkc_dt">{$group.name}</div>
+                                <div class="mkc_dd">
+                                    <ul>
+                                    {foreach from=$group.child item=item}
+                                    <li class="{$item.class}">
+                                        <a href="javascript:void(0);" data-url="{$item.url}" data-param="{$item.data_param}" ectype="iframeHref">
+                                            <em><i class="iconfont {$item.icon}"></i></em>
+                                            <div class="info">
+                                                <h2>{$item.name}</h2>
+                                                <span>{$item.desc}</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    {/foreach}
+                                    </ul>
+                                </div>
+                            </div>
+                            {/foreach}
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+	{include file ='library/pagefooter.lbi'}
+</body>
+</html>

@@ -1,0 +1,145 @@
+{if $full_page}
+<!doctype html>
+<html lang="zh-Hans">
+<head>{include file ='library/admin_html_head.lbi'}</head>
+
+<body class="iframe_body">
+<div class="warpper">
+    <div class="title"><a href="favourable.php?act=marketing_center" class="s-back">
+        {$lang.back}</a>{$lang.promotion} - {$ur_here}
+    </div>
+    <div class="content">
+        <div class="tabs_info">
+            <ul>
+                <li>
+                    <a href="lottery.php?act=index" data-val="0" ectype="tabs_info">活动设置</a>
+                </li>
+                <li class="curr">
+                    <a href="javascript:;" data-val="1" ectype="tabs_info">参与记录</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="explanation" id="explanation">
+            <div class="ex_tit">
+                <i class="sc_icon"></i>
+                <h4>{$lang.operating_hints}</h4>
+                <span id="explanationZoom" title="{$lang.fold_tips}"></span>
+            </div>
+            <ul>
+                <li>查看所有参与抽奖活动的记录。可通过奖品类型筛选、搜索会员名称/⼿机号/奖品名称等关键词搜索相应的记录</li>
+            </ul>
+        </div>
+        <div class="flexilist">
+            <div class="common-head">
+                <div class="search">
+                    <form action="javascript:;" name="searchForm" onSubmit="searchGoodsname(this);">
+                        <div class="select">
+                            <div class="imitate_select select_w120">
+                                <div class="cite">请选择奖品类型</div>
+                                <ul>
+                                    <li><a href="javascript:;" data-value="1" class="ftx-01">积分</a></li>
+                                    <li><a href="javascript:;" data-value="2" class="ftx-01">成长值</a></li>
+                                    <li><a href="javascript:;" data-value="3" class="ftx-01">优惠券</a></li>
+                                    <li><a href="javascript:;" data-value="4" class="ftx-01">红包</a></li>
+                                </ul>
+                                <input name="prize_type" type="hidden" value="0">
+                            </div>
+                        </div>
+                        <div class="input">
+                            <input type="text" name="keyword" class="text nofocus w160"
+                                   placeholder="请输⼊会员名称/⼿机号/奖品名称"
+                                   autocomplete="off"/>
+                            <input type="submit" class="btn" name="secrch_btn" ectype="secrch_btn" value=""/>
+                        </div>
+
+                        <input name="add_gift" type="button" class="btn btn30 blue_btn fl ml10"
+                               onclick="exportRecord()" value="导出数据" autocomplete="off">
+                    </form>
+
+                </div>
+            </div>
+            <div class="common-content">
+                <form method="POST" action="lottery.php?act=record" name="listForm">
+                    <div class="list-div" id="listDiv">
+                        {/if}
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <thead>
+                            <tr>
+                                <th width="20%">
+                                    <div class="tDiv">会员信息</div>
+                                </th>
+                                <th width="20%">
+                                    <div class="tDiv">奖品名称</div>
+                                </th>
+                                <th width="10%">
+                                    <div class="tDiv">奖品类型</div>
+                                </th>
+                                <th width="20%">
+                                    <div class="tDiv">奖品</div>
+                                </th>
+                                <th width="10%">
+                                    <div class="tDiv">参与渠道</div>
+                                </th>
+                                <th width="20%">
+                                    <div class="tDiv">参与时间</div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {foreach from=$list item=item}
+                            <tr>
+                                <td>
+                                    <div class="tDiv">{$item.user_name}</div>
+                                </td>
+                                <td>
+                                    <div class="tDiv">{$item.prize_name}</div>
+                                </td>
+                                <td>
+                                    <div class="tDiv">{$item.prize_type}</div>
+                                </td>
+                                <td>
+                                    <div class="tDiv">{$item.prize}</div>
+                                </td>
+                                <td>
+                                    <div class="tDiv">{$item.channel}</div>
+                                </td>
+                                <td>
+                                    <div class="tDiv">{$item.created_at}</div>
+                                </td>
+                            </tr>
+                            {foreachelse}
+                            <tr>
+                                <td class="no-records" align="center" colspan="6">{$lang.no_records}</td>
+                            </tr>
+                            {/foreach}
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    <div class="tDiv">
+                                        <div class="list-page">
+                                            {include file="library/page.lbi"}
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                        {if $full_page}
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+{include file ='library/pagefooter.lbi'}
+<script type="text/javascript">
+    function exportRecord() {
+        console.log('exportRecord...')
+    }
+</script>
+</body>
+</html>
+{/if}

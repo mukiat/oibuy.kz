@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{$lang.login_title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" href="__ROOT__favicon.ico" type="image/x-icon" />
+<link href="__TPL__/css/login.css" rel="stylesheet" type="text/css" />
+<link href="__TPL__/css/purebox.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__ROOT__js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="__TPL__/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="__TPL__/js/common.js"></script>
+
+
+<script type="text/javascript">
+
+{foreach from=$lang.js_languages key=key item=item}
+var {$key} = "{$item}";
+{/foreach}
+
+$.ajaxSetup({
+	headers: {
+		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	}
+});
+</script>
+<body>
+<div class="login-layout">
+
+    	<div class="login-form">
+        	<div class="logo">
+            {if $stores_login_logo}
+            <img src="{$stores_login_logo}" />
+            {else}
+            <img src="__TPL__/images/logo.png" />
+            {/if}
+            </div>
+
+            <form method="post" id="theForm" action="privilege.php" name='theForm'>
+            <div class="formInfo">
+            	<div class="formText">
+                	<i class="icon icon-user"></i>
+                    <input type="text" name="stores_user" autocomplete="off" class="input-text" value="" placeholder="{$lang.stores_user}">
+                </div>
+                <div class="formText mb10">
+                	<i class="icon icon-pwd"></i>
+                        <input type="password" style="display:none" autocomplete="off"/>
+                    <input type="password" name="stores_pwd" autocomplete="off" class="input-text" value="" placeholder="{$lang.stores_pwd}">
+                </div>
+                <div class="formText submitDiv mb10">
+                	{if $gd_version > 0}
+                	<span class="text_span">
+                        <div class="code">
+                            <div class="arrow"></div>
+                            <div class="code-img"><img src="privilege.php?act=login&step=captcha&{$random}" onclick= this.src="privilege.php?act=login&step=captcha&"+Math.random() title="{$lang.click_for_another}"  name="codeimage" border="0" id="codeimage"></div>
+                        </div>
+                        <input type="text" name="captcha" class="input-yzm" placeholder="{$lang.input_yzm}" value="">
+                    </span>
+                    {/if}
+                    <span class="submit_span">
+                    	<input type="hidden" name="act" value="signin" />
+                        <input type="hidden" name="dsc_token" value="{$dsc_token}" autocomplete="off" />
+                        <input type="submit" name="submit" class="sub" value="{$lang.login}" >
+                    </span>
+                </div>
+                <div class="formText">
+                	<a href="get_password.php?act=forget_pwd" class="not_pwd" target="_blank">{$lang.forget_password_alt}</a>
+                </div>
+            </div>
+            </form>
+
+        </div>
+        <div id="error" class="error"></div>
+</div>
+<div id="bannerBox">
+	<ul class="slideBanner">
+    	<li><img src="__TPL__/images/banner_login.jpg" /></li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="__TPL__/js/jquery.purebox.js"></script>
+
+<script type="text/javascript">
+	$("#bannerBox").slide({mainCell:".slideBanner",effect:"fold",interTime:3500,delayTime:500,autoPlay:true,autoPage:true,endFun:function(i,c,s){
+		$(window).resize(function(){
+			var width = $(window).width();
+			var height = $(window).height();
+			s.find(".slideBanner,.slideBanner li").css({"width":width,"height":height});
+		});
+	}});
+
+	$(function(){
+		$(".formText .input-text").focus(function(){
+			$(this).parent().addClass("focus");
+		});
+
+		$(".formText .input-text").blur(function(){
+			$(this).parent().removeClass("focus");
+		});
+
+		$(".checkbox").click(function(){
+			if($(this).hasClass("checked")){
+				$(this).removeClass("checked");
+			}else{
+				$(this).addClass("checked");
+			}
+		});
+
+		$(".formText .input-yzm").focus(function(){
+			$(this).prev().show();
+		});
+
+		$('#theForm input[name=submit]').on('click',function(){
+            var username=true;
+            var password=true;
+            var captcha=true;
+
+            if($('#theForm input[name=stores_user]').val() == ''){
+                $('#error').html('<span class="error">'+user_name_empty+'</span>');
+                $('#theForm input[name=stores_user]').focus();
+                username = false;
+                return false;
+            }
+
+            if($('#theForm input[name=stores_pwd]').val() == ''){
+                $('#error').html('<span class="error">'+password_empty+'</span>');
+                $('#theForm input[name=stores_pwd]').focus();
+                password = false;
+                return false;
+            }
+
+        {if $gd_version > 0}
+            if($('#theForm input[name=captcha]').val() == ''){
+                $('#error').html('<span class="error">'+captcha_empty+'</span>');
+                $('#theForm input[name=captcha]').focus();
+                captcha = false;
+                return false;
+            }
+
+            if(captcha){
+                $.ajax({
+                    async:false,
+                    url:'privilege.php?act=signin&type=captcha',
+                    data:{'captcha':$('#theForm input[name=captcha]').val()},
+                    headers:{
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type:'post',
+                    success:function(data){
+                        if(data == 'false'){
+                            $('#error').html('<span class="error">{$lang.captcha_error}</span>');
+                            captcha = false;
+                            return false;
+                        }
+                    }
+                });
+            }
+        {/if}
+
+            if(captcha && $('#theForm input[name=stores_user]').val() != '' && $('#theForm input[name=stores_pwd]').val() != ''){
+                $.ajax({
+                    async:false,
+                    url:'privilege.php?act=signin&type=password',
+                    data:{'stores_user':$('#theForm input[name=stores_user]').val(),'stores_pwd':$('#theForm input[name=stores_pwd]').val()},
+                    headers:{
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type:'post',
+                    success:function(data){
+
+                        if (data.status == 'failed') {
+                            if (data.errors.message){
+                                $('#error').html('<span class="error">'+data.errors.message+'</span>');
+                            } else {
+                                $('#error').html('<span class="error">'+username_password_error+'</span>');
+                            }
+
+                            $('.code-img img').attr('src','privilege.php?act=login&step=captcha&'+Math.random());
+
+                            username=false;
+                            password=false;
+                            return false;
+                        }
+                    }
+                });
+            }
+
+            if(captcha && username && password){
+                $('#theForm').submit();
+            }else{
+                return false;
+            }
+        });
+
+		$(document).on('click',function(e){
+			if(e.target.className !='input-yzm' && !$(e.target).parents("div").is(".code")){
+				$('.code').hide();
+			}
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+.wx-shop-list{}
+.wx-shop-list .wx-item{ background: #f9f9f9; padding: 20px; margin-bottom: 20px; overflow: hidden;}
+.wx-shop-list .wx-item .left{ float: left;}
+.wx-shop-list .wx-item .left i{ width: 60px; height: 60px; display: block; text-align: center; line-height: 60px; border: 1px dashed #ccc; border-radius: 50%; font-size: 20px; font-weight: 700; color: #ccc}
+.wx-shop-list .wx-item .right{ float: left; width: calc(100% - 80px); margin-left: 20px;}
+.wx-shop-list .wx-item .right .li{ margin-bottom: 20px; overflow: hidden;}
+.wx-shop-list .wx-item .right .li:last-child{ margin-bottom: 0; }
+.wx-shop-list .wx-item .right .desc{ float: left; width: 80%;}
+.wx-shop-list .wx-item .right .desc strong{ display: block; font-size: 16px; color: #333; line-height: 2}
+.wx-shop-list .wx-item .right .desc span{ display: block; font-size: 14px; line-height: 2;}
+.wx-shop-list .wx-item .right .info{ float: right; width: 20%; text-align: right; margin: 20px 0;}
+
+.audit_state{ overflow: hidden; }
+.audit_state_warp{ margin: 50px auto; text-align: center;}
+.audit_state_warp i{ width: 84px; height: 84px; display: inline-block; background: url(../images/message.png); }
+.audit_state_warp strong{ display: block; font-size: 20px; color: #000; margin: 20px 0;}
+.audit_state_warp span{ display: block; font-size: 16px; color: #999;line-height: 2;}
+.audit_state_warp .reason{ width: 640px; margin: 0 auto; text-align: left; }
+.audit_state_warp .reason .reason_txt{ font-size: 16px; color: #999; line-height: 2; }
+.audit_state_2 .audit_state_warp i{ background-position: 112px 0; }
+
+.wx_attr .wx_attr_li{ overflow: hidden; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #f2f2f2;}
+.wx_attr .wx_attr_li:last-child{ border-bottom: 0; margin-bottom: 0;}
+
+.wx_attr .li{ overflow: hidden; height: 30px; line-height: 30px; margin-bottom: 15px;}
+.wx_attr .li .radio-item{ float: left; margin-right: 10px;}
+.wx_attr .li .text{ float: left; margin-right: 10px;}
+.wx_attr .li .label{ float: left; margin-right: 10px; color: #333;}
+.wx_attr .li .value{ float: left; }
+
+.wx_attr .nyroModal{ float: left; margin-right: 10px; background: #F7F7F7}
+.wx_attr .caozuo{ float: left; height: 30px;}
+.wx_attr .caozuo .group{ background: #F7F7F7; margin-right: 10px; float: left; overflow: hidden;}
+.wx_attr .caozuo i{ font-size: 18px; padding: 0 10px; float: left; line-height: 30px; cursor: pointer;}
+.wx_attr .caozuo i.icon-trash{ }
+.wx_attr .caozuo i.icon-sort-up{ padding-top: 10px; line-height: normal;}
+.wx_attr .caozuo i.icon-sort-down{ margin-top: -4px; }
+.wx_attr .caozuo i.disabled{ color: #999; cursor: no-drop;}
+
+.wx_attr_add{ font-size: 15px; display: block; margin-top: 5px;}
+.wx_attr_add i{ font-size: 18px; float: left; margin: 2px 10px 0 0;}
+
+.wx_attr_price{ border-top:1px dashed #999; float: left; margin-top: 20px; padding-top: 20px; overflow: hidden; }
+.wx_attr_price .wx_attr_item{ overflow: hidden; margin: 0 22px 20px; padding-bottom: 20px; border-bottom: 1px dashed #f2f2f2; }
+.wx_attr_price .wx_attr_item:last-child{ border-bottom: 0; }
+.wx_attr_price .wx_attr_item .li{ overflow: hidden; line-height: 50px;}
+.wx_attr_price .wx_attr_item .li .radio-item{ float: left; margin-right: 10px;}
+.wx_attr_price .wx_attr_item .li .wx_attr_img{ float: left; width: 50px; height: 50px; margin-right: 10px;}
+.wx_attr_price .wx_attr_item .li .wx_attr_img .img{ width: 100%; height: 100%; }
+.wx_attr_price .wx_attr_item .li .wx_attr_name{ font-size: 14px; color: #333; }
+.wx_attr_price .wx_attr_item .shuru{ margin-top: 10px; overflow: hidden;}
+.wx_attr_price .wx_attr_item .shuru .text{ margin-right: 10px; }
+
+.wx_upload_img{ position: relative; }
+.wx_upload_img input[type="file"]{ position: absolute; left: 0; top: 0; opacity: 0; filter: alpha(opacity=0); cursor: pointer; width: 30px; height: 30px;}
+.wx_upload_img .type-file-text { height: 28px; line-height: 28px; border: 0; background: #f9f9f9; width: auto; padding: 0 10px 0 0; float: left; border-right: 0;}
