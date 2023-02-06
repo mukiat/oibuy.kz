@@ -16,7 +16,7 @@
                 </radio-group>
             </div>
             <div class="form-group" v-if="styleSel != 1">
-                <label class="group-l">指示标：</label>
+                <label class="group-l">Индикатор：</label>
                 <radio-group v-model="paginationSel" size="small">
                     <radio v-for="item in data.pagination" :key="item.key" :label="item.key">{{ item.title }}</radio>
                 </radio-group>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="form-group" v-if="styleSel == 1">
-                <label class="group-l">新样式：</label>
+                <label class="group-l">Жаңа：</label>
                 <radio-group v-model="separateSel" size="small">
                     <radio v-for="item in data.separateStyle" :key="item.key" :label="item.key">{{ item.title }}</radio>
                 </radio-group>

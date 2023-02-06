@@ -2,9 +2,9 @@
     <div class="discover_content">
         <van-tabs v-model="active" color="#000000" sticky @change="onChange">
             <van-tab :title="item.nav_name" v-for="(item,index) in list" :key="index">
-                <dsc-community v-if="item.nav_name == '社区'" />
-                <dsc-shop v-if="item.nav_name == '店铺街'" />
-                <dsc-video-list v-if="item.nav_name == '视频'" />
+                <dsc-community v-if="item.nav_name == 'Достық'" />
+                <dsc-shop v-if="item.nav_name == 'Дүкен'" />
+                <dsc-video-list v-if="item.nav_name == 'Видео'" />
             </van-tab>
         </van-tabs>
         <ec-tab-down></ec-tab-down>

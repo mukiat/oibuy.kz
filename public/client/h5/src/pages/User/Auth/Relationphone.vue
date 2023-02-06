@@ -11,14 +11,14 @@
 					<ec-form-item prop="sms">
 						<div class="item-input dis-box">
 							<div class="value box-flex">
-								<ec-input type="text" v-model="sms" placeholder="请输该账号密码"></ec-input>
+								<ec-input type="text" v-model="sms" placeholder="Аккаунт паролін енгізіңіз"></ec-input>
 							</div>
 						</div>
 					</ec-form-item>
 					<div class="phone">{{$t('lang.relationphone_notic')}}</div>
 				</div>
 				<template>
-					<button type="button" class="btn btn-submit border-radius-top05" @click="submitBtn">确定</button>
+					<button type="button" class="btn btn-submit border-radius-top05" @click="submitBtn">Иа</button>
 				</template>
 			</ec-form>
 		</div>

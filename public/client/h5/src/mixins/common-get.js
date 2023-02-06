@@ -29,7 +29,7 @@ function compress(img,orientation) {
     //如果图片大于四百万像素，计算压缩比并将大小压至400万以下
     let ratio;
     if ((ratio = width * height / 4000000) > 1) {
-        console.log("大于400万像素")
+        console.log("4Мгп-дан көп")
         ratio = Math.sqrt(ratio);
         width /= ratio;
         height /= ratio;
@@ -46,7 +46,7 @@ function compress(img,orientation) {
     //如果图片像素大于100万则使用瓦片绘制
     let count;
     if ((count = width * height / 1000000) > 1) {
-        console.log("超过100W像素");
+        console.log("1мгп-дан көп1");
         count = ~~(Math.sqrt(count) + 1); //计算要分成多少块瓦片
         //计算每块瓦片的宽和高
         let nw = ~~(width / count);

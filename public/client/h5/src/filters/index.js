@@ -12,18 +12,18 @@ export const reportFormatDate = (str) => {
         return ''
     } else if ((time / 1000 < 30)) {
 
-        return '刚刚'
+        return 'Жаңа'
     } else if (time / 1000 < 60) {
-        return parseInt((time / 1000)) + '秒前'
+        return parseInt((time / 1000)) + 'сек.бұрын'
     } else if ((time / 60000) < 60) {
-        return parseInt((time / 60000)) + '分钟前'
+        return parseInt((time / 60000)) + 'мин.бұрын'
     } else if ((time / 3600000) < 24) {
-        return parseInt(time / 3600000) + '小时前'
+        return parseInt(time / 3600000) + 'сағ.бұрын'
     } else if ((time / 86400000) < 31) {
-        return parseInt(time / 86400000) + '天前'
+        return parseInt(time / 86400000) + 'күн бұрын'
     } else if ((time / 2592000000) < 12) {
-        return parseInt(time / 2592000000) + '月前'
+        return parseInt(time / 2592000000) + 'ай бұрын'
     } else {
-        return parseInt(time / 31536000000) + '年前'
+        return parseInt(time / 31536000000) + 'жыл бұрын'
     }
 }

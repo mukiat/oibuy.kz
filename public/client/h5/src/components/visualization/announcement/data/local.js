@@ -27,11 +27,11 @@ export default {
         showNewStyle:[{
             key: "0",
             type: "radio",
-            title: '默认'
+            title: 'Әдепкі'
         }, {
             key: "1",
             type: "radio",
-            title: '新版'
+            title: 'Жаңа'
         }],
         allValue: {
             number: 10,

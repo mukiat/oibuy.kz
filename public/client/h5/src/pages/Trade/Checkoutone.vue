@@ -1,8 +1,8 @@
 <template>
 	<div class="con con_main">
 		<div class="title_on">
-			<div class="item" @click="shop_kud">快递配送</div>
-			<div class="item active_on">门店自提</div>
+			<div class="item" @click="shop_kud">Жеткізу</div>
+			<div class="item active_on">Барып алу</div>
 		</div>
 		<div class="add_title" @click="shop_show" v-if="isSingle == ''">
 			<img src="../../assets/img/more_icon.png" />
@@ -14,7 +14,7 @@
 				<van-cell-group>
 					<van-cell icon="location" is-link @click="checkoutAdd" v-if="stor==0">
 						<template slot="title">
-							<div class="tit_jin">您已选地区附近没有匹配到合适的门店，请重新更换地区/门店，或切换使用快递配送下单自提地区</div>
+							<div class="tit_jin">Сіз таңдаған аймақта сәйкесті бутик табылмады,аймақ/бутикті ауыстырыңыз немесе тасымал қызметін таңдаңыз.</div>
 						</template>
 					</van-cell>
 
@@ -196,7 +196,7 @@
 									<!--普通发票和电子发票-->
 									<p class="receipt-title">
 										<template v-if="invoice.invoiceType == 0">{{$t('lang.plain_invoice')}} - </template>
-                                        <template v-else-if="invoice.invoiceType == 2" >电子发票 - </template>
+                                        <template v-else-if="invoice.invoiceType == 2" >Эл.фактура - </template>
 
 										<template v-if="!invoice.company">{{ invoice.invoiceTitle }}</template>
 										<template v-else>{{ invoice.company_name }}</template>
@@ -416,7 +416,7 @@
 		<!-- 商品清单 -->
 		<van-popup class="show-popup-coupon show-popup-common" round position="bottom" v-model="inventory" :overlay="overlay" closeable>
 			<div class="title" >
-				<strong>商品清单</strong>
+				<strong>Тауар тізімі</strong>
 				<div class="title_count">
 					<em>{{$t('lang.gong')}} {{inventoryList.goods_count}} {{$t('lang.jian')}}</em>
 					<i class="iconfont icon-close" @click="closeInventory"></i>
@@ -442,7 +442,7 @@
 							</div>
 						</li>
 					</ul>
-					<div class="goods_thumb_footer">若对商品价格有所疑问，可点击查看详情</div>
+					<div class="goods_thumb_footer">Тауар бағасына күмәніңіз болса,басып анығын көріңіз.</div>
 				</div>
 			</div>
 		</van-popup>
@@ -453,7 +453,7 @@
 				<div class="header-tit">{{$t('lang.invoice_type')}}</div>
 				<ul class="ect-selects">
 					<li class="ect-select" :class="{'active':invoice.invoiceType == 0}" @click="incrementHandle(0)"><span>{{$t('lang.plain_invoice')}}</span></li>
-					<li class="ect-select" :class="{'active':invoice.invoiceType == 2}" @click="incrementHandle(1)" v-if="invoice.is_shouqianba > 0"><span>电子发票</span></li>
+					<li class="ect-select" :class="{'active':invoice.invoiceType == 2}" @click="incrementHandle(1)" v-if="invoice.is_shouqianba > 0"><span>Эл.фактура</span></li>
 					<li class="ect-select" :class="{'active':invoice.invoiceType == 1,'btn-box':!invoice.increment}" @click="incrementHandle(2)"><span>{{$t('lang.vat_invoice')}}</span></li>
 				</ul>
 				<p>{{$t('lang.checkout_inv_help')}}</p>
@@ -473,8 +473,8 @@
 					<van-field :label="$t('lang.taxpayer_id_number')" :placeholder="$t('lang.enter_taxpayer_id_number')" v-model="invoice.company_tid" />
 				</div>
 				<div class="invoice-cont-1 m-top08" v-if="invoice.invoiceType == 2">
-                    <van-field label="邮箱：" placeholder="请填写邮箱" class="my-cell-nobottom" v-model="invoice.inv_email"/>
-                    <van-field label="手机号：" placeholder="请填写手机号码" v-model="invoice.inv_mobile"/>
+                    <van-field label="E-mail：" placeholder="Эл.пошта енгізіңіз" class="my-cell-nobottom" v-model="invoice.inv_email"/>
+                    <van-field label="Телефон：" placeholder="Телефон нөмірді енгізіңіз" v-model="invoice.inv_mobile"/>
                 </div>
 				<div class="invoice-cont-2">
 					<div class="header-tit">{{$t('lang.invoice_content')}}</div>
@@ -514,7 +514,7 @@
 		<!--红包-->
 		<van-popup class="show-popup-common show-popup-bonuslist" v-model="bonusObject.bonusBase" position="bottom" :overlay="overlay">
 			<div class="title">
-				<strong>红包</strong>
+				<strong>Конверт</strong>
 				<i class="iconfont icon-close" @click="closeBonus"></i>
 			</div>
 			<div class="content">
@@ -550,7 +550,7 @@
 		<!--储值卡-->
 		<van-popup class="show-popup-common show-popup-valuecard" v-model="valueCardObject.valueCardBase" position="bottom" :overlay="overlay">
 			<div class="title">
-				<strong>储值卡</strong>
+				<strong>Төлем карта</strong>
 				<i class="iconfont icon-close" @click="closeValuecard"></i>
 			</div>
 			<div class="content">
@@ -563,8 +563,8 @@
 					<div class="value-card-list" v-show="currTab == index" v-waterfall-lower="loadMore" waterfall-disabled="disabled" waterfall-offset="300" :key="index">
 						<dsc-value-cart :list="item" page="checkout" :active="valueCardObject.valueCardId" :type="index" @link="goLink"></dsc-value-cart>
 						<div class="no_data" v-if="shopEmpty">
-							<p>很遗憾</p>
-							<p>{{currTab == 1 ? '您暂无不可用的储值卡' : '您暂无可使用的储值卡'}}</p>
+							<p>Өкінішті</p>
+							<p>{{currTab == 1 ? 'Сізде әлі жарамсыз карта жоқ' : 'Сізде әлі жарамды карта жоқ'}}</p>
 						</div>
 						<div class="loadmore" v-show="item.length >= size">{{loadmoreStatus}}</div>
 					</div>
@@ -606,7 +606,7 @@
 			<div class="content">
 				<div class="tip" :class="{'tipscroll':tipscroll}">
 					<i class="iconfont icon-lingdang"></i>
-					<div class="txt">修改支付方式可能会影响订单支付金额，提交订单前，请确认好信息</div>
+					<div class="txt">Төлем түрін өзгертсеңіз заказдың төлеу сомасына,заказды жолдауға әсер етуі мүмкін,мұқият болыңыз.</div>
 					<i class="iconfont icon-close" @click="tipscroll = false"></i>
 				</div>
 				<div class="select-tabs">
@@ -620,7 +620,7 @@
 		<!--选择店铺-->
 		<van-popup class="show-popup-bottom border-top" v-model="shopShow" position="bottom">
 			<div class="goods-show-title padding-all">
-				<h3 class="fl">选择店铺</h3>
+				<h3 class="fl">Дүкен таңда</h3>
 				<i class="iconfont icon-close fr" @click="storeclose"></i>
 			</div>
 			<div class="s-g-list-con">
@@ -676,12 +676,12 @@
 		<!--优惠券选择-->
 		<van-popup class="show-popup-common show-popup-coupon" v-model="couponsObject.couponsBase" position="bottom">
 			<div class="title">
-				<strong>优惠券</strong>
+				<strong>Купон</strong>
 				<i class="iconfont icon-close" @click="closeCoupons"></i>
 			</div>
 			<div class="content">
-				<div class="usable-coupon-number">可用优惠券 ({{couponsList.length}})</div>
-				<div class="usable-coupon-money">使用优惠券{{couponsObject.couponsIdArr && couponsObject.couponsIdArr.length}}张,共抵扣<em class="color-red">{{ currency }}{{couponsObject.couponsMoney}}</em></div>
+				<div class="usable-coupon-number">Жарамды ({{couponsList.length}})</div>
+				<div class="usable-coupon-money">{{couponsObject.couponsIdArr && couponsObject.couponsIdArr.length}} купон қолданылды,үнемдеу <em class="color-red">{{ currency }}{{couponsObject.couponsMoney}}</em></div>
 				<div class="coupons-list" v-if="shopCouponList">
 					<ul v-for="(ruItem,ruIndex) in shopCouponList" :key="ruIndex">
 						<li v-for="(item,index) in ruItem.list" :key="index" @click="couponValClick(item.uc_id,item.cou_money,ruIndex)">
@@ -705,7 +705,7 @@
 					</ul>
 				</div>
 				<div class="footer">
-					<div class="btn" @click="submitCoupons()">确定</div>
+					<div class="btn" @click="submitCoupons()">Иа</div>
 				</div>
 			</div>
 		</van-popup>
@@ -856,8 +856,8 @@
 				isLoading:true,
 				size:10,
 				currTab: 0,
-				tabs: ['可用卡', '不可用卡'],
-				loadmoreStatus: '加载中...',
+				tabs: ['Жарамды', 'Жарамсыз'],
+				loadmoreStatus: 'Жүктеу...',
 				shopEmpty: false,
 				cartList: [],
 				cartPaginated: [],
@@ -1091,7 +1091,7 @@
 			},
 			invoiceValue() {
 				//电子发票只显示明细 invoice.invoiceType == 2
-				return this.invoice.invoiceType == 2 ? ['商品明细'] : this.checkoutInfo.invoice_content
+				return this.invoice.invoiceType == 2 ? ['Деталы'] : this.checkoutInfo.invoice_content
 			},
 			use_paypwd() {
 				return this.checkoutInfo.use_paypwd ? this.checkoutInfo.use_paypwd : 0
@@ -1169,7 +1169,7 @@
 					this.$set(this.cartList, i, [...this.cartList[i], ...card_list]);
 					
 					this.shopEmpty = this.cartList[i].length == 0;
-					this.loadmoreStatus = card_list.length < this.size ? '没有更多了' : '加载中...';
+					this.loadmoreStatus = card_list.length < this.size ? 'Басқа жоқ' : 'Жүктеуде...';
 				};
 				
 				this.$nextTick(() => {
@@ -1181,7 +1181,7 @@
 				if (this.currTab == i) return;
 				this.currTab = i;
 				this.shopEmpty = false;
-				this.loadmoreStatus = this.cartList[i].length == this.cardCount ? '没有更多了' : '加载中...';
+				this.loadmoreStatus = this.cartList[i].length == this.cardCount ? 'Басқа жоқ' : 'Жүктеуде...';
 				if (this.cartList[i].length == 0) this.valueCardLoad();
 			},
 			loadMore(){
@@ -1192,10 +1192,10 @@
 					let i = this.currTab;
 					let isMore = this.cartPaginated[i];
 					if (isMore > 0) {
-						this.loadmoreStatus = '加载中...';
+						this.loadmoreStatus = 'Жүктеуде...';
 						this.valueCardLoad();
 					} else {
-						this.loadmoreStatus = '没有更多了';
+						this.loadmoreStatus = 'Басқа жоқ';
 					}
 				},200)
 			},
@@ -1353,7 +1353,7 @@
 						this.showKeyboard = true
 					}else{
 						Dialog.confirm({
-			              	message: '尚未开启支付密码,是否去开启？',
+			              	message: 'Төлем паролы қосылмады,қосу керек бе？',
 			              	className: 'text-center'
 				        }).then(() => {
 				            this.$router.push({
@@ -1599,7 +1599,7 @@
 				} else if (val == 1) {
 					// 电子发票
                     this.invoice.invoiceType = 2
-                    this.invoice.invoiceConent = '商品明细'
+                    this.invoice.invoiceConent = 'Деталы'
 				} else if (val == 2) {
 					// 增值税发票
 					if (this.invoice.increment == true) {
@@ -1637,10 +1637,10 @@
                             Toast(this.$t('lang.fill_in_taxpayer_id_number'))
                             return false
                         }else if (this.invoice.inv_email == '') {
-                            Toast('请填写邮箱')
+                            Toast('Эл.пошта енгізіңіз')
                             return false
                         }else if(this.invoice.inv_mobile == ''){
-                            Toast('请填写手机号码')
+                            Toast('Тел.нөмір енгізіңіз')
                             return false
                         }else{
                             this.showBase = false
@@ -1648,10 +1648,10 @@
                     }else{
                         // 电子发票 -个人
                         if (this.invoice.inv_email == '') {
-                            Toast('请填写邮箱')
+                            Toast('Эл.пошта енгізу')
                             return false
                         }else if(!this.checkMobile(this.invoice.inv_mobile)){
-                            Toast('请正确填写手机号码')
+                            Toast('Тел.нөмір енгізіңіз')
                             return false
                         }else{
                             this.showBase = false
@@ -2034,7 +2034,7 @@
 			},
 			surplusSelfHandle() {
 				if (this.surplus < 0) {
-					Toast('请填写合法值');
+					Toast('Ережеге сай мән жазыңыз');
 					return false
 				}
 
@@ -2393,7 +2393,7 @@
 			},
 			surplusSelf() {
 				Toast.loading({
-					message: '加载中...',
+					message: 'Жүктеуде...',
 					forbidClick: true,
 					loadingType: 'spinner',
 					duration: 0,

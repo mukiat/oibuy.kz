@@ -161,11 +161,11 @@ export default {
             let hint = ''
 
             if(this.type == 'function'){
-                hint = '“功能页面”App小程序链接暂不支持 “品牌街、微社区”'
+                hint = '“Фукция беті”Микро App қазірше“Бренд、Достық” қолдамайды'
             }else if(this.type == 'activity'){
-                hint = '“营销活动”App小程序链接暂不只支持 “超值礼包”'
+                hint = '“Маркетинг”Микро App қазірше“Пакетті” қолдамайды'
             }else if(this.type == 'article'){
-                hint = '“文章分类”App小程序链接暂不支持'
+                hint = '“Мақала”Микро App қазірше қолдамайды'
             }
 
             return hint

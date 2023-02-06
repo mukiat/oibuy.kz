@@ -2,12 +2,12 @@
     <div class="container container-register" :style="{'height': docmHeight2 + 'px'}">
         <div class="login-head"><i class="iconfont icon-back" @click="onClickBack"></i></div>
         <div class="login-form">
-            <div class="title">{{type == 0 ? '请输入您要找回的账号' : type == 1 ? '获取验证码' : '设置新密码'}}</div>
+            <div class="title">{{type == 0 ? 'Аккаунт логиннін енгізіңіз' : type == 1 ? 'Кодты алу' : 'Жаңа пароль қою'}}</div>
             <template v-if="type == 0">
                 <div class="input-box">
                     <div class="input-box__left">
                         <i class="iconfont icon-wodeguanzhu"></i>
-                        <input type="text" class="input" v-model="username" autocomplete="off" placeholder="用户名/手机号" />
+                        <input type="text" class="input" v-model="username" autocomplete="off" placeholder="Логин/Телефон" />
                         <i class="iconfont icon-guanbi" @click="username = ''" v-show="username"></i>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="signup-button">
-                    <button class="btn btn-lg-red" :class="{'btn-disabled':disabled}" :disabled="disabled" @click="submitStep(type)">获取验证码</button>
+                    <button class="btn btn-lg-red" :class="{'btn-disabled':disabled}" :disabled="disabled" @click="submitStep(type)">СМС код алу</button>
                 </div>
             </template>
             <template v-else-if="type == 1">
@@ -31,14 +31,14 @@
                         <div class="send" @click="sendVerifyCode" v-if="button_type">{{$t('lang.get_code')}}</div>
                         <div class="send" v-else>{{ button_text }}</div>
                     </div>
-                    <van-password-input :value="sms" :mask="false" :gutter="10" info="请输入6位数字验证码" @focus="showKeyboard = true" />
+                    <van-password-input :value="sms" :mask="false" :gutter="10" info="6 орынды санды енгізіңіз" @focus="showKeyboard = true" />
                     <van-number-keyboard :show="showKeyboard" @input="onInput" @delete="onDelete" @blur="showKeyboard = false" @hide="onHide" />
                 </div>
                 <div class="signup-button">
-                    <button class="btn btn-lg-red" :class="{'btn-disabled':disabled}" :disabled="disabled" @click="submitStep(type)">下一步</button>
+                    <button class="btn btn-lg-red" :class="{'btn-disabled':disabled}" :disabled="disabled" @click="submitStep(type)">Келесі</button>
                     <div class="tips">
-                        <a class="go-register" @click="tabClick('email')" v-if="curType == 'mobile_phone' && userinfo.is_email == 1">邮箱验证</a>
-                        <a class="go-register" @click="tabClick('mobile_phone')" v-if="curType == 'email' && userinfo.is_mobile_phone == 1">手机验证</a>
+                        <a class="go-register" @click="tabClick('email')" v-if="curType == 'mobile_phone' && userinfo.is_email == 1">E-mail растау</a>
+                        <a class="go-register" @click="tabClick('mobile_phone')" v-if="curType == 'email' && userinfo.is_mobile_phone == 1">Телефон растау</a>
                     </div>
                 </div>
             </template>
@@ -53,8 +53,8 @@
                     </div>
                 </div>
                 <div class="signup-button">
-                    <button class="btn btn-lg-red" :class="{'btn-disabled':disabled}" :disabled="disabled" @click="submitBtn">设置新密码</button>
-                    <div class="tip">为保障您账户安全，请您不要设置与邮箱密码相同的账户登录密码，谨防诈骗</div>
+                    <button class="btn btn-lg-red" :class="{'btn-disabled':disabled}" :disabled="disabled" @click="submitBtn">Жаңа пароль қою</button>
+                    <div class="tip">Аккаунт қауіпсіздігі үшін,пошта паролымен бірдей пароль қоймаңыз</div>
                 </div>
             </template>
         </div>
@@ -213,7 +213,7 @@ export default{
         submitStep(type){
             if(this.type == 0){
                 if(this.username == ''){
-                    Toast('用户名不能为空')
+                    Toast('Логинды енгізіңіз')
                     return false
                 }
 
@@ -237,7 +237,7 @@ export default{
                 })
             }else if(this.type == 1){
                 if(this.sms == ''){
-                    Toast('请填写验证码')
+                    Toast('Кодты енгізіңіз')
                     return false
                 }
                 if(this.curType == 'mobile_phone'){
@@ -267,7 +267,7 @@ export default{
         },
         submitBtn(){
             if(!(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,16}$/.test(this.password))){
-                Toast("请输入8-16位含大小写字母、数字组合");
+                Toast("8-16 орынды ләтін әріп және сан араластырып қойыңыз");
                 return
             }
 
@@ -276,7 +276,7 @@ export default{
                 new_password:this.password
             })).then(({data})=>{
                 if(data.status == 'success'){
-                    Toast('密码修改成功');
+                    Toast('Пароль сәтті өзгертілді');
                     this.$router.push({ name:'login' });
                 }else{
                     Toast(data.errors.message)

@@ -17,7 +17,7 @@
                 Key：
             </label>
             <div class="group-r">
-                <ec-input type="text" size="small" v-model="tenKey" placeholder="请输入腾讯地图key，空为初始值"></ec-input>
+                <ec-input type="text" size="small" v-model="tenKey" placeholder="Карта key-ін енгізіңіз,бос қатырылса бастапқы мәнді білдіреді"></ec-input>
             </div>
         </div>-->
         <div class="form-group" v-if="!bStore">

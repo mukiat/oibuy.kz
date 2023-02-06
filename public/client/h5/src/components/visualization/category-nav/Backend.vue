@@ -2,7 +2,7 @@
     <div class='b-category-nav'>
         <component-con :modules-index="modulesIndex" :component-name="componentName" :setting="setting">
            <div class="form-group">
-                <label class="group-l">是否滚动：</label>
+                <label class="group-l">Айналу：</label>
                 <radio-group v-model="styleSel" size="small">
                     <radio v-for="item in data.showStyle" :key="item.key" :label="item.key">{{ item.title }}</radio>
                 </radio-group>
@@ -23,7 +23,7 @@
                         size="small"
                         min="1"
                         v-model="number"
-                        placeholder="默认显示10条分类">
+                        placeholder="Әдепкісі 10 түрді көрсетеді">
                     </ec-input>
                 </div>
             </div>

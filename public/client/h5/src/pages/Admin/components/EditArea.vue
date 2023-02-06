@@ -139,7 +139,7 @@ export default {
             this.$store.dispatch('navHiddenTab')//拖拽放置结束影藏下拉框
 
             if(length > 0){
-                Message.error('此组件只能添加一个');
+                Message.error('Бұл бөлшек біреу ғана енгізіледі');
                 return 
             }
 

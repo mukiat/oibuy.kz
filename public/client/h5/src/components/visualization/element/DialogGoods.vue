@@ -13,7 +13,7 @@
                         }"
                         @click="tabSelectFn(index)">
                         {{ 
-                            item.title == '商品库' 
+                            item.title == 'Тауар қоры' 
                                 ? item.title 
                                 : `${item.title} (${selGoodNum})`
                         }}

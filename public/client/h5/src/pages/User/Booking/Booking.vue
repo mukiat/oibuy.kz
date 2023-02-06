@@ -1,23 +1,23 @@
 <template>
   <div class="user-booking">
   	<van-cell-group>
-	    <van-cell title="Haier/海尔 EG10014B39GU1 10公斤kg智能变频滚筒全自动洗衣机"></van-cell>
-	    <van-field type="text" label="订购数量" value="1"></van-field>
+	    <van-cell title="Haier EG10014B39GU1 10КГ Смарт кіржуғыш машинасы"></van-cell>
+	    <van-field type="text" label="Брон саны" value="1"></van-field>
 	    <van-cell>
 	    	<template solt="title">
-	    		<label class="t-remark">订购描述（50字）</label>
+	    		<label class="t-remark">Брон сипаты(50 әріп)</label>
 	    		<div class="text-area1 m-top04">
-						<textarea maxlength="50" name="desc" placeholder="选填"></textarea>
+						<textarea maxlength="50" name="desc" placeholder="еркін"></textarea>
 						<span>50</span>
 					</div>
 	    	</template>
 	    </van-cell>
-	    <van-field type="text" label="联系人" value="模板堂"></van-field>
-	    <van-field type="text" label="邮箱地址" value="123456789@qq.com"></van-field>
-	    <van-field type="text" label="联系电话" value="13855507894"></van-field>
+	    <van-field type="text" label="Аты-жөні" value="Паленше"></van-field>
+	    <van-field type="text" label="E-mail" value="123456789@mysal.com"></van-field>
+	    <van-field type="text" label="Телефон" value="7751234567"></van-field>
 	  </van-cell-group>
 	  <div class="filter-btn">
-	    <van-button type="primary" bottom-action>提交缺货登记</van-button>
+	    <van-button type="primary" bottom-action>Брон жолдау</van-button>
 	  </div>
   </div>
 </template>

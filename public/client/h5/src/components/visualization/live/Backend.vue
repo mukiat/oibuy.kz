@@ -44,9 +44,9 @@
             </template>
             <template v-else>
                 <div class="form-group">
-                    <label class="group-l">直播描述：</label>
+                    <label class="group-l">Сипаттау：</label>
                     <div class="group-r">
-                        <ec-input size="small" v-model="spikeDesc" placeholder="主播好物推荐"></ec-input>
+                        <ec-input size="small" v-model="spikeDesc" placeholder="Блогер ұсынысы"></ec-input>
                     </div>
                 </div>
             </template>

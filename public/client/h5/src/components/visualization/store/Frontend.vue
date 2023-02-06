@@ -18,7 +18,7 @@
         </template>
         <template v-else>
             <div class="floor-header-title relative">
-                <h1>店铺推荐</h1>
+                <h1>Ұсыныс</h1>
                 <span>{{spikeDesc}}</span>
                 <i class="iconfont icon-home-more"></i>
                 <router-link :to="{name:'integration',query:{type:1}}" class="absolute-link" v-if="authority == 'view'"></router-link>
@@ -114,7 +114,7 @@ export default {
             return this.getText({
                 dataNext: "allValue",
                 attrName: "spikeDesc",
-                defaultValue: '更多品质好店'
+                defaultValue: 'Басқа дүкендер'
             })
         },
         authority(){

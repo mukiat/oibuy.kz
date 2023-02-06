@@ -102,7 +102,7 @@ export default {
         this.isOver = data.length < this.size;
         this.list = [...this.list, ...data];
       } else {
-        Toast("获取数据失败!");
+        Toast("Деректі алу сәтсіз!");
       }
       this.loading = false;
       this.disabled = false;

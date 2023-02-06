@@ -60,7 +60,7 @@ export default {
             if(this.configData.currency_format){
                 return this.configData.currency_format.replace('%s', '');
             }else{
-                return '¥'
+                return '₸'
             }
         },
         mobile_kefu(){

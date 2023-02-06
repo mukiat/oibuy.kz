@@ -20,7 +20,7 @@ export default {
         {
             key: "2",
             type: "radio",
-            title: '新版样式'
+            title: 'Жаңасы'
         },
         ],
         picSize: [{

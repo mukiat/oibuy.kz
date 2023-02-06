@@ -45,7 +45,7 @@
 							</div>
 							<div class="item_footer" v-if="item.goods_attr">{{item.goods_attr}}</div>
 							<div class="item_body add_comment" v-if="item.add_comment.comment_id">
-								<div class="title">用户{{item.add_comment.add_time_humans}}追评</div>
+								<div class="title">Клент {{item.add_comment.add_time_humans}} жауабы</div>
 								<div class="comment_con">{{ item.add_comment.content }}</div>
 								<div class="imgs_scroll" v-if="item.add_comment.get_comment_img && item.add_comment.get_comment_img.length > 0">
 									<div class="com_img" :style="{height: `${windowWidth}px`}" v-for="(img, imgIndex) in item.add_comment.get_comment_img" :key="imgIndex" >

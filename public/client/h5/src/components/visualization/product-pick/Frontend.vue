@@ -82,18 +82,18 @@ export default {
         return {
             previewProlist: [
                 {
-                    title: '第一张图片',
+                    title: 'Бірінші',
                     sale: '0',
                     stock: '0',
-                    price: '¥238.00',
-                    marketPrice: '¥413.00'
+                    price: '23800₸',
+                    marketPrice: '41300₸'
                 },
                 {
-                    title: '第二张图片',
+                    title: 'Екінші',
                     sale: '0',
                     stock: '0',
-                    price: '¥38.00',
-                    marketPrice: '¥43.00'
+                    price: '3800₸',
+                    marketPrice: '4300₸'
                 }
             ],
             prolist: [],

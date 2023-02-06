@@ -1,7 +1,7 @@
 <template>
 	<div class="con bonus value_cart_content" v-waterfall-lower="loadMore" waterfall-disabled="disabled" waterfall-offset="300">
 		<header class="header_wrap">
-			<div class="use_price">可用余额{{currency}}<span>{{valueCartInfo.card_total || 0.00}}</span></div>
+			<div class="use_price">Теңгерім {{currency}}<span>{{valueCartInfo.card_total || 0.00}}</span></div>
 		</header>
 		<div class="cart_tabs">
 			<div :class="['tab_item', index == currTab ? 'active_tab' : '']" v-for="(item, index) in tabs" :key="index" @click="onClickTab(index)">
@@ -54,9 +54,9 @@ export default{
 			loading:true,
 			size:10,
 			currTab: 0,
-			currency:'￥',
-			tabs: ['可用卡', '不可用卡'],
-			loadmoreStatus: '加载中...',
+			currency:'₸',
+			tabs: ['Жарамды', 'Жарамсыз'],
+			loadmoreStatus: 'Жүктелуде...',
 			shopEmpty: false,
 			cartList: [],
 			cartPaginated: [],
@@ -112,7 +112,7 @@ export default{
 				this.$set(this.cartList, i, [...this.cartList[i], ...card_list]);
 				
 				this.shopEmpty = this.cartList[i].length == 0;
-				this.loadmoreStatus = card_list.length < this.size ? '没有更多了' : '加载中...';
+				this.loadmoreStatus = card_list.length < this.size ? 'Басқа жоқ' : 'Жүктелуде...';
 			};
 			
 			this.$nextTick(() => {
@@ -139,10 +139,10 @@ export default{
 				let i = this.currTab;
 				let isMore = this.cartPaginated[i];
 				if (isMore > 0) {
-					this.loadmoreStatus = '加载中...';
+					this.loadmoreStatus = 'Жүктелуде...';
 					this.valueCardLoad();
 				} else {
-					this.loadmoreStatus = '没有更多了';
+					this.loadmoreStatus = 'Басқа жоқ';
 				}
 			},200)
 		},

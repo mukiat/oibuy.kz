@@ -20,7 +20,7 @@ export default {
         {
             key: "2",
             type: "radio",
-            title: '新版样式',
+            title: 'Жаңа',
             picSizeKey: ["0"],
         }],
         picSize: [{
@@ -39,24 +39,24 @@ export default {
         pagination:[{
             key:"0",
             type:"radio",
-            title:'居左'
+            title:'Сол'
         },{
             key:"1",
             type:"radio",
-            title:'居中'
+            title:'Орта'
         },{
             key:"2",
             type:"radio",
-            title:'居右'
+            title:'Оңға'
         }],
         separateStyle:[{
             key:"0",
             type:"radio",
-            title:'默认'
+            title:'Әдепкі'
         },{
             key:"1",
             type:"radio",
-            title:'新版'
+            title:'Жаңа'
         }],
         allValue:{
             number:1

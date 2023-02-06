@@ -127,7 +127,7 @@ export default{
 	methods:{
 		userAddressDelete(value,is_checked){
 			if(is_checked == 1){
-				Toast('不可以删除默认收货地址');
+				Toast('Әдепкі мекен-жайды жоя алмайсыз');
 				return
 			}
 			

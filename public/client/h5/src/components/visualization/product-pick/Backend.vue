@@ -25,7 +25,7 @@
                 </radio-group>
             </div>
              <div class="form-group">
-                <label class="group-l">标签：</label>
+                <label class="group-l">Таңба：</label>
                 <checkbox-group v-model="tabSelList" size="small">
                     <checkbox 
                         v-for="item in aShowtabs" 
@@ -43,7 +43,7 @@
                             type="text" 
                             size="small"
                             v-model="item.text"
-                            placeholder="标题"
+                            placeholder="Тақырып"
                             @input="tabsInput($event,index,'text')">
                         </ec-input>
                     </div>
@@ -52,7 +52,7 @@
                             type="text" 
                             size="small"
                             v-model="item.desc"
-                            placeholder="描述"
+                            placeholder="Сипат"
                              @input="tabsInput($event,index,'desc')">
                         </ec-input>
                     </div>

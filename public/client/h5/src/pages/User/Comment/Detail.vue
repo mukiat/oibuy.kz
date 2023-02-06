@@ -4,7 +4,7 @@
 			<img class="img" :src="commentInfo.goods_thumb" v-if="commentInfo.goods_thumb">
 			<img class="img" src="../../../assets/img/no_image.jpg" v-else>
 			<div class="rate_box">
-				<p>商品评价</p>
+				<p>Бағалау</p>
 				<div class="rate" v-if="$route.params.type">
 					<i :class="['iconfont', 'icon-wujiaoxing', 'size_16', commentInfo.comment_rank >= rate ? 'color_red' : '']"
 						v-for="(rate, rIndex) in 5" :key="rIndex"></i>
@@ -28,7 +28,7 @@
 			<div class="input_wrap">
 				<textarea class="text_area" maxlength="500" v-model="textarea"
 					:placeholder="tips.placeholder"></textarea>
-				<div class="comment_length">已写<span>{{textareaLength}}</span>个字</div>
+				<div class="comment_length"><span>{{textareaLength}}</span> әріп жазылды</div>
 			</div>
 			<div class="add_img">
 				<div class="img_box" v-for="(item,index) in materialList" :key="index">
@@ -39,7 +39,7 @@
 					accept="image/jpg, image/jpeg, image/png, image/gif" multiple>
 					<div class="upload_content">
 						<i class="iconfont icon-jiahao"></i>
-						<p class="btn_text">添加图片</p>
+						<p class="btn_text">Фото жүктеу</p>
 					</div>
 				</van-uploader>
 			</div>
@@ -47,8 +47,8 @@
 
 		<div class="satisfaction_module" v-if="commentInfo.degree_count == 0 && commentInfo.ru_id > 0 && $route.params.type == 0">
 			<div class="header">
-				<span>满意度评价</span>
-				<span class="header_right">满意请给5颗星哦</span>
+				<span>Бағалау</span>
+				<span class="header_right">Ұнаса 5 жұлдыз беріңіз</span>
 			</div>
 			<div class="rate_list">
 				<div class="rate_item" v-for="(item, index) in satisfactionList" :key="index">
@@ -92,19 +92,19 @@
 				delivery: 0,
 				tagList: [],
 				satisfactionList: [{
-						title: '商品描述相符度',
+						title: 'Тауар',
 						rank: 0
 					},
 					{
-						title: '卖家服务态度',
+						title: 'Қызмет',
 						rank: 0
 					},
 					{
-						title: '物流发货速度',
+						title: 'Тасымал',
 						rank: 0
 					},
 					{
-						title: '配送人员态度',
+						title: 'Жеткізуші',
 						rank: 0
 					}
 				]
@@ -142,8 +142,8 @@
 			},
 			tips() {
 				return {
-					title: this.$route.params.type ? '追加一下你的使用体验吧' : '分享你的使用体验吧',
-					placeholder: this.$route.params.type ? '对评价进行补充，更客观，更全面~（500字）' : '商品质量如何？快写下你的评价，分享给大家吧！（500字）'
+					title: this.$route.params.type ? 'Қолданғаннан кейінгі әсеріңізді жазыңыз' : 'Әсеріңізбен бөлісіңіз',
+					placeholder: this.$route.params.type ? 'Бағалауға толықтырулар енгізіңіз,әділ және толықырақ~（500 әріп）' : 'Тауар сапасы қалай екен?бағаңызды көпшілікпен бөлісіңіз!（500 әріп）'
 				}
 			}
 		},

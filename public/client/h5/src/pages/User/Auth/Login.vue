@@ -53,23 +53,23 @@
 				</template>
 				<div class="privacy">
 	            	<div class="checkbox">
-	            		<van-checkbox v-model="checked">我已阅读并同意</van-checkbox>
-	            		<span class="privacy-link" @click="privacyShow = true">《{{ privacyActicleTitle ? privacyActicleTitle : '隐私协议' }}》</span>
+	            		<van-checkbox v-model="checked">Оқыдым және келісем</van-checkbox>
+	            		<span class="privacy-link" @click="privacyShow = true">《{{ privacyActicleTitle ? privacyActicleTitle : 'Құпия шарты' }}》</span>
 					</div>
 	            </div>
 				<div class="signup-button">
 					<button class="btn btn-lg-red" :class="{'btn-disabled':disabled}" :disabled="disabled" @click="submitBtn">
-						{{ loginMode ? '账号密码登录' : '短信快捷登录' }}
+						{{ loginMode ? 'Логин арқылы кіру' : 'СМС арқылы кіру' }}
 					</button>
 					<div class="btn btn-bor-red" v-if="shop_reg_closed == 0" @click="loginMode = !loginMode">
-						{{ loginMode ? '短信快捷登录' : '账号密码登录' }}
+						{{ loginMode ? 'СМС арқылы кіру' : 'Логин арқылы кіру' }}
 					</div>
-					<div class="tips">还没有账号?<router-link :to="{name:'register'}" class="go-register" v-if="shop_reg_closed == 0">立即去注册</router-link></div>
+					<div class="tips">Аккаунттыңыз жоқ ба?<router-link :to="{name:'register'}" class="go-register" v-if="shop_reg_closed == 0">Тез тіркеліңіз</router-link></div>
 				</div>
 			</div>
 			<div class="quick-login">
 				<template v-if="oauthList && oauthList.length > 0 && oauthHidden && shop_reg_closed == 0">
-					<p><span>其他登录方式</span></p>
+					<p><span>Басқа кіру жолдары</span></p>
 					<div class="quick-login-items">
 		                <a href="javascript:;" @click="thirdPartyLink(item.type)" v-for="(item,index) in oauthList" :key="index"><img :src="thirdPartyImg[index]" class="img">
 		                </a>
@@ -83,7 +83,7 @@
 
         <van-popup class="show-popup-common show-popup-privacy" v-model="privacyShow" position="bottom">
         	<div class="title">
-				<strong>隐私政策</strong>
+				<strong>Құпия саясаты</strong>
 				<i class="iconfont icon-close" @click="privacyShow = false"></i>
 			</div>
 			<div class="content">
@@ -137,7 +137,7 @@ export default{
 			privacyActicleContent:'',
 			privacyActicleTitle:'',
 			privacyDisabled:true,
-			privacy_button_text:'我已阅读(6s)',
+			privacy_button_text:'Оқыдым(6s)',
 			timer:null,
 			docmHeight2:document.documentElement.clientHeight,
 			configData:null,
@@ -201,15 +201,15 @@ export default{
         		that.timer = setInterval(()=>{
 		            second --
 		            if(second){
-		            	that.privacy_button_text = '我已阅读' + '('+ second +'s)'
+		            	that.privacy_button_text = 'Оқыдым' + '('+ second +'s)'
 		            }else{
-		            	that.privacy_button_text = '我已阅读'
+		            	that.privacy_button_text = 'Оқыдым'
 						that.privacyDisabled = false
 						clearInterval(that.timer)
 		            }
 				},1000)
         	}else{
-        		that.privacy_button_text = that.checked ? '我已阅读' : '我已阅读(6s)'
+        		that.privacy_button_text = that.checked ? 'Оқыдым' : 'Оқыдым(6s)'
         		clearInterval(that.timer)
         	}
         },
@@ -298,7 +298,7 @@ export default{
 	        	}
 
 	        	if(!this.checked){
-	        		Toast("请勾选并同意协议条款")
+	        		Toast("Шартты таңдап келісім беріңіз")
 		        	return false
 	        	}
 
@@ -334,7 +334,7 @@ export default{
 				}
 
 				if(!this.checked){
-	        		Toast("请勾选并同意协议条款")
+	        		Toast("Шартты таңдап келісім беріңіз")
 		        	return false
 	        	}
 
@@ -374,7 +374,7 @@ export default{
 	        		this.privacyActicleContent = data.content;
 	        		this.privacyActicleTitle = data.title;	
 	        	}else{
-	        		Toast('未设置隐私协议');
+	        		Toast('Құпия шарты қойылмаған');
 	        	}
         	}
         },

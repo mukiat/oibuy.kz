@@ -35,7 +35,7 @@
   		</router-link>
 		<router-link :to="{name:'integra',query:{type:account.pay_points}}">
 			<div class="dis-box padding-all my-bottom">
-				<h3 class="my-u-title-size box-flex"><i class="iconfont icon-jinqian"></i>我的积分</h3>
+				<h3 class="my-u-title-size box-flex"><i class="iconfont icon-jinqian"></i>Бонус</h3>
 				<span class="user-more"><i class="iconfont icon-more"></i></span>
 			</div>
 		</router-link>

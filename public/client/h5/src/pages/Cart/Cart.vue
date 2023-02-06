@@ -503,7 +503,7 @@ export default {
       checkGift:'',
       checkGiftArr:[],
       giftDisabled:false,
-	  currency: '￥',
+	  currency: '₸',
       favourableShow:false,
       favourableList:[],
       checkFavourable:'',

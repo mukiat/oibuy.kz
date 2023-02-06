@@ -2,7 +2,7 @@
 	<div class="container container-register" :style="{'height': docmHeight2 + 'px'}">
 		<div class="login-head"><i class="iconfont icon-back" @click="onClickBack"></i></div>
 		<div class="login-form">
-			<div class="title">注册新用户</div>
+			<div class="title">Тіркелу</div>
 			<div class="input-box">
 				<div class="input-box__left">
 					<i class="iconfont icon-shouji1"></i>
@@ -40,18 +40,18 @@
 			</div>
 			<div class="privacy">
             	<div class="checkbox">
-            		<van-checkbox v-model="checked">我已阅读并同意</van-checkbox>
-            		<span class="privacy-link" @click="privacyShow = true">《{{ privacyActicleTitle ? privacyActicleTitle : '隐私协议' }}》</span>
+            		<van-checkbox v-model="checked">Оқыдым және келісем</van-checkbox>
+            		<span class="privacy-link" @click="privacyShow = true">《{{ privacyActicleTitle ? privacyActicleTitle : 'Құпия шарты' }}》</span>
 				</div>
             </div>
 			<div class="signup-button">
-				<button class="btn btn-lg-red" :class="{'btn-disabled':disabled}" :disabled="disabled" @click="submitBtn">新用户注册</button>
+				<button class="btn btn-lg-red" :class="{'btn-disabled':disabled}" :disabled="disabled" @click="submitBtn">Тіркелу</button>
 			</div>
 		</div>
 
 		<van-popup class="show-popup-common show-popup-privacy" v-model="privacyShow" position="bottom">
         	<div class="title">
-				<strong>隐私政策</strong>
+				<strong>Құпия саясаты</strong>
 				<i class="iconfont icon-close" @click="privacyShow = false"></i>
 			</div>
 			<div class="content">
@@ -97,7 +97,7 @@ export default{
 			privacyActicleContent:'',
 			privacyActicleTitle:'',
 			privacyDisabled:true,
-			privacy_button_text:'我已阅读(6s)',
+			privacy_button_text:'Оқыдым(6s)',
 			timer:null,
 			docmHeight2:document.documentElement.clientHeight,
 		}
@@ -133,15 +133,15 @@ export default{
         		that.timer = setInterval(()=>{
 		            second --
 		            if(second){
-		            	that.privacy_button_text = '我已阅读' + '('+ second +'s)'
+		            	that.privacy_button_text = 'Оқыдым' + '('+ second +'s)'
 		            }else{
-		            	that.privacy_button_text = '我已阅读'
+		            	that.privacy_button_text = 'Оқыдым'
 						that.privacyDisabled = false
 						clearInterval(that.timer)
 		            }
 				},1000)
         	}else{
-        		that.privacy_button_text = that.checked ? '我已阅读' : '我已阅读(6s)'
+        		that.privacy_button_text = that.checked ? 'Оқыдым' : 'Оқыдым(6s)'
         		clearInterval(that.timer)
         	}
         },
@@ -177,7 +177,7 @@ export default{
 	        		this.privacyActicleContent = data.content;
 	        		this.privacyActicleTitle = data.title;	
 	        	}else{
-	        		Toast('未设置隐私协议');
+	        		Toast('Құпия шарт қойылмаған');
 	        	}
         	}
         },

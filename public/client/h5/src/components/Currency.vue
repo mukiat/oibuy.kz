@@ -26,7 +26,7 @@
       },
       label: {
         type: String,
-        default: '￥'
+        default: '₸'
       },
       isGray: {
         type: Boolean,

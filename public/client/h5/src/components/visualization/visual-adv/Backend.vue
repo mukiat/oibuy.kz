@@ -8,15 +8,15 @@
                 </radio-group>
             </div>
             <div class="form-group">
-                <label class="group-l">背景图片：</label>
+                <label class="group-l">Фон фото：</label>
                 <div class="group-r">
                     <edit-img :image="data.allValue.titleImg" :modules-index="modulesIndex" all-values-type="titleImg"></edit-img>
                 </div>
             </div>
             <div class="form-group">
-                <label class="group-l">图片链接：</label>
+                <label class="group-l">Сілтеме：</label>
                 <div class="group-r">
-                    <ec-input size="small" v-model="sCustomUrl" placeholder="填写背景图片跳转链接"></ec-input>
+                    <ec-input size="small" v-model="sCustomUrl" placeholder="Өтіп баратын сілтемесін енгізіңіз"></ec-input>
                 </div>
             </div>
             <div class="form-group" v-if="device == 'app'">

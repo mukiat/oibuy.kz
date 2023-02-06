@@ -50,7 +50,7 @@
                 <button type="button" class="btn btn-submit border-radius-top05" @click="submitBtn">{{$t('lang.next_step')}}</button>
               </template>
               <template v-else>
-                <button type="button" class="btn btn-submit border-radius-top05 btn-disabled">{{ userInfo.mobile ? $t('lang.next_step') : '尚未绑定手机号，无法修改' }}</button>
+                <button type="button" class="btn btn-submit border-radius-top05 btn-disabled">{{ userInfo.mobile ? $t('lang.next_step') : 'Тел нөмір байланбаған,өзгерте алмайсыз.' }}</button>
               </template>
             </ec-form>
         </div>
@@ -97,7 +97,7 @@ export default {
       return this.userInfo.mobile
     },
     mobile_placeholder(){
-      return this.userInfo.mobile ? this.$t('lang.enter_mobile') : '尚未绑定手机号'
+      return this.userInfo.mobile ? this.$t('lang.enter_mobile') : 'Телефон байланбаған'
     },
     captcha(){
       return this.$store.state.imgVerify.captcha

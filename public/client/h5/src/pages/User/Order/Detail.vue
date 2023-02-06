@@ -11,7 +11,7 @@
 								<p class="f-04 col-7 m-top02">{{$t('lang.service_call')}}：{{ orderDetail.offline_store.stores_tel }}</p>
 								<p class="f-04 col-7 m-top02" v-if="orderDetail.take_time">{{$t('lang.store_order_time')}}：{{ orderDetail.take_time }}</p>
 								<p class="f-04 col-7 m-top02">{{$t('lang.business_hours')}}：{{ orderDetail.offline_store.stores_opening_hours }}</p>
-								<p class="f-04 col-7 m-top02">门店地址：{{ orderDetail.offline_store.stores_address }}</p>
+								<p class="f-04 col-7 m-top02">Бутик адресі：{{ orderDetail.offline_store.stores_address }}</p>
 							</div>
 						</template>
 						<template v-else>
@@ -227,9 +227,9 @@
 								</template>
 								<template v-if="orderDetail.invoice_type == 2">
 		                            <div class="dis-box">
-		                                <label class="t-remark g-t-temark">发票类型：电子普通发票</label>
+		                                <label class="t-remark g-t-temark">Фактура түрі：Электронды</label>
 		                                <div class="box-flex text-right f-04">
-		                                    <a href="javascript:void(0)"  @click="invoiceDetail(orderDetail.order_id)"><em class="color-red"> 查看发票详情</em></a>
+		                                    <a href="javascript:void(0)"  @click="invoiceDetail(orderDetail.order_id)"><em class="color-red"> Анығын көру</em></a>
 		                                </div>
 		                            </div>
 		                            <p>{{$t('lang.label_invoice_company')}}：{{ orderDetail.inv_payee }}</p>
@@ -368,7 +368,7 @@
 			<van-cell-group class="m-top10" v-if="orderDetail.delay === 1">
 				<van-cell class="van-cell-title b-min b-min-b">
 					<div slot="title" class="lh28">{{$t('lang.delay_in_receiving')}}</div>
-					<template v-if="orderDetail.delay_type == '申请'">
+					<template v-if="orderDetail.delay_type == 'Өтініш'">
 						<van-button size="small" type="primary" @click="delayOrder(orderDetail.order_id)">{{ orderDetail.delay_type }}</van-button>
 					</template>
 					<template v-else>
@@ -472,7 +472,7 @@
 		<!--运单号-->
 		<van-popup class="show-popup-bottom" v-model="deliveries" position="bottom">
 			<div class="goods-show-title padding-all">
-				<h3 class="fl">选择快递跟踪</h3>
+				<h3 class="fl">Тасымал ізіне түсу</h3>
 				<i class="iconfont icon-close fr" @click="deliveries = false"></i>
 			</div>
 			<div class="s-g-list-con">
@@ -481,7 +481,7 @@
 						<li class="ect-select" v-for="(item,index) in deliveriesList" :key="index" :class="{'active':delivery_sn == item.delivery_sn}"
 						 @click="delivery_select(item.delivery_sn)">
 							<label class="dis-box">
-								<span class="box-flex">{{ item.shipping_name }}<span class="sn">(运单号：{{item.invoice_no}})</span></span>
+								<span class="box-flex">{{ item.shipping_name }}<span class="sn">(Трек-код：{{item.invoice_no}})</span></span>
 								<i class="iconfont icon-gou"></i>
 							</label>
 						</li>
@@ -519,7 +519,7 @@
 			return {
 				loading: true,
 				length: 0,
-				currency: '¥',
+				currency: '₸',
 				buttonText: this.$t('lang.immediate_payment'),
 				listPackageShow: false,
 				showPopup: false,

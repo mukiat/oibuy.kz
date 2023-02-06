@@ -18,7 +18,7 @@
 		<van-popup class="show-popup-right show-popup-filter" v-model="isPopupVisible" position="right">
 			<div class="top">
 				<div class="section">
-					<div class="title"><span>价格区间</span></div>
+					<div class="title"><span>Баға аралығы</span></div>
 					<div class="section-warp price-filter">
 						<div class="input">
 							<input type="tel" v-model="filter.min" :placeholder="$t('lang.minimum_price')" />
@@ -36,7 +36,7 @@
 				</div>
 				<div class="section" v-if="filter.brandResult.length > 0">
 					<div class="title">
-						<span>品牌</span>
+						<span>Бренд</span>
 						<div class="right-icon" @click="isPopupBrand = !isPopupBrand"><i class="iconfont" :class="[isPopupBrand ? 'icon-less' : 'icon-moreunfold']" v-if="filter.brandResult.length > 9"></i></div>
 					</div>
 					<div class="section-warp select-tabs">

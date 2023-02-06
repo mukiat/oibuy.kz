@@ -1161,7 +1161,7 @@
                     freeMode: true
                 },
                 couponShow: false,
-				currency:'￥',
+				currency:'₸',
                 promotionShow:false,
                 scrollState: false,
                 conpouLoading: true,

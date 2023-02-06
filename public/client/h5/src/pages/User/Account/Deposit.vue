@@ -53,7 +53,7 @@ import CommonNav from '@/components/CommonNav'
 export default{
 	data(){
 		return {
-			currency:'￥',
+			currency:'₸',
 			show:false,
 			amount:'',
 			user_note:'',
@@ -114,8 +114,8 @@ export default{
 				surplus_type:0,
 			}
 
-			if(this.amount > 20000){
-				Toast('最大充值金额20000')
+			if(this.amount > 1000000){
+				Toast('Максимум толтыру шегі 1 млн теңге')
 				return false;
 			}
 

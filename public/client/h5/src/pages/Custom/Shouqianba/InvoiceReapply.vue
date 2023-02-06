@@ -3,36 +3,36 @@
         <div class="flow-checkout">
             <section class="flow-checkout-item" v-if="order">
                 <van-cell-group class="van-cell-noleft">
-                    <van-cell title="换开发票" class="van-cell-title b-min b-min-b"></van-cell>
-                    <van-cell title="订单号：" v-model="order.order_sn"></van-cell>
-                    <van-cell title="发票类型：" v-model="inv_type"></van-cell>
-                    <van-cell title="发票内容：" v-model="inv_content"></van-cell>
-                    <van-cell title="发票抬头：">
+                    <van-cell title="Чек алмасу" class="van-cell-title b-min b-min-b"></van-cell>
+                    <van-cell title="Заказ：" v-model="order.order_sn"></van-cell>
+                    <van-cell title="Типі：" v-model="inv_type"></van-cell>
+                    <van-cell title="Мазмұны：" v-model="inv_content"></van-cell>
+                    <van-cell title="Тақырып：">
                         <van-radio-group class="radio-list" v-model="inv_company" :disabled="radio_status">
-                            <van-radio name="0" class="radio-item">个人</van-radio>
-                            <van-radio name="1" class="radio-item">单位</van-radio>
+                            <van-radio name="0" class="radio-item">Жеке</van-radio>
+                            <van-radio name="1" class="radio-item">Заңды</van-radio>
                         </van-radio-group>
                     </van-cell>
-                    <!--<van-cell title="公司名称：" v-model="inv_name" v-if="edit_status == 1"></van-cell>-->
-                    <van-cell title="公司名称：" v-if="inv_company == 1">
-                        <van-field v-model="inv_name" placeholder="请填写公司名称" class="van-cell-ptb0"/>
+                    <!--<van-cell title="Компания：" v-model="inv_name" v-if="edit_status == 1"></van-cell>-->
+                    <van-cell title="Компания：" v-if="inv_company == 1">
+                        <van-field v-model="inv_name" placeholder="Компания атын енгізіңіз" class="van-cell-ptb0"/>
                     </van-cell>
-                    <van-cell title="纳税人识别号：" v-if="inv_company == 1">
-                        <van-field v-model="inv_tax_sn" placeholder="请填写税号" class="van-cell-ptb0"/>
+                    <van-cell title="БСН：" v-if="inv_company == 1">
+                        <van-field v-model="inv_tax_sn" placeholder="БСН енгізіңіз" class="van-cell-ptb0"/>
                     </van-cell>
-                    <van-cell title="手机：">
-                        <van-field v-model="mobile" placeholder="请填写手机号码" class="van-cell-ptb0"/>
+                    <van-cell title="Телефон：">
+                        <van-field v-model="mobile" placeholder="Телефон нөмір енгізіңіз" class="van-cell-ptb0"/>
                     </van-cell>
-                    <van-cell title="邮箱：">
-                        <van-field v-model="email" placeholder="请填写邮箱" class="van-cell-ptb0"/>
+                    <van-cell title="E-mail：">
+                        <van-field v-model="email" placeholder="Эл.пошта енгізіңіз" class="van-cell-ptb0"/>
                     </van-cell>
                 </van-cell-group>
             </section>
             <section>
                 <div class="van-submit-bar van-order-submit-bar">
                     <div class="van-submit-bar__bar">
-                        <van-goods-action-big-btn text="已申请" v-if="apply_status >= 0"/>
-                        <van-goods-action-big-btn text="提交" primary @click="onSubmit" v-else/>
+                        <van-goods-action-big-btn text="Жолданған" v-if="apply_status >= 0"/>
+                        <van-goods-action-big-btn text="Жолдау" primary @click="onSubmit" v-else/>
                     </div>
                 </div>
             </section>
@@ -59,9 +59,9 @@
     export default{
         data(){
             return {
-                inv_type: '电子普通发票',
+                inv_type: 'Эл.фактура',
                 inv_tid: '',
-                inv_content: '商品明细',
+                inv_content: 'Деталы',
                 inv_company: 0,
                 inv_tax_sn: '',
                 inv_name: '',
@@ -115,7 +115,7 @@
                 this.$store.dispatch('setInvoiceReapply', {
                     order_id: this.order_id,
                     business_type: this.inv_company,
-                    payer_name: this.inv_company == 1 ? this.inv_name : '个人',
+                    payer_name: this.inv_company == 1 ? this.inv_name : 'Жеке',
                     payer_register_no: this.inv_tax_sn,
                     mobile: this.mobile,
                     email: this.email

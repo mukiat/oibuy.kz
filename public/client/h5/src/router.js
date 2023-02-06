@@ -1514,7 +1514,7 @@ const router = new Router({
         	name: 'invoiceDetail',
         	component: resolve => require(['@/pages/Custom/Shouqianba/InvoiceDetail'], resolve),
         	meta: {
-        		title: '查看电子发票',
+        		title: 'Фактураны көру',
         		requireAuth: true
         	}
         },
@@ -1523,7 +1523,7 @@ const router = new Router({
         	name: 'invoiceReapply',
         	component: resolve => require(['@/pages/Custom/Shouqianba/InvoiceReapply'], resolve),
         	meta: {
-        		title: '补开发票',
+        		title: 'Қайта беру',
         		requireAuth: true
         	}
         },

@@ -1,7 +1,7 @@
 import i18n from '@/locales'
 export default {
     module: "count-down",
-    componentName: "秒杀活动",
+    componentName: "Seckill",
     suggest: "",
     setting: "0",
     isShow: true,
@@ -13,11 +13,11 @@ export default {
         }, {
             key: "1",
             type: "radio",
-            title: "图文",
+            title: "Сурет",
         }, {
             key: "2",
             type: "radio",
-            title: "新版",
+            title: "Жаңа",
         }],
         allValue:{
             number:10

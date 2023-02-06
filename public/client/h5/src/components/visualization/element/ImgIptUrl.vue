@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="form-group" v-if="bgColor">
-                    <label class="group-l">背景：</label>
+                    <label class="group-l">Фон：</label>
                     <div class="group-r">
                         <color-input v-model="bgColorValue" :placeholder="$t('lang.bgColor2_placeholder')"></color-input>
                     </div>

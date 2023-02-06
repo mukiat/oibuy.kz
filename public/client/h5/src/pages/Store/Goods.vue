@@ -14,7 +14,7 @@
 					<li :class="{'active':store_id == item.id, 'disabled': item.is_stocks == 0}" v-for="(item,index) in storeContent" :key="index" @click="storeClick(item.id,item.is_stocks)" v-if="item.is_stocks > 0">
 						<div class="flow-have-adr padding-all">
 							<div class="f-h-adr-title">
-								<label>{{ item.stores_name }}<em>距您{{item.distance_format.value}}{{item.distance_format.unit}}</em></label>
+								<label>{{ item.stores_name }}<em>Сізден {{item.distance_format.value}}{{item.distance_format.unit}}</em></label>
 								<span><a href="javascript:;" @click="locationMap(item)"><i class="iconfont icon-location"></i>{{$t('lang.view_route')}}</a></span>
 							</div>
 							<p class="f-h-adr-con t-remark m-top06 store-address-cont">[{{ item.address }} {{ item.stores_address }}]</p>

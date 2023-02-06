@@ -2,7 +2,7 @@
     <div class='b-store'>
         <component-con :modules-index="modulesIndex" :component-name="componentName" :setting="setting">
             <div class="form-group">
-                <label class="group-l">显示样式</label>
+                <label class="group-l">Стилі</label>
                 <radio-group v-model="styleSel" size="small">
                     <radio v-for="item in data.showStyle" :key="item.key" :label="item.key">{{ item.title }}</radio>
                 </radio-group>
@@ -18,9 +18,9 @@
             </div>
             <template v-if="styleSel == 1">
                 <div class="form-group">
-                    <label class="group-l">店铺描述：</label>
+                    <label class="group-l">Сипаттау：</label>
                     <div class="group-r">
-                        <ec-input size="small" v-model="spikeDesc" placeholder="更多品质好店"></ec-input>
+                        <ec-input size="small" v-model="spikeDesc" placeholder="Басқа дүкендер"></ec-input>
                     </div>
                 </div>
                 <img-ipt-url v-for="(item,index) in data.list" :key="index" :info="item" :modules-index="modulesIndex" :list-index="index" :b-edit-img="true" @setInfoValue="updateText">

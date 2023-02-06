@@ -17,7 +17,7 @@
 							<!--会员码-->
 							<div class="user_qrcode" @click="onUserQrcode" v-if="data">
 								<i class="iconfont icon-erweima"></i>
-								<span>会员码</span>
+								<span>QR-Код</span>
 							</div>
 						</div>
 						<div class="growth">
@@ -276,30 +276,30 @@
 					<div class="name">{{ data.name !='' ? data.name : data.username }}</div>
 					<div class="rank">{{ data.user_rank }}</div>
 				</div>
-				<span class="close" @click="closeUserQrcode">关闭</span>
+				<span class="close" @click="closeUserQrcode">Х</span>
 			</div>
 			<div class="content">
 				<template v-if="data.mobile">
-					<div class="ms">请向营业员出示会员码进行优惠结算及付款</div>
+					<div class="ms">Сатушыға QR-кодты көрсетіп жеңілдік алып төлем жасаңыз</div>
 					<div class="qrcode" ref="qrCodeUrl"></div>
 					<div class="total">
 						<div class="total-item">
-							<div class="text">积分</div>
+							<div class="text">Бонус</div>
 							<div class="number">{{ data.drp_shop == 0 && data.user_rank_progress ? data.user_rank_progress.progress_format : data.rank_points }}</div>
 						</div>
 						<div class="total-item">
-							<div class="text">余额</div>
+							<div class="text">Теңгерім</div>
 							<div class="number">{{ data.user_money }}</div>
 						</div>
 						<div class="total-item">
-							<div class="text">红包</div>
+							<div class="text">Конверт</div>
 							<div class="number">{{ data.bonus }}</div>
 						</div>
 					</div>
 				</template>
 				<div class="not-mobile" v-else>
-					<p>会员码功能需绑定手机号方可使用</p>
-					<button class="button" @click="bindphoneHref">去绑定</button>
+					<p>QR-кодты қолдану үшін телефон нөмірін растау керек</p>
+					<button class="button" @click="bindphoneHref">Растау</button>
 				</div>
 			</div>
 		</van-popup>

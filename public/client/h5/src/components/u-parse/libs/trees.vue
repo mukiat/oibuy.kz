@@ -240,7 +240,7 @@
 								data: attrs.href,
 								success: () =>
 									uni.showToast({
-										title: '链接已复制'
+										title: 'Сілтеме көшірілді'
 									})
 							})
 							// #endif

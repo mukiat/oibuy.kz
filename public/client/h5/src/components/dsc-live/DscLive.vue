@@ -6,13 +6,13 @@
 				<view class="live_item_bgc"></view>
 				<view class="status_views flex_box ai_center">
 					<view :class="['live_status', 'size_20', 'color_fff', liveStatus(index).class]"><text :class="['iconfont', liveStatus(index).icon, 'size_20', 'color_fff']"></text>{{liveStatus(index).text}}</view>
-					<text class="views_number size_20 color_fff">8890人观看</text>
+					<text class="views_number size_20 color_fff">8890 адам</text>
 				</view>
 				<view class="live_info">
 					<image class="live_logo" src="https://x.dscmall.cn/storage/images/201703/thumb_img/0_thumb_G_1490169030833.jpg"></image>
-					<text class="size_20 color_fe live_user">宝格丽</text>
+					<text class="size_20 color_fe live_user">Bvlgari</text>
 					<view class="live_explain">
-						<text class="size_34 text_2 color_fff">夏日限定！全网最优好物疯狂来袭夏日限定！全网最优好物疯狂来袭</text>
+						<text class="size_34 text_2 color_fff">Наурыз мейрамына ең арзан жеңілдіктер</text>
 					</view>
 				</view>
 			</view>
@@ -35,15 +35,15 @@
 				if (status == 0) {
 					live_status.class = 'advance_notice';
 					live_status.icon = 'icon-find-live-time';
-					live_status.text = '预告';
+					live_status.text = 'Трейлер';
 				} else if (status == 1) {
 					live_status.class = 'live_ing';
 					live_status.icon = 'icon-home-live-ing';
-					live_status.text = '直播中';
+					live_status.text = 'LIVE';
 				} else {
 					live_status.class = 'playback';
 					live_status.icon = 'icon-home-live-back';
-					live_status.text = '回放';
+					live_status.text = 'Қайта';
 				}
 				return live_status
 			}

@@ -1,7 +1,7 @@
 import i18n from '@/locales'
 export default {
     module: "visual-adv",
-    componentName: '图片广告',
+    componentName: 'Фото',
     suggest: "",
     setting: "0",
     isShow: true, //控制是否显示

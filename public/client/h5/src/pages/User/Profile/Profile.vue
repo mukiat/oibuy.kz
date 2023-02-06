@@ -251,7 +251,7 @@ export default{
       this.imgPreview(file.file);
     },
     updataAvatar(){
-    	Toast.loading({ message:'上传中...',duration:0 });
+    	Toast.loading({ message:'Жүктеуде...',duration:0 });
     	this.$store.dispatch('setMaterial',{
         file:{
         	content:this.avatarUploadImage

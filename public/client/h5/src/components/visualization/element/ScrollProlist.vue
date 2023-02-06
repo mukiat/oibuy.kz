@@ -34,7 +34,7 @@
                 </div>
                 <h4 v-if="bTitle" class="twolist-hidden">{{ item.title || item.goods_name }}</h4>
                 <currency-price :price="item.shop_price" style="margin-top: 5px;"></currency-price>
-                <span class="rebate-price">{{item.rebate_price && item.rebate_price !== '0' ? '返:' + item.rebate_price : ''}}</span>
+                <span class="rebate-price">{{item.rebate_price && item.rebate_price !== '0' ? 'Қайту:' + item.rebate_price : ''}}</span>
                 <currency-price :price="item.market_price" :del="true" style="margin-top: 2px;"></currency-price>
             </swiper-slide>
         </template>

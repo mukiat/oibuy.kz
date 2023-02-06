@@ -54,7 +54,7 @@
 					<div class="flow-done-con" v-if="doneinfo.pay_code == 'bank'">
 						<i class="iconfont icon-hookring2"></i>
 						<p class="flow-done-title">
-							订单提交成功
+							Заказ сәтті жолданды
 						</p>
 					</div>
 					<div class="flow-done-con" v-else>
@@ -72,11 +72,11 @@
 							<span class="box-flex t-goods1 text-right">{{ order_sn }}</span>
 						</section>
 						<section class="dis-box dis-b">
-							<label class="t-remark g-t-temark">应付金额</label>
+							<label class="t-remark g-t-temark">Төлейтін сома</label>
 							<span class="box-flex t-goods1 text-right red">{{ doneinfo.order_amount_format }}</span>
 						</section>
 						<section class="dis-box dis-b">
-							<label class="t-remark g-t-temark">支付方式</label>
+							<label class="t-remark g-t-temark">Төлем түрі</label>
 							<span class="box-flex t-goods1 text-right red">{{ doneinfo.pay_name }}</span>
 						</section>
 						<section class="dis-box dis-b" v-for="(item,index) in doneinfo.pay_config" :key="index">

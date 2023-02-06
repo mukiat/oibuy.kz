@@ -2,9 +2,9 @@
     <div class='b-category-nav'>
         <component-con :modules-index="modulesIndex" :component-name="componentName" :setting="setting">
             <div class="form-group">
-                <label class="group-l">拼团描述：</label>
+                <label class="group-l">Сипаттау：</label>
                 <div class="group-r">
-                    <ec-input size="small" v-model="spikeDesc" placeholder="众多精美商品等你拼团"></ec-input>
+                    <ec-input size="small" v-model="spikeDesc" placeholder="Үздік тауарларды бірлесіп арзанға алыңыз"></ec-input>
                 </div>
             </div>
             <div class="form-group">

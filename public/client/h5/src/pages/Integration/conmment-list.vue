@@ -164,7 +164,7 @@ export default {
     return {
       detailData: {},
       commentList: [],
-      mapUser: ["", "管理员", "商家"],
+      mapUser: ["", "Админ", "Сатушы"],
       swipeIndex: 1,
 	  isZhanKai: true,
 	  disabled: true,

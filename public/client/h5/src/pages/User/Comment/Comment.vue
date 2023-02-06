@@ -2,8 +2,8 @@
   <div class="user-evaluation comment_content" v-waterfall-lower="loadMore" waterfall-disabled="disabled" waterfall-offset="300">
     <div class="product-list">
     	<div class="tabs">
-    		<div :class="['tab_item', activeTab == 0 ? 'active_tab' : '']" @click="switchTab(0)">待评价<span class="await_count">{{ signNum && activeTab == 0 ? ' · ' + signNum : '' }}</span></div>
-    		<div :class="['tab_item', activeTab == 1 ? 'active_tab' : '']" @click="switchTab(1)">已评价{{showEvaluate ? '/追评' : ''}}</div>
+    		<div :class="['tab_item', activeTab == 0 ? 'active_tab' : '']" @click="switchTab(0)">Бағалау<span class="await_count">{{ signNum && activeTab == 0 ? ' · ' + signNum : '' }}</span></div>
+    		<div :class="['tab_item', activeTab == 1 ? 'active_tab' : '']" @click="switchTab(1)">Бағаланды {{showEvaluate ? '/Жауап' : ''}}</div>
     	</div>
     	<template v-if="activeTab == 0">
     		<div :class="['product_wrap', index > 0 ? 'u-border-top' : '']" v-for="(item,index) in commentList" :key="index" @click="$router.push({ name: 'goods', params: { id: item.goods_id }})">
@@ -14,7 +14,7 @@
     				<div class="goods_name">
     					<p class="text_2">{{ item.goods_name }}</p>
     					<div class="btns" v-if="item.can_evaluate">
-    						<div class="evaluate_btn" @click.stop="$router.push({name:'commentDetail',params:{id:item.rec_id, type: 0}})">评价</div>
+    						<div class="evaluate_btn" @click.stop="$router.push({name:'commentDetail',params:{id:item.rec_id, type: 0}})">Бағалау</div>
     					</div>
     				</div>
     			</div>
@@ -33,7 +33,7 @@
     					<p class="text_1">{{ item.goods_name }}</p>
     					<div class="rate_wrap">
     						<div class="rate">
-    							<span>评分</span>
+    							<span>Ұпай</span>
     							<i :class="['iconfont', 'icon-wujiaoxing', 'size_12', rIndex < item.comment_rank ? 'color_red' : '']" v-for="(rate, rIndex) in 5" :key="rIndex"></i>
     						</div>
     					</div>
@@ -47,11 +47,11 @@
     						<img class="goods_img" v-for="(imgItem,imgIndex) in comItem.comment_img_list" :key="imgIndex" :src="imgItem.comment_img" />
     					</div>
     					<div class="btn_wrap" v-if="item.can_add_evaluate">
-    						<div class="additional_review" @click.stop="$router.push({name:'commentDetail',params:{id:item.rec_id, type: 1}})">追评</div>
+    						<div class="additional_review" @click.stop="$router.push({name:'commentDetail',params:{id:item.rec_id, type: 1}})">Жауап</div>
     					</div>
     				</div>
     				<div class="pro_content u-border-top additional_review_content" v-if="comItem.add_comment_id > 0">
-    					<div class="title">追评</div>
+    					<div class="title">Жауап</div>
     					<p class="no_comment">{{comItem.content}}</p>
     					<div class="img_list" v-if="comItem.comment_img_list.length">
     						<img class="goods_img" v-for="(imgItem,imgIndex) in comItem.comment_img_list" :key="imgIndex" :src="imgItem.comment_img" />

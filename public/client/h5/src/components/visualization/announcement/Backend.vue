@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="group-l">显示样式：</label>
+                <label class="group-l">Стилі：</label>
                 <radio-group v-model="newStyleSel" size="small">
                     <radio v-for="item in data.showNewStyle" :key="item.key" :label="item.key">{{ item.title }}</radio>
                 </radio-group>

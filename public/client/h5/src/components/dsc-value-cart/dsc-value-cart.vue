@@ -3,24 +3,24 @@
 		<li class="cart_list_item" v-for="(item,index) in list" :key="index" @click="clickHandle({type: 'active', value: item})">
 			<div class="cart_head">
 				<div class="card_sn">
-					<span>卡号：{{item.value_card_sn}}</span>
-					<span v-if="item.vc_dis != 1">折扣率：{{item.vc_dis_format}}</span>
+					<span>Карта：{{item.value_card_sn}}</span>
+					<span v-if="item.vc_dis != 1">Жеңілдік：{{item.vc_dis_format}}</span>
 				</div>
-				<div class="how_much">面值：{{item.vc_value_money}}元</div>
+				<div class="how_much">Құны：{{item.vc_value_money}}₸</div>
 			</div>
 			<div :class="['cart_body', page == 'checkout' ? 'h_11' : '']">
 				<div class="money_and_time">
-					<span class="balance">余额{{currency_format}}<span>{{item.use_card_money}}</span></span>
-					<span class="past_due">过期时间：{{item.local_end_time}}</span>
+					<span class="balance">Теңгерім{{currency_format}}<span>{{item.use_card_money}}</span></span>
+					<span class="past_due">Аяқтау：{{item.local_end_time}}</span>
 				</div>
 				<div class="btn_wrap" v-if="page == 'valuecart'">
 					<div class="red_btn" @click.stop="clickHandle({type: 'add', value: item})" v-if="item.is_rec == 1 && type == 0">充值</div>
-					<div class="status_txt size_14" v-if="item.use_status == 0">已失效</div>
-					<div class="status_txt size_14" v-if="item.use_status == 2">已过期</div>
-					<div class="status_txt size_14" v-if="item.use_status == 3">已用完</div>
-					<div class="cart_btn" @click.stop="clickHandle({type: 'detail', value: item})">查看使用记录</div>
+					<div class="status_txt size_14" v-if="item.use_status == 0">Жарамсыз</div>
+					<div class="status_txt size_14" v-if="item.use_status == 2">Мерзімі біткен</div>
+					<div class="status_txt size_14" v-if="item.use_status == 3">Таусылған</div>
+					<div class="cart_btn" @click.stop="clickHandle({type: 'detail', value: item})">Істету дерегі</div>
 				</div>
-				<div class="disabled_tips" v-if="page == 'checkout' && type == 1">结算商品中有不符合使用条件的商品</div>
+				<div class="disabled_tips" v-if="page == 'checkout' && type == 1">Тауарлар арасында істету шартына келмейтін тауар бар</div>
 				<div class="new-store-radio-box" v-if="page == 'checkout' && type == 0 && active == item.vid"><i class="iconfont icon-gou"></i></div>
 			</div>
 		</li>

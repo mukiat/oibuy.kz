@@ -1,7 +1,7 @@
 import i18n from '@/locales'
 export default {
     module: "visual-team",
-    componentName: '拼团活动',
+    componentName: 'Бірлесу',
     suggest: "",
     setting: "0",
     isShow: true, //控制是否显示

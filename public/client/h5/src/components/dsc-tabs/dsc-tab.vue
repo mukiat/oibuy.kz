@@ -24,7 +24,7 @@ export default {
         },
         loadingText: {
             type: String,
-            default: '加载中...'
+            default: 'Жүктелуде...'
         }
     },
     data() {

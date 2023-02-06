@@ -122,8 +122,8 @@
                                 Dialog.confirm({
                                     message: res.data.msg,
                                     className: 'text-center',
-                                    cancelButtonText:'跳过',
-                                    confirmButtonText:'去绑定'
+                                    cancelButtonText:'Жоқ',
+                                    confirmButtonText:'Байлау'
                                 }).then(() => {
                                     self.$router.push({
                                         name: 'binduser',

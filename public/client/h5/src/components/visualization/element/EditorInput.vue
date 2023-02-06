@@ -1,6 +1,6 @@
 <template>
     <div class='editor-input'>
-        第三方
+        Үшінші жақ
     </div>
 </template>
 

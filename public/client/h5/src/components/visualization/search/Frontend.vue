@@ -55,7 +55,7 @@ export default {
     data() {
         return {
             nSearchOpacity: 0,
-            lbsCityName: "定位中...",
+            lbsCityName: "Анықтау...",
             sFontColor: "#ffffff",
 			liststatus:[],
             topHeight:localStorage.getItem('localShow') === 'true' ? (this.scrollFixed ? '5rem' : '0') : 0,
@@ -100,7 +100,7 @@ export default {
         */
         formatCity(city) {
             let lastIndex = city.length - 1
-            return city.charAt(lastIndex) == "市" ? city.slice(0, lastIndex) : city
+            return city.charAt(lastIndex) == "Облыс" ? city.slice(0, lastIndex) : city
         },
         /**
          * 计算头部搜索与滚动条位置动态显示背景颜色

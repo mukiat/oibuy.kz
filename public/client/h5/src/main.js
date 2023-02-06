@@ -95,7 +95,7 @@ axios.interceptors.response.use(response => {
                 }
                 break
             case 404:
-                Toast("暂无记录");
+                Toast("Дерек жоқ");
 
                 router.replace({
                     name: 'home'
@@ -105,10 +105,10 @@ axios.interceptors.response.use(response => {
                 Toast(response.data.errors.message);
                 break
             case 506:
-                Toast("存在违禁词")
+                Toast("Тиым салынған сөз бар")
                 break
             case 102:
-                Toast("用户数据错误，请重新登录");
+                Toast("Дерек қателігі，қайта кіріңіз");
                 localStorage.removeItem('token');
 
                 if(isApp.isWeixinBrowser()){

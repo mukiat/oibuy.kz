@@ -86,7 +86,7 @@ export default {
             window.location.href = 'dscmall://type=home';
             //微信内
             if(isApp.isWeixinBrowser()){
-                Toast('请在浏览器上打开')
+                Toast('Браузермен ашыңыз')
             }else{
                 //android端
                 if(isApp.isAndroid){

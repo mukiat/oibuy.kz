@@ -50,7 +50,7 @@ export default{
     methods: {
         init(type){
             let url = this.$route.query
-            let loadingInstance = Loading.service({ fullscreen: true, background: 'rgba(255,255,255,1)' , text: "加载中……" })
+            let loadingInstance = Loading.service({ fullscreen: true, background: 'rgba(255,255,255,1)' , text: "Жүктеуде……" })
             if (type && type == 'qrpay') {
                 // 收款码同步通知
                 this.$http.get(`${window.ROOT_URL}api/qrpay/callback`,{ params:url }).then(res=>{

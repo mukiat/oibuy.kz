@@ -3,9 +3,9 @@
 		<div class="flow-checkout">
 			<section class="flow-checkout-item">
 				<van-cell-group class="van-cell-noleft" v-if="invoiceDetail">
-					<van-cell title="发票详情" class="van-cell-title b-min b-min-b"></van-cell>
-					<van-cell title="订单编号：" >{{ invoiceDetail.client_sn }}</van-cell>
-					<van-cell title="发票类型：" >
+					<van-cell title="Чек инфо" class="van-cell-title b-min b-min-b"></van-cell>
+					<van-cell title="Заказ коды：" >{{ invoiceDetail.client_sn }}</van-cell>
+					<van-cell title="Түрі：" >
 
 						<div class="dis-box" v-if="invoiceDetail.inv_type">
 							<label class="t-remark g-t-temark">{{ invoiceDetail.inv_type }}</label>
@@ -16,17 +16,17 @@
 
 					</van-cell>
 
-					<van-cell title="发票抬头：" >{{ order_inv_payee }}</van-cell>
+					<van-cell title="Тақырып：" >{{ order_inv_payee }}</van-cell>
 					<template v-if="order_tax_id != ''">
-						<van-cell title="纳税人识别号：" >{{ order_tax_id }}</van-cell>
+						<van-cell title="БСН/ЖСН：" >{{ order_tax_id }}</van-cell>
 					</template>
-					<van-cell title="发票内容：">{{ invoiceDetail.inv_content }}</van-cell>
+					<van-cell title="Мазмұн：">{{ invoiceDetail.inv_content }}</van-cell>
 				</van-cell-group>
 			</section>
 			<section>
 				<div class="van-submit-bar van-order-submit-bar">
 					<div class="van-submit-bar__bar">
-						<van-goods-action-big-btn text="换开申请" primary  @click="reapply(invoiceDetail.order_id)"/>
+						<van-goods-action-big-btn text="Өтініш" primary  @click="reapply(invoiceDetail.order_id)"/>
 					</div>
 				</div>
 			</section>
@@ -53,7 +53,7 @@
 				inv_type:'',
                 inv_payee:'',
                 tax_id:'',
-				inv_content:'商品明细',
+				inv_content:'Деталы',
 			}
 		},
 		components:{

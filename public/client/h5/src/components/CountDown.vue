@@ -3,7 +3,7 @@
         <slot>
 			<ul class="time_wrap" v-if="mini">
 				<li class="time_item" v-if="dateInfo.day && showDay">{{dateInfo.day}}</li>
-				<li class="time_splitor" v-if="dateInfo.day && showDay">天</li>
+				<li class="time_splitor" v-if="dateInfo.day && showDay">күн</li>
 				<li class="time_item" v-if="dateInfo.hour">{{dateInfo.hour}}</li>
 				<li class="time_item" v-if="dateInfo.min">{{dateInfo.min}}</li>
 				<li class="time_item" v-if="dateInfo.sec">{{dateInfo.sec}}</li>

@@ -76,7 +76,7 @@
             			<h4></h4>
             			<div class="ect-button-more">
                             <template v-if="item.invoice_see == true && item.invoice_type == 2">
-                                <a href="javascript:void(0)"  @click="invoiceDetail(item.order_id)" class="btn-default-new">查看发票</a>
+                                <a href="javascript:void(0)"  @click="invoiceDetail(item.order_id)" class="btn-default-new">Чек көру</a>
                             </template>
                             <template v-if="item.delay === 1">
                               <a href="javascript:void(0)" @click="delayOrder(item.order_id)" class="btn-default-new">{{$t('lang.delay_in_receiving')}}</a>

@@ -158,7 +158,7 @@
 					id: id
 				}).then(res => {
 					if (res.data.status == 'success') {
-						Toast("删除成功")
+						Toast("Сәтті жойылды")
 						this.default()
 
 					}

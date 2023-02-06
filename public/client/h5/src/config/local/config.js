@@ -7,178 +7,178 @@ const pageInfo = {
             isShow:true
         },
         globaSettings: {
-            text: "全局配置",
+            text: "Жалпы баптау",
             isActive: false,
             isShow:false
         },
         menuComponent: [{
-            text: "布局",
+            text: "Макет",
             isActive: false,
             isShow: true,
             type:"all",
             subComponent: [{
                 icon: "line",
-                text: "辅助线",
+                text: "Сызық",
                 module: "line",
                 type:"all",
                 isShow: true,
             }, {
                 icon: "blank",
-                text: "辅助空白",
+                text: "Бос орын",
                 module: "blank",
                 type:"all",
                 isShow: true,
             }, {
                 icon: "magic-cube",
-                text: "魔方",
+                text: "Кубик",
                 module: "magic-cube",
                 type:"all",
                 isShow: false,
             }]
         }, {
-            text: "文本",
+            text: "Текст",
             isActive: false,
             isShow: true,
             type:"all",
             subComponent: [{
-                text: "标题",
+                text: "Тақырып",
                 icon: "title",
                 module: "title",
                 type:"all",
                 isShow: true,
             }, {
-                text: "段落",
+                text: "Өткел",
                 icon: "passage",
                 module: "passage",
                 type:"all",
                 isShow: false,
             }, {
-                text: "富文本",
+                text: "Рик-мәтін",
                 icon: "rick-text",
                 module: "rick-text",
                 type:"all",
                 isShow: false,
             }, {
-                text: "公告",
+                text: "Хабар",
                 icon: "announcement",
                 module: "announcement",
                 type:"all",
                 isShow: true,
             }, {
-                text: "文字导航",
+                text: "Мәтін нав.",
                 icon: "text-nav",
                 module: "textNav",
                 type:"all",
                 isShow: false,
             }]
         }, {
-            text: "图片",
+            text: "Сурет",
             isActive: false,
             isShow: true,
             type:"all",
             subComponent: [{
                 icon: "img-nav",
-                text: "图片导航",
+                text: "Сурет нав.",
                 module: "nav",
                 type:"all",
                 isShow: true,
             }, {
                 icon: "slide",
-                text: "幻灯片",
+                text: "Слайд",
                 module: "slide",
                 type:"all",
                 isShow: true,
             }, {
                 icon: "jigsaw",
-                text: "拼图",
+                text: "Джигсо",
                 module: "jigsaw",
                 type:"all",
                 isShow: true,
             }, {
                 icon: "live",
-                text: "直播",
+                text: "LIVE",
                 module: "live",
                 type:"platform",
                 isShow: true,
             }]
         }, {
-            text: "功能",
+            text: "Функция",
             isActive: false,
             isShow: true,
             type:"all",
             subComponent: [{
                 icon: "count-down",
-                text: "秒杀活动",
+                text: "Seckill",
                 module: "count-down",
                 type:"platform",
                 isShow: true,
             }, {
                 icon: "coupon",
-                text: "优惠券",
+                text: "Купон",
                 module: "coupon",
                 type:"all",
                 isShow: false,
             }, {
                 icon: "product-list",
-                text: "商品列表",
+                text: "Тауарлар",
                 module: "product",
                 type:"all",
                 isShow: true,
             }, {
                 icon: "search",
-                text: "搜索",
+                text: "Іздеу",
                 module: "search",
                 type:"platform",
                 isShow: true,
             }, {
                 icon: "button",
-                text: "按钮",
+                text: "Кнопка",
                 module: "button",
                 type:"all",
                 isShow: false,
             },{
                 icon: "store",
-                text: "店铺街",
+                text: "Дүкен",
                 module: "store",
                 type:"platform",
                 isShow: true,
             },{
                 icon:"tab-down",
-                text:"导航",
+                text:"Навигация",
                 module:"tab-down",
                 type:"platform",
                 isShow:true
             }]
         },
         {
-            text: "新模块",
+            text: "Жаңа бөлшек",
             isActive: false,
             isShow: true,
             type:"platform-home",
             subComponent: [{
                 icon: "product-list",
-                text: "分类导航",
+                text: "Түрлер",
                 module: "category-nav",
                 type:"platform",
                 isShow: true,
             },
             {
                 icon: "product-list",
-                text: "拼团活动",
+                text: "Бірлесу",
                 module: "visual-team",
                 type:"platform",
                 isShow: true,
             },
             {
                 icon: "product-list",
-                text: "图片广告",
+                text: "Сурет",
                 module: "visual-adv",
                 type:"platform",
                 isShow: true,
             },
             {
                 icon: "product-list",
-                text: "推荐商品",
+                text: "Ұсыныс",
                 module: "product-pick",
                 type:"platform",
                 isShow: true
@@ -187,29 +187,29 @@ const pageInfo = {
     },
     pageListTool: {
         system: {
-            text: "系统默认"
+            text: "Әдепкі"
         },
         custom: {
-            text: "自定义"
+            text: "Еркін"
         },
         search: {
             icon: "search",
-            text: "页面搜索"
+            text: "Іздеу"
         }
     },
     editArea: {
-        text: "编辑区域",
+        text: "Өңдеу",
         function: {
             clear: {
-                text: "清空",
+                text: "Тазалау",
                 icon: "clear"
             },
             save: {
-                text: "存储",
+                text: "Сақтау",
                 icon: "save",
             },
             restore: {
-                text: "还原",
+                text: "Бастапқы",
                 icon: "restore"
             }
         },
@@ -219,26 +219,26 @@ const pageInfo = {
         }
     },
     previewArea: {
-        text: "预览区域",
+        text: "Қарау",
         function: {
             release: {
-                text: "发布",
+                text: "Жолдау",
                 icon: "release"
             }
         }
     },
     otherArea: {
-        QRCodeText: "扫码手机预览",
+        QRCodeText: "QR-мен көру",
         function: {
-            import: "本地导入",
-            export: "导出至本地"
+            import: "Импорт",
+            export: "Экспорт"
         },
         prompt: {
-            headline: "温馨提示",
-            text: "手机扫描二维码，即可在手机进行观看页面效果",
+            headline: "Ескерту",
+            text: "QR-код арқылы телефондағы нәтижесін көре аласыз.",
             http: {
-                text: "链接名称",
-                link: "https://www.ectouch.cn"
+                text: "Сілтеме аты",
+                link: "http://www.oibuy.kz"
             }
         }
     },

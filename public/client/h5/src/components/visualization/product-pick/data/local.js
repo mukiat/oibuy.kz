@@ -1,7 +1,7 @@
 import i18n from '@/locales'
 export default {
     module: "product-pick",
-    componentName: '推荐商品',
+    componentName: 'Ұсыныс',
     suggest: "",
     setting: "0",
     isShow: true, //控制是否显示

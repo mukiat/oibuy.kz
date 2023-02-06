@@ -232,7 +232,7 @@ export default{
       this.LicenseShow = false
     },
     noTel(){
-      Toast('该店铺未设置客服电话')
+      Toast('Бұл дүкен тел.нөмір қоймаған')
     },
 	link(){
 		let that = this
