@@ -15,6 +15,7 @@ module.exports = {
 				ws: true,
 				changeOrigin: true
 			},
+			
 			'^/admin': {
 				target: 'https://dev3.dscmall.cn',
 				ws: true,
