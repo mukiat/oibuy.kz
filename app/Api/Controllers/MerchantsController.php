@@ -222,7 +222,7 @@ class MerchantsController extends Controller
         if (empty($data['contactPhone'])) {
             return $this->succeed(['code' => 1, 'msg' => lang('merchants.mobile_not_null')]);
         }
-        if ($data['contactPhone'] && !CommonRepository::getMatchPhone($data['contactPhone'])) {
+        if ($data['contactPhone'] && !is_phone_number($data['contactPhone'])) {
             return $this->succeed(['code' => 1, 'msg' => lang('merchants.mobile_phone_invalid')]);
         }
         $data['user_id'] = $user_id;

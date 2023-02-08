@@ -61,7 +61,7 @@ class UserManageService
         $name = e($name);
 
         /* 是否手机 */
-        $is_phone = CommonRepository::getMatchPhone($name);
+        $is_phone = is_phone_number($name);
 
         $fieldVal = [
             $name

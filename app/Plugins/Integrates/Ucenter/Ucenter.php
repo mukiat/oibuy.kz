@@ -45,7 +45,7 @@ class Ucenter extends Integrate
         $username = e($username);
 
         // 本地会员，通过手机号码换取用户名
-        if (CommonRepository::getMatchPhone($username)) {
+        if (is_phone_number($username)) {
             $condition['mobile_phone'] = $username;
         } elseif (CommonRepository::getMatchEmail($username)) {
             $condition['email'] = $username;
@@ -60,7 +60,7 @@ class Ucenter extends Integrate
         $mobile = collect($local_user)->get('mobile_phone', $username);
         // 用户登录方式 isuid（0：用户名，1：ID，2：电子邮箱）
         $isuid = 0;
-        if (CommonRepository::getMatchPhone($username)) {
+        if (is_phone_number($username)) {
             $isuid = $this->connectType() == 'ecjiauc' ? 6 : $isuid; // 增加 ecjia ucenter 手机号登录
         } elseif (CommonRepository::getMatchEmail($username)) {
             $isuid = 2;
@@ -431,7 +431,7 @@ class Ucenter extends Integrate
             $is_email = CommonRepository::getMatchEmail($username);
 
             /* 是否手机 */
-            $is_phone = CommonRepository::getMatchPhone($username);
+            $is_phone = is_phone_number($username);
 
             $username = e($username);
 
@@ -499,7 +499,7 @@ class Ucenter extends Integrate
             $is_email = CommonRepository::getMatchEmail($username);
 
             /* 是否手机 */
-            $is_phone = CommonRepository::getMatchPhone($username);
+            $is_phone = is_phone_number($username);
 
             $username = e($username);
 

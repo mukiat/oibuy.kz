@@ -512,7 +512,7 @@ class Integrate
         $is_email = CommonRepository::getMatchEmail($username);
 
         /* 是否手机 */
-        $is_phone = CommonRepository::getMatchPhone($username);
+        $is_phone = is_phone_number($username);
 
         $username = e($username);
 
@@ -647,7 +647,7 @@ class Integrate
             $is_email = CommonRepository::getMatchEmail($username);
 
             /* 是否手机 */
-            $is_phone = CommonRepository::getMatchPhone($username);
+            $is_phone = is_phone_number($username);
 
             $username = e($username);
 
@@ -716,7 +716,7 @@ class Integrate
             $is_email = CommonRepository::getMatchEmail($username);
 
             /* 是否手机 */
-            $is_phone = CommonRepository::getMatchPhone($username);
+            $is_phone = is_phone_number($username);
 
             $username = e($username);
 

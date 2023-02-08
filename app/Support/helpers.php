@@ -113,6 +113,15 @@ function db_config($item = null)
 }
 
 /**
+ * @param $mobile
+ * @return bool
+ */
+function is_phone_number($mobile)
+{
+    return preg_match(KZ_MOBILE_REGEX, $mobile) ? true : false;
+}
+
+/**
  * 是否为移动设备
  * @return mixed
  */

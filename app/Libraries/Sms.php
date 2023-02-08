@@ -154,7 +154,7 @@ class Sms
                 $phone_key++;
             }
 
-            if (CommonRepository::getMatchPhone($value)) {
+            if (is_phone_number($value)) {
                 $phone[$phone_key][] = $value;
             } else {
                 $i--;

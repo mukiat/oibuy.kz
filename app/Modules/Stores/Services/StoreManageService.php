@@ -45,7 +45,7 @@ class StoreManageService
         $condition = ['field' => 'stores_user', 'value' => $username];
         if (CommonRepository::getMatchEmail($username)) {
             $condition['field'] = 'email';
-        } elseif (CommonRepository::getMatchPhone($username)) {
+        } elseif (is_phone_number($username)) {
             $condition['field'] = 'tel';
         }
 

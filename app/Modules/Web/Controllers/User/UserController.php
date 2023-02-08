@@ -1034,7 +1034,7 @@ class UserController extends InitController
             if (!empty($qq) && !preg_match('/^\d+$/', $qq)) {
                 return show_message($GLOBALS['_LANG']['passport_js']['qq_invalid']);
             }
-            if (!empty($mobile_phone) && !CommonRepository::getMatchPhone($mobile_phone)) {
+            if (!empty($mobile_phone) && !is_phone_number($mobile_phone)) {
                 return show_message($GLOBALS['_LANG']['passport_js']['mobile_phone_invalid']);
             }
 
@@ -1288,7 +1288,7 @@ class UserController extends InitController
             $mobile_phone = isset($request['mobile_phone']) && !empty($request['mobile_phone']) ? addslashes(trim($request['mobile_phone'])) : '';
             $mobile_code = isset($request['mobile_code']) && !empty($request['mobile_code']) ? addslashes(trim($request['mobile_code'])) : '';
 
-            $is_phone = CommonRepository::getMatchPhone($mobile_phone);
+            $is_phone = is_phone_number($mobile_phone);
 
             if (!$is_phone) {
                 return show_message($GLOBALS['_LANG']['Mobile_username'], $GLOBALS['_LANG']['back_retry_answer'], 'user.php?act=get_password', 'info');

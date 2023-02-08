@@ -201,7 +201,7 @@ class OauthController extends InitController
             }
 
             // 验证手机号格式
-            if (!CommonRepository::getMatchPhone($mobile)) {
+            if (!is_phone_number($mobile)) {
                 return response()->json(['status' => 'n', 'info' => lang('user.bind_mobile_error')]);
             }
 

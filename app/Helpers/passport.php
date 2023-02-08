@@ -52,7 +52,7 @@ function register($username, $password, $email, $other = [], $register_mode = 0)
                 }
             }
 
-            if (!CommonRepository::getMatchPhone($other['mobile_phone'])) {
+            if (!is_phone_number($other['mobile_phone'])) {
                 $GLOBALS['err']->add(sprintf(lang('user.msg_mobile_invalid'), htmlspecialchars($other['mobile_phone'])));
             }
         }

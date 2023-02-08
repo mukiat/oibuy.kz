@@ -78,7 +78,7 @@ function get_user_info($id = 0)
             $is_email = CommonRepository::getMatchEmail(session('user_name'));
 
             /* 是否手机 */
-            $is_phone = CommonRepository::getMatchPhone(session('user_name'));
+            $is_phone = is_phone_number(session('user_name'));
 
             if ($is_email) {
                 $user['username'] = $user['email'];

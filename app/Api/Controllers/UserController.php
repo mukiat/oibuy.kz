@@ -726,10 +726,10 @@ class UserController extends Controller
 
         $res = [
             'user_name' => $user['user_name'],
-            'user_name_sign' => CommonRepository::getMatchPhone($user['user_name'])
+            'user_name_sign' => is_phone_number($user['user_name'])
                 ? app(DscRepository::class)->stringToStar($user['user_name'], 3, 4) : $user['user_name'],
             'mobile_phone' => $user['mobile_phone'],
-            'is_mobile_phone' => CommonRepository::getMatchPhone($username) || CommonRepository::getMatchPhone($user['mobile_phone']) ? 1 : 0,
+            'is_mobile_phone' => is_phone_number($username) || is_phone_number($user['mobile_phone']) ? 1 : 0,
             'is_email' => CommonRepository::getMatchEmail($user['email']) ? 1 : 0,
             'mobile_phone_sign' => app(DscRepository::class)->stringToStar($user['mobile_phone'], 3, 4),
             'email' => $user['email'],
