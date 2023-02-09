@@ -193,6 +193,11 @@ class UserController extends Controller
         // 店铺
         $res['collect_store_num'] = $this->userService->collectStoreNum($user_id);
 
+        // 兼容（临时处理）
+        if (stripos($res['avatar'], '/storage/') === false) {
+            $res['avatar'] = str_replace('/uploads/', '/storage/uploads/', $res['avatar']);
+        }
+
         return $this->succeed($res);
     }
 
