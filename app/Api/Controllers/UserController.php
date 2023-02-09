@@ -311,6 +311,11 @@ class UserController extends Controller
         $res['avatar'] = $this->dscRepository->getImagePath($res['avatar']);
         $res['user_picture'] = $this->dscRepository->getImagePath($res['user_picture']);
 
+        // 兼容（临时处理）
+        if (stripos($res['avatar'], '/storage/') === false) {
+            $res['avatar'] = str_replace('/uploads/', '/storage/uploads/', $res['avatar']);
+        }
+
         return $this->succeed($res);
     }
 
