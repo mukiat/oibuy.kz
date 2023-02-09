@@ -77,7 +77,7 @@ class AddressController extends Controller
             'city' => 'required|integer',
             'district' => 'required|integer',
             'address' => 'required|string',
-            'mobile' => 'required|size:11'
+            'mobile' => 'required|size:10'
         ]);
 
         //返回用户ID
@@ -156,7 +156,7 @@ class AddressController extends Controller
             'district' => 'required|integer',
             'street' => 'required|integer',
             'address' => 'required|string',
-            'mobile' => 'required|size:11'
+            'mobile' => 'required|size:10'
         ]);
 
         //返回会员id
