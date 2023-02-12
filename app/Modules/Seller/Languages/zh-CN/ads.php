@@ -1,35 +1,35 @@
 <?php
 
-$_LANG['ad_type'] = '广告类型';
-$_LANG['goods_name'] = '商品名称';
-$_LANG['ad_name_notic2'] = '广告位显示商品名称，以商品形式展现';
-$_LANG['ad_type1'] = '广告';
-$_LANG['ad_type2'] = '商品';
+$_LANG['ad_type'] = 'Жармана типі';
+$_LANG['goods_name'] = 'Тауар аты';
+$_LANG['ad_name_notic2'] = 'Жарнама орын тауар атын көрсетсе,тауар ретінде көрсетіледі';
+$_LANG['ad_type1'] = 'Жарнама';
+$_LANG['ad_type2'] = 'Тауар';
 
 /* 广告位置字段信息 */
-$_LANG['position_name'] = '广告位名称';
-$_LANG['ad_width'] = '广告位宽度';
-$_LANG['ad_height'] = '广告位高度';
-$_LANG['position_model'] = '广告位结构';
-$_LANG['position_desc'] = '广告位描述';
-$_LANG['posit_width'] = '位置宽度';
-$_LANG['posit_height'] = '位置高度';
-$_LANG['posit_style'] = '广告位模板';
-$_LANG['outside_posit'] = '站外广告';
-$_LANG['outside_address'] = '投放广告的站点名称：';
-$_LANG['copy_js_code'] = '复制JS代码';
-$_LANG['adsense_code'] = '站外投放的JS代码';
-$_LANG['label_charset'] = '选择编码：';
+$_LANG['position_name'] = 'Орын атауы';
+$_LANG['ad_width'] = 'Орын ені';
+$_LANG['ad_height'] = 'Орын биіктігі';
+$_LANG['position_model'] = 'Орын моделі';
+$_LANG['position_desc'] = 'Орын сипаттауы';
+$_LANG['posit_width'] = 'Орын ені';
+$_LANG['posit_height'] = 'Биіктігі';
+$_LANG['posit_style'] = 'Орын үлгісі';
+$_LANG['outside_posit'] = 'Сыртқы жарнама';
+$_LANG['outside_address'] = 'Жарнама салатын сайт аты：';
+$_LANG['copy_js_code'] = 'JS Code-ын көшіру';
+$_LANG['adsense_code'] = 'Сыртқа салған JS Code';
+$_LANG['label_charset'] = 'Код таңдау：';
 
-$_LANG['no_position'] = '您还没有设置广告位置';
-$_LANG['no_ads'] = '您还没有添加广告';
-$_LANG['unit_px'] = '像素';
-$_LANG['ad_content'] = '广告内容';
-$_LANG['width_and_height'] = '(宽*高)';
+$_LANG['no_position'] = 'Сіз әлі жарнама орынын қоймадыңыз';
+$_LANG['no_ads'] = 'Сіз әлі жарнама енгізбедіңіз';
+$_LANG['unit_px'] = 'px';
+$_LANG['ad_content'] = 'Мазмұны';
+$_LANG['width_and_height'] = '(Ені*Биіктік)';
 
-$_LANG['position_name_empty'] = '广告位名称不能为空！';
-$_LANG['ad_width_empty'] = '广告位宽度不能为空！';
-$_LANG['ad_height_empty'] = '广告位高度不能为空！';
+$_LANG['position_name_empty'] = 'Жарнама атын енгізіңіз！';
+$_LANG['ad_width_empty'] = 'Орынның енін енгізіңіз！';
+$_LANG['ad_height_empty'] = 'Орынның биіктігін енгізіңіз！';
 $_LANG['position_desc_empty'] = '广告位描述不能为空！';
 
 $_LANG['view_static'] = '查看统计信息';

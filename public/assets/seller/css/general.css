@@ -13,9 +13,9 @@ html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, p, b
 	padding: 0;
 	margin: 0;
 }
-td, input, textarea, select,button { color: #707070; font-size: 12px; font-family: "Microsoft Yahei", "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif; }
+td, input, textarea, select,button { color: #707070; font-size: 12px; font-family: "Arial", "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif; }
 body {
-	font:12px/20px "微软雅黑","Microsoft Yahei","sans-serif", "Arial", "Verdana";
+	font:12px/20px "Arial", "Verdana";
 	color: #707070;
 	background-color: #F9F9F9;
 }
@@ -45,7 +45,7 @@ ul, ol {
 	list-style: none outside none;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: "microsoft yahei";
+	font-family: "Arial";
 	font-weight: normal;
 }
 h1, h2, h3, h4, h5, h6, pre, code, address, caption, cite, code, em, strong, table, th, td {
