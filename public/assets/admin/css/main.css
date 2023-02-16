@@ -19,7 +19,7 @@ a:hover { color: #ec5051; text-decoration: none; }
 a img { border: none; }
 em, cite, th { font-style: normal; font-weight: normal; }
 table { border-collapse: collapse; border-spacing:0;}
-th { text-align: left; }
+th { text-align: center; }
 input, button, select, textarea { outline: none }
 i,em{ font-style:normal;}
 i.fa { font-size: 14px; vertical-align: middle; margin-right: 4px; }

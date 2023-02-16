@@ -26,7 +26,7 @@ class IdCardNumber implements Rule
      */
     public function passes($attribute, $value)
     {
-        return preg_match('/^\d{15}|\d{18}$/', $value) ? true : false;
+        return preg_match('/^\d{12}|\d{18}$/', $value) ? true : false;
     }
 
     /**

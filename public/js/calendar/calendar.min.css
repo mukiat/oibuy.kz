@@ -5,7 +5,7 @@
 
 .dates_box {
 	position: absolute;
-	width: 240px;
+	width: 260px;
 	/*border: 1px solid #ccc;
 	-webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,.1);
 	-moz-box-shadow: 1px 1px 2px 0 rgba(0,0,0,.1);
@@ -91,7 +91,7 @@
 	height:auto;
 	line-height:normal;
 	padding: 0;
-    font-family: arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+    font-family: arial,"Arial","Hiragino Sans GB",sans-serif;
     font-size: 100%;
     outline: 0;
     vertical-align: middle;
@@ -130,7 +130,7 @@
 
 .dates_table {
 	margin: 0 auto;
-	width: 240px;
+	width: 260px;
 	border-collapse: collapse;
 	/*border: 1px solid #ccc;
 	border-top:0;*/
@@ -182,7 +182,7 @@
 }
 
 .dates_bottom {
-	padding: 8px 5px;
+	padding: 8px 0px;
 	height: 26px;
 	overflow: hidden;
 	border:1px solid #ccc;
@@ -197,7 +197,7 @@
 .dates_hms {
 	float: left;
 	border: 1px solid #ccc;
-	width: 100px
+	width: 113px
 }
 
 .dates_hms li {
@@ -213,7 +213,7 @@
 	line-height: 14px;
 	text-align: center;
 	padding:0;
-	font-family:arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;	
+	font-family:arial,"Arial","Hiragino Sans GB",sans-serif;	
     font-size: 100%;
     outline: 0;
 	vertical-align:middle;
@@ -227,7 +227,7 @@
 
 .dates_btn {
 	float: right;
-	width: 117px;
+	width: 140px;
 	border: 1px solid #ccc;
 	border-right: none
 }
