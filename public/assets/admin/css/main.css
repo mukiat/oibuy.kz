@@ -1214,7 +1214,8 @@ i.sc_icon_dsz{ position:absolute; width:48px; height:56px; background-position:-
 .activity .sale{ background-position:-139px 0;}
 .activity .purchaseEnd{ background-position:-309px 0; width:61px;}
 .activity .purchase{ background-position:-190px 0;}
-.activity .distribution{ background-position:-383px 0;}
+.activity .dist
+ribution{ background-position:-383px 0;}
 /*商品列表end*/
 
 /*添加新商品*/
@@ -2290,26 +2291,26 @@ div.bgSelector div#bgColorSelector #bscParent #bscDrop td span { display: block;
 .return_order_hh_desc .item{ line-height:30px;}
 
 .order_icon_items{ overflow:hidden;}
-.order_icon{ display:block; width:20px; height:20px; background:url(../images/order_icon.png) no-repeat; font-size:0; float:left; margin-right:5px;}
-.order_icon_bt{ background-position:-100px 0;}
-.order_icon_zc{ background-position:-50px 0;}
-.order_icon_jf{ background-position:-125px 0;}
-.order_icon_zdd{ background-position:-25px 0;}
-.order_icon_ys{ background-position:-75px 0;}
-.order_icon_db{ background-position:-150px 0;}
-.order_icon_pm{ background-position:-175px 0;}
-.order_icon_tg{ background-position:-200px 0;}
-.order_icon_so{ background-position:-225px 0;}
-.order_icon_pt{ background-position:-250px 0;}
-.order_icon_ms{ background-position:-275px 0;}
-.order_icon_fx{ background-position:-300px 0;}
-.order_icon_team{ background-position:-325px 0;}
-.order_icon_package{ background-position:-350px 0;}
-.order_icon_wholesale{ background-position:-375px 0;}
-.order_icon_xn{ background-position:-400px 0;}
-.order_icon_bargain{ background-position:-427px 0;}
-.order_icon_return{ background-position:-452px 0;}
-.order_icon_cg{ background-position:-476px 0;}
+.order_icon{ display:block; width:48px; height:20px; background:url(../images/order_icon.png) no-repeat; font-size:0; float:left; margin-right:5px;}
+.order_icon_bt{ background-position:-196px 0;}
+.order_icon_zc{ background-position:-97px 0;}
+.order_icon_jf{ background-position:-247px 0;}
+.order_icon_zdd{ background-position:-47px 0;}
+.order_icon_ys{ background-position:-147px 0;}
+.order_icon_db{ background-position:-295px 0;}
+.order_icon_pm{ background-position:-347px 0;}
+.order_icon_tg{ background-position:-397px 0;}
+.order_icon_so{ background-position:-448px 0;}
+.order_icon_pt{ background-position:-498px 0;}
+.order_icon_ms{ background-position:-548px 0;}
+.order_icon_fx{ background-position:-598px 0;}
+.order_icon_team{ background-position:-648px 0;}
+.order_icon_package{ background-position:-698px 0;}
+.order_icon_wholesale{ background-position:-748px 0;}
+.order_icon_xn{ background-position:-798px 0;}
+.order_icon_bargain{ background-position:-848px 0;}
+.order_icon_return{ background-position:-899px 0;}
+.order_icon_cg{ background-position:-949px 0;}
 
 .sale_info .text{ margin-right:0;}
 /*.up,.down{ background:url(../images/icon_updown.png) no-repeat; display:inline-block; width:13px; height:13px; margin-right: 5px; text-indent:99999px; vertical-align:middle;}

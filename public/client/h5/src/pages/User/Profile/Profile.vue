@@ -76,7 +76,7 @@
           <div class="text-all dis-box">
             <label>{{$t('lang.birthday')}}</label>
             <div class="input-text box-flex">
-              <input class="j-input-text inputcard" type="date" name="birthday" placeholder="1970-01-01" autocomplete="off" v-model="birthday" />
+              <input class="j-input-text inputcard" type="date" name="birthday" placeholder="1996-12-16" autocomplete="off" v-model="birthday" />
             </div>
           </div>
         </div>
