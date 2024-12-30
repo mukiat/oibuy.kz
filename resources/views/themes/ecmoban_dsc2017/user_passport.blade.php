@@ -204,7 +204,8 @@ var {{ $key }} = "{!! $item !!}";
                         <form action="user.php" method="post" name="formUser">
                             <div class="item" id="phone_yz">
                                 <div class="item-label">{{ $lang['bind_phone'] }}</div>
-                                <div class="item-info">
+                                <div class="item-info" style="display: flex; align-items: center; border: 1px solid #ccc; border-radius: 4px; ">
+                                    <span style="white-space: nowrap; margin-right: 5px; padding-left: 8px ;font-size: 12px; border-right: 1px solid #ccc; padding-right: 8px; height: 16px; display: inline-block; line-height: 16px; ">+7</span>
                                     <input type="text" name="mobile_phone" id="mobile_phone" class="text" placeholder="{{ $lang['label_mobile_input'] }}" value="" autocomplete="off" />
                                 </div>
                                 <div class="input-tip"><label id="mobile_notice"></label></div>

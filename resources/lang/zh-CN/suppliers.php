@@ -4,21 +4,21 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | suppliers(供应链) Language Lines
+    | suppliers(Поставщик) Language Lines
     |--------------------------------------------------------------------------
     |
     | The following language lines are used by the suppliers
     |
     */
 
-    'no_data' => '暂无数据',
-    'illegal_request' => '请求不合法',
-    'goods_number_must' => '请选择需要购买到商品',
-    'goods_number_limit' => '该商品库存只有 %s 个',
-    'cart_move_success' => '成功删除购物车',
-    'must_limit_number' => '，未达到最小起订量 %s 件',
+    'no_data' => 'Дерек жоқ',
+    'illegal_request' => 'Сұраныс ережесіз',
+    'goods_number_must' => 'Алатын тауарды таңдаңыз',
+    'goods_number_limit' => 'Бұл тауардың қоры тек %s тал',
+    'cart_move_success' => 'Қоржын сәтті жойылды',
+    'must_limit_number' => '，Ең аз сатылым саны %s талға жетпеді',
 
-    'ordergoods_not_on_sale' => '您的订单中含有下架商品，请删除后重新提交',
-    'order_success' => '下单成功',
+    'ordergoods_not_on_sale' => 'Заказыңызда сатылымы тоқтаған тауар бар,жойғаннан кейін қайта жіберіңіз',
+    'order_success' => 'Заказ сәтті',
 
 ];

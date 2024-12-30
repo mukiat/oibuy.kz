@@ -1,37 +1,37 @@
 <?php
 
 /* 列表页面 */
-$_LANG['01_shipping_add'] = '运费添加';
+$_LANG['01_shipping_add'] = 'Тасымал ақысын енгізу';
 
 //运费
-$_LANG['fee_compute_mode'] = '费用计算方式';
-$_LANG['fee_by_weight'] = '按重量计算';
-$_LANG['fee_by_number'] = '按商品件数计算';
-$_LANG['free_money'] = '免费额度';
-$_LANG['pay_fee'] = '货到付款支付费用';
+$_LANG['fee_compute_mode'] = 'Ақысын есеп тәсілі';
+$_LANG['fee_by_weight'] = 'Салмақ бойынша';
+$_LANG['fee_by_number'] = 'Тауар саны бойынша';
+$_LANG['free_money'] = 'Тегін лимит';
+$_LANG['pay_fee'] = 'Қолма-қол ақысы';
 
-$_LANG['not_find_plugin'] = '没有找到指定的配送方式的插件。';
+$_LANG['not_find_plugin'] = 'Көрсетілген тасымал плагині табылмады';
 
-$_LANG['remove_confirm'] = '您确定要删除该运费信息吗？';
-$_LANG['list_remove_confirm'] = '您确定要删除所有选中的运费信息吗？';
-$_LANG['batch_remove_success'] = '已经成功删除了 %d 个运费信息。';
-$_LANG['no_select_user'] = '您现在没有需要删除的运费信息！';
-$_LANG['edit_success'] = '编辑运费成功';
+$_LANG['remove_confirm'] = 'Бұл тасымал ақысын жоясыз ба？';
+$_LANG['list_remove_confirm'] = 'Бүкіл таңдаған тасымал ақысын жоясыз ба？';
+$_LANG['batch_remove_success'] = '%d дерек сәтті жойылды.';
+$_LANG['no_select_user'] = 'Сізде қазір жою керек тасымал деректері жоқ！';
+$_LANG['edit_success'] = 'Жеткізу ақысы сәтті өңделді';
 
-$_LANG['originating_place'] = '始发地';
-$_LANG['reach_the_destination'] = '到达目的地';
+$_LANG['originating_place'] = 'Шыққан жер';
+$_LANG['reach_the_destination'] = 'Баратын жері';
 
-$_LANG['01_shipping_edit'] = '运费编辑';
-$_LANG['distribution_mode'] = '配送方式';
-$_LANG['warehouse'] = '物流配送';
-$_LANG['add_region'] = '添加地区';
-$_LANG['region_notic'] = '不选择地区添加地区时会添加“全国”';
-$_LANG['region_existed'] = '该地区已存在';
+$_LANG['01_shipping_edit'] = 'Ақысын өңдеу';
+$_LANG['distribution_mode'] = 'Тасымал түрі';
+$_LANG['warehouse'] = 'Жеткізу';
+$_LANG['add_region'] = 'Аймақ енгізу';
+$_LANG['region_notic'] = 'Аймақты енгізуді таңдамасаңыз бүкіл Қазақстан енгізіледі';
+$_LANG['region_existed'] = 'Бұндай аймақ бар';
 
-$_LANG['js_languages']['tpl_name_null'] = '请输入仓库模板名称';
-$_LANG['js_languages']['shipping_id_null'] = '请选择物流配送';
+$_LANG['js_languages']['tpl_name_null'] = 'Склад үлгінің атауын енгізіңіз';
+$_LANG['js_languages']['shipping_id_null'] = 'Тасымалды таңдаңыз';
 
 /* 页面顶部操作提示 */
-$_LANG['operation_prompt_content']['list'][0] = '此配送方式的所有仓库配送地区列表。';
+$_LANG['operation_prompt_content']['list'][0] = 'Бұл жеткізу түрінің барлық склад,жеткізу аймақтарының тізімдері';
 
 return $_LANG;

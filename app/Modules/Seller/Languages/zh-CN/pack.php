@@ -1,41 +1,41 @@
 <?php
 
-$_LANG['pack_name'] = '商品包装名称';
-$_LANG['pack_fee'] = '费用';
-$_LANG['free_money'] = '免费额度';
-$_LANG['pack_img'] = '包装图纸';
-$_LANG['pack_desc'] = '包装描述';
+$_LANG['pack_name'] = 'Қаптама атауы';
+$_LANG['pack_fee'] = 'Ақысы';
+$_LANG['free_money'] = 'Тегін лимиті';
+$_LANG['pack_img'] = 'Қаптама суреті';
+$_LANG['pack_desc'] = 'Қаптама сипаттауы';
 
-$_LANG['pack_edit'] = '编辑包装';
+$_LANG['pack_edit'] = 'Қаптаманы өңдеу';
 
-$_LANG['drop_pack_img'] = '删除包装图纸';
-$_LANG['confirm_pack_img'] = '你确认要删除贺卡图纸吗？';
-$_LANG['drop_pack_img_success'] = '删除包装图片成功';
+$_LANG['drop_pack_img'] = 'Суретті жою';
+$_LANG['confirm_pack_img'] = 'Қаптаманың суретін жоясыз ба？';
+$_LANG['drop_pack_img_success'] = 'Қаптама суреті сәтті жойылды';
 
-$_LANG['pack_edit_lnk'] = '重新编辑该包装';
-$_LANG['pack_list_lnk'] = '返回列表页面';
+$_LANG['pack_edit_lnk'] = 'Бұл қаптаманы қайта өңдеу';
+$_LANG['pack_list_lnk'] = 'Тізім бетіне қайту';
 
 /*帮助信息*/
-$_LANG['notice_packfee'] = '使用这个包装所需要支付的费用，免费时设置为0';
-$_LANG['notice_freemoney'] = '当用户消费金额超过这个值时，将免费使用这个包装，设置为0时表明必须支付包装费用';
+$_LANG['notice_packfee'] = 'Бұл қаптаманы істеткенде төлейтін сомасы,тегін болса 0 деп қойыңыз';
+$_LANG['notice_freemoney'] = 'Клиенттің сатып алу сомасы осы саннан асқан кезде,осы қаптама тегін беріледі,Егер 0 деп қойсаңыз,онда қаптамаға міндетті түрде ақы төлеуі керек болады';
 
-$_LANG['warn_packimg'] = '你已经上传过图片。再次上传时将覆盖原图片';
+$_LANG['warn_packimg'] = 'Сіз суретті жүктегенсіз,қайта жүктесеңіз бұрынғы суретті осы суретке жаңартады';
 
 /*提示信息*/
-$_LANG['packname_exist'] = '包装名 %s 已经存在';
-$_LANG['packadd_succed'] = '已成功添加';
-$_LANG['packedit_succed'] = '包装 %s 修改成功';
-$_LANG['packedit_falure'] = '包装 %s 修改失败';
-$_LANG['packremove_falure'] = '删除失败';
-$_LANG['enter_num'] = '请输入一个数字！';
-$_LANG['no_packname'] = '你输入的包装名称为空！';
+$_LANG['packname_exist'] = '%s қаптама аты бұрын енгізілген';
+$_LANG['packadd_succed'] = 'Сәтті енгізілді';
+$_LANG['packedit_succed'] = '%s қаптамасы сәтті өзгертілді';
+$_LANG['packedit_falure'] = '%s қаптамасын өзгерту сәтсіз';
+$_LANG['packremove_falure'] = 'Жою сәтсіз';
+$_LANG['enter_num'] = 'Бір сан енгізіңіз！';
+$_LANG['no_packname'] = 'Қаптама атауын енгізіңіз！';
 
-$_LANG['back_list'] = '返回包装列表';
-$_LANG['continue_add'] = '继续添加新包装';
+$_LANG['back_list'] = 'Қаптама тізіміне қайту';
+$_LANG['continue_add'] = 'Жалғасты қаптама енгізу';
 
 /*JS 语言项*/
-$_LANG['js_languages']['no_packname'] = '没有输入包装名';
-$_LANG['js_languages']['packfee_un_num'] = '包装费用为空或不是数字';
-$_LANG['js_languages']['packmoney_un_num'] = '包装免费额度为空或不是数字';
+$_LANG['js_languages']['no_packname'] = 'Қаптама аты енгізілмеді';
+$_LANG['js_languages']['packfee_un_num'] = 'Қаптама ақысы енгізілмеді немесе енгізген мән сан/цифр емес';
+$_LANG['js_languages']['packmoney_un_num'] = 'Қаптаманың тегін лимиті енгізілмеді немесе енгізген мән сан/цифр емес';
 
 return $_LANG;

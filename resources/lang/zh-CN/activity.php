@@ -1,23 +1,23 @@
 <?php
 
-$_LANG['His_general'] = "全场通用";
-$_LANG['Full_reduction'] = "满减";
-$_LANG['discount'] = "折扣";
+$_LANG['His_general'] = "Жалпы";
+$_LANG['Full_reduction'] = "Арзан";
+$_LANG['discount'] = "Акция";
 
-$_LANG['all_activity'] = "全部活动";
-$_LANG['activity_gift'] = "享受赠品";
-$_LANG['activity_reduction'] = "现金减免";
-$_LANG['activity_discount'] = "享受折扣";
+$_LANG['all_activity'] = "Барлығы";
+$_LANG['activity_gift'] = "Силық";
+$_LANG['activity_reduction'] = "Арзан";
+$_LANG['activity_discount'] = "Акция";
 
-$_LANG['special_field'] = "进入专场";
-$_LANG['consume'] = "消费满";
+$_LANG['special_field'] = "Кіру";
+$_LANG['consume'] = "Толса";
 
-$_LANG['activity_time'] = "活动时间";
-$_LANG['activity_type'] = "优惠方式";
-$_LANG['max_amount'] = "金额限制";
-$_LANG['user_rank'] = "会员等级";
-$_LANG['act_range_type'] = "优惠范围";
+$_LANG['activity_time'] = "Уақыт";
+$_LANG['activity_type'] = "Түрі";
+$_LANG['max_amount'] = "Шектеу";
+$_LANG['user_rank'] = "Дәреже";
+$_LANG['act_range_type'] = "Ауқымы";
 
-$_LANG['money_unit'] = '元';
+$_LANG['money_unit'] = '₸';
 
 return $_LANG;

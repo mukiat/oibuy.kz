@@ -1,13 +1,13 @@
 <?php
 
-$_LANG['minutes'] = '分';
-$_LANG['Detailed_score'] = '评分详细';
-$_LANG['goods_score'] = '商品评分';
-$_LANG['service_score'] = '服务评分';
-$_LANG['Prescription_score'] = '时效评分';
-$_LANG['shop_name']='店铺名称';
-$_LANG['Corporate_name']='公司名称';
-$_LANG['customer_service_tel'] = '客服电话';
-$_LANG['add_follow'] = '加关注';
+$_LANG['minutes'] = 'Балл';
+$_LANG['Detailed_score'] = 'Баға инфо.';
+$_LANG['goods_score'] = 'Тауар бағасы';
+$_LANG['service_score'] = 'Қызмет бағасы';
+$_LANG['Prescription_score'] = 'Жылдамдық';
+$_LANG['shop_name']='Дүкен аты';
+$_LANG['Corporate_name']='Серіктестік аты';
+$_LANG['customer_service_tel'] = 'Байланыс';
+$_LANG['add_follow'] = 'Жазылу';
 
 return $_LANG;

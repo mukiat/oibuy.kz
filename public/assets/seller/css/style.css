@@ -2948,7 +2948,7 @@ color: #139ff0;
 .templet .templet-info .template_tit{ font-size:14px; font-weight:bold; color:#343434; margin-top:30px;}
 .templet .templet-info .template_name{ margin-top:10px; display:block;}
 .templet .templet-info .template_desc{ line-height:20px; margin-top:5px; height:40px; overflow:hidden;white-space: nowrap;text-overflow: ellipsis;}
-.templet .templet-info .button{ border:0; background:#ec5151; border-radius:3px; color:#fff;  height:35px; line-height:33px; width:120px; font-size:14px; cursor:pointer; margin-top:10px; padding:0;}
+.templet .templet-info .button{ border:0; background:#ec5151; border-radius:3px; color:#fff;  height:35px; line-height:33px; width:160px; font-size:14px; cursor:pointer; margin-top:10px; padding:0;}
 
 .design-content .tabs{ margin-top:30px;}
 

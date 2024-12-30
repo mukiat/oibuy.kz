@@ -481,7 +481,7 @@
                                                 </div>
                                                 {/foreach}
                                             </div>
-                                            <div class="bot clearfix">商品活动标签,可展示在前端，最多可添加3个标签<a href="javascript:;" onmouseover="toolTip('<img src=__ROOT__assets/admin/images/biaoqian.png>')" onmouseout="toolTip()" class="ml10">查看示例</a></div>
+                                            <div class="bot clearfix">Тауарға арналған акция шаралар таңбасы,бұл клиенттерге көрсетіледі.Ең көбі 3 таңба енгізе аласыз!<a href="javascript:;" onmouseover="toolTip('<img src=__ROOT__assets/admin/images/biaoqian.png>')" onmouseout="toolTip()" class="ml10">Мысалды көру</a></div>
                                         </div>
                                         <div class="notic"></div>
                                     </dd>

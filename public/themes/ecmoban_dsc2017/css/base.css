@@ -9,7 +9,7 @@
 
 /* common */
 *{ padding: 0;margin: 0;}
-body,button,input,select,textarea{-webkit-font-smoothing: antialiased; font:12px/1.5 Microsoft YaHei,tahoma,arial,Hevetica,\\5b8b\4f53,sans-serif; color: #555; word-break: break-all;}
+body,button,input,select,textarea{-webkit-font-smoothing: antialiased; font:12px/1.5 arial,Hevetica,\\5b8b\4f53,sans-serif; color: #555; word-break: break-all;}
 h2,h3,h4,h5,h6{ font-size:100%;font-weight: normal;}
 address,cite,dfn,em,var{ font-style:normal;}
 ul,ol{ list-style:none;}
@@ -19,7 +19,7 @@ fieldset,iframe,img{ border:0;}
 button,input,select,textarea{ font-size:100%;}
 table{ border-collapse:collapse;border-spacing:0;}
 img{ vertical-align:middle; display:inline-block;}
-a{ text-decoration:none; color: #555;}
+a{ text-decoration:none; color: #555555;}
 a:hover{ color: #f42424;}
 a:focus{ outline:none;}
 
@@ -432,7 +432,7 @@ input[disabled],input[disabled="disabled"],input[readonly],input[readonly="reado
 .ftx-02{ color:#23bc17 !important;}
 .ftx-03{ color:#8c8c8c;}
 .ftx-04{ color:#f68a00;}
-.ftx-05{ color:#438cde;}
+.ftx-05{ color:#438cde;margin-left: 10px;}
 .ftx-06{ color:#333;}
 .ftx-07{ color:#555;}
 .ftx-08{ color:#F60;}
@@ -602,7 +602,7 @@ input.btn25{ height: 25px;line-height: 23px;}
 .user-form{ font-size: 14px; padding: 1px 0;}
 .user-form .form-row{ margin: 15px 0; }
 .user-form .form-row:after{content: ""; clear: both; display: block; }
-.user-form .form-label{ float: left; width: 90px; height: 22px; line-height: 22px; padding: 9px;}
+.user-form .form-label{ float: left; width: 200px; height: 22px; line-height: 22px; padding: 9px;}
 .user-form .form-label .red{ margin-top: 5px; margin-right: 3px; }
 .user-form .form-value{ float: left; line-height: 40px;}
 .user-form .form-value .error{ margin-right:10px; color:#f42424;}
@@ -662,6 +662,7 @@ input.btn25{ height: 25px;line-height: 23px;}
 .site-nav{ background:#eee; margin-bottom:1px;}
 .site-nav .w{ height:30px; line-height:30px; color:#8c8c8c;}
 
+
 .city-choice{ float:left;}
 
 .dsc-choie{ position:relative; overflow:hidden; padding:0 7px;}
@@ -705,13 +706,14 @@ input.btn25{ height: 25px;line-height: 23px;}
 .quick-menu li .dt{ padding-left:7px; padding-right:7px;}
 .quick-menu li .dt .icon-down{ font-size:12px; padding-left:6px;}
 .quick-menu li.li_dorpdown{ cursor:pointer; position:relative;}
-.quick-menu li.li_dorpdown .dorpdown-layer{ padding:18px 0px; min-width:380px;}
+.quick-menu li.li_dorpdown .dorpdown-layer{ padding:18px 0px; min-width:405px;}
 
 .dsc-cm{ position:relative; border:1px solid #eee; height:28px; line-height:28px; z-index:1;}
 
 .dorpdown-layer{ display:none; position:absolute; border:1px solid #d2d2d2; background-color:#fff; top:30px; right:0;}
-.dorpdown-layer dl{ float:left; padding:0 0 0 30px; border-right:1px solid #efefef; width:85px;}
+.dorpdown-layer dl{ float:left; padding:0 10px 0 25px; border-right:1px solid #fd6602;height: 80px; display: inline-block; line-height: 25px; width:108px;}
 .dorpdown-layer dl:last-child{ border-right:0;}
+.dorpdown-layer .fore1 dt{ margin-top: 30px;}
 .dorpdown-layer dl dt{font-weight: 700;color: #666;}
 .dorpdown-layer dl dd{ float:left;}
 .dorpdown-layer dl .item{ float:left;width:75px;}
@@ -758,11 +760,11 @@ input.btn25{ height: 25px;line-height: 23px;}
 .shopCart .shopCart-con span{ margin-left:8px;}
 .shopCart .shopCart-con .count,.attached-search-container .shopCart-con .count{ min-width:13px; height:13px; line-height:13px; padding:1px; border-radius:50%; background:#f42424; color:#fff; position:absolute; top:6px; left:122px; text-align:center; font-size:12px;}
 .attached-search-container .shopCart-con .count{left:40px;top:0px}
-.shopCart .dorpdown-layer{ top:35px; width:312px;}
-.shopCart .prompt{ padding:20px 20px 20px 36px;}
+.shopCart .dorpdown-layer{ top:35px; width:342px;}
+.shopCart .prompt{ padding:20px 20px 20px 20px;}
 .shopCart .prompt .nogoods{ overflow:hidden;}
 .shopCart .prompt b{ background:url(../images/cart-nogoods.png) no-repeat; display:block; width:110px; height:68px; float:left;}
-.shopCart .prompt span{ float:left; display:block; font-size:12px; color:#8c8c8c; margin:6px 0 0 14px; line-height:25px; width:132px;}
+.shopCart .prompt span{ float:left; display:block; font-size:12px; color:#8c8c8c; margin:6px 0 0 14px; line-height:25px; width:171px;}
 .shopCart .dorpdown-layer .load{ width:108px; height:108px; margin-left:100px;}
 
 
@@ -804,7 +806,7 @@ input.btn25{ height: 25px;line-height: 23px;}
 .loginRegister-header .logo-span b{ width:258px; height:70px; overflow:hidden; display:block;}
 
 .header-href{ float:right; font-size:14px; color:#8c8c8c;}
-.header-href .jump{ color:#f42424;}
+.header-href .jump{ color:#f42424;margin-left: 10px;}
 .header-href .jump:hover{ text-decoration:underline;}
 /* login-header end */
 
@@ -1122,7 +1124,7 @@ input.btn25{ height: 25px;line-height: 23px;}
 .arrowItem .label{ float:left; width:60px; text-align:right; color:#8c8c8c;}
 .arrowItem .value{ float:left; min-width:200px; text-align:left; color:#555;}
 
-.user-invoice-list .arrowItem .label {width:70px;}
+.user-invoice-list .arrowItem .label {width:86px;}
 
 /*图片点击查看大图nyroModal*/
 .nyroModal{ color:#aaa;}

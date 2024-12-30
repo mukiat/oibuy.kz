@@ -1,50 +1,50 @@
 <?php
 
-$_LANG['csv_file'] = '上传批量csv文件：';
-$_LANG['notice_file'] = '（CSV文件中一次上传商品数量最好不要超过40，CSV文件大小最好不要超过500K.）';
-$_LANG['file_charset'] = '文件编码：';
-$_LANG['download_file'] = '下载批量CSV文件（%s）';
-$_LANG['use_help'] = '<h4>使用说明：</h4>' .
+$_LANG['csv_file'] = 'csv файлды жаппай жүктеу：';
+$_LANG['notice_file'] = '（CSV файлында бір реткі тауар жүктеу саны 40-тан аспауы керек,CSV файлының көлемі 500KB аспауы керек.）';
+$_LANG['file_charset'] = 'Файл коды：';
+$_LANG['download_file'] = 'CSV файлын жаппай жүктеу（%s）';
+$_LANG['use_help'] = '<h4>Түсіндірме：</h4>' .
     '<ul>' .
-    '<li>根据使用习惯，下载相应语言的csv文件，例如中国内地用户下载简体中文语言的文件，港台用户下载繁体语言的文件；</li>' .
-    '<li>选择所上传商品的分类以及文件编码，上传csv文件</li>' .
-    '<li>建议安装<a href="http://www.wps.cn/product/" target="_blank"><em class="red">WPS</em></a>软件，避免编码问题</li>' .
+    '<li>Ыңғайыңызға қарай сәйкесті тілдегі csv файлын таңдаңыз,мысалы ҚР азаматы болсаңыз қазақша таңдаңыз,басқа ел азаматы болсаңыз ағылшынша таңдаңыз；</li>' .
+    '<li>Жүктеген тауардың түрі мен файл кодын таңдап,csv файлын жүктеңіз</li>' .
+    '<li><a href="https://www.wps.com/" target="_blank"><em class="red">WPS</em></a> бағдарламасын жазып алуды ұсынамыз,ыңғайлы Office құралы.</li>' .
     '</ul>';
 
-$_LANG['goods_name'] = '商品名称：';
-$_LANG['js_languages']['please_select_goods'] = '请您选择商品';
-$_LANG['js_languages']['please_input_sn'] = '请您输入商品货号';
-$_LANG['js_languages']['goods_cat_not_leaf'] = '请选择底级分类';
-$_LANG['js_languages']['please_select_cat'] = '请您选择所属分类';
-$_LANG['js_languages']['please_upload_file'] = '请您上传批量csv文件';
+$_LANG['goods_name'] = 'Тауар аты：';
+$_LANG['js_languages']['please_select_goods'] = 'Тауарды таңдаңыз';
+$_LANG['js_languages']['please_input_sn'] = 'Тауар кодын енгізіңіз';
+$_LANG['js_languages']['goods_cat_not_leaf'] = 'Төменгі түрді таңдаңыз';
+$_LANG['js_languages']['please_select_cat'] = 'Тиесілі түрді таңдаңыз';
+$_LANG['js_languages']['please_upload_file'] = 'csv файлын жаппай жүктеу';
 
 // 批量上传商品的字段
-$_LANG['upload_product']['goods_id'] = '商品ID';
-$_LANG['upload_product']['goods_name'] = '商品名称';
-$_LANG['upload_product']['goods_sn'] = '商品货号';
-$_LANG['upload_product']['shop_name'] = '商家名称';
-$_LANG['upload_product']['seller_id'] = '商家ID';
-$_LANG['upload_product']['area_id'] = '地区ID';
-$_LANG['upload_product']['city_id'] = '城市ID';
+$_LANG['upload_product']['goods_id'] = 'Тауар ID';
+$_LANG['upload_product']['goods_name'] = 'Тауар аты';
+$_LANG['upload_product']['goods_sn'] = 'Тауар коды';
+$_LANG['upload_product']['shop_name'] = 'Сатушы аты';
+$_LANG['upload_product']['seller_id'] = 'Сатушы ID';
+$_LANG['upload_product']['area_id'] = 'Аймақ ID';
+$_LANG['upload_product']['city_id'] = 'Қала ID';
 
-$_LANG['market_price'] = '市场价格';
-$_LANG['product_price'] = '本店价格';
-$_LANG['promote_price'] = '促销价格';
-$_LANG['product_number'] = '库存';
-$_LANG['product_warn_number'] = '预警值';
-$_LANG['product_sn'] = '货号';
-$_LANG['bar_code'] = '条形码';
-$_LANG['state'] = '状态';
+$_LANG['market_price'] = 'Нарық бағасы';
+$_LANG['product_price'] = 'Бағасы';
+$_LANG['promote_price'] = 'Акция бағасы';
+$_LANG['product_number'] = 'Қоры';
+$_LANG['product_warn_number'] = 'Қор ескертуі';
+$_LANG['product_sn'] = 'Коды';
+$_LANG['bar_code'] = 'Штриз коды';
+$_LANG['state'] = 'Күйі';
 
-$_LANG['save_products'] = '保存货品成功';
+$_LANG['save_products'] = 'Тип сәтті сақталды';
 
-$_LANG['14_batch_add'] = '仓库货品列表';
-$_LANG['13_batch_add'] = '地区商品货品批量上传';
+$_LANG['14_batch_add'] = 'Склад тип тізімі';
+$_LANG['13_batch_add'] = 'Аймақтық тауар типін жаппай жүктеу';
 
-$_LANG['notice_select'] = '（导出CSV属性类型）';
+$_LANG['notice_select'] = '（CSV сипат түрін шығару）';
 
-$_LANG['edit_goods'] = '编辑商品信息';
+$_LANG['edit_goods'] = 'Тауар инфосын баптау';
 
-$_LANG['current_modification_data'] = '当前需要修改的数据有';
+$_LANG['current_modification_data'] = 'Қазіргі өзгерту керек деректер ';
 
 return $_LANG;

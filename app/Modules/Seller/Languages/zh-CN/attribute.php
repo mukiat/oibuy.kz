@@ -1,88 +1,88 @@
 <?php
 
 /* 列表 */
-$_LANG['set_gcolor'] = '设置属性颜色';
+$_LANG['set_gcolor'] = 'Сипат реңін баптау';
 
-$_LANG['by_goods_type'] = '按商品类型显示';
-$_LANG['all_goods_type'] = '所有商品类型';
+$_LANG['by_goods_type'] = 'Тауардың түрі мен көрсету';
+$_LANG['all_goods_type'] = 'Барлық тауардың түрі';
 
-$_LANG['attr_id'] = '编号';
-$_LANG['cat_id'] = '商品类型';
-$_LANG['attr_name'] = '属性名称';
-$_LANG['attr_input_type'] = '属性值的录入方式';
-$_LANG['attr_values'] = '可选值列表';
-$_LANG['attr_type'] = '购买商品时是否需要选择该属性的值';
+$_LANG['attr_id'] = 'Реті';
+$_LANG['cat_id'] = 'Тауар түрі';
+$_LANG['attr_name'] = 'Сипат атауы';
+$_LANG['attr_input_type'] = 'Сипат енгізу жолы';
+$_LANG['attr_values'] = 'Мәндер';
+$_LANG['attr_type'] = 'Тауарды алғанда сипаттың мәндерін таңдау керек ба?';
 
-$_LANG['value_attr_input_type'][ATTR_TEXT] = '手工录入';
-$_LANG['value_attr_input_type'][ATTR_OPTIONAL] = '从列表中选择';
-$_LANG['value_attr_input_type'][ATTR_TEXTAREA] = '多行文本框';
+$_LANG['value_attr_input_type'][ATTR_TEXT] = 'Қолмен енгізу';
+$_LANG['value_attr_input_type'][ATTR_OPTIONAL] = 'Тізімнен таңдау';
+$_LANG['value_attr_input_type'][ATTR_TEXTAREA] = 'Көп жолды мәтін';
 
-$_LANG['drop_confirm'] = '您确实要删除该属性吗？';
+$_LANG['drop_confirm'] = 'Сипатты Жоясыз ба?';
 
 /* 添加/编辑 */
-$_LANG['label_attr_name'] = '属性名称：';
-$_LANG['label_cat_id'] = '所属商品类型：';
-$_LANG['label_attr_index'] = '能否进行检索：';
-$_LANG['label_is_linked'] = '相同属性值的商品是否关联：';
-$_LANG['no_index'] = '不需要检索';
-$_LANG['keywords_index'] = '关键字检索';
-$_LANG['range_index'] = '范围检索';
-$_LANG['note_attr_index'] = '不需要该属性成为检索商品条件的情况请选择不需要检索，需要该属性进行关键字检索商品时选择关键字检索，如果该属性检索时希望是指定某个范围时，选择范围检索。';
-$_LANG['label_attr_input_type'] = '该属性值的录入方式：';
-$_LANG['text'] = '手工录入';
-$_LANG['select'] = '从下面的列表中选择（一行代表一个可选值）';
-$_LANG['text_area'] = '多行文本框';
-$_LANG['label_attr_values'] = '可选值列表：';
-$_LANG['label_attr_group'] = '属性分组：';
-$_LANG['label_attr_type'] = '属性是否可选';
-$_LANG['note_attr_type'] = '选择"单选/复选属性"时，可以对商品该属性设置多个值，同时还能对不同属性值指定不同的价格加价，用户购买商品时需要选定具体的属性值。选择"唯一属性"时，商品的该属性值只能设置一个值，用户只能查看该值。';
-$_LANG['attr_type_values'][0] = '唯一属性';
-$_LANG['attr_type_values'][1] = '单选属性';
-$_LANG['attr_type_values'][2] = '复选属性';
+$_LANG['label_attr_name'] = 'Сипат атауы：';
+$_LANG['label_cat_id'] = 'Барлық тауардың түрі：';
+$_LANG['label_attr_index'] = ' Іздеуге болады ма：';
+$_LANG['label_is_linked'] = 'Бірдей сипаттағы тауар байланыстырылама ：';
+$_LANG['no_index'] = 'Іздеу керек емес';
+$_LANG['keywords_index'] = 'Кілтсөзбен іздеу';
+$_LANG['range_index'] = 'АУқымды іздеу';
+$_LANG['note_attr_index'] = 'Бул сипат іздеу шарты ретінде қажет болмаса, Іздеу қажет еместі таңдаңыз，Бұл сипат кілтсөзді іздеу үшін қажет болғанда, кілтсөзбен іздеуді таңдаңыз，осы сипатты іздеу кезінде ауқымды көрсеткіңіз келсе, Ауқымды іздеуді таңдаңыз.';
+$_LANG['label_attr_input_type'] = 'Сипаттың енгізілу тәсілі：';
+$_LANG['text'] = 'Қолмен енгізу';
+$_LANG['select'] = 'Төмендегі тізімнен таңдаңыз (1 қатар 1 мәнді білдіреді) ';
+$_LANG['text_area'] = 'Көп қатарлы текст';
+$_LANG['label_attr_values'] = 'Мәндер тізімі：';
+$_LANG['label_attr_group'] = 'Сипат тобы：';
+$_LANG['label_attr_type'] = 'Сипат таңдалама';
+$_LANG['note_attr_type'] = '"Жалғыз/көп сипат" таңдалғанда，тауардың осы сипаты үшін бірнеше мәндерді орнатуға болады ，Сонымен қатар, әртүрлі сипат мәндері үшін әртүрлі баға көрсетуге болады，клент тауарды сатып алған кезде белгілі бір сипат мәнін таңдауы керек. "Бірегей сипат" таңдалғанда, тауардың сипат мәні үшін тек бір мәнді орнатуға болады және клент тек осы мәнді көре алады.';
+$_LANG['attr_type_values'][0] = 'Бірегей сипат';
+$_LANG['attr_type_values'][1] = 'Жалғыз сипат';
+$_LANG['attr_type_values'][2] = 'Көп сипат';
 
 
-$_LANG['add_next'] = '添加下一个属性';
-$_LANG['back_list'] = '返回属性列表';
-$_LANG['edit_attr'] = '返回编辑属性';
+$_LANG['add_next'] = 'Келесі сипатты қосу';
+$_LANG['back_list'] = 'Сипат тізіміне қайту';
+$_LANG['edit_attr'] = 'Сипатты өңдеуге қайту';
 
-$_LANG['add_ok'] = '添加属性 [%s] 成功。';
-$_LANG['edit_ok'] = '编辑属性 [%s] 成功。';
+$_LANG['add_ok'] = 'Сипат  [%s] сәтті қосылды .';
+$_LANG['edit_ok'] = 'Сипат  [%s] сәтті өңделді.';
 
 /* 提示信息 */
-$_LANG['name_exist'] = '该属性名称已存在，请您换一个名称。';
-$_LANG['drop_confirm'] = '您确实要删除该属性吗？';
-$_LANG['notice_drop_confirm'] = '已有%s个商品使用该属性，无法删除该属性';
-$_LANG['name_not_null'] = '属性名称不能为空。';
-$_LANG['select_color'] = '请选择颜色';
-$_LANG['attr_color_edit_success'] = '属性颜色修改成功';
-$_LANG['edit_attr_img'] = '编辑属性图片';
-$_LANG['back_attr'] = '返回该属性';
-$_LANG['edit_success'] = '编辑成功';
+$_LANG['name_exist'] = 'Сипат атауы бұрыннан бар,өзгертіңіз. ';
+$_LANG['drop_confirm'] = 'Бұл сипатты жоясызба?';
+$_LANG['notice_drop_confirm'] = 'Қазір %s тауарға бұл сипат енгізілген,сипатты жоя адмайсыз';
+$_LANG['name_not_null'] = 'Сипат атауын енгізіңіз.';
+$_LANG['select_color'] = 'Сүсті таңдаңыз';
+$_LANG['attr_color_edit_success'] = 'Сипат түсі өзгертілді';
+$_LANG['edit_attr_img'] = 'Сипат фотосын өңдеу ';
+$_LANG['back_attr'] = 'Сипатқа қайту ';
+$_LANG['edit_success'] = 'Өңделді';
 
-$_LANG['no_select_arrt'] = '您没有选择需要删除的属性名';
-$_LANG['drop_ok'] = '成功删除了 %d 条商品属性';
+$_LANG['no_select_arrt'] = 'Жойылатын сипат атауын таңдаңыз ';
+$_LANG['drop_ok'] = '%d тауар сипаты өзгертілді';
 
-$_LANG['js_languages']['name_not_null'] = '请您输入属性名称。';
-$_LANG['js_languages']['values_not_null'] = '请您输入该属性的可选值。';
-$_LANG['js_languages']['cat_id_not_null'] = '请您选择该属性所属的商品类型。';
-$_LANG['js_languages']['js_name_not_null'] = '属性名称不能为空';
+$_LANG['js_languages']['name_not_null'] = 'Сипат атауын енгізіңіз .';
+$_LANG['js_languages']['values_not_null'] = 'Сипат мәнін енгізіңіз .';
+$_LANG['js_languages']['cat_id_not_null'] = 'Осы сипатқа жататын тауар түрін таңдаңыз.';
+$_LANG['js_languages']['js_name_not_null'] = 'Сипат атауын енгізіңіз ';
 
-$_LANG['wai_href'] = '外链地址';
-$_LANG['add_attribute_img'] = '添加属性图片';
-$_LANG['add_attribute_color'] = '设置属性颜色';
+$_LANG['wai_href'] = 'Сыртқы сілтеме ';
+$_LANG['add_attribute_img'] = 'Сипат фотосын қосыңыз';
+$_LANG['add_attribute_color'] = 'Сипат түсін орнатыңыз';
 
-$_LANG['category_style'] = '分类筛选样式';
-$_LANG['category_style_one'] = '普通';
-$_LANG['category_style_color'] = '颜色';
+$_LANG['category_style'] = 'Түрді іріктеу әдісі';
+$_LANG['category_style_one'] = 'Кәдімгі';
+$_LANG['category_style_color'] = 'Түсті';
 
 /* 页面顶部操作提示 */
-$_LANG['operation_prompt_content'][0] = '展示了一个商品类型下的商品属性列表。';
-$_LANG['operation_prompt_content'][1] = '可新增商品属性。';
-$_LANG['operation_prompt_content'][2] = '请按提示文案正确填写信息。';
+$_LANG['operation_prompt_content'][0] = 'Тауар түріне сәйкесті тауардың сипат тізімін көрсетеді.';
+$_LANG['operation_prompt_content'][1] = 'Қосуға болатын тауар сипаты.';
+$_LANG['operation_prompt_content'][2] = 'Мәліметтерді дұрыс толықтыру үшін кеңестерге назар аударыңыз.';
 
-$_LANG['operation_prompt_content']['color'][0] = '填写颜色信息';
+$_LANG['operation_prompt_content']['color'][0] = 'Түс туралы ақпаратты толтырыңыз';
 
 // 商家后台
-$_LANG['label_attr_filter_style'] = '分类筛选样式：';
+$_LANG['label_attr_filter_style'] = 'Түрді іріктеу әдісі：';
 
 return $_LANG;

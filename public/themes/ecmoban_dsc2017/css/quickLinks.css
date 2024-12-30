@@ -114,8 +114,8 @@
 }
 .quick_links a.cart_list{
 	background: url(../images/common/ibar_sprites.png) no-repeat;
-	line-height: 16px;
-	height: 133px;
+	line-heigh: 16px;
+	height: 70px;
 	background-position: -23px -225px;
 	color: #fff;
 	margin: 10px 0;
@@ -142,7 +142,7 @@
 	background: #f42424;
 	text-align: center;
 	line-height: 21px;
-	margin: 5px 0 0 10px;
+	margin: -48px 0 0 10px;
 	cursor: pointer;
 	color: #fff;
 }

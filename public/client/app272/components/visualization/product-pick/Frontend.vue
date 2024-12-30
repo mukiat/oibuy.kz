@@ -70,7 +70,7 @@ export default{
 					txt:'为你推荐'
 				},
 				{
-					tit:'社区',
+					tit:'Пост',
 					txt:'新奇好物'
 				},
 				{

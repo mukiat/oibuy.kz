@@ -1,98 +1,98 @@
 <?php
 
 //@author guan 晒单评价 start
-$_LANG['comment'] = '评论';
-$_LANG['single_goods_name'] = '商品名称';
-$_LANG['single_title'] = '晒单标题';
-$_LANG['single_desc'] = '晒单描述';
-$_LANG['single_img'] = '晒单图片';
-$_LANG['add_integration'] = '增加积分';
-$_LANG['integ_notice'] = '&nbsp;<font color=red>允许则为用户添加您输入的积分，反之则扣除。</font>';
+$_LANG['comment'] = 'Пікір';
+$_LANG['single_goods_name'] = 'Тауар аты';
+$_LANG['single_title'] = 'Тақырып';
+$_LANG['single_desc'] = 'Сипаттау';
+$_LANG['single_img'] = 'Сурет';
+$_LANG['add_integration'] = 'Бонус қосу';
+$_LANG['integ_notice'] = '&nbsp;<font color=red>Мақұлдасаңыз клиентке сіз енгізген бонус қосылады,керісінше азайтылады.</font>';
 //晒单
-$_LANG['single_order_sn'] = '订单号';
-$_LANG['single_obj'] = '晒单对象';
-$_LANG['single_reward'] = '晒单奖励';
-$_LANG['single_prohibit_integral'] = '晒单禁止扣除积分';
-$_LANG['single_order_addtime'] = '购买时间';
-$_LANG['single_addtime'] = '晒单时间';
-$_LANG['comment_tag'] = '评论商品标签';
-$_LANG['drop_img'] = '删除';
-$_LANG['drop_img_confirm'] = '您确定删除图片吗？';
+$_LANG['single_order_sn'] = 'Заказ коды';
+$_LANG['single_obj'] = 'Бөлісу нысаны';
+$_LANG['single_reward'] = 'Силығы';
+$_LANG['single_prohibit_integral'] = 'Бонусты азайтуға тиім салу';
+$_LANG['single_order_addtime'] = 'Алу уақыты';
+$_LANG['single_addtime'] = 'Бөлісу уақыты';
+$_LANG['comment_tag'] = 'Тауар таңбасы';
+$_LANG['drop_img'] = 'Жою';
+$_LANG['drop_img_confirm'] = 'Суретті жоясыз ба？';
 
-$_LANG['img_list'] = '图片列表';
+$_LANG['img_list'] = 'Сурет тізімі';
 //@author guan 晒单评价 end
 
-$_LANG['comment_id'] = '编号';
-$_LANG['user_name'] = '用户名';
+$_LANG['comment_id'] = 'Коды';
+$_LANG['user_name'] = 'Логин';
 $_LANG['from'] = '于';
 $_LANG['to'] = '对';
-$_LANG['send_comment'] = '发表评论';
+$_LANG['send_comment'] = 'Пікір жіберу';
 $_LANG['email'] = 'Email';
-$_LANG['anonymous'] = '匿名用户';
-$_LANG['send_email_notice'] = '邮件通知';
-$_LANG['remail'] = '重发邮件';
+$_LANG['anonymous'] = 'Аноним';
+$_LANG['send_email_notice'] = 'Email ескерту';
+$_LANG['remail'] = 'Қайта жіберу';
 
-$_LANG['comment_type'] = '类型';
-$_LANG['comment_obj'] = '评论对象';
-$_LANG['content'] = '评论内容';
-$_LANG['comment_time'] = '评论时间';
-$_LANG['comment_data'] = '评论日期';
-$_LANG['reply_content'] = '回复内容';
-$_LANG['reply_data'] = '回复日期';
-$_LANG['comment_flag'] = '状态';
-$_LANG['no_reply'] = '未回复';
-$_LANG['yes_reply'] = '已回复';
-$_LANG['admin_user_name'] = '管理员';
+$_LANG['comment_type'] = 'Типі';
+$_LANG['comment_obj'] = 'Кімге пікір';
+$_LANG['content'] = 'Мазмұны';
+$_LANG['comment_time'] = 'Уақыты';
+$_LANG['comment_data'] = 'Мерзімі';
+$_LANG['reply_content'] = 'Жауап';
+$_LANG['reply_data'] = 'Мерзімі';
+$_LANG['comment_flag'] = 'Күйі';
+$_LANG['no_reply'] = 'Жауап берілмеді';
+$_LANG['yes_reply'] = 'Жауап берілді';
+$_LANG['admin_user_name'] = 'Админ';
 
-$_LANG['type'] = ['商品', '文章', '会员回复', '管理员回复'];
-$_LANG['goods_user_reply'] = '其他用户回复购买商品用户留言信息';
+$_LANG['type'] = ['Тауар', 'Мақала', 'Жауап', 'Админ жауабы'];
+$_LANG['goods_user_reply'] = 'Басқа клиенттер сатып алған клиентке деген пікір';
 
-$_LANG['ip_address'] = 'IP地址';
-$_LANG['comment_rank'] = '评论等级';
-$_LANG['view_reply'] = '查看回复';
-$_LANG['view_content'] = '查看详情';
-$_LANG['search_comment'] = '输入评论内容';
-$_LANG['no_reply_comment'] = '未回复的评论';
-$_LANG['all_comment'] = '查看所有评论';
-$_LANG['reply_comment'] = '回复评论';
-$_LANG['comment_info'] = '评论详情';
+$_LANG['ip_address'] = 'IP адресс';
+$_LANG['comment_rank'] = 'Пікір дәреже';
+$_LANG['view_reply'] = 'Жауапты көру';
+$_LANG['view_content'] = 'Анығын көру';
+$_LANG['search_comment'] = 'Пікір мазмұнын енгізу';
+$_LANG['no_reply_comment'] = 'Жауап берілмеген пікір';
+$_LANG['all_comment'] = 'Бүкіл пікірді көру';
+$_LANG['reply_comment'] = 'Пікірге жауап';
+$_LANG['comment_info'] = 'Пікір инфосы';
 
-$_LANG['comment_rank'] = '评论等级';
-$_LANG['comment_list'] = '评论列表';
+$_LANG['comment_rank'] = 'Пікір дәрежесі';
+$_LANG['comment_list'] = 'Пікір тізімі';
 
-$_LANG['drop_select'] = '删除评论';
-$_LANG['reply'] = '回复';
-$_LANG['check'] = '审核';
-$_LANG['allow'] = '允许显示';
-$_LANG['forbid'] = '禁止显示';
-$_LANG['display'] = '显示';
-$_LANG['hidden'] = '隐藏';
+$_LANG['drop_select'] = 'Пікірді жою';
+$_LANG['reply'] = 'Жауап';
+$_LANG['check'] = 'Тексеру';
+$_LANG['allow'] = 'Көрсету';
+$_LANG['forbid'] = 'Көрсетпеу';
+$_LANG['display'] = 'Көрсету';
+$_LANG['hidden'] = 'Жасыру';
 
-$_LANG['no_select_comment'] = '您没有选择需要删除的评论!';
+$_LANG['no_select_comment'] = 'Жоятын пікірді таңдамадыңыз!';
 
-$_LANG['reply_comment_success'] = '回复评论操作成功!';
-$_LANG['batch_drop_success'] = '执行成功!';
+$_LANG['reply_comment_success'] = 'Пікірге сәтті жауап берілді!';
+$_LANG['batch_drop_success'] = 'Сәтті атқарылды!';
 
-$_LANG['back_list'] = '返回评论列表';
+$_LANG['back_list'] = 'Пікір тізімі';
 
-$_LANG['be_careful'] = '注意：管理员回复内容会在前台显示';
+$_LANG['be_careful'] = 'Ескерту：Админ жауабы сайтта көрсетіледі';
 
 /* JS提示信息 */
-$_LANG['js_languages']['no_content'] = '回复的评论内容不能为空!';
-$_LANG['have_reply_content'] = '提示: 此条评论已有回复, 如果继续回复将更新原来回复的内容!';
+$_LANG['js_languages']['no_content'] = 'Жауап мазмұнын енгізіңіз!';
+$_LANG['have_reply_content'] = 'Ескерту: Бұл пікірге жауап берілген,егер жалғасты жауап берсеңіз,бұрынға жауап мазмұны жаңартылады!';
 
 
-$_LANG['cfm_allow'] = '你确定要允许显示所选评论吗？';
-$_LANG['cfm_remove'] = '你确定要删除所选评论吗？';
-$_LANG['cfm_deny'] = '你确定要禁止显示所选评论吗？';
+$_LANG['cfm_allow'] = 'Таңдалған пікірді көрсетуге рұқсат бересіз бе？';
+$_LANG['cfm_remove'] = 'Таңдалған пікірді жоясыз ба？';
+$_LANG['cfm_deny'] = 'Таңдалған пікірді көрсетуге тиім саласыз ба？';
 
-$_LANG['mail_send_fail'] = '邮件发送失败，请检查邮件服务器设置后重新发送邮件。';
+$_LANG['mail_send_fail'] = 'Email-ды жіберу сәтсіз,пошта серверін тексеріңіз.';
 
 /* 页面顶部操作提示 */
-$_LANG['operation_prompt_content']['list'][0] = '展示了所有用户评论商品的相关信息。';
-$_LANG['operation_prompt_content']['list'][1] = '可以屏蔽评论或者删除评论，也可以直接回复评论。';
+$_LANG['operation_prompt_content']['list'][0] = 'Бүкіл клиенттердің тауарға деген пікір ақпараттары көрсетілген.';
+$_LANG['operation_prompt_content']['list'][1] = 'Пікірді бұғаттау немесе жоюға болады, және пікірге жауап беруге болады';
 
-$_LANG['operation_prompt_content']['info'][0] = '对用户的评论进行回复。';
-$_LANG['operation_prompt_content']['info'][1] = '如果是邮件订阅用户，可勾选邮件通知。';
+$_LANG['operation_prompt_content']['info'][0] = 'Клиенттің пікіріне жауап беру';
+$_LANG['operation_prompt_content']['info'][1] = 'Егерде поштаға жазылған клиент болса,поштамен ескертуді таңдай аласыз';
 
 return $_LANG;

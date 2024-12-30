@@ -61,12 +61,12 @@ return [
             '苏泊尔（SUPOR)电压'
         ]
     ],
-    'industry_message' => '行业资讯',
-    'media_report' => '媒体报道',
-    'development_history' => '发展历程',
-    'activity_list' => '活动列表',
-    'station_express' => '站内快讯',
-    'recent_hot' => '近期热门',
-    'best_recommend' => '精品推荐',
-    'cms_here' => 'CMS频道'
+    'industry_message' => 'Сала ақпараты',
+    'media_report' => 'Медиа репорт',
+    'development_history' => 'Даму тарихы',
+    'activity_list' => 'Іс-шаралар',
+    'station_express' => 'Жаңалықтар',
+    'recent_hot' => 'Хит',
+    'best_recommend' => 'Үздіктер',
+    'cms_here' => 'CMS каналы'
 ];

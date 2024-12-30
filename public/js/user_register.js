@@ -200,11 +200,11 @@ $(function(){
 
 			if(name == "password"){
 				if(strongRegex.test($(element).val())){
-					$(element).parents(".item-info").next(".input-tip").html("<div class='strength strengthC'><b></b><span>强</span></div>");
+					$(element).parents(".item-info").next(".input-tip").html("<div class='strength strengthC'><b></b><span>Жоғары</span></div>");
 				}else if(mediumRegex.test($(element).val())){
-					$(element).parents(".item-info").next(".input-tip").html("<div class='strength strengthB'><b></b><span>中</span></div>");
+					$(element).parents(".item-info").next(".input-tip").html("<div class='strength strengthB'><b></b><span>Орташа</span></div>");
 				}else{
-					$(element).parents(".item-info").next(".input-tip").html("<div class='strength strengthA'><b></b><span>弱</span></div>");
+					$(element).parents(".item-info").next(".input-tip").html("<div class='strength strengthA'><b></b><span>Нашар</span></div>");
 				}
 			}else if(name == "captcha"){
 				//不可去除，当是验证码输入必须失去焦点才可以验证（错误刷新验证码）

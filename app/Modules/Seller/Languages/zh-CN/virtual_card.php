@@ -3,87 +3,87 @@
 /*------------------------------------------------------ */
 //-- 卡片信息
 /*------------------------------------------------------ */
-$_LANG['virtual_card_list'] = '虚拟商品列表';
-$_LANG['lab_goods_name'] = '商品名称';
-$_LANG['replenish'] = '补货';
-$_LANG['lab_card_id'] = '编号';
-$_LANG['lab_card_sn'] = '卡片序号';
-$_LANG['lab_card_password'] = '卡片密码';
-$_LANG['lab_end_date'] = '截至使用日期';
-$_LANG['lab_is_saled'] = '是否已出售';
-$_LANG['lab_order_sn'] = '订单号';
-$_LANG['action_success'] = '操作成功';
-$_LANG['action_fail'] = '操作失败';
-$_LANG['card'] = '卡片列表';
-$_LANG['virtual_card'] = '虚拟卡';
+$_LANG['virtual_card_list'] = 'Виртуалды тауарлар';
+$_LANG['lab_goods_name'] = 'Тауар аты';
+$_LANG['replenish'] = 'Қор қосу';
+$_LANG['lab_card_id'] = 'Коды';
+$_LANG['lab_card_sn'] = 'Карта коды';
+$_LANG['lab_card_password'] = 'Карта паролі';
+$_LANG['lab_end_date'] = 'Жарамды уақыты';
+$_LANG['lab_is_saled'] = 'Сатылды ма';
+$_LANG['lab_order_sn'] = 'Заказ коды';
+$_LANG['action_success'] = 'Атқару сәтті';
+$_LANG['action_fail'] = 'Атқару сәтсіз';
+$_LANG['card'] = 'Карта тізімі';
+$_LANG['virtual_card'] = 'Вир.карта';
 
-$_LANG['batch_card_add'] = '批量添加补货';
-$_LANG['download_file'] = '下载批量CSV文件';
-$_LANG['separator'] = '分隔符';
-$_LANG['uploadfile'] = '上传文件';
-$_LANG['sql_error'] = '第 %s 条信息出错：<br /> ';
-$_LANG['notice_file'] = '（CSV文件中一次上传商品数量最好不要超过40，CSV文件大小最好不要超过500K.）';
+$_LANG['batch_card_add'] = 'Топпен қорды қосу';
+$_LANG['download_file'] = 'CSV файлды жүктеу';
+$_LANG['separator'] = 'Бөлгіш белгі';
+$_LANG['uploadfile'] = 'Файл жүктеу';
+$_LANG['sql_error'] = '%s-ақпараттан қате шықты：<br /> ';
+$_LANG['notice_file'] = '（CSV файлы арқылы әр рет тауар енгізгенде тауар саны 40-дан аспауы керек,CSV файл көлемі 500КБ аспауы керек.）';
 
 /* 提示信息 */
-$_LANG['replenish_no_goods_id'] = '缺少商品ID参数，无法进行补货操作';
-$_LANG['replenish_no_get_goods_name'] = '商品ID参数有误，无法获取商品名';
-$_LANG['drop_card_success'] = '该记录已成功删除';
-$_LANG['batch_drop'] = '批量删除';
-$_LANG['drop_card_confirm'] = '你确定要删除该记录吗？';
-$_LANG['card_sn_exist'] = '卡片序号 %s 已经存在，请重新输入';
-$_LANG['go_list'] = '返回补货列表';
-$_LANG['continue_add'] = '继续补货';
-$_LANG['uploadfile_fail'] = '文件上传失败';
-$_LANG['batch_card_add_ok'] = '已成功添加了 %s 条补货信息';
+$_LANG['replenish_no_goods_id'] = 'Тауар ID-ы кем,тауарды толықтыра алмайсыз';
+$_LANG['replenish_no_get_goods_name'] = 'Тауар ID-ында қателік бар,тауар атын алу мүмкін емес';
+$_LANG['drop_card_success'] = 'Бұл дерек сәтті жойылды';
+$_LANG['batch_drop'] = 'Топпен жою';
+$_LANG['drop_card_confirm'] = 'Бұл деректі жоясыз ба？';
+$_LANG['card_sn_exist'] = '%s карта коды бұрыннан бар,қайта енгізіңіз';
+$_LANG['go_list'] = 'Қор қосу тізімі';
+$_LANG['continue_add'] = 'Жалғасты қою';
+$_LANG['uploadfile_fail'] = 'Файлды жүктеу сәтсіз';
+$_LANG['batch_card_add_ok'] = '%s қор қосу ақпараты сәтті орындалды';
 
-$_LANG['js_languages']['no_card_sn'] = '卡片序号和卡片密码不能都为空。';
-$_LANG['js_languages']['separator_not_null'] = '分隔符号不能为空。';
-$_LANG['js_languages']['uploadfile_not_null'] = '请选择要上传的文件。';
-$_LANG['js_languages']['card_sn_null'] = '请输入卡号序号。';
-$_LANG['js_languages']['card_password_null'] = '请输入卡号密码。';
+$_LANG['js_languages']['no_card_sn'] = 'Карта коды және карта паролі екеуіде бос қалтырылмауы керек';
+$_LANG['js_languages']['separator_not_null'] = 'Бөлгіш белгіні енгізіңіз';
+$_LANG['js_languages']['uploadfile_not_null'] = 'Жүктейтін файлды таңдаңыз';
+$_LANG['js_languages']['card_sn_null'] = 'Карта кодын енгізіңіз';
+$_LANG['js_languages']['card_password_null'] = 'Карта паролін енгізіңіз';
 
 $_LANG['use_help'] = '<ul>' .
-    '<li>上传文件应为CSV文件<br />' .
-    'CSV文件第一列为卡片序号；第二列为卡片密码；第三列为使用截至日期。<br />' .
-    '(用EXCEL创建csv文件方法：在EXCEL中按卡号、卡片密码、截至日期的顺序填写数据，完成后直接保存为csv文件即可)' .
-    '<li>密码，和截至日期可以为空，截至日期格式为2006-11-6或2006/11/6' .
-    '<li>卡号、卡片密码、截至日期中不要使用中文</li>' .
+    '<li>Файлды жүктегенде CSV файлы болуы керек<br />' .
+    'CSV файлдық бірінші солы карта коды；Екінші солы карта паролі；Үшінші солы мерзімі<br />' .
+    '(EXCEL арқылы csv файл жасау амалы：EXCEL-де карта коды,карта паролі,мерзім деген рет бойынша ақпаратты енгізіп,сақтаған кезде csv файл ретінде сақтасаңыз болды)' .
+    '<li>Пароль және мерзімін бос қалтыруға болады, мерзімді енгізгенде 2006-11-6 немесе 2006/11/6 форматында енгізу керек' .
+    '<li>Карта коды,Карта паролі,Мерзімін енгізген кезде қазақша әріптер қолданбаңыз</li>' .
     '</ul>';
 
 /*------------------------------------------------------ */
 //-- 改变加密串
 /*------------------------------------------------------ */
 
-$_LANG['virtual_card_change'] = '更改加密串';
-$_LANG['user_guide'] = '<h4>使用说明：</h4>' .
+$_LANG['virtual_card_change'] = 'Құпия шифрді өзгерту';
+$_LANG['user_guide'] = '<h4>Қолданбасы：</h4>' .
     '<ul>' .
-    '<li>加密串是在加密虚拟卡类商品的卡号和密码时使用的</li>' .
-    '<li>加密串保存在文件 data/config.php 中，对应的常量是 AUTH_KEY</li>' .
-    '<li>如果要更改加密串在下面的文本框中输入原加密串和新加密串，点\'确定\'按钮后即可</li>' .
+    '<li>Құпия шифрді виртуалды карта кодын және карта паролін жасыру үшін қолданылады</li>' .
+    '<li>Шифр файлының сақтау орыны data/config.php ,сәйкесті тұрақты шамасы AUTH_KEY</li>' .
+    '<li>Егер шифрді өзгерту керек болса төмендегі жолаққа ескі шифр мен жаңа шифрді енгізіп,\'Иа\' кнопкасын бассаңыз болды</li>' .
     '</ul>';
-$_LANG['label_old_string'] = '原加密串';
-$_LANG['label_new_string'] = '新加密串';
-$_LANG['invalid_old_string'] = '原加密串不正确';
-$_LANG['invalid_new_string'] = '新加密串不正确';
-$_LANG['change_key_ok'] = '更改加密串成功';
-$_LANG['same_string'] = '新加密串跟原加密串相同';
+$_LANG['label_old_string'] = 'Ескі шифр';
+$_LANG['label_new_string'] = 'Жаңа шифр';
+$_LANG['invalid_old_string'] = 'Ескі шифр қате';
+$_LANG['invalid_new_string'] = 'Жаңа шифр қате';
+$_LANG['change_key_ok'] = 'Шифр сәтті ауыстырылды';
+$_LANG['same_string'] = 'Жаңа шифр мен ескі шифр ұқсас боп қалды';
 
-$_LANG['update_log'] = '更新记录';
-$_LANG['old_stat'] = '总共有记录 %s 条。已使用新串加密的记录有 %s 条，使用原串加密（待更新）的记录有 %s 条，使用未知串加密的记录有 %s 条。';
-$_LANG['new_stat'] = '<strong>更新完毕</strong>，现在使用新串加密的记录有 %s 条，使用未知串加密的记录有 %s 条。';
-$_LANG['update_error'] = '更新过程中出错：%s';
-$_LANG['js_languages']['updating_info'] = '<strong>正在更新</strong>（每次 100 条记录）';
-$_LANG['js_languages']['updated_info'] = '<strong>已更新</strong> <span id=\"updated\">0</span> 条记录。';
+$_LANG['update_log'] = 'Жаңарту дерегі';
+$_LANG['old_stat'] = 'Жалпы %s дерек.Жаңа шифрді істеткен дерек саны %s ,ескі шифрді істеткен（жаңартуды күтуде）дерек саны %s ,белгісіз шифрді істеткен дерек саны %s';
+$_LANG['new_stat'] = '<strong>Жаңарту аяқталды</strong>,Қазір жаңа шифр істеткен деректер саны %s ,белгісіз шифр істеткен деректер саны %s .';
+$_LANG['update_error'] = 'Жаңарту кезінде қате шықты：%s';
+$_LANG['js_languages']['updating_info'] = '<strong>Жаңартуда</strong>（Әр рет 100 тал）';
+$_LANG['js_languages']['updated_info'] = '<strong>Жаңартылды</strong> <span id=\"updated\">0</span> дерек';
 
 /* 页面顶部操作提示 */
-$_LANG['operation_prompt_content']['batch_confirm'][0] = '上传文件格式必须后缀为.csv文件。';
+$_LANG['operation_prompt_content']['batch_confirm'][0] = 'Файлды жүктеу кезінде .csv файлы болуы керек';
 
-$_LANG['operation_prompt_content']['replenish'][0] = '虚拟卡补货请认真谨慎填写补货信息。';
+$_LANG['operation_prompt_content']['replenish'][0] = 'Виртуалды карта қорын қосқан кезде өте мұқият болыңыз';
 
-$_LANG['operation_prompt_content']['replenish_list'][0] = '虚拟商品虚拟卡列表信息页，展示此虚拟商品所有的虚拟卡卡号信息。';
+$_LANG['operation_prompt_content']['replenish_list'][0] = 'Виртуалды карта бетінде,осы виртуалды тауардың бүкіл виртуалды карта коды көрсетілген.';
 
-$_LANG['six_stars'] = '查看密码';
-$_LANG['only_precise_search'] = '（精确搜索）';
-$_LANG['virtual_card_export_alt'] = '虚拟卡导出-';
+$_LANG['six_stars'] = 'Парольді көру';
+$_LANG['only_precise_search'] = '（Дәл іздеу）';
+$_LANG['virtual_card_export_alt'] = 'Картаны шығару-';
 
 return $_LANG;

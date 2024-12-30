@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'please_upload' => '请上传图片',
-    'file_upload' => '上传',
-    'file_download' => '下载',
-    'file_size_limit' => '文件大小超出最大限制，请重新上传',
-    'file_not_exist' => '文件不存在',
-    'file_type_not_allow' => '文件上传类型不允许',
-    'not_file_type' => '文件上传类型不允许',
+    'please_upload' => 'Сурет жүктеңіз',
+    'file_upload' => 'Жүктеу',
+    'file_download' => 'Жазу',
+    'file_size_limit' => 'Файл көлемі тым үлкен,қайта жолдаңыз',
+    'file_not_exist' => 'Файл табылмады',
+    'file_type_not_allow' => 'Файл форматына шектеу қойылған',
+    'not_file_type' => 'Файл форматы қате',
 ];

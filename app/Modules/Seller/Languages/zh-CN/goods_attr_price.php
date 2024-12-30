@@ -1,35 +1,35 @@
 <?php
 
-$_LANG['csv_file'] = '上传批量csv文件：';
-$_LANG['notice_file'] = '（CSV文件中一次上传商品数量最好不要超过40，CSV文件大小最好不要超过500K.）';
-$_LANG['file_charset'] = '文件编码：';
-$_LANG['download_file'] = '下载批量CSV文件（%s）';
+$_LANG['csv_file'] = 'Топпен csv файл жүктеу：';
+$_LANG['notice_file'] = '(CSV файлында бір рет жүктегенде тауар саны 40-дан аспауы керек,CSV файлының көлемі 500Kb аспауы керек.）';
+$_LANG['file_charset'] = 'Файл коды：';
+$_LANG['download_file'] = 'Топпен CSV файлын жүктеп алу(%s)';
 $_LANG['use_help'] = '<ul>' .
-    '<li>根据使用习惯，下载相应语言的csv文件，例如中国内地用户下载简体中文语言的文件，港台用户下载繁体语言的文件；</li>' .
-    '<li>选择所上传商品的分类以及文件编码，上传csv文件</li>' .
+    '<li>Қолдану ыңғайыңызға қарай сәйкесті тілдегі файлды жүктеп алыңыз,мысалы Қазақстан азаматы болсаңыз қазақша,басқалай болса Ағылшын мен Орысша файлды жүктеңіз；</li>' .
+    '<li>Жүктейтін тауардың түрі мен файл кодын таңдап csv файлды жүктеңіз</li>' .
     '</ul>';
 
-$_LANG['goods_name'] = '商品名称：';
-$_LANG['js_languages']['please_select_goods'] = '请您选择商品';
-$_LANG['js_languages']['please_input_sn'] = '请您输入商品货号';
-$_LANG['js_languages']['goods_cat_not_leaf'] = '请选择底级分类';
-$_LANG['js_languages']['please_select_cat'] = '请您选择所属分类';
-$_LANG['js_languages']['please_upload_file'] = '请您上传批量csv文件';
+$_LANG['goods_name'] = 'Тауар аты：';
+$_LANG['js_languages']['please_select_goods'] = 'Тауарды таңдаңыз';
+$_LANG['js_languages']['please_input_sn'] = 'Тауар кодын енгізіңіз';
+$_LANG['js_languages']['goods_cat_not_leaf'] = 'Төменгі түрді таңдаңыз';
+$_LANG['js_languages']['please_select_cat'] = 'Тиесілі түрді таңдаңыз';
+$_LANG['js_languages']['please_upload_file'] = 'Топпен csv файлды жүктеңіз';
 
 // 批量上传商品的字段
-$_LANG['upload_area_attr']['goods_sn'] = '商品货号';
-$_LANG['upload_area_attr']['goods_attr'] = '商品属性';
-$_LANG['upload_area_attr']['attr_sort'] = '排序';
-$_LANG['upload_area_attr']['attr_price'] = '属性价格';
+$_LANG['upload_area_attr']['goods_sn'] = 'Тауар коды';
+$_LANG['upload_area_attr']['goods_attr'] = 'Тауар сипаты';
+$_LANG['upload_area_attr']['attr_sort'] = 'Реті';
+$_LANG['upload_area_attr']['attr_price'] = 'Сипат бағасы';
 
-$_LANG['upload_goods_attr']['goods_sn'] = '商品货号';
-$_LANG['upload_goods_attr']['goods_attr'] = '商品属性';
-$_LANG['upload_goods_attr']['attr_price'] = '属性价格';
-$_LANG['upload_goods_attr']['goods_number'] = '属性库存';
+$_LANG['upload_goods_attr']['goods_sn'] = 'Тауар коды';
+$_LANG['upload_goods_attr']['goods_attr'] = 'Тауар сипаты';
+$_LANG['upload_goods_attr']['attr_price'] = 'Сипат бағасы';
+$_LANG['upload_goods_attr']['goods_number'] = 'Сипат қоры';
 
-$_LANG['save_products'] = '保存商品地区属性成功';
-$_LANG['add_area_batch'] = '继续批量添加商品地区属性';
+$_LANG['save_products'] = 'Тауардың аймақтық сипаты сәтті сақталды';
+$_LANG['add_area_batch'] = 'Жалғасты аймақтық сипатты енгізу';
 
-$_LANG['13_batch_add'] = '批量上传属性价格';
+$_LANG['13_batch_add'] = 'Топпен сипат бағасын жүктеу';
 
 return $_LANG;

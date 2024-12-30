@@ -1,9 +1,9 @@
 <?php
 
-$_LANG['Distribution_exists'] = "配送信息已存在"; 
-$_LANG['add_success_one'] = '信息添加成功，待审核...';
-$_LANG['edit_success_one'] = '信息编辑成功，待审核...';
-$_LANG['add_success_two'] = '信息添加成功';
-$_LANG['edit_success_two'] = '信息编辑成功';
+$_LANG['Distribution_exists'] = "Жеткізу ақпараты бұрыннан бар"; 
+$_LANG['add_success_one'] = 'Ақпарат сәтті енгізілінді,тексерісті күтіңіз...';
+$_LANG['edit_success_one'] = 'Ақпарат сәтті өзгертілінді,тексерісті күтіңіз...';
+$_LANG['add_success_two'] = 'Ақпарат сәтті енгізілінді';
+$_LANG['edit_success_two'] = 'Ақпарат сәтті өзгертілінді';
 
 return $_LANG;

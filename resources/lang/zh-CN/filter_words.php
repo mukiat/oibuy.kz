@@ -1,6 +1,6 @@
 <?php
 
-$_LANG['banned_word'] = "违禁词";
-$_LANG['sensitive_word'] = "敏感词";
+$_LANG['banned_word'] = "Заңсыз сөз";
+$_LANG['sensitive_word'] = "Сізімтал сөз";
 
 return $_LANG;

@@ -117,22 +117,22 @@ $_LANG['server_errors'][11] = '短信功能尚未激活。';//ERROR_INVALID_PASS
 
 /* 客户端JS语言项 */
 //--注册或启用
-$_LANG['js_languages']['password_empty_error'] = '密码不能为空。';
-$_LANG['js_languages']['username_empty_error'] = '用户名不能为空。';
-$_LANG['js_languages']['username_format_error'] = '用户名格式不对。';
-$_LANG['js_languages']['domain_empty_error'] = '域名不能为空。';
-$_LANG['js_languages']['domain_format_error'] = '域名格式不对。';
-$_LANG['js_languages']['send_empty_error'] = '发送手机号与发送等级至少填写一项！';
+$_LANG['js_languages']['password_empty_error'] = 'Паролді енгізіңіз';
+$_LANG['js_languages']['username_empty_error'] = 'Логинді енгізіңіз';
+$_LANG['js_languages']['username_format_error'] = 'Логин форматы қате';
+$_LANG['js_languages']['domain_empty_error'] = 'Доменді енгізіңіз';
+$_LANG['js_languages']['domain_format_error'] = 'Домен форматы қате';
+$_LANG['js_languages']['send_empty_error'] = 'Телефон және дәреженің кемінде біреуін енгізіңіз！';
 //--发送
-$_LANG['js_languages']['phone_empty_error'] = '请填写手机号。';
-$_LANG['js_languages']['phone_format_error'] = '手机号码格式不对。';
-$_LANG['js_languages']['msg_empty_error'] = '请填写消息内容。';
-$_LANG['js_languages']['send_date_format_error'] = '定时发送时间格式不对。';
+$_LANG['js_languages']['phone_empty_error'] = 'Телефон нөмірді енгізіңіз';
+$_LANG['js_languages']['phone_format_error'] = 'Телефон нөмірдің форматы қате';
+$_LANG['js_languages']['msg_empty_error'] = 'Хабар мазмұнын енгізіңіз';
+$_LANG['js_languages']['send_date_format_error'] = 'Жіберудің уақыт форматы қате';
 //--历史记录
-$_LANG['js_languages']['start_date_format_error'] = '开始日期格式不对。';
-$_LANG['js_languages']['end_date_format_error'] = '结束日期格式不对。';
+$_LANG['js_languages']['start_date_format_error'] = 'Басталу уақыт форматы қате';
+$_LANG['js_languages']['end_date_format_error'] = 'Аяқталу уақыт форматы қате';
 //--充值
-$_LANG['js_languages']['money_empty_error'] = '请输入您要充值的金额。';
-$_LANG['js_languages']['money_format_error'] = '金额格式不对。';
+$_LANG['js_languages']['money_empty_error'] = 'Толтыратын соманы енгізіңіз';
+$_LANG['js_languages']['money_format_error'] = 'Сома форматы қате';
 
 return $_LANG;

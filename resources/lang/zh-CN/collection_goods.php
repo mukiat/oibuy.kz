@@ -1,9 +1,9 @@
 <?php
 
-$_LANG['unit_price_user'] = '单价'; 
-$_LANG['Collection_time'] = '收藏时间';
-$_LANG['follow_batch'] = '批量关注';
-$_LANG['drop_batch'] = '批量删除';
-$_LANG['Collection_goods_null'] = "抱歉，您尚未收藏商品！";
+$_LANG['unit_price_user'] = 'Бағасы'; 
+$_LANG['Collection_time'] = 'уақыты';
+$_LANG['follow_batch'] = 'Топтық назар';
+$_LANG['drop_batch'] = 'Топтық жою';
+$_LANG['Collection_goods_null'] = "Кешіріңіз, сіз әлі ешқандай тауарға назар аудармадыңыз!";
 
 return $_LANG;

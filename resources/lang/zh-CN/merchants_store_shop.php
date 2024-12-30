@@ -1,16 +1,16 @@
 <?php
 
-$_LANG['Main_brand'] = "主营品牌";
-$_LANG['Invalid'] = "时效";
-$_LANG['default'] = "默认";
-$_LANG['Relevant_goods'] = "件相关商品";
-$_LANG['existing'] = "已有";
-$_LANG['No_goods'] = "无货";
-$_LANG['service'] = "客服";
-$_LANG['Recommendation'] = "掌柜推荐";
+$_LANG['Main_brand'] = "Басты бренд";
+$_LANG['Invalid'] = "Уақыт";
+$_LANG['default'] = "Әдепкі";
+$_LANG['Relevant_goods'] = " тал қатысты тауар";
+$_LANG['existing'] = "Жалпы ";
+$_LANG['No_goods'] = "Қор жоқ";
+$_LANG['service'] = "Онлайн чать";
+$_LANG['Recommendation'] = "Сатушы ұсынысы";
 
-$_LANG['Store_score'] = "店铺评分";
-$_LANG['shelf_time'] = "上架时间";
+$_LANG['Store_score'] = "Бағалау";
+$_LANG['shelf_time'] = "Бастап сату";
 
 return $_LANG;
 

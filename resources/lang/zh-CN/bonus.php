@@ -1,21 +1,21 @@
 <?php
 
-$_LANG['please_login'] = "请登录";
-$_LANG['already_got'] = "您已经领过该红包啦";
-$_LANG['no_bonus'] = "红包已发完";
-$_LANG['get_success'] = "领取成功";
+$_LANG['please_login'] = "Кіріңіз";
+$_LANG['already_got'] = "Сіз конвертті алдыңыз";
+$_LANG['no_bonus'] = "Конверт бітті";
+$_LANG['get_success'] = "Сәтті алынды";
 
-$_LANG['face_value'] = "面值";
-$_LANG['min_order_money'] = "最小订单金额";
-$_LANG['use_start_time'] = "使用开始时间";
-$_LANG['use_end_time'] = "使用结束时间";
-$_LANG['valid_period'] = "红包有效期";
-$_LANG['valid_period_lost'] = "天后失效";
-$_LANG['only_limit'] = "仅限";
-$_LANG['use'] = "使用";
-$_LANG['already_received'] = "已领取";
-$_LANG['have_finished'] = "已领完";
-$_LANG['receive'] = "领取";
-$_LANG['overdue_time'] = "红包已过期";
+$_LANG['face_value'] = "Құны";
+$_LANG['min_order_money'] = "Минимум заказ сомасы";
+$_LANG['use_start_time'] = "Басталу уақыты";
+$_LANG['use_end_time'] = "Аяқталу уақыты";
+$_LANG['valid_period'] = "Жарамдылығы";
+$_LANG['valid_period_lost'] = " күн қалды";
+$_LANG['only_limit'] = "Тек";
+$_LANG['use'] = "Істету";
+$_LANG['already_received'] = "Алынды";
+$_LANG['have_finished'] = "Бітті";
+$_LANG['receive'] = "Алу";
+$_LANG['overdue_time'] = "Жарамсыз";
 
 return $_LANG;

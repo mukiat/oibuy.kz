@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'baitiao' => '白条',
-    'baitiao_stages' => '白条分期'
+    'baitiao' => 'Б-төлеу',
+    'baitiao_stages' => 'Бөліп төлеу'
 ];

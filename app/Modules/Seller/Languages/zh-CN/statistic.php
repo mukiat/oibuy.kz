@@ -1,142 +1,142 @@
 <?php
 
 /* 流量统计 */
-$_LANG['stats_off'] = '网站流量统计已被关闭。<BR>如有需要请到: 系统设置->商店设置->基本设置 开启站点流量统计服务。';
-$_LANG['last_update'] = '最后更新日期';
-$_LANG['now_update'] = '更新记录';
-$_LANG['update_success'] = '分析记录已成功更新!';
-$_LANG['view_log'] = '查看分析记录';
-$_LANG['select_year_month'] = '查询年月';
+$_LANG['stats_off'] = 'Сайттың қаралым статистикасы жабық.<BR> Қосу үшін: Жүйе->Магазин->Негізгі бойынша кіріп статистиканы қосыңыз.';
+$_LANG['last_update'] = 'Соңғы жаңартылу';
+$_LANG['now_update'] = 'Жаңарту дерегі';
+$_LANG['update_success'] = 'Талдау дерегі сәтті жаңартылды!';
+$_LANG['view_log'] = 'Талдау дерегін көру';
+$_LANG['select_year_month'] = 'Іздеу ай-жылы';
 
-$_LANG['pv_stats'] = '综合访问数据';
-$_LANG['integration_visit'] = '综合访问量';
-$_LANG['seo_analyse'] = '搜索引擎分析';
-$_LANG['area_analyse'] = '地域分布';
-$_LANG['visit_site'] = '来访网站分析';
-$_LANG['key_analyse'] = '关键字分析';
+$_LANG['pv_stats'] = 'Жалпы қаралым дерегі';
+$_LANG['integration_visit'] = 'Жалпы қаралым';
+$_LANG['seo_analyse'] = 'SEO аналистикасы';
+$_LANG['area_analyse'] = 'Аймақтық үлес';
+$_LANG['visit_site'] = 'Веб-сайттық талдау';
+$_LANG['key_analyse'] = 'Кілтсөз талдауы';
 
-$_LANG['start_date'] = '开始日期';
-$_LANG['end_date'] = '结束日期';
-$_LANG['start_end_date'] = '起始时间';
-$_LANG['query'] = '查询';
-$_LANG['result_filter'] = '过滤结果';
-$_LANG['compare_query'] = '比较查询';
-$_LANG['year_status'] = '年走势';
-$_LANG['month_status'] = '月走势';
+$_LANG['start_date'] = 'Басталу';
+$_LANG['end_date'] = 'Аяқталу';
+$_LANG['start_end_date'] = 'Уақыты';
+$_LANG['query'] = 'Іздеу';
+$_LANG['result_filter'] = 'Іріктеу';
+$_LANG['compare_query'] = 'Салыстыру';
+$_LANG['year_status'] = 'Жылдық үдеріс';
+$_LANG['month_status'] = 'Айлық үдеріс';
 
-$_LANG['year'] = '年';
-$_LANG['month'] = '月';
-$_LANG['day'] = '日';
+$_LANG['year'] = 'Жыл';
+$_LANG['month'] = 'Ай';
+$_LANG['day'] = 'Күн';
 $_LANG['year_format'] = '%Y';
 $_LANG['month_format'] = '%c';
 
-$_LANG['from'] = '从';
-$_LANG['to'] = '到';
-$_LANG['view'] = '查看';
+$_LANG['from'] = 'Бастап';
+$_LANG['to'] = 'Дейін';
+$_LANG['view'] = 'Көру';
 
 /* 销售概况 */
-$_LANG['overall_sell_circs'] = '当前总体销售情况';
-$_LANG['order_count_trend'] = '订单数(单位:个)';
-$_LANG['sell_out_amount'] = '销出产品数量';
-$_LANG['period'] = '时间段';
-$_LANG['order_amount_trend'] = '营业额(单位:元)';
-$_LANG['order_status'] = '订单走势';
-$_LANG['turnover_status'] = '销售额走势';
-$_LANG['sales_statistics'] = '销售统计';
-$_LANG['down_sales_stats'] = '销售概况报表下载';
+$_LANG['overall_sell_circs'] = 'Қазіргі жалпы сатылым жағдайы';
+$_LANG['order_count_trend'] = 'Заказ саны(тал)';
+$_LANG['sell_out_amount'] = 'Сатқан тауар саны';
+$_LANG['period'] = 'Кезең';
+$_LANG['order_amount_trend'] = 'Айналым(ТГ)';
+$_LANG['order_status'] = 'Заказ үдерісі';
+$_LANG['turnover_status'] = 'Сатылым үдерісі';
+$_LANG['sales_statistics'] = 'Статистика';
+$_LANG['down_sales_stats'] = 'Сатылым аналистикасын жүктеп алу';
 
 /* 订单统计 */
-$_LANG['overall_sum'] = '有效订单总金额';
-$_LANG['overall_choose'] = '总点击数';
-$_LANG['kilo_buy_amount'] = '每千点击订单数';
-$_LANG['kilo_buy_sum'] = '每千点击购物额';
-$_LANG["pay_type"] = "支付方式";
-$_LANG["succeed"] = "已成交";
-$_LANG["confirmed"] = "已确认";
-$_LANG["unconfirmed"] = "未确认";
-$_LANG["invalid"] = "无效或已取消";
-$_LANG['order_circs'] = '订单概况';
-$_LANG['shipping_method'] = '配送方式';
-$_LANG['pay_method'] = '支付方式 ';
-$_LANG['tab_area'] = '地区分布';
-$_LANG['down_order_statistics'] = '订单统计报表下载';
-$_LANG['total_sales'] = '销售总额';
+$_LANG['overall_sum'] = 'Жарамды заказдың жалпы сомасы';
+$_LANG['overall_choose'] = 'Жалпы клик';
+$_LANG['kilo_buy_amount'] = 'Мың кликдегі заказ саны';
+$_LANG['kilo_buy_sum'] = 'Мың кликдегі сатып алу сомасы';
+$_LANG["pay_type"] = "Төлем түрі";
+$_LANG["succeed"] = "Сәтті";
+$_LANG["confirmed"] = "Расталды";
+$_LANG["unconfirmed"] = "Расталмады";
+$_LANG["invalid"] = "Жарамсыз";
+$_LANG['order_circs'] = 'Заказ шолуы';
+$_LANG['shipping_method'] = 'Тасымал түрі';
+$_LANG['pay_method'] = 'Төлем түрі ';
+$_LANG['tab_area'] = 'Аймақ үлесі';
+$_LANG['down_order_statistics'] = 'Тапсырыс аналистикасын жүктеу';
+$_LANG['total_sales'] = 'Жалпы сатылым';
 
 /* 销售排行 */
-$_LANG['order_by'] = '排行';
-$_LANG['goods_name'] = '商品名称';
-$_LANG['sell_amount'] = '销售量';
-$_LANG['sell_sum'] = '销售额';
-$_LANG['percent_count'] = '均价';
-$_LANG["to"] = '至';
-$_LANG['order_by_goodsnum'] = '按销售量排序';
-$_LANG["order_by_money"] = '按销售额排序';
-$_LANG["download_sale_sort"] = "销售排行报表下载";
+$_LANG['order_by'] = 'Рейтинг';
+$_LANG['goods_name'] = 'Тауар аты';
+$_LANG['sell_amount'] = 'Сатылым';
+$_LANG['sell_sum'] = 'Сату сомасы';
+$_LANG['percent_count'] = 'Орташа баға';
+$_LANG["to"] = '→';
+$_LANG['order_by_goodsnum'] = 'Сатылым бойынша';
+$_LANG["order_by_money"] = 'Сату сомасы бойынша';
+$_LANG["download_sale_sort"] = "Сатылым рейтингінің есебін жүктеп алу";
 
 /* 客户统计 */
-$_LANG['guest_order_sum'] = '匿名会员平均订单额';
-$_LANG['member_count'] = '会员总数';
-$_LANG['member_order_count'] = '会员订单总数';
-$_LANG['guest_member_ordercount'] = '匿名会员订单总数';
-$_LANG['guest_member_orderamount'] = '匿名会员购物总额';
-$_LANG['percent_buy_member'] = '会员购买率 ';
-$_LANG['buy_member_formula'] = '（会员购买率 = 有订单会员数 ÷ 会员总数）';
-$_LANG['member_order_amount'] = '（每会员订单数 = 会员订单总数 ÷ 会员总数）';
-$_LANG['member_buy_amount'] = '（每会员购物额 = 会员购物总额 ÷ 会员总数）';
-$_LANG["order_turnover_peruser"] = "每会员平均订单数及购物额";
-$_LANG["order_turnover_percus"] = "匿名会员平均订单额及购物总额";
-$_LANG['guest_all_ordercount'] = '（匿名会员平均订单额 =  匿名会员购物总额 ÷ 匿名会员订单总数）';
+$_LANG['guest_order_sum'] = 'Анон.кленттердің орташа заказ сомасы';
+$_LANG['member_count'] = 'Клент саны';
+$_LANG['member_order_count'] = 'Кленттің заказ саны';
+$_LANG['guest_member_ordercount'] = 'Анон.кленттің заказ саны';
+$_LANG['guest_member_orderamount'] = 'Анон.кленттің сатып алу сомасы';
+$_LANG['percent_buy_member'] = 'Кленттердің Сатып алу мөлшері ';
+$_LANG['buy_member_formula'] = '（Кленттердің сатып алу мөлшері = Заказ бергер клент саны ÷ жалпы клент саны）';
+$_LANG['member_order_amount'] = '（Кр кленттің заказ саны = Заказдың жалпы саны ÷ кленттің жалпы саны）';
+$_LANG['member_buy_amount'] = '（Кленттің сатып алу сомасы = Кленттің жалпы сатып алу сомасы ÷ кленттің жалпы саны）';
+$_LANG["order_turnover_peruser"] = "Кленттің орташа заказы және сомасы";
+$_LANG["order_turnover_percus"] = "Анон.кленттің орташа заказымен жалпы сомасы";
+$_LANG['guest_all_ordercount'] = '（Анон.клент орташа заказ сомасы =  Анон.кленттің жалпы сомасы ÷ анон.кленттің жалпы заказ саны）';
 
-$_LANG['average_member_order'] = '每会员订单数';
-$_LANG['member_order_sum'] = '每会员购物额';
-$_LANG['order_member_count'] = '有订单会员数';
-$_LANG['member_sum'] = '会员购物总额';
+$_LANG['average_member_order'] = 'Кленттің заказ саны';
+$_LANG['member_order_sum'] = 'Әр адам алу сомасы';
+$_LANG['order_member_count'] = 'Заказ бар адам саны';
+$_LANG['member_sum'] = 'Адамның жалпы алу сомасы';
 
-$_LANG['order_all_amount'] = '订单总数';
-$_LANG['order_all_turnover'] = '总购物额';
+$_LANG['order_all_amount'] = 'Заказдың жалпы саны';
+$_LANG['order_all_turnover'] = 'Жалпы сатым алу';
 
-$_LANG['down_guest_stats'] = '客户统计报表下载';
-$_LANG['guest_statistics'] = '客户统计报表';
+$_LANG['down_guest_stats'] = 'Клент статистикасын жүктеп алу';
+$_LANG['guest_statistics'] = 'Клент статистикасы';
 
 /* 会员排行 */
-$_LANG['show_num'] = '显示数量';
-$_LANG['member_name'] = '会员名';
-$_LANG['order_amount'] = '订单数(单位:个)';
-$_LANG['buy_sum'] = '购物金额';
+$_LANG['show_num'] = 'Көрсету саны';
+$_LANG['member_name'] = 'Клент аты';
+$_LANG['order_amount'] = 'Заказ саны(тал)';
+$_LANG['buy_sum'] = 'Алу сомасы';
 
-$_LANG['order_amount_sort'] = '按订单数量排序';
-$_LANG['buy_sum_sort'] = '按购物金额排序';
-$_LANG['download_amount_sort'] = '下载购物金额报表';
+$_LANG['order_amount_sort'] = 'Заказ санымен тізу';
+$_LANG['buy_sum_sort'] = 'Алу сомасымен тізу';
+$_LANG['download_amount_sort'] = 'Статистикасын жүктеп алу';
 
 /* 销售名细 */
-$_LANG['goods_name'] = '商品名称';
-$_LANG['goods_sn'] = '货号';
-$_LANG['order_sn'] = '订单号';
-$_LANG['amount'] = '数量';
-$_LANG['to'] = '至';
-$_LANG['sell_price'] = '售价';
-$_LANG['sell_date'] = '售出日期';
-$_LANG['down_sales'] = '下载销售明细';
-$_LANG['sales_list'] = '销售明细';
+$_LANG['goods_name'] = 'Тауар аты';
+$_LANG['goods_sn'] = 'Коды';
+$_LANG['order_sn'] = 'Заказ коды';
+$_LANG['amount'] = 'Саны';
+$_LANG['to'] = '→';
+$_LANG['sell_price'] = 'Бағасы';
+$_LANG['sell_date'] = 'Уақыты';
+$_LANG['down_sales'] = 'Сату деталын жүктеу';
+$_LANG['sales_list'] = 'Сату деталы';
 
 /* 访问购买比例 */
-$_LANG['fav_exponential'] = '人气指数';
-$_LANG['buy_times'] = '购买次数';
-$_LANG['visit_buy'] = '访问购买率';
-$_LANG['download_visit_buy'] = '下载访问购买率报表';
+$_LANG['fav_exponential'] = 'Хит индекісі';
+$_LANG['buy_times'] = 'Алу саны';
+$_LANG['visit_buy'] = 'Көру-алу мөлшері';
+$_LANG['download_visit_buy'] = 'Көру-алу статистикасын жүктеп алу';
 
-$_LANG['goods_cat'] = '商品分类';
-$_LANG['goods_brand'] = '商品品牌';
+$_LANG['goods_cat'] = 'Тауар түрі';
+$_LANG['goods_brand'] = 'Бренд';
 
 /* 搜索引擎 */
-$_LANG['down_search_stats'] = '下载搜索关键字报表';
-$_LANG['tab_keywords'] = '关键字统计';
-$_LANG['keywords'] = '关键字';
-$_LANG['date'] = '日期';
-$_LANG['hits'] = '搜索次数';
+$_LANG['down_search_stats'] = 'Іздеу кілтсөз статистикасын жүктеп алу';
+$_LANG['tab_keywords'] = 'Кілтсөз есебі';
+$_LANG['keywords'] = 'Кілтсөз';
+$_LANG['date'] = 'Мерзімі';
+$_LANG['hits'] = 'Іздеу саны';
 
 //供货商导出
-$_LANG['pay_uncomplete'] = '已支付未完成';
-$_LANG['suppliers_return'] = '退换货';
+$_LANG['pay_uncomplete'] = 'Төленді-аяқталмады';
+$_LANG['suppliers_return'] = 'Қайтару';
 
 return $_LANG;

@@ -1,6 +1,6 @@
 <?php
 
-$_LANG['topic_count'] = "个话题";
-$_LANG['browse_all'] = "点击浏览全部";
+$_LANG['topic_count'] = " тақырып";
+$_LANG['browse_all'] = "Бәрін көру";
 
 return $_LANG;

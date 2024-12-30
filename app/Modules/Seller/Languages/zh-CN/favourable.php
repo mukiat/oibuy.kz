@@ -1,102 +1,102 @@
 <?php
 
-$_LANG['lab_act_range_desc'][0] = '商品已经参与其他优惠活动';
-$_LANG['lab_act_range_desc'][1] = '分类商品已经参与其他优惠活动';
-$_LANG['lab_act_range_desc'][2] = '品牌商品已经参与其他优惠活动';
-$_LANG['rs_no_merchants_notice'] = '该卖场下没有商家，暂时无法参加优惠活动';
+$_LANG['lab_act_range_desc'][0] = 'Тауар басқа акция түрлеріне қатысқан';
+$_LANG['lab_act_range_desc'][1] = 'Түр тауары басқа акция түрлеріне қатысқан';
+$_LANG['lab_act_range_desc'][2] = 'Брнет тауар басқа акция түрлеріне қатысқан';
+$_LANG['rs_no_merchants_notice'] = 'Бұл сатылым алаңында сатушы жоқ,акцияға қатыса алмайсыз.';
 
-$_LANG['drop_activity_thumb'] = '删除图标';
-$_LANG['confirm_drop_thumb'] = '你确认要删除该图标吗？';
-$_LANG['drop_activity_thumb_success'] = '删除活动图片成功';
+$_LANG['drop_activity_thumb'] = 'Нобайды жою';
+$_LANG['confirm_drop_thumb'] = 'Нобайды жоясызба?';
+$_LANG['drop_activity_thumb_success'] = 'Акция фотосы сәтті жойылды';
 
 /* menu */
-$_LANG['favourable_list'] = '优惠活动列表';
-$_LANG['add_favourable'] = '添加优惠活动';
-$_LANG['edit_favourable'] = '编辑优惠活动';
-$_LANG['favourable_log'] = '优惠活动出价记录';
-$_LANG['continue_add_favourable'] = '继续添加优惠活动';
-$_LANG['back_favourable_list'] = '返回优惠活动列表';
-$_LANG['add_favourable_ok'] = '添加优惠活动成功';
-$_LANG['edit_favourable_ok'] = '编辑优惠活动成功';
+$_LANG['favourable_list'] = 'Акциялар';
+$_LANG['add_favourable'] = 'Акция енгізу';
+$_LANG['edit_favourable'] = 'Акцияны өңдеу ';
+$_LANG['favourable_log'] = 'Акциядағы атау дерекі';
+$_LANG['continue_add_favourable'] = 'Жалғасты енгізу';
+$_LANG['back_favourable_list'] = 'Акцияларға қайту';
+$_LANG['add_favourable_ok'] = 'Сәтті енгізілді';
+$_LANG['edit_favourable_ok'] = 'Сәтті өңделді';
 
 /* list */
-$_LANG['act_is_going'] = '仅显示进行中的活动';
-$_LANG['act_name'] = '优惠活动名称';
-$_LANG['goods_name'] = '商品名称';
-$_LANG['start_time'] = '开始时间';
-$_LANG['end_time'] = '结束时间';
-$_LANG['min_amount'] = '金额下限';
-$_LANG['max_amount'] = '金额上限';
-$_LANG['favourable_not_exist'] = '您要操作的优惠活动不存在';
-$_LANG['batch_drop_ok'] = '批量删除成功';
-$_LANG['no_record_selected'] = '没有选择记录';
-$_LANG['coupons_adopt_status_set_success'] = '优惠活动审核状态设置成功';
+$_LANG['act_is_going'] = 'Тек жүргізіліп жатқан акциялар';
+$_LANG['act_name'] = 'Акция атауы';
+$_LANG['goods_name'] = 'Тауар атауы';
+$_LANG['start_time'] = 'Басталуы';
+$_LANG['end_time'] = 'Аяқталуы';
+$_LANG['min_amount'] = 'Сомма МИН';
+$_LANG['max_amount'] = 'Сомма МАХ';
+$_LANG['favourable_not_exist'] = 'Өңдейтін акция табылмады';
+$_LANG['batch_drop_ok'] = 'Жаппай жойылу сәтті';
+$_LANG['no_record_selected'] = 'Таңдаулар жоқ';
+$_LANG['coupons_adopt_status_set_success'] = 'Акцияның тексеріс күйі сәтті бапталды';
 
 /* info */
-$_LANG['label_act_name'] = '优惠活动名称：';
-$_LANG['label_start_time'] = '优惠开始时间：';
-$_LANG['label_end_time'] = '优惠结束时间：';
-$_LANG['label_start_end_time'] = '优惠起止时间：';
-$_LANG['label_user_rank'] = '享受优惠的会员等级：';
-$_LANG['not_user'] = '非会员';
-$_LANG['label_act_range'] = '优惠范围：';
-$_LANG['far_all'] = '全部商品';
-$_LANG['far_category'] = '以下分类';
-$_LANG['far_brand'] = '以下品牌';
-$_LANG['far_goods'] = '以下商品';
-$_LANG['label_search_and_add'] = '搜索并加入优惠范围';
-$_LANG['js_languages']['all_need_not_search'] = '优惠范围是全部商品，不需要此操作';
-$_LANG['js_languages']['range_exists'] = '该选项已存在';
-$_LANG['label_min_amount'] = '金额下限：';
-$_LANG['label_max_amount'] = '金额上限：';
-$_LANG['notice_max_amount'] = '0表示没有上限';
-$_LANG['label_act_type'] = '优惠方式：';
-$_LANG['notice_act_type'] = '当优惠方式为“享受赠品（特惠品）”时，请输入允许买家选择赠品（特惠品）的最大数量，数量为0表示不可选择赠品；' .
-    '当优惠方式为“享受现金减免”时，请输入现金减免的金额；' .
-    '当优惠方式为“享受价格折扣”时，请输入折扣（1－99），如：打9折，就输入90。';
-$_LANG['fat_goods'] = '享受赠品（特惠品）';
-$_LANG['fat_price'] = '享受现金减免';
-$_LANG['fat_discount'] = '享受价格折扣';
-$_LANG['search_result_empty'] = '没有找到相应记录，请重新搜索';
-$_LANG['label_search_and_add_gift'] = '搜索并加入赠品（特惠品）';
+$_LANG['label_act_name'] = 'Акция атауы：';
+$_LANG['label_start_time'] = 'Басталуы：';
+$_LANG['label_end_time'] = 'Аяқталуы：';
+$_LANG['label_start_end_time'] = 'Мерзімі：';
+$_LANG['label_user_rank'] = 'Жеңілдіктерге ие клент деңгейлері：';
+$_LANG['not_user'] = 'Клент емес';
+$_LANG['label_act_range'] = 'Жеңілдік ауқымы：';
+$_LANG['far_all'] = 'Барлық тауар';
+$_LANG['far_category'] = 'Төмендегі түр';
+$_LANG['far_brand'] = 'Төмендегі брент';
+$_LANG['far_goods'] = 'Төмендегі тауар';
+$_LANG['label_search_and_add'] = 'акцияларды іздеу және қосылу';
+$_LANG['js_languages']['all_need_not_search'] = 'Жеңілдік көлемі барлық тауар болып табылады, бұл атқару қажет емес';
+$_LANG['js_languages']['range_exists'] = 'Таңдау бұрыннан бар';
+$_LANG['label_min_amount'] = 'Сомма МИН：';
+$_LANG['label_max_amount'] = 'Сомма МАХ：';
+$_LANG['notice_max_amount'] = '0-шегі жоқ дегенді білдіреді';
+$_LANG['label_act_type'] = 'Акция түрі：';
+$_LANG['notice_act_type'] = 'Акция түрі“Сыйлық”болған жағдайда，кленттің сыйлықты таңдай алатын МАХ санын енгізіңіз.Сан 0-ге тең болса сыйлық таңдалмайды дегенді білдіреді.；' .
+    'Акция түрі “Арзандық”болғанда，арзандатылатын ақша соммасын енгізіңіз；' .
+    'Акция түрі “Жеңілдік”болғанда，(1－99) аралығындағы санды енгізіңіз，мысалы：10 пайыз жеңілдік болса 10 санын енгізіңіз.';
+$_LANG['fat_goods'] = 'Сыйлық';
+$_LANG['fat_price'] = 'Арзандық';
+$_LANG['fat_discount'] = 'Жеңілдік';
+$_LANG['search_result_empty'] = 'Сәйкес дерек табылмады,қайтадан іздеңіз';
+$_LANG['label_search_and_add_gift'] = 'Іздеп сыйлықты енгізіңіз.';
 
 /* 提示信息 */
-$_LANG['js_languages']['pls_search'] = '请先搜索';
-$_LANG['js_languages']['price_need_not_search'] = '优惠方式是享受价格折扣，不需要此操作';
-$_LANG['js_languages']['gift'] = '赠品（特惠品）';
-$_LANG['js_languages']['price'] = '价格';
-$_LANG['js_languages']['act_name_not_null'] = '请输入优惠活动名称';
-$_LANG['js_languages']['min_amount_not_number'] = '金额下限格式不正确（数字）';
-$_LANG['js_languages']['max_amount_not_number'] = '金额上限格式不正确（数字）';
-$_LANG['js_languages']['act_type_ext_not_number'] = '优惠方式后面的值不正确（数字）';
-$_LANG['js_languages']['amount_invalid'] = '金额上限小于金额下限。';
-$_LANG['js_languages']['start_lt_end'] = '优惠开始时间不能大于结束时间';
-$_LANG['js_languages']['select_user_dengji'] = '请选择享受优惠的会员等级';
-$_LANG['js_languages']['min_amount_null'] = '金额下限不能为空';
-$_LANG['js_languages']['max_amount_null'] = '金额上限不能为空';
-$_LANG['js_languages']['batch_drop_confirm'] = '您确实要删除选中的优惠活动吗？';
+$_LANG['js_languages']['pls_search'] = 'Іздеңіз';
+$_LANG['js_languages']['price_need_not_search'] = 'Акция түрі Арзандық,Бұл атқару қажет емес';
+$_LANG['js_languages']['gift'] = 'Сыйлық';
+$_LANG['js_languages']['price'] = 'Баға';
+$_LANG['js_languages']['act_name_not_null'] = 'Акция атауын енгізіңіз';
+$_LANG['js_languages']['min_amount_not_number'] = 'Сомманың МИН форматы қате(сан)';
+$_LANG['js_languages']['max_amount_not_number'] = 'Сомманың МАХ форматы қате(сан)';
+$_LANG['js_languages']['act_type_ext_not_number'] = 'Акция түрінің соңындағы мән қате(сан)';
+$_LANG['js_languages']['amount_invalid'] = 'Сомманың МАХ саны МИН санынан кем 。';
+$_LANG['js_languages']['start_lt_end'] = 'Басталу уақыты аяқталуынан кейін болмауы керек';
+$_LANG['js_languages']['select_user_dengji'] = 'Акцияны пайдалана алатын клент деңгейі';
+$_LANG['js_languages']['min_amount_null'] = 'Сомманың МИН санын енгізіңіз';
+$_LANG['js_languages']['max_amount_null'] = 'Сомманың МАХ санын енгізіңіз';
+$_LANG['js_languages']['batch_drop_confirm'] = 'Таңдалған акцияны жоясызба?';
 
 /* post */
-$_LANG['pls_set_user_rank'] = '请设置享受优惠的会员等级';
-$_LANG['pls_set_act_range'] = '请设置优惠范围';
-$_LANG['amount_error'] = '金额下限不能大于金额上限';
-$_LANG['act_name_exists'] = '该优惠活动名称已存在，请您换一个';
+$_LANG['pls_set_user_rank'] = 'Акцияға ие болатын клент деңгейін қойыңыз';
+$_LANG['pls_set_act_range'] = 'Акция ауқымын енгізіңіз';
+$_LANG['amount_error'] = 'Сомманың МИН саны МАХ санынан үлкен болмауы керек';
+$_LANG['act_name_exists'] = 'Бұл атау бұрыннан бар，ауыстырыңыз';
 $_LANG['favourable_fw'] = '';
 
-$_LANG['nolimit'] = '没有限制';
-$_LANG['set_use_range'] = '设置使用范围';
+$_LANG['nolimit'] = 'Шектеусіз';
+$_LANG['set_use_range'] = 'Істетілу ауқымын енгізіңіз';
 
 /* 教程名称 */
-$_LANG['tutorials_bonus_list_one'] = '商城优惠活动说明';
+$_LANG['tutorials_bonus_list_one'] = 'Акция туралы нұсқаулар';
 
 /* 页面顶部操作提示 */
-$_LANG['operation_prompt_content']['list'][0] = '展示了所有优惠活动相关信息列表。';
-$_LANG['operation_prompt_content']['list'][1] = '可根据商品名称关键字进行搜索，侧边栏高级搜索使用类型、店铺名称搜索具体活动信息。';
-$_LANG['operation_prompt_content']['list'][2] = '展示信息有：商家名称、优惠活动名称、起始时间等，可进行添加、编辑、删除或批量删除等操作。';
+$_LANG['operation_prompt_content']['list'][0] = 'Акция туралы барлық ақпараттар тізімі көрсетілген.';
+$_LANG['operation_prompt_content']['list'][1] = 'Акцияны тауар атының кілсөзі арқылы іздеуге болады,және шеткі тақтада түр мен дүкен атауы арқылы нақты деректі табуға болады.';
+$_LANG['operation_prompt_content']['list'][2] = 'Деректерде：сатушы аты、акция атауы、мерзімі және Т.Б.қамтылады，Енгізу,өңдеу,жою н/е жаппай жою әрекеттерін атқара аласыз.';
 
-$_LANG['operation_prompt_content']['info'][0] = '请正确填写活动信息：优惠活动名称、活动起始时间、优惠方式（享受赠品、享受满减、享受折扣）。';
-$_LANG['operation_prompt_content']['info'][1] = '前台可在优惠活动频道页查看优惠活动详情。';
+$_LANG['operation_prompt_content']['info'][0] = 'Деректі мұқият енгізіңіз：акция атауы,мерзімі,түрі(сыйлық,арзандық,жеңілдік).';
+$_LANG['operation_prompt_content']['info'][1] = 'Сайттағы акцияларға қатысты бетте акцияның нақты ақпараттарын көре аласыз.';
 
-$_LANG['all_checkbox'] = '全选';
+$_LANG['all_checkbox'] = 'Барлығын';
 
 return $_LANG;

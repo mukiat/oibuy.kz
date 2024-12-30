@@ -12,19 +12,19 @@ return [
     |
     */
 
-    'cancel_order_reason' => '拼团失败',
-    'team_order_fail_refound' => '拼团订单失败退款',
-    'team_money' => '金钱',
-    'team_is_end' => '该拼团活动已结束，去查看新的活动吧',
-    'goods_not_on_sale' => '拼团商品已下架',
-    'team_you_joined' => '该团已经参加，请选择其他团',
-    'team_is_finished' => '该团已经完成，请选择其他团去参团',
-    'team_goods_understock' => '当前库存不足',
-    'team_number_limited' => '已超过拼团限购数量',
-	'yuan' => '元',
-	'hours' => '小时',
-    'seconds' => '秒前',
-	'ordinary' => '普通',
-	'team_success' => '您好，您已参团成功',
+    'cancel_order_reason' => 'Топтасу сәтсіз',
+    'team_order_fail_refound' => 'Топтасу сәтсіз төлем қайтару',
+    'team_money' => 'Ақша',
+    'team_is_end' => 'Бұл топтасу аяқталды,басқасын көріңіз',
+    'goods_not_on_sale' => 'Топтасу тауары сатудан алынды',
+    'team_you_joined' => 'Бұл топқа қосылғансыз,басқасын таңдаңыз',
+    'team_is_finished' => 'Бұл топтасу аяқталды,басқасын таңдаңыз',
+    'team_goods_understock' => 'Қор жеткіліксіз',
+    'team_number_limited' => 'Топтасу шегінен асты',
+	'yuan' => '₸',
+	'hours' => 'сағ',
+    'seconds' => 'сек.бұрын',
+	'ordinary' => 'Қалыпты',
+	'team_success' => 'Сәлеметсіз,сіз топқа сәтті қатыстыңыз',
 
 ];

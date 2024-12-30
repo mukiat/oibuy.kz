@@ -1,14 +1,14 @@
 <?php
 
-$_LANG['This_suit'] = "此套装";
-$_LANG['Set_price'] = "套餐价";
-$_LANG['Already_preferential'] = "已优惠";
-$_LANG['jian'] = "件";
-$_LANG['Simple_description'] = "简单描述";
+$_LANG['This_suit'] = "Бұл пакет";
+$_LANG['Set_price'] = "Пакеттік баға";
+$_LANG['Already_preferential'] = "Жеңілдетілді";
+$_LANG['jian'] = "тал";
+$_LANG['Simple_description'] = "Қысқаша түсінік";
 
-$_LANG['package_number'] = "商品数量";
-$_LANG['package_time'] = "活动时间";
+$_LANG['package_number'] = "Тауар саны";
+$_LANG['package_time'] = "Науқан уақыты";
 
-$_LANG['sheng'] = "省";
+$_LANG['sheng'] = "Үнем";
 
 return $_LANG;

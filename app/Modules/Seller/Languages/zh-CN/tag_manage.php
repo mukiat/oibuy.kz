@@ -1,36 +1,36 @@
 <?php
 
-$_LANG['tag_manage'] = '标签管理';
-$_LANG['tag_id'] = '编号';
-$_LANG['tag_words'] = '标签名称';
-$_LANG['add_tag'] = '添加标签';
-$_LANG['user_id'] = '会员名';
-$_LANG['goods_id'] = '商品名称';
-$_LANG['drop_tags'] = '批量删除';
-$_LANG['tagword_exist'] = '标签 %s 已经存在！';
-$_LANG['tag_list'] = '标签列表';
-$_LANG['tag_edit'] = '编辑标签';
-$_LANG['goods_name'] = '商品名称';
-$_LANG['name_search'] = '根据商品编号、名称或货号搜索商品';
-$_LANG['tag_edit_success'] = '更新标签成功';
-$_LANG['tag_add_success'] = '添加标签成功';
-$_LANG['pls_select_goods'] = '请选择商品';
+$_LANG['tag_manage'] = 'Таңба баптауы';
+$_LANG['tag_id'] = 'Коды';
+$_LANG['tag_words'] = 'Таңба аты';
+$_LANG['add_tag'] = 'Енгізу';
+$_LANG['user_id'] = 'Клент аты';
+$_LANG['goods_id'] = 'Тауар аты';
+$_LANG['drop_tags'] = 'Топпен жою';
+$_LANG['tagword_exist'] = '%s таңбасы бұрын енгізілген！';
+$_LANG['tag_list'] = 'Таңба тізімі';
+$_LANG['tag_edit'] = 'Таңба өңдеу';
+$_LANG['goods_name'] = 'Тауар аты';
+$_LANG['name_search'] = 'Тауар коды,аты бойынша іздеңіз';
+$_LANG['tag_edit_success'] = 'Таңба сәтті жаңартылды';
+$_LANG['tag_add_success'] = 'Таңба сәтті енгізілді';
+$_LANG['pls_select_goods'] = 'Тауар таңда';
 
-$_LANG['no_select_tag'] = '您现在没有需要删除的标签';
-$_LANG['drop_success'] = '您已经成功的删除了 %d 个标签';
-$_LANG['back_list'] = '返回标签列表';
+$_LANG['no_select_tag'] = 'Сізде қазір жою керек таңба жоқ';
+$_LANG['drop_success'] = 'Сіз %d таңбаны сәтті жойдыңыз';
+$_LANG['back_list'] = 'Тізімге қайту';
 
 /* JS语言项 */
-$_LANG['drop_confirm'] = '您确定要删除这条记录吗?';
+$_LANG['drop_confirm'] = 'Бұл деректі жоясыз ба?';
 
-$_LANG['js_languages']['tag_name_not_empty'] = '标签名称不能为空！';
+$_LANG['js_languages']['tag_name_not_empty'] = 'Таңба атауын енгізіңіз！';
 
 /* 页面顶部操作提示 */
-$_LANG['operation_prompt_content']['list'][0] = '上架，当商品处于非上架状态时，前台将不能浏览该商品，店主可控制商品上架状态。';
-$_LANG['operation_prompt_content']['list'][1] = '违规下架，当商品处于违规下架状态时，前台将不能购买该商品，只有管理员可控制商品违规下架状态，并且商品只有重新编辑后才能上架。';
-$_LANG['operation_prompt_content']['list'][2] = '设置项中可以查看商品详细、查看商品SKU。查看商品详细，跳转到商品详细页。查看商品SKU，显示商品的SKU、图片、价格、库存信息。';
+$_LANG['operation_prompt_content']['list'][0] = 'Сөреге қою- тауар сөреге қою күйінде емес кезде,платформа кленттеріне тауар көрсетілмейді,осы функция арқылы тауардың сатылымға шығуын еркін басқарасыз';
+$_LANG['operation_prompt_content']['list'][1] = 'Сөреден алыну - Егер тауарды сөреден портал админдері алып тастаса,онда тауарды кленттер көре алмайды,тек портал админі ғана тауарды ережеге сай емес деп алып тастай алады,қайта шығару үшін тауарды қайтадан өңдеп енгізуге тура келеді';
+$_LANG['operation_prompt_content']['list'][2] = 'Баптау арқылы тауардың деталын,тауар SKU көре аласыз.Тауар деталын көргенде,тауар ақпарат бетіне өтеді,тауар SKU көргенде,тауардың SKU、суреті、бағасы、қоры сияқты ақпараттар көрінеді.';
 
-$_LANG['operation_prompt_content']['info'][0] = '可从管理平台手动添加一名新会员，并填写相关信息。';
-$_LANG['operation_prompt_content']['info'][1] = '新增会员后可从会员列表中找到该条数据，并再次进行编辑操作，但该会员名称不可变。';
+$_LANG['operation_prompt_content']['info'][0] = 'Басқарма арқылы бір жаңа клент енгізіп,қатысты ақпараттарын толтыра аласыз.';
+$_LANG['operation_prompt_content']['info'][1] = 'Жаңа клент енгізген соң клент тізімінен осы деректі таба аласыз,және бұл дерекке өңдеу атқаруын жасай аласыз,бірақ бұл кленттің аты өзгертілмейді';
 
 return $_LANG;

@@ -1,8 +1,8 @@
 /*
-* * 上海商创网络科技有限公司
-* * team:made by https://www.dscmall.cn
+* * Samruk IT Ltd.
+* * team:made by Samruk IT
 * * Author:made by zhuofuxi
-* * Date:2018-04-06 09:30:00
+* * Date:2023-04-06 09:30:00
 */
 
 body{ background: #f8f8f8; }
@@ -25,7 +25,7 @@ body{ background: #f8f8f8; }
 
 /* ------------------ 通用模块 start ------------------ */
 /*用户中心卡片模块-白底-内边距30*/
-.user-mod{ background: #fff; clear:both; display: block; padding: 30px; margin-bottom: 10px;}
+.user-mod{ background: #fff; clear:both; display: block; padding: 25px; margin-bottom: 10px;}
 /*用户等级模块*/
 .user-rank{ background: url(../images/user/user_rank.png) no-repeat; width: 90px; height: 17px; display: inline-block; vertical-align: middle; color:#fff; text-indent:40px;}
 .user-rank-1{ background-position: -25px 0; }
@@ -34,7 +34,7 @@ body{ background: #f8f8f8; }
 .user-rank-4{ background-position: -25px -51px; }
 .user-rank-5{ background-position: -25px -68px; }
 /*标题模块*/
-.user-title{ height: 27px; border-bottom: 1px solid #d1d1d1; padding-bottom: 5px; margin-bottom: 10px;}
+.user-title{ height: 40px; border-bottom: 1px solid #d1d1d1; padding-bottom: 45px; margin-bottom: 10px;}
 .user-title h2{ float: left; font-size: 16px; font-weight: 700; color: #555; height: 27px; line-height: 27px; margin-right: 20px;}
 .user-title h2:before{ content: ""; float: left; height: 16px; width: 3px; background: #F32525; margin: 6px 10px 0 0;}
 .more{ float: right; line-height: 27px; color:#438cde;}
@@ -140,9 +140,9 @@ body{ background: #f8f8f8; }
 /*表单列表*/
 .user-items:after{ content: ' '; display: block; clear: both; height: 0; visibility: hidden;}
 .user-items .item{ display:block; margin-bottom:15px; position:relative; float:left; width:100%;}
-.user-items .item .label{ float:left; width:100px; text-align:right; margin-right:15px; height:40px; line-height:40px; font-size:14px;}
+.user-items .item .label{ float:left; width:120px; text-align:right; margin-right:15px; height:40px; line-height:40px; font-size:14px;}
 .user-items .item .label em{ color:#f42424; margin-right:2px;}
-.user-items .item .value{ float:left; width:calc(100% - 116px);}
+.user-items .item .value{ float:left; width:calc(100% - 173px);}
 .user-items .item .value .text{ height:38px; line-height:38px; border-color:#d2d2d2; float:left; font-size:14px;}
 .user-items .item .value .text.error{ border-color:#f42424; color:#555; margin-left:0;}
 .user-items .item .value .notic{ float:left;color:#d2d2d2; font-size:14px; line-height:40px; margin-left:18px;}
@@ -183,7 +183,7 @@ body{ background: #f8f8f8; }
 .user-side .account .item{ margin-top: 5px; }
 .user-side .account .item-name,
 .user-side .account .item-main{  float: left; }
-.user-side .account .item-name{ width: 68px; overflow: hidden;}
+.user-side .account .item-name{ width: 75px; overflow: hidden;}
 .user-side .account .integrity{ display: inline-block; width: 95px; height: 5px; border-radius: 3px; background: #D2D2D2; overflow: hidden; vertical-align: middle; margin-right: 8px;}
 .user-side .account .integrity em{ height: 100%; float: left; background: #FF8F27; }
 .user-side .account .safe .iconfont{ color: #d2d2d2; margin-right: 10px; position: relative;}
@@ -222,14 +222,14 @@ body{ background: #f8f8f8; }
 /* ------------------ 默认页start ------------------ */
 /*订单状态*/
 .user-index-order-statu{ margin-right: -10px; margin-bottom: 10px;}
-.user-index-order-statu li{ margin-right: 10px;  width: 162.5px;  float: left; background: #fff; padding: 15px 30px;}
+.user-index-order-statu li{ margin-right: 10px;  width: 182.5px;  float: left; background: #fff; padding: 15px 20px;}
 .user-index-order-statu li .circle{ float: left; width: 70px; height: 70px; border-radius: 50%; overflow: hidden; background: #ddd; color: #fff; text-align: center; margin-right: 20px;}
 .user-index-order-statu li:nth-child(1) .circle{ background: #97D142; }
 .user-index-order-statu li:nth-child(2) .circle{ background: #45C9D3; }
 .user-index-order-statu li:nth-child(3) .circle{ background: #EE6CA5; }
 .user-index-order-statu li:nth-child(4) .circle{ background: #B262F6; }
 .user-index-order-statu li .circle .iconfont{ font-size: 40px; line-height: 70px; font-weight: 100;}
-.user-index-order-statu li .info{ float: left; width: 72px; padding-top: 7px;}
+.user-index-order-statu li .info{ float: left; width: 76px; padding-top: 7px;}
 .user-index-order-statu li .info p{ font-size: 16px; }
 .user-index-order-statu li .info .num{ font-size: 30px; }
 .user-index-order-statu li:nth-child(1) .info .num{ color: #97D142; }
@@ -269,7 +269,7 @@ body{ background: #f8f8f8; }
 .user-index-order-list .td-goods .ellipsis{ float:left; margin-top:15px; letter-spacing: 1px; color:#444}
 .user-index-order-list .td-price{ width: 120px; padding-top: 18px; text-align:center;}
 .user-index-order-list .td-name{ width: 150px; padding-top: 18px; text-align:center;}
-.user-index-order-list .td-statu{ width: 150px; padding-top: 18px; color: #333; text-align:center;}
+.user-index-order-list .td-statu{ width: 157px; padding-top: 18px; color: #333; text-align:center;}
 .user-index-order-list .td-handle{ width: 110px; padding-top: 13px; padding-right: 0; text-align: right!important;}
 /*我的收藏*/
 .user-index-collection-list{ font-size: 14px; margin-bottom: 50px;}
@@ -772,7 +772,7 @@ body{ background: #f8f8f8; }
 .affiliate-step-warp .cont .recommend{position: absolute;top: 1px;left: 220px;}
 .affiliate-step-warp .cont .recommend .sc-btn{ width:85px; height:35px; line-height:35px; margin-left:10px;background: #FF8800;border-color: #FF8800;}
 .affiliate-step-warp .a-item .a-item-info{ float:left;}
-.affiliate-step-warp .a-item .iconfont{ float:left; margin:20px 45px 0; color:#d2d2d2;}
+.affiliate-step-warp .a-item .iconfont{ float:left; margin:20px 20px 0; color:#d2d2d2;}
 .affiliate-step-warp .a-item .item-icon{ display:inline-block; width:60px; height:60px; background:url(../images/user/aff-icon.png) no-repeat;}
 .affiliate-step-warp .a-item span{ display:block; font-size:14px; color:#8c8c8c; margin-top:5px;}
 .affiliate-step-warp .a-item .item-icon-1{ background-position:0 0;}

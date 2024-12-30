@@ -1,47 +1,47 @@
 <?php
 
-$_LANG['card_name'] = '贺卡名称';
-$_LANG['card_fee'] = '贺卡费用';
-$_LANG['free_money'] = '贺卡免费额度';
-$_LANG['card_img'] = '贺卡图纸';
-$_LANG['card_desc'] = '贺卡描述';
+$_LANG['card_name'] = 'Силық карта аты';
+$_LANG['card_fee'] = 'Карта құны';
+$_LANG['free_money'] = 'Карта тегін лимиті';
+$_LANG['card_img'] = 'Карта суреті';
+$_LANG['card_desc'] = 'Карта сипаттауы';
 
-$_LANG['card_edit'] = '编辑贺卡';
+$_LANG['card_edit'] = 'Картаны өңдеу';
 
-$_LANG['drop_card_img'] = '删除贺卡图纸';
-$_LANG['confirm_drop_card_img'] = '你确认删除该贺卡图纸吗？';
-$_LANG['drop_card_img_success'] = '删除贺卡图片成功';
+$_LANG['drop_card_img'] = 'Карта фотосын жою';
+$_LANG['confirm_drop_card_img'] = 'Бұл картаның суретін жоясыз ба？';
+$_LANG['drop_card_img_success'] = 'Карта суреті сәтті жойылды';
 
-$_LANG['card_edit_lnk'] = '重新编辑该贺卡';
-$_LANG['card_list_lnk'] = '返回列表页面';
+$_LANG['card_edit_lnk'] = 'Картаны қайта өңдеу';
+$_LANG['card_list_lnk'] = 'Тізім бетіне қайту';
 
 /*帮助信息*/
-$_LANG['notice_cardfee'] = '使用这个贺卡所需要支付的费用，免费时设置为0';
-$_LANG['notice_cardfreemoney'] = '当用户消费金额超过这个值时，将免费使用这个贺卡，设置为0表明必须支付贺卡费用';
+$_LANG['notice_cardfee'] = 'Осы картаны істету үшін төлейтін сома,тегін болса 0 деп қоясыз';
+$_LANG['notice_cardfreemoney'] = 'Клиенттің тұтыну сомасы осы саннан асқан кезде,картаны тегін қолданады,0 деп қойылса,міндетті түрде карта төлемін өтеу қажет';
 
-$_LANG['warn_cardimg'] = '你已经上传过图片。再次上传时将覆盖原图片';
+$_LANG['warn_cardimg'] = 'Сіз фото жүктегенсіз,қайта жүктесеңіз бұрынғы жүктеген суретті жаңартады';
 
 /*提示信息*/
-$_LANG['cardname_exist'] = '贺卡名 %s 已经存在';
-$_LANG['cardadd_succeed'] = '已成功添加';
-$_LANG['carddrop_fail'] = '删除失败';
-$_LANG['carddrop_succeed'] = '删除成功';
-$_LANG['cardedit_succeed'] = '贺卡 %s 修改成功';
-$_LANG['cardedit_fail'] = '贺卡 %s 修改失败';
-$_LANG['drop_confirm'] = '你确认要删除这条记录吗？';
-$_LANG['enter_num'] = '请输入一个数字！';
+$_LANG['cardname_exist'] = '%s карта атауы бұрыннан бар';
+$_LANG['cardadd_succeed'] = 'Сәтті енгізілді';
+$_LANG['carddrop_fail'] = 'Жою сәтсіз';
+$_LANG['carddrop_succeed'] = 'Сәтті жойылды';
+$_LANG['cardedit_succeed'] = '%s силық картасы сәтті өзгертілді';
+$_LANG['cardedit_fail'] = '%s силық картасын өзгерту сәтсіз';
+$_LANG['drop_confirm'] = 'Сіз бұл деректі жоясыз ба？';
+$_LANG['enter_num'] = 'Бір сан енгізіңіз！';
 
-$_LANG['no_cardname'] = '你输入的卡片名称为空！';
+$_LANG['no_cardname'] = 'Картаның атын енгізіңіз！';
 
-$_LANG['back_list'] = '返回贺卡列表';
-$_LANG['continue_add'] = '继续添加新贺卡';
+$_LANG['back_list'] = 'Карта тізімі';
+$_LANG['continue_add'] = 'Жалғасты енгізу';
 
-$_LANG['upfile_type_error'] = "只能上传jpg，gif，png类型的图片";
-$_LANG['upfile_error'] = "图片无法上传，请确保data目录下所有子目录的可写性";
+$_LANG['upfile_type_error'] = "Тек ғана jpg，gif，png форматындағы сурет жарамды";
+$_LANG['upfile_error'] = "Сурет жүктелмейді,data каталогындағы барлық ішкі каталогтар жазылу құқығын қамтамасыз етіңіз";
 
 /*JS 语言项*/
-$_LANG['js_languages']['no_cardname'] = '没有输入贺卡名';
-$_LANG['js_languages']['cardfee_un_num'] = '贺卡费用为空或不是数字';
-$_LANG['js_languages']['cardmoney_un_num'] = '贺卡免费额度为空或不是数字';
+$_LANG['js_languages']['no_cardname'] = 'Карта аты енгізілмеді';
+$_LANG['js_languages']['cardfee_un_num'] = 'Карта сомасы енгізілмеді немесе енгізілген мазмұн сан емес';
+$_LANG['js_languages']['cardmoney_un_num'] = 'Картаның тегін лимиті енгізілмеді немесе енгізілген мазмұн сан емес';
 
 return $_LANG;

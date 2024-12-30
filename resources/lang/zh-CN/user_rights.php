@@ -8,9 +8,9 @@ return [
     |
     */
 
-    'rights_no_install' => '权益未安装',
-    'rights_no_configure' => '权益未配置',
-    'card_nobind_rights' => '您所属的权益卡没有绑定当前权益',
+    'rights_no_install' => 'Құқық орнатылмады',
+    'rights_no_configure' => 'Құқық бапталмады',
+    'card_nobind_rights' => 'Сіздің құқық картаңыз бұл құқыққа байланыстырылмады',
 
 
 ];

@@ -1,116 +1,116 @@
 <?php
 
-$_LANG['lab_market_price'] = '市场售价：';
+$_LANG['lab_market_price'] = 'Нарық бағасы：';
 
 /* 当前页面标题及可用链接名称 */
-$_LANG['group_buy_list'] = '团购活动列表';
-$_LANG['add_group_buy'] = '添加团购活动';
-$_LANG['edit_group_buy'] = '编辑团购活动';
+$_LANG['group_buy_list'] = 'Топтасу тізімі';
+$_LANG['add_group_buy'] = 'Топтасуды енгізу';
+$_LANG['edit_group_buy'] = 'Топтасуды өңдеу';
 
 /* 活动列表页 */
-$_LANG['goods_name'] = '商品名称';
-$_LANG['start_date'] = '开始时间';
-$_LANG['end_date'] = '结束时间';
-$_LANG['deposit'] = '保证金';
-$_LANG['restrict_amount'] = '限购';
-$_LANG['gift_integral'] = '赠送积分';
-$_LANG['valid_order'] = '订单';
-$_LANG['valid_goods'] = '订购商品';
-$_LANG['current_price'] = '当前价格';
-$_LANG['current_status'] = '状态';
-$_LANG['view_order'] = '查看订单';
+$_LANG['goods_name'] = 'Тауар аты';
+$_LANG['start_date'] = 'Басталу';
+$_LANG['end_date'] = 'Аяқталу';
+$_LANG['deposit'] = 'Депозит';
+$_LANG['restrict_amount'] = 'Шектеу';
+$_LANG['gift_integral'] = 'Силық бонус';
+$_LANG['valid_order'] = 'Заказ';
+$_LANG['valid_goods'] = 'Заказ тауары';
+$_LANG['current_price'] = 'Қазіргі баға';
+$_LANG['current_status'] = 'Күйі';
+$_LANG['view_order'] = 'Заказды көру';
 
 /* 添加/编辑活动页 */
-$_LANG['goods_cat'] = '商品分类';
-$_LANG['all_cat'] = '所有分类';
-$_LANG['goods_brand'] = '商品品牌';
-$_LANG['all_brand'] = '所有品牌';
+$_LANG['goods_cat'] = 'Тауар түрі';
+$_LANG['all_cat'] = 'Түрлер';
+$_LANG['goods_brand'] = 'Бренд';
+$_LANG['all_brand'] = 'Брендтер';
 
-$_LANG['new'] = '新品';
-$_LANG['hot'] = '热销';
+$_LANG['new'] = 'Жаңа';
+$_LANG['hot'] = 'Хит';
 
-$_LANG['label_goods_name'] = '团购商品：';
-$_LANG['notice_goods_name'] = '请先搜索商品,在此生成选项列表...';
-$_LANG['label_start_date'] = '活动开始时间：';
-$_LANG['label_end_date'] = '活动结束时间：';
-$_LANG['label_start_end_date'] = '活动起止时间：';
-$_LANG['notice_datetime'] = '（年月日－时）';
-$_LANG['label_deposit'] = '保证金：';
-$_LANG['label_restrict_amount'] = '限购数量：';
-$_LANG['notice_restrict_amount'] = '达到此数量，团购活动自动结束。0表示没有数量限制。';
-$_LANG['label_gift_integral'] = '赠送积分数：';
-$_LANG['notice_start_time'] = '团购活动已开始则无法修改开始时间。';
-$_LANG['label_price_ladder'] = '价格阶梯：';
-$_LANG['notice_ladder_amount'] = '数量达到';
-$_LANG['notice_ladder_price'] = '享受价格';
-$_LANG['label_desc'] = '活动说明：';
-$_LANG['label_status'] = '活动当前状态：';
-$_LANG['gbs'][GBS_PRE_START] = '未开始';
-$_LANG['gbs'][GBS_UNDER_WAY] = '进行中';
-$_LANG['gbs'][GBS_FINISHED] = '结束未处理';
-$_LANG['gbs'][GBS_SUCCEED] = '成功结束';
-$_LANG['gbs'][GBS_FAIL] = '失败结束';
-$_LANG['label_order_qty'] = '订单数 / 有效订单数：';
-$_LANG['label_goods_qty'] = '商品数 / 有效商品数：';
-$_LANG['label_cur_price'] = '当前价：';
-$_LANG['label_end_price'] = '最终价：';
-$_LANG['label_handler'] = '操作：';
-$_LANG['error_group_buy'] = '您要操作的团购活动不存在';
-$_LANG['error_status'] = '当前状态不能执行该操作！';
-$_LANG['button_finish'] = '结束活动';
-$_LANG['notice_finish'] = '（修改活动结束时间为当前时间）';
-$_LANG['button_succeed'] = '活动成功';
-$_LANG['notice_succeed'] = '（更新订单价格）';
-$_LANG['button_fail'] = '活动失败';
-$_LANG['notice_fail'] = '（取消订单，保证金退回帐户余额，失败原因可以写到活动说明中）';
-$_LANG['cancel_order_reason'] = '团购失败';
-$_LANG['js_languages']['succeed_confirm'] = '此操作不可逆，您确定要设置该团购活动成功吗？';
-$_LANG['js_languages']['fail_confirm'] = '此操作不可逆，您确定要设置该团购活动失败吗？';
-$_LANG['button_mail'] = '发送邮件';
-$_LANG['notice_mail'] = '（通知客户付清余款，以便发货）';
-$_LANG['mail_result'] = '该团购活动共有 %s 个有效订单，成功发送了 %s 封邮件。';
-$_LANG['invalid_time'] = '您输入了一个无效的团购时间。';
+$_LANG['label_goods_name'] = 'Тауар：';
+$_LANG['notice_goods_name'] = 'Алдымен тауарды іздеп,таңдау тізімін құрыңыз...';
+$_LANG['label_start_date'] = 'Басталу уақыт：';
+$_LANG['label_end_date'] = 'Аяқталу уақыт：';
+$_LANG['label_start_end_date'] = 'Шара мерзімі：';
+$_LANG['notice_datetime'] = '（Жыл,ай,күн,сағат）';
+$_LANG['label_deposit'] = 'Депозит：';
+$_LANG['label_restrict_amount'] = 'Шектеу саны：';
+$_LANG['notice_restrict_amount'] = 'Осы санға жеткен кезде,топтасу автоматты аяқталады,0 санға шектеу жоқ дегенді білдіреді.';
+$_LANG['label_gift_integral'] = 'Силық бонус：';
+$_LANG['notice_start_time'] = 'Топтасу басталғаннан кейін басталу уақытын өзгерте алмайсыз.';
+$_LANG['label_price_ladder'] = 'Баға сатысы：';
+$_LANG['notice_ladder_amount'] = 'Жеткен саны';
+$_LANG['notice_ladder_price'] = 'Берілген баға';
+$_LANG['label_desc'] = 'Түсіндірме：';
+$_LANG['label_status'] = 'Шараның күйі：';
+$_LANG['gbs'][GBS_PRE_START] = 'Басталмады';
+$_LANG['gbs'][GBS_UNDER_WAY] = 'Жалғасуда';
+$_LANG['gbs'][GBS_FINISHED] = 'Аяқталды,өңделмеді';
+$_LANG['gbs'][GBS_SUCCEED] = 'Сәтті аяқталды';
+$_LANG['gbs'][GBS_FAIL] = 'Сәтсіз аяқталады';
+$_LANG['label_order_qty'] = 'Заказ саны / Жарамды заказ：';
+$_LANG['label_goods_qty'] = 'Тауар саны / Жарамды тауар：';
+$_LANG['label_cur_price'] = 'Қазіргі баға：';
+$_LANG['label_end_price'] = 'Соңғы баға：';
+$_LANG['label_handler'] = 'Атқару：';
+$_LANG['error_group_buy'] = 'Сіз атқаратын топтасу табылмады';
+$_LANG['error_status'] = 'Қазіргі күйде бұл атқаруды жасай алмайсыз！';
+$_LANG['button_finish'] = 'Аяқтау';
+$_LANG['notice_finish'] = '(Шараның аяқталу уақытын қазіргі уақытқа өзгерту)';
+$_LANG['button_succeed'] = 'Шара сәтті';
+$_LANG['notice_succeed'] = '（Заказ бағасын жаңарту）';
+$_LANG['button_fail'] = 'Шара сәтсіз';
+$_LANG['notice_fail'] = '(Заказды бастарту,депозит теңгерімге қайтарылады,сәтсіз болу себебін шара түсіндірмесіне жаза аласыз)';
+$_LANG['cancel_order_reason'] = 'Топтасу сәтсіз';
+$_LANG['js_languages']['succeed_confirm'] = 'Бұл атқаруды қайтара алмайсыз,бұл топтасуды сәтті болды деп қоясыз ба？';
+$_LANG['js_languages']['fail_confirm'] = 'Бұл атқаруды қайтара алмайсыз,бұл топтасуды сәтсіз болды деп қоясыз ба？';
+$_LANG['button_mail'] = 'Email жіберу';
+$_LANG['notice_mail'] = '(Клентке тауарды жіберу үшін қалған ақшаны төлеуді ескерту)';
+$_LANG['mail_result'] = 'Бұл топтасуда жалпы %s жарамды заказ бар,%s Email сәтті жіберілді.';
+$_LANG['invalid_time'] = 'Сіз жарамсыз топтасу уақытын енгіздіңіз.';
 
-$_LANG['add_success'] = '添加团购活动成功。';
-$_LANG['edit_success'] = '编辑团购活动成功。';
-$_LANG['back_list'] = '返回团购活动列表。';
-$_LANG['continue_add'] = '继续添加团购活动。';
+$_LANG['add_success'] = 'Топтасу сәтті енгізілді.';
+$_LANG['edit_success'] = 'Топтасу сәтті өңделді.';
+$_LANG['back_list'] = 'Топтасу тізіміне қайту.';
+$_LANG['continue_add'] = 'Жалғасты енгізу.';
 
 /* 添加/编辑活动提交 */
-$_LANG['error_goods_null'] = '您没有选择团购商品！';
-$_LANG['error_goods_exist'] = '您选择的商品目前有一个团购活动正在进行！';
-$_LANG['error_price_ladder'] = '您没有输入有效的价格阶梯！';
-$_LANG['error_restrict_amount'] = '限购数量不能小于价格阶梯中的最大数量';
+$_LANG['error_goods_null'] = 'Топтасу тауарын таңдамадыңыз！';
+$_LANG['error_goods_exist'] = 'Сіз таңдаған тауарда қазір жүріп жатқан топтасу бар！';
+$_LANG['error_price_ladder'] = 'Енгізген баға сатысы жарамсыз！';
+$_LANG['error_restrict_amount'] = 'Шектеу саны баға сатысындағы ең үлкен саннан кіші болмауы керек';
 
-$_LANG['js_languages']['error_goods_null'] = '您没有选择团购商品！';
-$_LANG['js_languages']['error_deposit'] = '您输入的保证金不是数字！';
-$_LANG['js_languages']['error_restrict_amount'] = '您输入的限购数量不是整数！';
-$_LANG['js_languages']['error_gift_integral'] = '您输入的赠送积分数不是整数！';
-$_LANG['js_languages']['search_is_null'] = '没有搜索到任何商品，请重新搜索';
-$_LANG['js_languages']['error_goods_price'] = '您没有输入有效的价格阶梯价格';
-$_LANG['js_languages']['error_goods_nunber'] = '您没有输入有效的价格阶梯数量';
-$_LANG['js_languages']['ladder_price_min_notice'] = '阶梯价格不能小于保证金金额！';
+$_LANG['js_languages']['error_goods_null'] = 'Топтасу тауарын таңдамадыңыз！';
+$_LANG['js_languages']['error_deposit'] = 'Депозитке тек сан ғана енгізуге болады！';
+$_LANG['js_languages']['error_restrict_amount'] = 'Сіз енгізген шектеу саны бүтін сан емес！';
+$_LANG['js_languages']['error_gift_integral'] = 'Сіз енгізген силық бонус саны бүтін сан емес！';
+$_LANG['js_languages']['search_is_null'] = 'Ешқандай тауар табылмады,қайта іздеңіз';
+$_LANG['js_languages']['error_goods_price'] = 'Сіз енгізген баға сатысының бағасы жарамсыз';
+$_LANG['js_languages']['error_goods_nunber'] = 'Сіз енгізген баға сатысының саны жарамсыз';
+$_LANG['js_languages']['ladder_price_min_notice'] = 'Баға сатысының бағасы депозит сомасынан кем болмауы керек！';
 
 /* 删除团购活动 */
-$_LANG['js_languages']['batch_drop_confirm'] = '您确定要删除选定的团购活动吗？';
-$_LANG['error_exist_order'] = '该团购活动已经有订单，不能删除！';
-$_LANG['batch_drop_success'] = '成功删除了 %s 条团购活动记录。';
-$_LANG['no_select_group_buy'] = '您现在没有团购活动记录！';
+$_LANG['js_languages']['batch_drop_confirm'] = 'Таңдаған топтасуды жоясыз ба？';
+$_LANG['error_exist_order'] = 'Бұл топтасуда тапсырыс бар,жоя алмайсыз！';
+$_LANG['batch_drop_success'] = '%s топтасу дерегі сәтті жойылды.';
+$_LANG['no_select_group_buy'] = 'Сізде қазірше топтасулар жоқ！';
 
 /* 操作日志 */
-$_LANG['log_action']['group_buy'] = '团购商品';
+$_LANG['log_action']['group_buy'] = 'Топтасу тауары';
 
 /* 教程名称 */
-$_LANG['tutorials_bonus_list_one'] = '商城团购活动说明';
+$_LANG['tutorials_bonus_list_one'] = 'Топтасу түсіндірмесі';
 
 /* 页面顶部操作提示 */
-$_LANG['operation_prompt_content']['list'][0] = '团购活动列表展示商品的团购相关信息。';
-$_LANG['operation_prompt_content']['list'][1] = '可根据条件，如商品名称、店铺名称等搜索团购商品。';
-$_LANG['operation_prompt_content']['list'][2] = '可查看团购商品的订单列表（可进行订单相关操作）。';
-$_LANG['operation_prompt_content']['list'][3] = '可添加、编辑、删除或批量删除团购活动。';
+$_LANG['operation_prompt_content']['list'][0] = 'Топтасу тізімінде тауарлардың топтасуға қатысты ақпараттары көрсетіледі.';
+$_LANG['operation_prompt_content']['list'][1] = 'Тауар аты,дүкен аты сияқты шарттар бойынша топтасу тауарын іздей аласыз.';
+$_LANG['operation_prompt_content']['list'][2] = 'Топтасу тауарының тапсырыс тізімін көре аласыз(Заказға атқарулар жасай аласыз)';
+$_LANG['operation_prompt_content']['list'][3] = 'Топтасуды енгізу,өңдеу,жою және топпен жоюға болады.';
 
-$_LANG['operation_prompt_content']['info'][0] = '活动规则：团购活动时间内，根据后台设置的价格阶梯，买家先支付保证金，根据商家评判标准决定活动是否成功，如果成功，买家根据阶梯价格支付尾款；如果失败，已支付保证金退回买家账户。';
-$_LANG['operation_prompt_content']['info'][1] = '前台可在团购频道页看到该参团活动的商品。';
-$_LANG['operation_prompt_content']['info'][2] = '保证金：保证金为0时，根据阶梯价格支付全款购买。当保证金大于0时，阶梯价格的最小值不得小于保证金金额，活动开始后保证金金额无法修改。';
+$_LANG['operation_prompt_content']['info'][0] = 'Шара ережесі：Топтасу кезінде,басқармада қойған баға сатысы бойынша,кленттер алдымен депозит төлейді.Сатушының қойған талабы бойынша шара сәтті болды ма жоқпа екені анықталады,егер сәтті болса,онда клент баға сатысы бойынша қалдық соманы төлейді；Егер сәтсіз болса,төленген депозит клентке қайтарылады.';
+$_LANG['operation_prompt_content']['info'][1] = 'Порталдағы топтасу каналында,осы топтасудағы тауарларды көре аласыз.';
+$_LANG['operation_prompt_content']['info'][2] = 'Депозит：Депозит 0-ге тең болған кезде,баға сатысы бойынша толық төлем жасап сатып алады.Депозит 0-ден үлкен болған кезде,баға сатысының ең аз сомасы депозит сомасынан кем болмауы керек,шара басталғаннан кейін депозит сомасы өзгертілмейді.';
 
 return $_LANG;

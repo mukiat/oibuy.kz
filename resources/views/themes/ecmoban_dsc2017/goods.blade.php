@@ -178,7 +178,7 @@
 
                                                 <a class="J-open-tb" href="#none" data-goodsid="{{ $goods_id }}">
                                                     <div class="quan-item"><i
-                                                                class="i-left"></i>{{ $lang['man'] }}{{ $vo['cou_man'] }}{{ $lang['minus'] }}{{ $vo['cou_money'] }}
+                                                                class="i-left"></i>{{ $vo['cou_man'] }}{{ $lang['man'] }}{{ $vo['cou_money'] }}{{ $lang['minus'] }}
                                                         <i class="i-right"></i></div>
                                                 </a>
 
@@ -267,7 +267,7 @@
                                                            title="{{ $lang['Full_reduction'] }}">{{ $lang['Full_reduction'] }}</a>
                                                         <em class="h1_red" title="
 @foreach($goods['consumption'] as $con)
-                                                        {{ $lang['man'] }}{{ $con['cfull'] }}{{ $lang['minus'] }}{{ $con['creduce'] }}
+                                                        {{ $con['cfull'] }}₸ {{ $lang['man'] }}{{ $con['creduce'] }}₸ {{ $lang['minus'] }}
                                                         @if(!$loop->last)
                                                                 ，
 @endif
@@ -275,7 +275,7 @@
                                                         @endforeach
                                                                 ">
                                                             @foreach($goods['consumption'] as $con)
-                                                                {{ $lang['man'] }}{{ $con['cfull'] }}{{ $lang['minus'] }}{{ $con['creduce'] }}
+                                                                {{ $con['cfull'] }}₸ {{ $lang['man'] }}{{ $con['creduce'] }}₸ {{ $lang['minus'] }}
                                                                 @if(!$loop->last)
                                                                     ，
                                                                 @endif

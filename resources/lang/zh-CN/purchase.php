@@ -4,27 +4,27 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | purchase(批发) Language Lines
+    | purchase(Оптом) Language Lines
     |--------------------------------------------------------------------------
     |
     | The following language lines are used by the purchase
     |
     */
 
-    'no_data' => '暂无数据',
-    'illegal_request' => '请求不合法',
+    'no_data' => 'Дерек жоқ',
+    'illegal_request' => 'Сұраныс ережесіз',
 
-    'purchase_title' => '批发首页',
-    'purchase_list' => '批发列表',
-    'purchase_goods_detail' => '批发详情',
-    'purchase_cart' => '进货单',
-    'purchase_info' => '求购信息',
-    'purchase_detail' => '求购详情',
+    'purchase_title' => 'Оптом басбеті',
+    'purchase_list' => 'Оптом тізімі',
+    'purchase_goods_detail' => 'Оптом инфосы',
+    'purchase_cart' => 'Алу тізімі',
+    'purchase_info' => 'Сұраныс',
+    'purchase_detail' => 'Сұраныс инфо',
 
-    'purchase_addto_cart' => '批发商品已添加',
+    'purchase_addto_cart' => 'Оптом тауар енгізілді',
 
-    'goods_number_must' => '请选择需要购买到商品',
-    'goods_number_limit' => '该商品库存只有 %s 个',
-    'order_success' => '提交成功',
+    'goods_number_must' => 'Алатын тауарды таңдаңыз',
+    'goods_number_limit' => 'Бұл тауардың қоры тек %s тал',
+    'order_success' => 'Сәтті жолданды',
 
 ];

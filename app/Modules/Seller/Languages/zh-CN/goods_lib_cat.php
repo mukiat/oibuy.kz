@@ -1,39 +1,39 @@
 <?php
 
-$_LANG['is_show'] = '是否显示';
-$_LANG['parent_id'] = '上级分类';
-$_LANG['cat_name'] = '分类名称';
-$_LANG['catadd_succed'] = '商品库商品分类添加成功！';
-$_LANG['category_edit'] = '编辑商品分类';
-$_LANG['catedit_succed'] = '商品库商品分类编辑成功！';
-$_LANG['continue_add'] = '继续添加分类';
-$_LANG['back_list'] = '返回分类列表';
-$_LANG['top_cat'] = '顶级分类';
-$_LANG['move_goods'] = '转移商品';
-$_LANG['start_move_cat'] = '开始转移';
-$_LANG['level'] = '级';
-$_LANG['level_alt'] = '级别';
-$_LANG['goods_number'] = '商品数量';
-$_LANG['cat_isleaf'] = '分类已存在';
+$_LANG['is_show'] = 'Көрсету';
+$_LANG['parent_id'] = 'Жоғары түрі';
+$_LANG['cat_name'] = 'Түр аты';
+$_LANG['catadd_succed'] = 'Тауар қорының тауар түрі сәтті енгізілді！';
+$_LANG['category_edit'] = 'Тауар түрін өңдеу';
+$_LANG['catedit_succed'] = 'Тауар түрі сәтті өңделді！';
+$_LANG['continue_add'] = 'Жалғасты түр енгізу';
+$_LANG['back_list'] = 'Түр тізіміне қайту';
+$_LANG['top_cat'] = 'Негізгі түр';
+$_LANG['move_goods'] = 'Тауарды көшіру';
+$_LANG['start_move_cat'] = 'Көшіру';
+$_LANG['level'] = 'Lv';
+$_LANG['level_alt'] = 'Деңгей';
+$_LANG['goods_number'] = 'Тауар саны';
+$_LANG['cat_isleaf'] = 'Түр бұрыннан бар';
 
-$_LANG['select_default_topcat_notic'] = '不选择分类默认为顶级分类';
+$_LANG['select_default_topcat_notic'] = 'Түр таңдалмаса,Әдепкісі негізгі түр болады';
 
-$_LANG['catname_empty'] = '分类名称不能为空!';
-$_LANG['catname_exist'] = '已存在相同的分类名称!';
-$_LANG["parent_isleaf"] = '所选分类不能是末级分类!';
-$_LANG["cat_isleaf"] = '不是末级分类,您不能删除!';
-$_LANG["cat_noleaf"] = '底下还有其它子分类,不能修改为末级分类!';
-$_LANG["is_leaf_error"] = '所选择的上级分类不能是当前分类或者当前分类的下级分类!';
+$_LANG['catname_empty'] = 'Түр атын енгізіңіз!';
+$_LANG['catname_exist'] = 'Ұқсас түр атауы бар!';
+$_LANG["parent_isleaf"] = 'Таңдаған түр соңғы түр болмауы керек!';
+$_LANG["cat_isleaf"] = 'Соңғы түр емес,жоя алмайсыз!';
+$_LANG["cat_noleaf"] = 'Қарайтын басқа төменгі түрлер бар,соңғы түр етіп өзгерте алмайсыз!';
+$_LANG["is_leaf_error"] = 'Таңдаған жоғары түр қазіргі түр немесе қазіргі түрге қарайтын төменгі түр болмауы керек!';
 
-$_LANG['js_languages']['cat_name_not_null'] = '分类名称不能为空';
-$_LANG['js_languages']['not_ts_zf'] = '不能包含特殊字符';
-$_LANG['js_languages']['confirm_zy_cat'] = '执行此操作时，当前分类所有下级分类也同时转移，确定执行吗？';
+$_LANG['js_languages']['cat_name_not_null'] = 'Түр атауын енгізіңіз';
+$_LANG['js_languages']['not_ts_zf'] = 'Ерекше әріп енгізуге болмайды';
+$_LANG['js_languages']['confirm_zy_cat'] = 'Бұл атқаруды жүргізген кезде,қазіргі түрге қарайтын барлық төменгі түрлер бірге көшіріледі,жалғасты атқарасыз ба？';
 
 /* 页面顶部操作提示 */
-$_LANG['operation_prompt_content']['info'][0] = '请按提示信息填写每一个字段。';
+$_LANG['operation_prompt_content']['info'][0] = 'Әр деректі ескерту бойынша енгізіңіз.';
 
-$_LANG['operation_prompt_content']['list'][0] = '展示了平台商品库的所有分类。';
-$_LANG['operation_prompt_content']['list'][1] = '可在列表直接增加下一级分类。';
-$_LANG['operation_prompt_content']['list'][2] = '鼠标移动“设置”位置，可新增、查看下一级分类。';
+$_LANG['operation_prompt_content']['list'][0] = 'Портал тауар қорының бүкіл түрлері көрсетілген.';
+$_LANG['operation_prompt_content']['list'][1] = 'Тізім ішінде бірден төменгі түрді енгізе аласыз.';
+$_LANG['operation_prompt_content']['list'][2] = 'Тінтуірді“баптау”апарыңыз,төменгі түрді енгізуге,көруге болады.';
 
 return $_LANG;

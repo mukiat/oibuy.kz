@@ -1,68 +1,68 @@
 <?php
 
 /*页面语言项*/
-$_LANG['add_album'] = "添加相册";
-$_LANG['edit_album'] = "编辑相册";
-$_LANG['album_mame'] = "相册名称";
-$_LANG['album_cover'] = "封面";
-$_LANG['album_desc'] = "描述";
-$_LANG['gallery_count'] = "图片数量";
-$_LANG['shop_name'] = "店铺名称";
-$_LANG['select_album'] = "选择相册";
-$_LANG['transfer_img'] = '转移图片';
-$_LANG['start_transfer'] = '开始转移';
-$_LANG['superior_album'] = '上级相册';
-$_LANG['top_album'] = '顶级相册';
-$_LANG['refresh_span_image'] = '张图片';
-$_LANG['transfer_album'] = '转移相册';
+$_LANG['add_album'] = "Альбом енгізу";
+$_LANG['edit_album'] = "Альбом өңдеу";
+$_LANG['album_mame'] = "Альбом аты";
+$_LANG['album_cover'] = "Сырты";
+$_LANG['album_desc'] = "Сипаттау";
+$_LANG['gallery_count'] = "Сурет саны";
+$_LANG['shop_name'] = "Дүкен аты";
+$_LANG['select_album'] = "Альбом таңдау";
+$_LANG['transfer_img'] = 'Сурет көшіру';
+$_LANG['start_transfer'] = 'Көшіру';
+$_LANG['superior_album'] = 'Жоғары альбом';
+$_LANG['top_album'] = 'Негізгі альбом';
+$_LANG['refresh_span_image'] = ' сурет';
+$_LANG['transfer_album'] = 'Альбом көшіру';
 
 /*提示*/
-$_LANG['title_exist'] = '相册 %s 已经存在';
-$_LANG['continue_add_album'] = '继续添加相册';
-$_LANG['bank_list'] = '返回列表';
-$_LANG['add_succeed'] = '添加成功';
-$_LANG['edit_succeed'] = '编辑成功';
-$_LANG['delete_succeed'] = '删除成功';
-$_LANG['delete_fail'] = '请选择删除项';
-$_LANG['view_pic'] = '查看 %s 相册图片';
-$_LANG['handle_fail'] = '请选择图片！';
-$_LANG['album_fail'] = '请选择相册！';
-$_LANG['remove_succeed'] = '转移成功';
-$_LANG['unremove_succeed'] = '相册 %s 不是末级相册，不能删除';
-$_LANG['ckdelete_album'] = '确定删除该相册吗？删除后图片无法找回！';
-$_LANG['zi_album_handle'] = '子相册是否继承此操作？';
-$_LANG['confirm_delete'] = '确定删除吗？';
-$_LANG['select_transfer_image'] = '请选择转移图片！';
-$_LANG['no_last_album_no_remove'] = '不是末级相册，不能删除';
+$_LANG['title_exist'] = '%s альбомы бұрыннан бар';
+$_LANG['continue_add_album'] = 'Жалғасты енгізу';
+$_LANG['bank_list'] = 'Тізімге қайту';
+$_LANG['add_succeed'] = 'Сәтті енгізілді';
+$_LANG['edit_succeed'] = 'Сәтті өңделді';
+$_LANG['delete_succeed'] = 'Сәтті жойылды';
+$_LANG['delete_fail'] = 'Жоятынды таңдау';
+$_LANG['view_pic'] = '%s альбомдағы суретті көру';
+$_LANG['handle_fail'] = 'Сурет таңдаңыз！';
+$_LANG['album_fail'] = 'Альбом таңдаңыз！';
+$_LANG['remove_succeed'] = 'Сәтті көшірілді';
+$_LANG['unremove_succeed'] = '%s альбомы соңғы альбом емес,жойылмайды';
+$_LANG['ckdelete_album'] = 'Бұл альбомды жоясыз ба？жойылғаннан кейін суреттер қайтарылмайды！';
+$_LANG['zi_album_handle'] = 'Қарасты альбом бұл атқаруға ілесе ме？';
+$_LANG['confirm_delete'] = 'Жоясыз ба？';
+$_LANG['select_transfer_image'] = 'Көшетін суретті таңдаңыз！';
+$_LANG['no_last_album_no_remove'] = 'Соңғы альбом емес,жойылмайды';
 
 // label
-$_LANG['label_parent_album'] = '上级相册：';
-$_LANG['not_unremove_succeed'] = '不是末级相册，不能删除';
-$_LANG['system_error_notic'] = '系统出错，请重试！';
-$_LANG['upload_error_notic'] = '上传有误，清检查服务器配置！';
-$_LANG['upload_format_error'] = '上传格式有误！';
+$_LANG['label_parent_album'] = 'Жоғарғы альбом：';
+$_LANG['not_unremove_succeed'] = 'Соңғы альбом емес,жойылмайды';
+$_LANG['system_error_notic'] = 'Жүйе қателігі,қайта көріңіз！';
+$_LANG['upload_error_notic'] = 'Жүктеу қателігі,сервер баптауын тексеріңіз！';
+$_LANG['upload_format_error'] = 'Жүктеу форматы қате！';
 
 /*js语言项*/
-$_LANG['js_languages']['album_mame_null'] = '相册名称不能为空';
-$_LANG['js_languages']['batch_drop_confirm'] = '确定删除选中相册？';
-$_LANG['js_languages']['zi_album_handle'] = '子相册是否继承此操作？';
-$_LANG['js_languages']['transfer_img'] = '转移图片';
-$_LANG['js_languages']['select_transfer_image'] = '请选择转移图片！';
-$_LANG['js_languages']['select_transfer_album'] = '请选择转移相册!';
-$_LANG['js_languages']['transfer_album'] = '转移相册';
+$_LANG['js_languages']['album_mame_null'] = 'Альбом атауын енгізіңіз';
+$_LANG['js_languages']['batch_drop_confirm'] = 'Таңдаған альбомды жоясыз ба？';
+$_LANG['js_languages']['zi_album_handle'] = 'Қарасты альбом атқаруға ілесе ме？';
+$_LANG['js_languages']['transfer_img'] = 'Сурет көшіру';
+$_LANG['js_languages']['select_transfer_image'] = 'Көшіретін суретті таңдаңыз！';
+$_LANG['js_languages']['select_transfer_album'] = 'Көшіретін альбомды таңдаңыз!';
+$_LANG['js_languages']['transfer_album'] = 'Альбом көшіру';
 
 /* 教程名称 */
-$_LANG['tutorials_bonus_list_one'] = '商城图片库功能说明';
+$_LANG['tutorials_bonus_list_one'] = 'Суреттік қор функциясын сипаттау';
 
 /* 页面顶部操作提示 */
-$_LANG['operation_prompt_content']['list'][0] = '展示每个店铺的图片空间列表。';
-$_LANG['operation_prompt_content']['list'][1] = '平台可查看、编辑、删除商家的图片空间。';
-$_LANG['operation_prompt_content']['list'][2] = '平台可以对商家违规的图片进行删除。';
+$_LANG['operation_prompt_content']['list'][0] = 'Әр дүкеннің суреттер тізімін көрсету.';
+$_LANG['operation_prompt_content']['list'][1] = 'Портал сатушының суреттеріне көру,өңдеу,жою атқаруларын жасай алады.';
+$_LANG['operation_prompt_content']['list'][2] = 'Портал сатушының ережесіз суреттерін жоя алады.';
 
-$_LANG['operation_prompt_content']['info'][0] = '供货商隶属于管理员下级的角色，请注意勾选管理员。';
+$_LANG['operation_prompt_content']['info'][0] = 'Поставщикте админнің төменгі деңгейіне жатады,админды мұқият белгілеңіз.';
 
-$_LANG['operation_prompt_content']['view'][0] = '该页面展示了当前图片库的图片信息。';
-$_LANG['operation_prompt_content']['view'][1] = '可上传、删除、编辑图片。';
-$_LANG['operation_prompt_content']['view'][2] = '图片上有“<em class="red">引</em>”字表示此图片已经在某些地方使用了，删除会导致图片丢失，谨慎删除。';
+$_LANG['operation_prompt_content']['view'][0] = 'Бұл бетте қазіргі сурет қорының суреттер ақпараты көрсетіледі.';
+$_LANG['operation_prompt_content']['view'][1] = 'Суретті жою,жүктеу,өңдеуге болады.';
+$_LANG['operation_prompt_content']['view'][2] = 'Суретте“<em class="red">Иа</em>”әріпі болса бір жерде қолданылған дегенді білдіреді,жойсаңыз сурет табылмайды,жойған кезде мұқият болыңыз.';
 
 return $_LANG;

@@ -1,29 +1,29 @@
 <?php
 
-$_LANG['id'] = '编号';
+$_LANG['id'] = 'Коды';
 
-$_LANG['starttime'] = '上架时间';
-$_LANG['endtime'] = '下架时间';
-$_LANG['select_time'] = '请选定时间';
-$_LANG['goods_name'] = '商品名称';
-$_LANG['ok'] = '确定';
-$_LANG['edit_ok'] = '操作成功';
-$_LANG['delete'] = '撤销';
-$_LANG['deleteck'] = '确定删除此商品的自动上架下架处理么?此操作不会影响商品本身';
-$_LANG['enable_notice'] = '您需要到系统设置->计划任务中开启该功能后才能使用。';
-$_LANG['enable_seller_notice'] = '您当前还没有使用此功能的权限，需要平台“系统设置->计划任务”中开启该功能后才能使用。';
-$_LANG['button_start'] = '批量上架';
-$_LANG['button_end'] = '批量下架';
+$_LANG['starttime'] = 'Сөреге қою';
+$_LANG['endtime'] = 'Сөреден алу';
+$_LANG['select_time'] = 'Уақыт таңдау';
+$_LANG['goods_name'] = 'Тауар аты';
+$_LANG['ok'] = 'Иа';
+$_LANG['edit_ok'] = 'Сәтті атқарылды';
+$_LANG['delete'] = 'Жою';
+$_LANG['deleteck'] = 'Бұл тауардың сатылымға автоматты қою/алу қызметін жоясыз ба? Тауардың өзіне ешқандай әсері жоқ.';
+$_LANG['enable_notice'] = 'Сіз жүйе баптауы->Жоспарлы міндет ішінен бұл қызметті қоса аласыз.';
+$_LANG['enable_seller_notice'] = 'Сізде әлі бұл қызметтің рұқсаты жоқ,Порталдың“Жүйе баптауы->Жоспарлы міндет”ішінен бұл қызметті қоса аласыз.';
+$_LANG['button_start'] = 'Топпен қою';
+$_LANG['button_end'] = 'Топпен алу';
 
-$_LANG['no_select_goods'] = '没有选定商品';
+$_LANG['no_select_goods'] = 'Тауар таңдалмады';
 
-$_LANG['batch_start_succeed'] = '批量上架成功';
-$_LANG['batch_end_succeed'] = '批量下架成功';
+$_LANG['batch_start_succeed'] = 'Топпен сәтті қойылды';
+$_LANG['batch_end_succeed'] = 'Топпен сәтті алынды';
 
-$_LANG['back_list'] = '返回商品自动上下架';
+$_LANG['back_list'] = 'Тауарды авто.қою/алуға қайту';
 
 /* 页面顶部操作提示 */
-$_LANG['operation_prompt_content'][0] = '选择商品和需要上下架操作的时间进行批量上下架。';
-$_LANG['operation_prompt_content'][1] = '也可搜索商品名称进行单个上下架。';
+$_LANG['operation_prompt_content'][0] = 'Тауарды таңдап және автоматты қою/алу уақытын енгізу арқылы топпен атқара аласыз.';
+$_LANG['operation_prompt_content'][1] = 'Тауар атын іздеу арқылы жекеде атқару жасауға болады.';
 
 return $_LANG;
